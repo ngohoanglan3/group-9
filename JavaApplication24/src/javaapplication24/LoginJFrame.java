@@ -180,6 +180,11 @@ public final class LoginJFrame extends javax.swing.JFrame {
         jLabel7.setText("ĐĂNG NHẬP");
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jLabel7.setPreferredSize(new java.awt.Dimension(225, 32));
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
         jPanel8.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
@@ -317,7 +322,7 @@ public final class LoginJFrame extends javax.swing.JFrame {
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("XEM ĐIỂM HUCE");
+        jLabel10.setText("QUẢN LÝ ĐIỂM HUCE");
         jLabel10.setPreferredSize(new java.awt.Dimension(115, 25));
         jPanel10.add(jLabel10, java.awt.BorderLayout.WEST);
 
@@ -418,6 +423,11 @@ public final class LoginJFrame extends javax.swing.JFrame {
         int xy = evt.getYOnScreen();
         this.setLocation(xx - x, xy - y);
     }//GEN-LAST:event_jPanel10MouseDragged
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        DashboardJFrame dash = new DashboardJFrame();
+        dash.setVisible(true);
+    }//GEN-LAST:event_jLabel7MouseClicked
 
     
     /**
