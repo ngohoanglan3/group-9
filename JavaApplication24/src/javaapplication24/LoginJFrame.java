@@ -324,7 +324,7 @@ public final class LoginJFrame extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("QUẢN LÝ ĐIỂM HUCE");
         jLabel10.setPreferredSize(new java.awt.Dimension(115, 25));
-        jPanel10.add(jLabel10, java.awt.BorderLayout.WEST);
+        jPanel10.add(jLabel10, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel10, java.awt.BorderLayout.NORTH);
 

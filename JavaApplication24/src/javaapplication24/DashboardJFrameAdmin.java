@@ -181,7 +181,57 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         TitleSinhVien = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
         QuanLyHocKy = new javax.swing.JPanel();
+        jPanel70 = new javax.swing.JPanel();
+        jPanel77 = new javax.swing.JPanel();
+        jLabel70 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jLabel71 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel72 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel73 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jButton10 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jPanel78 = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
+        jPanel80 = new javax.swing.JPanel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTable8 = new javax.swing.JTable();
+        jPanel81 = new javax.swing.JPanel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        TitleHocKy = new javax.swing.JPanel();
+        jLabel76 = new javax.swing.JLabel();
         QuanLyMonHoc = new javax.swing.JPanel();
+        jPanel71 = new javax.swing.JPanel();
+        jPanel82 = new javax.swing.JPanel();
+        jLabel77 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jButton11 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jLabel78 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel79 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel80 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jButton15 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jPanel83 = new javax.swing.JPanel();
+        jLabel62 = new javax.swing.JLabel();
+        jPanel84 = new javax.swing.JPanel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTable9 = new javax.swing.JTable();
+        jPanel85 = new javax.swing.JPanel();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        TitleMonHoc = new javax.swing.JPanel();
+        jLabel83 = new javax.swing.JLabel();
         QuanLyKhoa = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
         jPanel38 = new javax.swing.JPanel();
@@ -357,7 +407,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("QUẢN LÝ ĐIỂM HUCE");
         jLabel10.setPreferredSize(new java.awt.Dimension(125, 25));
-        DecoratedBar.add(jLabel10, java.awt.BorderLayout.WEST);
+        DecoratedBar.add(jLabel10, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(DecoratedBar, java.awt.BorderLayout.NORTH);
 
@@ -1237,9 +1287,455 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         RealContentLayout.add(QuanLySinhVien, "card2");
 
         QuanLyHocKy.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel70.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel70.setOpaque(false);
+        jPanel70.setPreferredSize(new java.awt.Dimension(1040, 400));
+        jPanel70.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel77.setPreferredSize(new java.awt.Dimension(400, 300));
+        jPanel77.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel70.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel70.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel70.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel70.setText("Nhập mã:");
+        jLabel70.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel70.setRequestFocusEnabled(false);
+        jLabel70.setVerifyInputWhenFocusTarget(false);
+        jPanel77.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 15, -1, -1));
+
+        jTextField5.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel77.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 15, -1, -1));
+
+        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton8.setText("Tìm");
+        jButton8.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel77.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 15, -1, -1));
+
+        jButton9.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton9.setText("Sửa");
+        jButton9.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel77.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 225, -1, -1));
+
+        jLabel71.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel71.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel71.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel71.setText("Mã học kỳ:");
+        jLabel71.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel71.setRequestFocusEnabled(false);
+        jLabel71.setVerifyInputWhenFocusTarget(false);
+        jPanel77.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 75, -1, -1));
+
+        jTextField6.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel77.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 75, 195, -1));
+
+        jLabel72.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel72.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel72.setText("Năm học:");
+        jLabel72.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel72.setRequestFocusEnabled(false);
+        jLabel72.setVerifyInputWhenFocusTarget(false);
+        jPanel77.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 125, -1, -1));
+
+        jTextField7.setPreferredSize(new java.awt.Dimension(75, 25));
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        jPanel77.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 125, 195, -1));
+
+        jLabel73.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel73.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel73.setText("Thứ tự:");
+        jLabel73.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel73.setRequestFocusEnabled(false);
+        jLabel73.setVerifyInputWhenFocusTarget(false);
+        jPanel77.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 175, -1, -1));
+
+        jTextField8.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel77.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 175, 195, -1));
+
+        jButton10.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton10.setText("Làm mới");
+        jButton10.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel77.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 15, -1, -1));
+
+        jButton12.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton12.setText("Thêm");
+        jButton12.setPreferredSize(new java.awt.Dimension(75, 25));
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+        jPanel77.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 225, -1, -1));
+
+        jButton13.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton13.setText("Xóa");
+        jButton13.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel77.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 225, -1, -1));
+
+        jPanel70.add(jPanel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 75, -1, -1));
+
+        jPanel78.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel78.setPreferredSize(new java.awt.Dimension(330, 25));
+
+        jLabel59.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel59.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel59.setText("Danh sách học kỳ");
+
+        javax.swing.GroupLayout jPanel78Layout = new javax.swing.GroupLayout(jPanel78);
+        jPanel78.setLayout(jPanel78Layout);
+        jPanel78Layout.setHorizontalGroup(
+            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel78Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel59)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel78Layout.setVerticalGroup(
+            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 28, Short.MAX_VALUE)
+            .addGroup(jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel78Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel59)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel70.add(jPanel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 25, 560, -1));
+
+        jPanel80.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel80.setPreferredSize(new java.awt.Dimension(200, 300));
+
+        jTable8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Mã học kỳ", "Năm học", "Thứ tự"
+            }
+        ));
+        jScrollPane12.setViewportView(jTable8);
+
+        javax.swing.GroupLayout jPanel80Layout = new javax.swing.GroupLayout(jPanel80);
+        jPanel80.setLayout(jPanel80Layout);
+        jPanel80Layout.setHorizontalGroup(
+            jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE))
+        );
+        jPanel80Layout.setVerticalGroup(
+            jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 325, Short.MAX_VALUE)
+            .addGroup(jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE))
+        );
+
+        jPanel70.add(jPanel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 560, 325));
+
+        jPanel81.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel81.setPreferredSize(new java.awt.Dimension(400, 50));
+
+        jLabel74.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel74.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel74.setText("CẬP NHẬT HỌC KỲ");
+
+        javax.swing.GroupLayout jPanel81Layout = new javax.swing.GroupLayout(jPanel81);
+        jPanel81.setLayout(jPanel81Layout);
+        jPanel81Layout.setHorizontalGroup(
+            jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel81Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel74)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel81Layout.setVerticalGroup(
+            jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel81Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel74)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel70.add(jPanel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 25, -1, -1));
+        jPanel70.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        QuanLyHocKy.add(jPanel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 75, -1, -1));
+
+        TitleHocKy.setBackground(new java.awt.Color(0, 102, 102));
+        TitleHocKy.setPreferredSize(new java.awt.Dimension(250, 50));
+
+        jLabel76.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel76.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel76.setText("QUẢN LÝ HỌC KỲ");
+
+        javax.swing.GroupLayout TitleHocKyLayout = new javax.swing.GroupLayout(TitleHocKy);
+        TitleHocKy.setLayout(TitleHocKyLayout);
+        TitleHocKyLayout.setHorizontalGroup(
+            TitleHocKyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1040, Short.MAX_VALUE)
+            .addGroup(TitleHocKyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleHocKyLayout.createSequentialGroup()
+                    .addContainerGap(423, Short.MAX_VALUE)
+                    .addComponent(jLabel76)
+                    .addContainerGap(423, Short.MAX_VALUE)))
+        );
+        TitleHocKyLayout.setVerticalGroup(
+            TitleHocKyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(TitleHocKyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleHocKyLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel76)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        QuanLyHocKy.add(TitleHocKy, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 1040, -1));
+
         RealContentLayout.add(QuanLyHocKy, "card3");
 
         QuanLyMonHoc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel71.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel71.setOpaque(false);
+        jPanel71.setPreferredSize(new java.awt.Dimension(1040, 400));
+        jPanel71.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel82.setPreferredSize(new java.awt.Dimension(400, 300));
+        jPanel82.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel77.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel77.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel77.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel77.setText("Nhập mã:");
+        jLabel77.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel77.setRequestFocusEnabled(false);
+        jLabel77.setVerifyInputWhenFocusTarget(false);
+        jPanel82.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 15, -1, -1));
+
+        jTextField9.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel82.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 15, -1, -1));
+
+        jButton11.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton11.setText("Tìm");
+        jButton11.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel82.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 15, -1, -1));
+
+        jButton14.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton14.setText("Sửa");
+        jButton14.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel82.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 225, -1, -1));
+
+        jLabel78.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel78.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel78.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel78.setText("Mã học kỳ:");
+        jLabel78.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel78.setRequestFocusEnabled(false);
+        jLabel78.setVerifyInputWhenFocusTarget(false);
+        jPanel82.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 75, -1, -1));
+
+        jTextField10.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel82.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 75, 195, -1));
+
+        jLabel79.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel79.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel79.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel79.setText("Năm học:");
+        jLabel79.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel79.setRequestFocusEnabled(false);
+        jLabel79.setVerifyInputWhenFocusTarget(false);
+        jPanel82.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 125, -1, -1));
+
+        jTextField11.setPreferredSize(new java.awt.Dimension(75, 25));
+        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField11ActionPerformed(evt);
+            }
+        });
+        jPanel82.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 125, 195, -1));
+
+        jLabel80.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel80.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel80.setText("Thứ tự:");
+        jLabel80.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel80.setRequestFocusEnabled(false);
+        jLabel80.setVerifyInputWhenFocusTarget(false);
+        jPanel82.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 175, -1, -1));
+
+        jTextField12.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel82.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 175, 195, -1));
+
+        jButton15.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton15.setText("Làm mới");
+        jButton15.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel82.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 15, -1, -1));
+
+        jButton16.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton16.setText("Thêm");
+        jButton16.setPreferredSize(new java.awt.Dimension(75, 25));
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+        jPanel82.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 225, -1, -1));
+
+        jButton17.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton17.setText("Xóa");
+        jButton17.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel82.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 225, -1, -1));
+
+        jPanel71.add(jPanel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 75, -1, -1));
+
+        jPanel83.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel83.setPreferredSize(new java.awt.Dimension(330, 25));
+
+        jLabel62.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel62.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel62.setText("Danh sách học kỳ");
+
+        javax.swing.GroupLayout jPanel83Layout = new javax.swing.GroupLayout(jPanel83);
+        jPanel83.setLayout(jPanel83Layout);
+        jPanel83Layout.setHorizontalGroup(
+            jPanel83Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(jPanel83Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel83Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel62)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel83Layout.setVerticalGroup(
+            jPanel83Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 28, Short.MAX_VALUE)
+            .addGroup(jPanel83Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel83Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel62)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel71.add(jPanel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 25, 560, -1));
+
+        jPanel84.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel84.setPreferredSize(new java.awt.Dimension(200, 300));
+
+        jTable9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Mã học kỳ", "Năm học", "Thứ tự"
+            }
+        ));
+        jScrollPane13.setViewportView(jTable9);
+
+        javax.swing.GroupLayout jPanel84Layout = new javax.swing.GroupLayout(jPanel84);
+        jPanel84.setLayout(jPanel84Layout);
+        jPanel84Layout.setHorizontalGroup(
+            jPanel84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(jPanel84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE))
+        );
+        jPanel84Layout.setVerticalGroup(
+            jPanel84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 325, Short.MAX_VALUE)
+            .addGroup(jPanel84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE))
+        );
+
+        jPanel71.add(jPanel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 560, 325));
+
+        jPanel85.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel85.setPreferredSize(new java.awt.Dimension(400, 50));
+
+        jLabel81.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel81.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel81.setText("CẬP NHẬT HỌC PHẦN");
+
+        javax.swing.GroupLayout jPanel85Layout = new javax.swing.GroupLayout(jPanel85);
+        jPanel85.setLayout(jPanel85Layout);
+        jPanel85Layout.setHorizontalGroup(
+            jPanel85Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jPanel85Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel85Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel81)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel85Layout.setVerticalGroup(
+            jPanel85Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(jPanel85Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel85Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel81)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel71.add(jPanel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 25, -1, -1));
+        jPanel71.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        QuanLyMonHoc.add(jPanel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 75, -1, -1));
+
+        TitleMonHoc.setBackground(new java.awt.Color(0, 102, 102));
+        TitleMonHoc.setPreferredSize(new java.awt.Dimension(250, 50));
+
+        jLabel83.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel83.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel83.setText("QUẢN LÝ HỌC PHẦN");
+
+        javax.swing.GroupLayout TitleMonHocLayout = new javax.swing.GroupLayout(TitleMonHoc);
+        TitleMonHoc.setLayout(TitleMonHocLayout);
+        TitleMonHocLayout.setHorizontalGroup(
+            TitleMonHocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1040, Short.MAX_VALUE)
+            .addGroup(TitleMonHocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleMonHocLayout.createSequentialGroup()
+                    .addContainerGap(404, Short.MAX_VALUE)
+                    .addComponent(jLabel83)
+                    .addContainerGap(404, Short.MAX_VALUE)))
+        );
+        TitleMonHocLayout.setVerticalGroup(
+            TitleMonHocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(TitleMonHocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleMonHocLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel83)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        QuanLyMonHoc.add(TitleMonHoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 1040, -1));
+
         RealContentLayout.add(QuanLyMonHoc, "card4");
 
         QuanLyKhoa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2458,6 +2954,22 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
      
     /**
      * @param args the command line arguments
@@ -2518,18 +3030,30 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel SonOfToolBar_1;
     private javax.swing.JPanel SonOfToolBar_2;
     private javax.swing.JPanel SonOfToolBar_3;
+    private javax.swing.JPanel TitleHocKy;
+    private javax.swing.JPanel TitleMonHoc;
     private javax.swing.JPanel TitleSinhVien;
     private javax.swing.JPanel TitleThongTinLopHoc;
     private javax.swing.JPanel TitleXemKhoa;
     private javax.swing.JPanel TitleXemNganh;
     private javax.swing.JPanel ToolBar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2561,9 +3085,11 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
@@ -2572,7 +3098,21 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -2616,16 +3156,28 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel68;
     private javax.swing.JPanel jPanel69;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel70;
+    private javax.swing.JPanel jPanel71;
     private javax.swing.JPanel jPanel72;
     private javax.swing.JPanel jPanel73;
     private javax.swing.JPanel jPanel74;
     private javax.swing.JPanel jPanel75;
     private javax.swing.JPanel jPanel76;
+    private javax.swing.JPanel jPanel77;
+    private javax.swing.JPanel jPanel78;
     private javax.swing.JPanel jPanel79;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel80;
+    private javax.swing.JPanel jPanel81;
+    private javax.swing.JPanel jPanel82;
+    private javax.swing.JPanel jPanel83;
+    private javax.swing.JPanel jPanel84;
+    private javax.swing.JPanel jPanel85;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
@@ -2635,9 +3187,19 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
+    private javax.swing.JTable jTable8;
+    private javax.swing.JTable jTable9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

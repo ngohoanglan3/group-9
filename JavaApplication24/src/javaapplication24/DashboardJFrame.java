@@ -488,7 +488,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("QUẢN LÝ ĐIỂM HUCE");
         jLabel10.setPreferredSize(new java.awt.Dimension(125, 25));
-        DecoratedBar.add(jLabel10, java.awt.BorderLayout.WEST);
+        DecoratedBar.add(jLabel10, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(DecoratedBar, java.awt.BorderLayout.NORTH);
 
