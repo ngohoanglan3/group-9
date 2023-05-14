@@ -1641,7 +1641,7 @@
                             </Component>
                           </SubComponents>
                         </Container>
-                        <Container class="com.raven.avatar.ImageAvatar" name="imageAvatar1">
+                        <Container class="javaapplication24.ImageAvatar" name="imageAvatar2">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/folder/pp,840x830-pad,1000x1000,f8f8f8.jpg"/>

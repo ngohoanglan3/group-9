@@ -1,4 +1,4 @@
-package com.raven.avatar;
+package javaapplication24;
 
 import java.awt.AlphaComposite;
 import java.awt.Composite;

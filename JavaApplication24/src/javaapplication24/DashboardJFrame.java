@@ -242,7 +242,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         LoaiHinhdaotao1 = new javax.swing.JLabel();
         Khoahoc = new javax.swing.JLabel();
         Khoahoc1 = new javax.swing.JLabel();
-        imageAvatar1 = new com.raven.avatar.ImageAvatar();
+        imageAvatar2 = new javaapplication24.ImageAvatar();
         jLabel63 = new javax.swing.JLabel();
         XemDiem = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
@@ -1299,8 +1299,8 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jPanel14.add(ThongtinSinhvien3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 370, 370));
 
-        imageAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/pp,840x830-pad,1000x1000,f8f8f8.jpg"))); // NOI18N
-        jPanel14.add(imageAvatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 210, 210));
+        imageAvatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/pp,840x830-pad,1000x1000,f8f8f8.jpg"))); // NOI18N
+        jPanel14.add(imageAvatar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 210, 210));
 
         ThongTinSinhVien.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 1040, 450));
 
@@ -3389,7 +3389,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel XemKhoa;
     private javax.swing.JPanel XemLop;
     private javax.swing.JPanel XemNganh;
-    private com.raven.avatar.ImageAvatar imageAvatar1;
+    private javaapplication24.ImageAvatar imageAvatar2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
