@@ -180,6 +180,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jLabel64 = new javax.swing.JLabel();
         TitleSinhVien = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         QuanLyHocKy = new javax.swing.JPanel();
         jPanel70 = new javax.swing.JPanel();
         jPanel77 = new javax.swing.JPanel();
@@ -206,6 +207,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jLabel75 = new javax.swing.JLabel();
         TitleHocKy = new javax.swing.JPanel();
         jLabel76 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
         QuanLyMonHoc = new javax.swing.JPanel();
         jPanel71 = new javax.swing.JPanel();
         jPanel82 = new javax.swing.JPanel();
@@ -242,6 +244,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jLabel82 = new javax.swing.JLabel();
         TitleMonHoc = new javax.swing.JPanel();
         jLabel83 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
         QuanLyKhoa = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
         jPanel86 = new javax.swing.JPanel();
@@ -278,6 +281,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jButton25 = new javax.swing.JButton();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
         QuanLyNganh = new javax.swing.JPanel();
         TitleXemNganh = new javax.swing.JPanel();
         jLabel51 = new javax.swing.JLabel();
@@ -314,6 +318,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jButton29 = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
         jButton31 = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
         QuanLyLop = new javax.swing.JPanel();
         TitleThongTinLopHoc = new javax.swing.JPanel();
         jLabel57 = new javax.swing.JLabel();
@@ -348,6 +353,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jButton36 = new javax.swing.JButton();
         jButton37 = new javax.swing.JButton();
         jButton38 = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
         GuiThongBao = new javax.swing.JPanel();
         jSplitPane1 = new javax.swing.JSplitPane();
         jScrollPane9 = new javax.swing.JScrollPane();
@@ -366,8 +372,45 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jLabel60 = new javax.swing.JLabel();
         jPanel73 = new javax.swing.JPanel();
         jLabel61 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         HomThu = new javax.swing.JPanel();
+        jPanel40 = new javax.swing.JPanel();
+        jPanel98 = new javax.swing.JPanel();
+        jSplitPane2 = new javax.swing.JSplitPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jPanel99 = new javax.swing.JPanel();
+        jLabel119 = new javax.swing.JLabel();
+        jPanel100 = new javax.swing.JPanel();
+        jLabel113 = new javax.swing.JLabel();
+        jTextField30 = new javax.swing.JTextField();
+        jLabel114 = new javax.swing.JLabel();
+        jTextField31 = new javax.swing.JTextField();
+        jLabel115 = new javax.swing.JLabel();
+        jPanel27 = new javax.swing.JPanel();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        jTextPane4 = new javax.swing.JTextPane();
+        jButton41 = new javax.swing.JButton();
+        jPanel101 = new javax.swing.JPanel();
+        jLabel120 = new javax.swing.JLabel();
+        jPanel102 = new javax.swing.JPanel();
+        jLabel121 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
         DoiMatKhau = new javax.swing.JPanel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jTextField32 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jTextField33 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jTextField34 = new javax.swing.JTextField();
+        jButton42 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(250, 250, 250));
@@ -1128,6 +1171,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jPanel69.setPreferredSize(new java.awt.Dimension(1040, 400));
         jPanel69.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel74.setBackground(new java.awt.Color(255, 255, 255,90));
         jPanel74.setPreferredSize(new java.awt.Dimension(400, 300));
         jPanel74.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1355,6 +1399,9 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         QuanLySinhVien.add(TitleSinhVien, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 1040, -1));
 
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/86815858_p0_master1200.jpg"))); // NOI18N
+        QuanLySinhVien.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -130, 1210, 730));
+
         RealContentLayout.add(QuanLySinhVien, "card2");
 
         QuanLyHocKy.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1364,6 +1411,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jPanel70.setPreferredSize(new java.awt.Dimension(1040, 400));
         jPanel70.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel77.setBackground(new java.awt.Color(255, 255, 255,90));
         jPanel77.setPreferredSize(new java.awt.Dimension(400, 300));
         jPanel77.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1581,6 +1629,9 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         QuanLyHocKy.add(TitleHocKy, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 1040, -1));
 
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/86815858_p0_master1200.jpg"))); // NOI18N
+        QuanLyHocKy.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -130, 1210, 730));
+
         RealContentLayout.add(QuanLyHocKy, "card3");
 
         QuanLyMonHoc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1590,6 +1641,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jPanel71.setPreferredSize(new java.awt.Dimension(1040, 400));
         jPanel71.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel82.setBackground(new java.awt.Color(255, 255, 255,90));
         jPanel82.setPreferredSize(new java.awt.Dimension(400, 300));
         jPanel82.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1871,6 +1923,9 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         QuanLyMonHoc.add(TitleMonHoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 1040, -1));
 
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/86815858_p0_master1200.jpg"))); // NOI18N
+        QuanLyMonHoc.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -130, 1210, 730));
+
         RealContentLayout.add(QuanLyMonHoc, "card4");
 
         QuanLyKhoa.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1880,6 +1935,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jPanel37.setPreferredSize(new java.awt.Dimension(1040, 400));
         jPanel37.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel86.setBackground(new java.awt.Color(255, 255, 255,90));
         jPanel86.setPreferredSize(new java.awt.Dimension(400, 300));
         jPanel86.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2182,6 +2238,9 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jButton27.setPreferredSize(new java.awt.Dimension(160, 25));
         QuanLyKhoa.add(jButton27, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 460, -1, 40));
 
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/86815858_p0_master1200.jpg"))); // NOI18N
+        QuanLyKhoa.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -130, 1210, 730));
+
         RealContentLayout.add(QuanLyKhoa, "card5");
 
         QuanLyNganh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2222,6 +2281,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jPanel38.setPreferredSize(new java.awt.Dimension(1040, 400));
         jPanel38.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel90.setBackground(new java.awt.Color(255, 255, 255,90));
         jPanel90.setPreferredSize(new java.awt.Dimension(400, 300));
         jPanel90.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2493,6 +2553,9 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jButton31.setPreferredSize(new java.awt.Dimension(160, 25));
         QuanLyNganh.add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 460, -1, 40));
 
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/86815858_p0_master1200.jpg"))); // NOI18N
+        QuanLyNganh.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -130, 1210, 730));
+
         RealContentLayout.add(QuanLyNganh, "card6");
 
         QuanLyLop.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2533,6 +2596,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jPanel39.setPreferredSize(new java.awt.Dimension(1040, 400));
         jPanel39.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel94.setBackground(new java.awt.Color(255, 255, 255,90));
         jPanel94.setPreferredSize(new java.awt.Dimension(400, 300));
         jPanel94.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -2797,6 +2861,9 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jButton38.setPreferredSize(new java.awt.Dimension(160, 25));
         QuanLyLop.add(jButton38, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 460, -1, 40));
 
+        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/86815858_p0_master1200.jpg"))); // NOI18N
+        QuanLyLop.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -130, 1210, 730));
+
         RealContentLayout.add(QuanLyLop, "card7");
 
         GuiThongBao.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -2811,6 +2878,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane9.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane9.setMinimumSize(new java.awt.Dimension(250, 250));
         jScrollPane9.addHierarchyBoundsListener(new java.awt.event.HierarchyBoundsListener() {
             public void ancestorMoved(java.awt.event.HierarchyEvent evt) {
@@ -2856,6 +2924,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jPanel24.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, -1, -1));
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/image.png"))); // NOI18N
+        jLabel19.setOpaque(true);
         jPanel24.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(78, 0, 80, -1));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -2872,6 +2941,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(jScrollPane9);
 
+        jScrollPane11.setBackground(new java.awt.Color(255, 255, 255,90));
         jScrollPane11.setViewportView(jLabel54);
 
         jSplitPane1.setRightComponent(jScrollPane11);
@@ -2940,12 +3010,294 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         GuiThongBao.add(jPanel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 260, -1));
 
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/86815858_p0_master1200.jpg"))); // NOI18N
+        GuiThongBao.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -130, 1210, 730));
+
         RealContentLayout.add(GuiThongBao, "card8");
 
         HomThu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel40.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel40.setOpaque(false);
+        jPanel40.setPreferredSize(new java.awt.Dimension(1040, 400));
+        jPanel40.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel98.setPreferredSize(new java.awt.Dimension(400, 325));
+        jPanel98.setLayout(new java.awt.CardLayout());
+
+        jSplitPane2.setCursor(new java.awt.Cursor(java.awt.Cursor.N_RESIZE_CURSOR));
+
+        jScrollPane7.setMinimumSize(new java.awt.Dimension(300, 16));
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "MSSV", "Tiêu đề"
+            }
+        ));
+        jTable4.setMinimumSize(new java.awt.Dimension(310, 80));
+        jScrollPane7.setViewportView(jTable4);
+
+        jSplitPane2.setLeftComponent(jScrollPane7);
+
+        jScrollPane8.setMinimumSize(new java.awt.Dimension(300, 16));
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "MSSV", "Tiêu đề"
+            }
+        ));
+        jTable5.setMinimumSize(new java.awt.Dimension(310, 80));
+        jScrollPane8.setViewportView(jTable5);
+
+        jSplitPane2.setRightComponent(jScrollPane8);
+
+        jPanel98.add(jSplitPane2, "card2");
+
+        jPanel40.add(jPanel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 50, 610, -1));
+
+        jPanel99.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel99.setPreferredSize(new java.awt.Dimension(330, 50));
+
+        jLabel119.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel119.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel119.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel119.setText("ĐỌC THƯ");
+
+        javax.swing.GroupLayout jPanel99Layout = new javax.swing.GroupLayout(jPanel99);
+        jPanel99.setLayout(jPanel99Layout);
+        jPanel99Layout.setHorizontalGroup(
+            jPanel99Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
+            .addGroup(jPanel99Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel99Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel119)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel99Layout.setVerticalGroup(
+            jPanel99Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(jPanel99Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel99Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel119)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel40.add(jPanel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 25, 340, -1));
+
+        jPanel100.setBackground(new java.awt.Color(255, 255, 255,90));
+        jPanel100.setPreferredSize(new java.awt.Dimension(200, 300));
+        jPanel100.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel113.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel113.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel113.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel113.setText("Nội dung:");
+        jLabel113.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel113.setRequestFocusEnabled(false);
+        jLabel113.setVerifyInputWhenFocusTarget(false);
+        jPanel100.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 125, -1, -1));
+
+        jTextField30.setPreferredSize(new java.awt.Dimension(75, 25));
+        jTextField30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField30ActionPerformed(evt);
+            }
+        });
+        jPanel100.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 75, 195, -1));
+
+        jLabel114.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel114.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel114.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel114.setText("MSSV:");
+        jLabel114.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel114.setRequestFocusEnabled(false);
+        jLabel114.setVerifyInputWhenFocusTarget(false);
+        jPanel100.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 25, -1, -1));
+
+        jTextField31.setPreferredSize(new java.awt.Dimension(75, 25));
+        jTextField31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField31ActionPerformed(evt);
+            }
+        });
+        jPanel100.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 25, 195, -1));
+
+        jLabel115.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel115.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel115.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel115.setText("Tiêu đề:");
+        jLabel115.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel115.setRequestFocusEnabled(false);
+        jLabel115.setVerifyInputWhenFocusTarget(false);
+        jPanel100.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 75, -1, -1));
+
+        jPanel27.setPreferredSize(new java.awt.Dimension(195, 150));
+        jPanel27.setRequestFocusEnabled(false);
+        jPanel27.setVerifyInputWhenFocusTarget(false);
+        jPanel27.setLayout(new java.awt.CardLayout());
+
+        jScrollPane18.setViewportView(jTextPane4);
+
+        jPanel27.add(jScrollPane18, "card2");
+
+        jPanel100.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 125, -1, -1));
+
+        jButton41.setBackground(new java.awt.Color(51, 0, 255));
+        jButton41.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jButton41.setForeground(new java.awt.Color(255, 255, 255));
+        jButton41.setText("Đã xem");
+        jButton41.setPreferredSize(new java.awt.Dimension(80, 25));
+        jPanel100.add(jButton41, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 175, 80, -1));
+
+        jPanel40.add(jPanel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 75, 340, 300));
+
+        jPanel101.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel101.setPreferredSize(new java.awt.Dimension(400, 50));
+
+        jLabel120.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel120.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel120.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel120.setText("Thư mới");
+
+        javax.swing.GroupLayout jPanel101Layout = new javax.swing.GroupLayout(jPanel101);
+        jPanel101.setLayout(jPanel101Layout);
+        jPanel101Layout.setHorizontalGroup(
+            jPanel101Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel101Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel101Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel120)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel101Layout.setVerticalGroup(
+            jPanel101Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 28, Short.MAX_VALUE)
+            .addGroup(jPanel101Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel101Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel120)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel40.add(jPanel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 25, 300, 25));
+
+        jPanel102.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel102.setPreferredSize(new java.awt.Dimension(400, 50));
+
+        jLabel121.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel121.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel121.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel121.setText("Các thư gần đây");
+
+        javax.swing.GroupLayout jPanel102Layout = new javax.swing.GroupLayout(jPanel102);
+        jPanel102.setLayout(jPanel102Layout);
+        jPanel102Layout.setHorizontalGroup(
+            jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel102Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel121)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel102Layout.setVerticalGroup(
+            jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 28, Short.MAX_VALUE)
+            .addGroup(jPanel102Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel102Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel121)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel40.add(jPanel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 25, 300, 25));
+
+        HomThu.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 75, -1, -1));
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/86815858_p0_master1200.jpg"))); // NOI18N
+        HomThu.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -130, 1210, 730));
+
         RealContentLayout.add(HomThu, "card9");
 
         DoiMatKhau.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel28.setBackground(new java.awt.Color(255, 255, 255,90));
+        jPanel28.setPreferredSize(new java.awt.Dimension(300, 400));
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setText("Tài khoản:");
+        jPanel28.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jTextField12.setOpaque(true);
+        jTextField12.setPreferredSize(new java.awt.Dimension(150, 30));
+        jPanel28.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 75, 175, -1));
+
+        jLabel23.setText("Mật khẩu:");
+        jPanel28.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        jTextField32.setOpaque(true);
+        jTextField32.setPreferredSize(new java.awt.Dimension(150, 30));
+        jPanel28.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 125, 175, -1));
+
+        jLabel24.setText("Mật khẩu mới:");
+        jPanel28.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+
+        jTextField33.setOpaque(true);
+        jTextField33.setPreferredSize(new java.awt.Dimension(150, 30));
+        jTextField33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField33ActionPerformed(evt);
+            }
+        });
+        jPanel28.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 225, 175, -1));
+
+        jLabel25.setText("Nhập lại:");
+        jPanel28.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
+        jTextField34.setOpaque(true);
+        jTextField34.setPreferredSize(new java.awt.Dimension(150, 30));
+        jPanel28.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 275, 175, -1));
+
+        jButton42.setBackground(new java.awt.Color(51, 0, 255));
+        jButton42.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jButton42.setForeground(new java.awt.Color(255, 255, 255));
+        jButton42.setText("Xác nhận");
+        jButton42.setPreferredSize(new java.awt.Dimension(100, 25));
+        jButton42.setRequestFocusEnabled(false);
+        jButton42.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton42MouseClicked(evt);
+            }
+        });
+        jPanel28.add(jButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
+
+        DoiMatKhau.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 75, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(4, 78, 183));
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("THAY ĐỔI MẬT KHẨU");
+        jLabel26.setPreferredSize(new java.awt.Dimension(300, 50));
+        DoiMatKhau.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 25, -1, -1));
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/86815858_p0_master1200.jpg"))); // NOI18N
+        DoiMatKhau.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -130, 1210, 730));
+
         RealContentLayout.add(DoiMatKhau, "card10");
 
         ContentLayout.add(RealContentLayout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1140, 550));
@@ -3224,7 +3576,8 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel16MouseExited
 
     private void jPanel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseClicked
-        // TODO add your handling code here:
+        invisibleAllContentLayout();
+        DoiMatKhau.setVisible(true);
     }//GEN-LAST:event_jPanel17MouseClicked
 
     private void jPanel17MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseEntered
@@ -3329,11 +3682,30 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton40MouseClicked
 
     private void jButton39MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton39MouseClicked
-        Object[] options = {"Yes","No"};
+        Object[] options = {"Có","Không"};
         int n = JOptionPane.showOptionDialog(GuiThongBao,
 "Bạn muốn gửi thông báo?",null, JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
     
     }//GEN-LAST:event_jButton39MouseClicked
+
+    private void jTextField30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField30ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField30ActionPerformed
+
+    private void jTextField31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField31ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField31ActionPerformed
+
+    private void jTextField33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField33ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField33ActionPerformed
+
+    private void jButton42MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton42MouseClicked
+        Object[] options = {"Có","Không"};
+        int n = JOptionPane.showOptionDialog(GuiThongBao,
+"Bạn muốn thay đổi mật khẩu?",null, JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+    
+    }//GEN-LAST:event_jButton42MouseClicked
      
     /**
      * @param args the command line arguments
@@ -3436,6 +3808,8 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JButton jButton39;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton40;
+    private javax.swing.JButton jButton41;
+    private javax.swing.JButton jButton42;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -3459,7 +3833,13 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -3469,7 +3849,21 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
@@ -3524,6 +3918,9 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel100;
+    private javax.swing.JPanel jPanel101;
+    private javax.swing.JPanel jPanel102;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
@@ -3541,11 +3938,14 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel40;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel66;
@@ -3581,6 +3981,8 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel95;
     private javax.swing.JPanel jPanel96;
     private javax.swing.JPanel jPanel97;
+    private javax.swing.JPanel jPanel98;
+    private javax.swing.JPanel jPanel99;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -3589,25 +3991,32 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable10;
     private javax.swing.JTable jTable11;
     private javax.swing.JTable jTable12;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
     private javax.swing.JTable jTable9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
@@ -3627,6 +4036,11 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField30;
+    private javax.swing.JTextField jTextField31;
+    private javax.swing.JTextField jTextField32;
+    private javax.swing.JTextField jTextField33;
+    private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -3636,5 +4050,6 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JTextPane jTextPane2;
     private javax.swing.JTextPane jTextPane3;
+    private javax.swing.JTextPane jTextPane4;
     // End of variables declaration//GEN-END:variables
 }
