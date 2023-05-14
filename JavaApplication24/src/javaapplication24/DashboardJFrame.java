@@ -207,7 +207,6 @@ public class DashboardJFrame extends javax.swing.JFrame {
         jPanel14 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         ThongtinSinhvienTitle = new javax.swing.JLabel();
-        Avatar = new com.raven.avatar.ImageAvatar();
         ThongtinSinhvien1 = new javax.swing.JPanel();
         Hoten = new javax.swing.JLabel();
         Mssv = new javax.swing.JLabel();
@@ -243,6 +242,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         LoaiHinhdaotao1 = new javax.swing.JLabel();
         Khoahoc = new javax.swing.JLabel();
         Khoahoc1 = new javax.swing.JLabel();
+        imageAvatar1 = new com.raven.avatar.ImageAvatar();
         jLabel63 = new javax.swing.JLabel();
         XemDiem = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
@@ -961,22 +961,19 @@ public class DashboardJFrame extends javax.swing.JFrame {
         ThongtinSinhvienTitle.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel14.add(ThongtinSinhvienTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 210, 50));
 
-        Avatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/pp,840x830-pad,1000x1000,f8f8f8.jpg"))); // NOI18N
-        jPanel14.add(Avatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 210, 210));
-
         ThongtinSinhvien1.setBackground(new java.awt.Color(255, 255, 255, 100));
 
-        Hoten.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        Hoten.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Hoten.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Hoten.setText("Họ tên:");
         Hoten.setPreferredSize(new java.awt.Dimension(60, 50));
 
-        Mssv.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        Mssv.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Mssv.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Mssv.setText("MSSV:");
         Mssv.setPreferredSize(new java.awt.Dimension(60, 50));
 
-        GioiTinh.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        GioiTinh.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         GioiTinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GioiTinh.setText("Giới tính:");
         GioiTinh.setPreferredSize(new java.awt.Dimension(60, 50));
@@ -1001,13 +998,13 @@ public class DashboardJFrame extends javax.swing.JFrame {
         ThongtinSinhvien1Layout.setHorizontalGroup(
             ThongtinSinhvien1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ThongtinSinhvien1Layout.createSequentialGroup()
-                .addGroup(ThongtinSinhvien1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Hoten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Mssv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(GioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(ThongtinSinhvien1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Hoten, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(Mssv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(GioiTinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ThongtinSinhvien1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Mssv1, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                    .addComponent(Mssv1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
                     .addComponent(Hoten1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(GioiTinh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(6, 6, 6))
@@ -1024,7 +1021,6 @@ public class DashboardJFrame extends javax.swing.JFrame {
                         .addGap(0, 0, 0)
                         .addComponent(GioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThongtinSinhvien1Layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
                         .addComponent(Mssv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(GioiTinh1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1035,7 +1031,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         ThongtinSinhvien2.setBackground(new java.awt.Color(255, 255, 255, 100));
 
-        Ngaysinh.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Ngaysinh.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Ngaysinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Ngaysinh.setText("Ngày sinh:");
         Ngaysinh.setPreferredSize(new java.awt.Dimension(95, 50));
@@ -1045,7 +1041,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         Ngaysinh1.setText("Ngày sinh");
         Ngaysinh1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        CCCD.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        CCCD.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         CCCD.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CCCD.setText("Số CCCD:");
         CCCD.setPreferredSize(new java.awt.Dimension(95, 50));
@@ -1055,7 +1051,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         CCCD1.setText("Mã CCCD");
         CCCD1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        Email.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Email.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Email.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Email.setText("Email:");
         Email.setPreferredSize(new java.awt.Dimension(95, 50));
@@ -1065,7 +1061,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         Email1.setText("Email");
         Email1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        Sodienthoai.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Sodienthoai.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Sodienthoai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Sodienthoai.setText("Số điện thoại:");
         Sodienthoai.setPreferredSize(new java.awt.Dimension(95, 50));
@@ -1075,7 +1071,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         Sodienthoai1.setText("Số Điện Thoại");
         Sodienthoai1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        Noisinh.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Noisinh.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Noisinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Noisinh.setText("Nơi sinh:");
         Noisinh.setPreferredSize(new java.awt.Dimension(95, 50));
@@ -1085,7 +1081,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         Noisinh1.setText("Nơi sinh");
         Noisinh1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        Thuongtru.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Thuongtru.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Thuongtru.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Thuongtru.setText("Thường trú:");
         Thuongtru.setPreferredSize(new java.awt.Dimension(95, 50));
@@ -1095,7 +1091,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         Thuongtru1.setText("Thường trú");
         Thuongtru1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        Dantoc.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Dantoc.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Dantoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Dantoc.setText("Dân tộc:");
         Dantoc.setPreferredSize(new java.awt.Dimension(95, 50));
@@ -1179,7 +1175,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         ThongtinSinhvien3.setBackground(new java.awt.Color(255, 255, 255, 100));
 
-        Lophoc.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Lophoc.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Lophoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Lophoc.setText("Lớp học:");
         Lophoc.setPreferredSize(new java.awt.Dimension(80, 50));
@@ -1189,7 +1185,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         Lophoc1.setText("Lớp học");
         Lophoc1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        Khoa.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Khoa.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Khoa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Khoa.setText("Khoa:");
         Khoa.setPreferredSize(new java.awt.Dimension(80, 50));
@@ -1199,7 +1195,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         Khoa1.setText("Khoa");
         Khoa1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        Nganh.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Nganh.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Nganh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Nganh.setText("Ngành:");
         Nganh.setPreferredSize(new java.awt.Dimension(80, 50));
@@ -1209,7 +1205,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         Nganh1.setText("Ngành");
         Nganh1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        BacDaotao.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        BacDaotao.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         BacDaotao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BacDaotao.setText("Bậc đào tạo:");
         BacDaotao.setPreferredSize(new java.awt.Dimension(80, 50));
@@ -1219,7 +1215,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         BacDaotao1.setText("Bậc đào tạo");
         BacDaotao1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        LoaiHinhdaotao.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        LoaiHinhdaotao.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         LoaiHinhdaotao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LoaiHinhdaotao.setText("Loại hình đào tạo:");
         LoaiHinhdaotao.setPreferredSize(new java.awt.Dimension(80, 50));
@@ -1229,7 +1225,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         LoaiHinhdaotao1.setText("Loại hình đào tạo");
         LoaiHinhdaotao1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        Khoahoc.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Khoahoc.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Khoahoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Khoahoc.setText("Khóa học:");
         Khoahoc.setPreferredSize(new java.awt.Dimension(80, 50));
@@ -1255,13 +1251,14 @@ public class DashboardJFrame extends javax.swing.JFrame {
                     .addComponent(Nganh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(6, 6, 6))
             .addGroup(ThongtinSinhvien3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(BacDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(34, 34, 34)
                 .addComponent(BacDaotao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(ThongtinSinhvien3Layout.createSequentialGroup()
-                .addComponent(LoaiHinhdaotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addComponent(LoaiHinhdaotao, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LoaiHinhdaotao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(ThongtinSinhvien3Layout.createSequentialGroup()
@@ -1286,9 +1283,9 @@ public class DashboardJFrame extends javax.swing.JFrame {
                         .addGap(0, 0, 0)
                         .addComponent(Nganh1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, 0)
-                .addGroup(ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BacDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BacDaotao1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BacDaotao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BacDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addGroup(ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LoaiHinhdaotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1301,6 +1298,9 @@ public class DashboardJFrame extends javax.swing.JFrame {
         );
 
         jPanel14.add(ThongtinSinhvien3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 370, 370));
+
+        imageAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/pp,840x830-pad,1000x1000,f8f8f8.jpg"))); // NOI18N
+        jPanel14.add(imageAvatar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 210, 210));
 
         ThongTinSinhVien.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 1040, 450));
 
@@ -3329,7 +3329,6 @@ public class DashboardJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.raven.avatar.ImageAvatar Avatar;
     private javax.swing.JLabel BacDaotao;
     private javax.swing.JLabel BacDaotao1;
     private javax.swing.JLabel CCCD;
@@ -3390,6 +3389,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel XemKhoa;
     private javax.swing.JPanel XemLop;
     private javax.swing.JPanel XemNganh;
+    private com.raven.avatar.ImageAvatar imageAvatar1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

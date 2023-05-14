@@ -1005,22 +1005,6 @@
                             </Constraint>
                           </Constraints>
                         </Component>
-                        <Container class="com.raven.avatar.ImageAvatar" name="Avatar">
-                          <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/folder/pp,840x830-pad,1000x1000,f8f8f8.jpg"/>
-                            </Property>
-                          </Properties>
-                          <Constraints>
-                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="10" y="70" width="210" height="210"/>
-                            </Constraint>
-                          </Constraints>
-
-                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
-                            <Property name="useNullLayout" type="boolean" value="true"/>
-                          </Layout>
-                        </Container>
                         <Container class="javax.swing.JPanel" name="ThongtinSinhvien1">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -1037,14 +1021,14 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Hoten" min="-2" max="-2" attributes="0"/>
-                                          <Component id="Mssv" min="-2" max="-2" attributes="0"/>
-                                          <Component id="GioiTinh" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="Hoten" pref="61" max="32767" attributes="0"/>
+                                          <Component id="Mssv" max="32767" attributes="0"/>
+                                          <Component id="GioiTinh" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="Mssv1" alignment="0" pref="138" max="32767" attributes="0"/>
+                                          <Component id="Mssv1" alignment="0" pref="137" max="32767" attributes="0"/>
                                           <Component id="Hoten1" max="32767" attributes="0"/>
                                           <Component id="GioiTinh1" alignment="0" max="32767" attributes="0"/>
                                       </Group>
@@ -1066,7 +1050,6 @@
                                               <Component id="GioiTinh" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                               <Component id="Mssv1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                               <Component id="GioiTinh1" min="-2" max="-2" attributes="0"/>
@@ -1081,7 +1064,7 @@
                             <Component class="javax.swing.JLabel" name="Hoten">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Semilight" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="H&#x1ecd; t&#xea;n:"/>
@@ -1093,7 +1076,7 @@
                             <Component class="javax.swing.JLabel" name="Mssv">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Semilight" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="MSSV:"/>
@@ -1105,7 +1088,7 @@
                             <Component class="javax.swing.JLabel" name="GioiTinh">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Semilight" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="Gi&#x1edb;i t&#xed;nh:"/>
@@ -1255,7 +1238,7 @@
                             <Component class="javax.swing.JLabel" name="Ngaysinh">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh:"/>
@@ -1279,7 +1262,7 @@
                             <Component class="javax.swing.JLabel" name="CCCD">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; CCCD:"/>
@@ -1303,7 +1286,7 @@
                             <Component class="javax.swing.JLabel" name="Email">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="Email:"/>
@@ -1327,7 +1310,7 @@
                             <Component class="javax.swing.JLabel" name="Sodienthoai">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x111;i&#x1ec7;n tho&#x1ea1;i:"/>
@@ -1351,7 +1334,7 @@
                             <Component class="javax.swing.JLabel" name="Noisinh">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="N&#x1a1;i sinh:"/>
@@ -1375,7 +1358,7 @@
                             <Component class="javax.swing.JLabel" name="Thuongtru">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="Th&#x1b0;&#x1edd;ng tr&#xfa;:"/>
@@ -1399,7 +1382,7 @@
                             <Component class="javax.swing.JLabel" name="Dantoc">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="D&#xe2;n t&#x1ed9;c:"/>
@@ -1452,14 +1435,15 @@
                                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="BacDaotao" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                       <Component id="BacDaotao1" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="LoaiHinhdaotao" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="LoaiHinhdaotao" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="LoaiHinhdaotao1" max="32767" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -1491,9 +1475,9 @@
                                           </Group>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="BacDaotao" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="BacDaotao1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="BacDaotao1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="BacDaotao" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -1514,7 +1498,7 @@
                             <Component class="javax.swing.JLabel" name="Lophoc">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="L&#x1edb;p h&#x1ecd;c:"/>
@@ -1538,7 +1522,7 @@
                             <Component class="javax.swing.JLabel" name="Khoa">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="Khoa:"/>
@@ -1562,7 +1546,7 @@
                             <Component class="javax.swing.JLabel" name="Nganh">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="Ng&#xe0;nh:"/>
@@ -1586,7 +1570,7 @@
                             <Component class="javax.swing.JLabel" name="BacDaotao">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="B&#x1ead;c &#x111;&#xe0;o t&#x1ea1;o:"/>
@@ -1610,7 +1594,7 @@
                             <Component class="javax.swing.JLabel" name="LoaiHinhdaotao">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="Lo&#x1ea1;i h&#xec;nh &#x111;&#xe0;o t&#x1ea1;o:"/>
@@ -1634,7 +1618,7 @@
                             <Component class="javax.swing.JLabel" name="Khoahoc">
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                                  <Font name="Segoe UI Light" size="14" style="1"/>
+                                  <Font name="Segoe UI Semibold" size="14" style="1"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
                                 <Property name="text" type="java.lang.String" value="Kh&#xf3;a h&#x1ecd;c:"/>
@@ -1656,6 +1640,22 @@
                               </Properties>
                             </Component>
                           </SubComponents>
+                        </Container>
+                        <Container class="com.raven.avatar.ImageAvatar" name="imageAvatar1">
+                          <Properties>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/folder/pp,840x830-pad,1000x1000,f8f8f8.jpg"/>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="10" y="70" width="210" height="210"/>
+                            </Constraint>
+                          </Constraints>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+                            <Property name="useNullLayout" type="boolean" value="true"/>
+                          </Layout>
                         </Container>
                       </SubComponents>
                     </Container>
