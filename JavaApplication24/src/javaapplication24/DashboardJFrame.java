@@ -5,7 +5,6 @@
 package javaapplication24;
 
 import java.awt.*;
-import java.awt.image.*;
 import javax.swing.*;
 
 
@@ -205,48 +204,46 @@ public class DashboardJFrame extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         RealContentLayout = new javax.swing.JPanel();
         ThongTinSinhVien = new javax.swing.JPanel();
-        ThongtinSinhvien = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
-        imageAvatar = new com.raven.avatar.ImageAvatar();
+        ThongtinSinhvienTitle = new javax.swing.JLabel();
+        Avatar = new com.raven.avatar.ImageAvatar();
         ThongtinSinhvien1 = new javax.swing.JPanel();
         Hoten = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         Mssv = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        Gioitinh = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        ThongtinCanhan2 = new javax.swing.JPanel();
+        GioiTinh = new javax.swing.JLabel();
+        Hoten1 = new javax.swing.JLabel();
+        Mssv1 = new javax.swing.JLabel();
+        GioiTinh1 = new javax.swing.JLabel();
+        ThongtinSinhvien2 = new javax.swing.JPanel();
         Ngaysinh = new javax.swing.JLabel();
+        Ngaysinh1 = new javax.swing.JLabel();
         CCCD = new javax.swing.JLabel();
+        CCCD1 = new javax.swing.JLabel();
         Email = new javax.swing.JLabel();
-        Hoten2 = new javax.swing.JLabel();
+        Email1 = new javax.swing.JLabel();
+        Sodienthoai = new javax.swing.JLabel();
+        Sodienthoai1 = new javax.swing.JLabel();
         Noisinh = new javax.swing.JLabel();
-        HoKhau = new javax.swing.JLabel();
+        Noisinh1 = new javax.swing.JLabel();
+        Thuongtru = new javax.swing.JLabel();
+        Thuongtru1 = new javax.swing.JLabel();
         Dantoc = new javax.swing.JLabel();
-        Quoctich = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        ThongtinHocvan = new javax.swing.JPanel();
+        Dantoc1 = new javax.swing.JLabel();
+        ThongtinSinhvien3 = new javax.swing.JPanel();
         Lophoc = new javax.swing.JLabel();
+        Lophoc1 = new javax.swing.JLabel();
         Khoa = new javax.swing.JLabel();
+        Khoa1 = new javax.swing.JLabel();
         Nganh = new javax.swing.JLabel();
+        Nganh1 = new javax.swing.JLabel();
         BacDaotao = new javax.swing.JLabel();
-        LoaiHinhDaotao = new javax.swing.JLabel();
-        KhoaHoc = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
+        BacDaotao1 = new javax.swing.JLabel();
+        LoaiHinhdaotao = new javax.swing.JLabel();
+        LoaiHinhdaotao1 = new javax.swing.JLabel();
+        Khoahoc = new javax.swing.JLabel();
+        Khoahoc1 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
-        jLabel72 = new javax.swing.JLabel();
-        jLabel73 = new javax.swing.JLabel();
-        Background = new javax.swing.JLabel();
         XemDiem = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -949,401 +946,366 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         ThongTinSinhVien.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ThongtinSinhvien.setBackground(new java.awt.Color(255, 255, 255, 80));
-        ThongtinSinhvien.setPreferredSize(new java.awt.Dimension(1075, 467));
-        ThongtinSinhvien.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel14.setBackground(new java.awt.Color(255, 255, 255, 80));
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Thông tin sinh viên");
-        jLabel17.setPreferredSize(new java.awt.Dimension(160, 30));
-        ThongtinSinhvien.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, -1));
-
-        jSeparator1.setBackground(new java.awt.Color(102, 102, 102));
-        jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
+        jSeparator1.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
         jSeparator1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jSeparator1.setPreferredSize(new java.awt.Dimension(1055, 3));
-        ThongtinSinhvien.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        jSeparator1.setPreferredSize(new java.awt.Dimension(225, 3));
+        jPanel14.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1020, -1));
 
-        imageAvatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/LOGO_DHXD_1.png"))); // NOI18N
+        ThongtinSinhvienTitle.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        ThongtinSinhvienTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ThongtinSinhvienTitle.setText("Thông tin sinh viên");
+        ThongtinSinhvienTitle.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel14.add(ThongtinSinhvienTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 210, 50));
 
-        javax.swing.GroupLayout imageAvatarLayout = new javax.swing.GroupLayout(imageAvatar);
-        imageAvatar.setLayout(imageAvatarLayout);
-        imageAvatarLayout.setHorizontalGroup(
-            imageAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
-        imageAvatarLayout.setVerticalGroup(
-            imageAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
-        );
+        Avatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/pp,840x830-pad,1000x1000,f8f8f8.jpg"))); // NOI18N
+        jPanel14.add(Avatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 210, 210));
 
-        ThongtinSinhvien.add(imageAvatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 200, 200));
+        ThongtinSinhvien1.setBackground(new java.awt.Color(255, 255, 255, 100));
 
-        ThongtinSinhvien1.setBackground(new java.awt.Color(255, 255, 255, 128));
-        ThongtinSinhvien1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Hoten.setBackground(new java.awt.Color(255, 255, 255));
-        Hoten.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Hoten.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Hoten.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        Hoten.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Hoten.setText("Họ tên:");
-        Hoten.setMaximumSize(new java.awt.Dimension(40, 20));
-        Hoten.setMinimumSize(new java.awt.Dimension(40, 20));
-        Hoten.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinSinhvien1.add(Hoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 66, 42));
+        Hoten.setPreferredSize(new java.awt.Dimension(60, 50));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel5.setText("jLabel5");
-        jLabel5.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel5.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel5.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinSinhvien1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 130, 42));
-
-        Mssv.setBackground(new java.awt.Color(255, 255, 255));
-        Mssv.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Mssv.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Mssv.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        Mssv.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Mssv.setText("MSSV:");
-        Mssv.setMaximumSize(new java.awt.Dimension(40, 20));
-        Mssv.setMinimumSize(new java.awt.Dimension(40, 20));
-        Mssv.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinSinhvien1.add(Mssv, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 42, 66, 42));
+        Mssv.setPreferredSize(new java.awt.Dimension(60, 50));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel15.setText("jLabel15");
-        jLabel15.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel15.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel15.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinSinhvien1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 42, 130, 42));
+        GioiTinh.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
+        GioiTinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        GioiTinh.setText("Giới tính:");
+        GioiTinh.setPreferredSize(new java.awt.Dimension(60, 50));
 
-        Gioitinh.setBackground(new java.awt.Color(255, 255, 255));
-        Gioitinh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Gioitinh.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Gioitinh.setText("Giới tính:");
-        Gioitinh.setMaximumSize(new java.awt.Dimension(40, 20));
-        Gioitinh.setMinimumSize(new java.awt.Dimension(40, 20));
-        Gioitinh.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinSinhvien1.add(Gioitinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 84, 66, 42));
+        Hoten1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Hoten1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Hoten1.setText("Họ & tên");
+        Hoten1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel16.setText("jLabel16");
-        jLabel16.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel16.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel16.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinSinhvien1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 84, 130, 42));
+        Mssv1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Mssv1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Mssv1.setText("Mã Số Sinh Viên");
+        Mssv1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        ThongtinSinhvien.add(ThongtinSinhvien1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 200, 127));
+        GioiTinh1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        GioiTinh1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        GioiTinh1.setText("Giới tính");
+        GioiTinh1.setPreferredSize(new java.awt.Dimension(70, 50));
 
-        ThongtinCanhan2.setBackground(new java.awt.Color(255, 255, 255, 128));
-        ThongtinCanhan2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Ngaysinh.setBackground(new java.awt.Color(255, 255, 255));
-        Ngaysinh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Ngaysinh.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Ngaysinh.setText("Ngày sinh:");
-        Ngaysinh.setMaximumSize(new java.awt.Dimension(40, 20));
-        Ngaysinh.setMinimumSize(new java.awt.Dimension(40, 20));
-        Ngaysinh.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinCanhan2.add(Ngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 90, 42));
-
-        CCCD.setBackground(new java.awt.Color(255, 255, 255));
-        CCCD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        CCCD.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        CCCD.setText("Số CCCD:");
-        CCCD.setMaximumSize(new java.awt.Dimension(40, 20));
-        CCCD.setMinimumSize(new java.awt.Dimension(40, 20));
-        CCCD.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinCanhan2.add(CCCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 90, 42));
-
-        Email.setBackground(new java.awt.Color(255, 255, 255));
-        Email.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Email.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Email.setText("Email:");
-        Email.setMaximumSize(new java.awt.Dimension(40, 20));
-        Email.setMinimumSize(new java.awt.Dimension(40, 20));
-        Email.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinCanhan2.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 90, 42));
-
-        Hoten2.setBackground(new java.awt.Color(255, 255, 255));
-        Hoten2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Hoten2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Hoten2.setText("Số điện thoại:");
-        Hoten2.setMaximumSize(new java.awt.Dimension(40, 20));
-        Hoten2.setMinimumSize(new java.awt.Dimension(40, 20));
-        Hoten2.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinCanhan2.add(Hoten2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 90, 42));
-
-        Noisinh.setBackground(new java.awt.Color(255, 255, 255));
-        Noisinh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Noisinh.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Noisinh.setText("Nơi sinh:");
-        Noisinh.setMaximumSize(new java.awt.Dimension(40, 20));
-        Noisinh.setMinimumSize(new java.awt.Dimension(40, 20));
-        Noisinh.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinCanhan2.add(Noisinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 90, 42));
-
-        HoKhau.setBackground(new java.awt.Color(255, 255, 255));
-        HoKhau.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        HoKhau.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        HoKhau.setText("Thường trú:");
-        HoKhau.setMaximumSize(new java.awt.Dimension(40, 20));
-        HoKhau.setMinimumSize(new java.awt.Dimension(40, 20));
-        HoKhau.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinCanhan2.add(HoKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 90, 42));
-
-        Dantoc.setBackground(new java.awt.Color(255, 255, 255));
-        Dantoc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Dantoc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Dantoc.setText("Dân tộc:");
-        Dantoc.setMaximumSize(new java.awt.Dimension(40, 20));
-        Dantoc.setMinimumSize(new java.awt.Dimension(40, 20));
-        Dantoc.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinCanhan2.add(Dantoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 90, 42));
-
-        Quoctich.setBackground(new java.awt.Color(255, 255, 255));
-        Quoctich.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Quoctich.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Quoctich.setText("Quốc tịch:");
-        Quoctich.setMaximumSize(new java.awt.Dimension(40, 20));
-        Quoctich.setMinimumSize(new java.awt.Dimension(40, 20));
-        Quoctich.setPreferredSize(new java.awt.Dimension(40, 66));
-        ThongtinCanhan2.add(Quoctich, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 90, 42));
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel25.setText("jLabel5");
-        jLabel25.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel25.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel25.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinCanhan2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 300, 42));
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel18.setText("jLabel5");
-        jLabel18.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel18.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel18.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinCanhan2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 300, 42));
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel19.setText("jLabel15");
-        jLabel19.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel19.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel19.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinCanhan2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 300, 42));
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel20.setText("jLabel16");
-        jLabel20.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel20.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel20.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinCanhan2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 300, 42));
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel21.setText("jLabel5");
-        jLabel21.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel21.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel21.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinCanhan2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 300, 42));
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel22.setText("jLabel15");
-        jLabel22.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel22.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel22.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinCanhan2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 300, 42));
-
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel23.setText("jLabel16");
-        jLabel23.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel23.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel23.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinCanhan2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 300, 42));
-
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel24.setText("jLabel5");
-        jLabel24.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel24.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel24.setPreferredSize(new java.awt.Dimension(160, 66));
-        ThongtinCanhan2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 300, 42));
-
-        ThongtinSinhvien.add(ThongtinCanhan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 400, 347));
-
-        ThongtinHocvan.setBackground(new java.awt.Color(255, 255, 255, 128));
-
-        Lophoc.setBackground(new java.awt.Color(255, 255, 255));
-        Lophoc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Lophoc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Lophoc.setText("Lớp học:");
-        Lophoc.setMaximumSize(new java.awt.Dimension(40, 20));
-        Lophoc.setMinimumSize(new java.awt.Dimension(40, 20));
-        Lophoc.setPreferredSize(new java.awt.Dimension(40, 66));
-
-        Khoa.setBackground(new java.awt.Color(255, 255, 255));
-        Khoa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Khoa.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Khoa.setText("Khoa:");
-        Khoa.setMaximumSize(new java.awt.Dimension(40, 20));
-        Khoa.setMinimumSize(new java.awt.Dimension(40, 20));
-        Khoa.setPreferredSize(new java.awt.Dimension(40, 66));
-
-        Nganh.setBackground(new java.awt.Color(255, 255, 255));
-        Nganh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Nganh.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Nganh.setText("Ngành:");
-        Nganh.setMaximumSize(new java.awt.Dimension(40, 20));
-        Nganh.setMinimumSize(new java.awt.Dimension(40, 20));
-        Nganh.setPreferredSize(new java.awt.Dimension(40, 66));
-
-        BacDaotao.setBackground(new java.awt.Color(255, 255, 255));
-        BacDaotao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        BacDaotao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        BacDaotao.setText("Bậc đào tạo:");
-        BacDaotao.setMaximumSize(new java.awt.Dimension(40, 20));
-        BacDaotao.setMinimumSize(new java.awt.Dimension(40, 20));
-        BacDaotao.setPreferredSize(new java.awt.Dimension(40, 66));
-
-        LoaiHinhDaotao.setBackground(new java.awt.Color(255, 255, 255));
-        LoaiHinhDaotao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        LoaiHinhDaotao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        LoaiHinhDaotao.setText("Loại hình đào tạo:");
-        LoaiHinhDaotao.setMaximumSize(new java.awt.Dimension(40, 20));
-        LoaiHinhDaotao.setMinimumSize(new java.awt.Dimension(40, 20));
-        LoaiHinhDaotao.setPreferredSize(new java.awt.Dimension(40, 66));
-
-        KhoaHoc.setBackground(new java.awt.Color(255, 255, 255));
-        KhoaHoc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        KhoaHoc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        KhoaHoc.setText("Khóa học:");
-        KhoaHoc.setMaximumSize(new java.awt.Dimension(40, 20));
-        KhoaHoc.setMinimumSize(new java.awt.Dimension(40, 20));
-        KhoaHoc.setPreferredSize(new java.awt.Dimension(40, 66));
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel26.setText("jLabel15");
-        jLabel26.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel26.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel26.setPreferredSize(new java.awt.Dimension(160, 66));
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel27.setText("jLabel16");
-        jLabel27.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel27.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel27.setPreferredSize(new java.awt.Dimension(160, 66));
-
-        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel58.setText("jLabel5");
-        jLabel58.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel58.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel58.setPreferredSize(new java.awt.Dimension(160, 66));
-
-        jLabel63.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel63.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel63.setText("jLabel15");
-        jLabel63.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel63.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel63.setPreferredSize(new java.awt.Dimension(160, 66));
-
-        jLabel72.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel72.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel72.setText("jLabel16");
-        jLabel72.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel72.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel72.setPreferredSize(new java.awt.Dimension(160, 66));
-
-        jLabel73.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel73.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel73.setText("jLabel5");
-        jLabel73.setMaximumSize(new java.awt.Dimension(160, 66));
-        jLabel73.setMinimumSize(new java.awt.Dimension(160, 66));
-        jLabel73.setPreferredSize(new java.awt.Dimension(160, 66));
-
-        javax.swing.GroupLayout ThongtinHocvanLayout = new javax.swing.GroupLayout(ThongtinHocvan);
-        ThongtinHocvan.setLayout(ThongtinHocvanLayout);
-        ThongtinHocvanLayout.setHorizontalGroup(
-            ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThongtinHocvanLayout.createSequentialGroup()
-                .addGap(0, 3, Short.MAX_VALUE)
-                .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Lophoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Nganh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Khoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LoaiHinhDaotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(KhoaHoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BacDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout ThongtinSinhvien1Layout = new javax.swing.GroupLayout(ThongtinSinhvien1);
+        ThongtinSinhvien1.setLayout(ThongtinSinhvien1Layout);
+        ThongtinSinhvien1Layout.setHorizontalGroup(
+            ThongtinSinhvien1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThongtinSinhvien1Layout.createSequentialGroup()
+                .addGroup(ThongtinSinhvien1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Hoten, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Mssv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(GioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(ThongtinSinhvien1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Mssv1, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                    .addComponent(Hoten1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(GioiTinh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(6, 6, 6))
+        );
+        ThongtinSinhvien1Layout.setVerticalGroup(
+            ThongtinSinhvien1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThongtinSinhvien1Layout.createSequentialGroup()
+                .addGroup(ThongtinSinhvien1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Hoten1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Hoten, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(ThongtinSinhvien1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ThongtinSinhvien1Layout.createSequentialGroup()
+                        .addComponent(Mssv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(GioiTinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThongtinSinhvien1Layout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addComponent(Mssv1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(GioiTinh1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel14.add(ThongtinSinhvien1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 210, 150));
+
+        ThongtinSinhvien2.setBackground(new java.awt.Color(255, 255, 255, 100));
+
+        Ngaysinh.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Ngaysinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Ngaysinh.setText("Ngày sinh:");
+        Ngaysinh.setPreferredSize(new java.awt.Dimension(95, 50));
+
+        Ngaysinh1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Ngaysinh1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Ngaysinh1.setText("Ngày sinh");
+        Ngaysinh1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        CCCD.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        CCCD.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CCCD.setText("Số CCCD:");
+        CCCD.setPreferredSize(new java.awt.Dimension(95, 50));
+
+        CCCD1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        CCCD1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CCCD1.setText("Mã CCCD");
+        CCCD1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        Email.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Email.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Email.setText("Email:");
+        Email.setPreferredSize(new java.awt.Dimension(95, 50));
+
+        Email1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Email1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Email1.setText("Email");
+        Email1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        Sodienthoai.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Sodienthoai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Sodienthoai.setText("Số điện thoại:");
+        Sodienthoai.setPreferredSize(new java.awt.Dimension(95, 50));
+
+        Sodienthoai1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Sodienthoai1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Sodienthoai1.setText("Số Điện Thoại");
+        Sodienthoai1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        Noisinh.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Noisinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Noisinh.setText("Nơi sinh:");
+        Noisinh.setPreferredSize(new java.awt.Dimension(95, 50));
+
+        Noisinh1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Noisinh1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Noisinh1.setText("Nơi sinh");
+        Noisinh1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        Thuongtru.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Thuongtru.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Thuongtru.setText("Thường trú:");
+        Thuongtru.setPreferredSize(new java.awt.Dimension(95, 50));
+
+        Thuongtru1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Thuongtru1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Thuongtru1.setText("Thường trú");
+        Thuongtru1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        Dantoc.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Dantoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Dantoc.setText("Dân tộc:");
+        Dantoc.setPreferredSize(new java.awt.Dimension(95, 50));
+
+        Dantoc1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Dantoc1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Dantoc1.setText("Dân tộc");
+        Dantoc1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        javax.swing.GroupLayout ThongtinSinhvien2Layout = new javax.swing.GroupLayout(ThongtinSinhvien2);
+        ThongtinSinhvien2.setLayout(ThongtinSinhvien2Layout);
+        ThongtinSinhvien2Layout.setHorizontalGroup(
+            ThongtinSinhvien2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThongtinSinhvien2Layout.createSequentialGroup()
+                .addGroup(ThongtinSinhvien2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Ngaysinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CCCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(ThongtinSinhvien2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CCCD1, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                    .addComponent(Ngaysinh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Email1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(6, 6, 6))
+            .addGroup(ThongtinSinhvien2Layout.createSequentialGroup()
+                .addComponent(Sodienthoai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(Sodienthoai1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(ThongtinSinhvien2Layout.createSequentialGroup()
+                .addComponent(Noisinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(Noisinh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(ThongtinSinhvien2Layout.createSequentialGroup()
+                .addComponent(Thuongtru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(Thuongtru1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(ThongtinSinhvien2Layout.createSequentialGroup()
+                .addComponent(Dantoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(Dantoc1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        ThongtinHocvanLayout.setVerticalGroup(
-            ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                        .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                                .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        ThongtinSinhvien2Layout.setVerticalGroup(
+            ThongtinSinhvien2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThongtinSinhvien2Layout.createSequentialGroup()
+                .addGroup(ThongtinSinhvien2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Ngaysinh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Ngaysinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(ThongtinSinhvien2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ThongtinSinhvien2Layout.createSequentialGroup()
+                        .addComponent(CCCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                        .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                                .addComponent(Lophoc, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                                        .addGap(40, 40, 40)
-                                        .addComponent(BacDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(Nganh, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(Khoa, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThongtinSinhvien2Layout.createSequentialGroup()
+                        .addComponent(CCCD1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LoaiHinhDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(KhoaHoc, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 103, Short.MAX_VALUE))
+                        .addComponent(Email1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, 0)
+                .addGroup(ThongtinSinhvien2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Sodienthoai1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Sodienthoai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(ThongtinSinhvien2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Noisinh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Noisinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(ThongtinSinhvien2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Thuongtru1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Thuongtru, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(ThongtinSinhvien2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Dantoc1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Dantoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
-        ThongtinSinhvien.add(ThongtinHocvan, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 410, 347));
+        jPanel14.add(ThongtinSinhvien2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 400, 370));
 
-        ThongTinSinhVien.add(ThongtinSinhvien, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 50, -1, -1));
+        ThongtinSinhvien3.setBackground(new java.awt.Color(255, 255, 255, 100));
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/80081542_p0_master1200.jpg"))); // NOI18N
-        ThongTinSinhVien.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        Lophoc.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Lophoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lophoc.setText("Lớp học:");
+        Lophoc.setPreferredSize(new java.awt.Dimension(80, 50));
+
+        Lophoc1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Lophoc1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lophoc1.setText("Lớp học");
+        Lophoc1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        Khoa.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Khoa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Khoa.setText("Khoa:");
+        Khoa.setPreferredSize(new java.awt.Dimension(80, 50));
+
+        Khoa1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Khoa1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Khoa1.setText("Khoa");
+        Khoa1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        Nganh.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Nganh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Nganh.setText("Ngành:");
+        Nganh.setPreferredSize(new java.awt.Dimension(80, 50));
+
+        Nganh1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Nganh1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Nganh1.setText("Ngành");
+        Nganh1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        BacDaotao.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        BacDaotao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BacDaotao.setText("Bậc đào tạo:");
+        BacDaotao.setPreferredSize(new java.awt.Dimension(80, 50));
+
+        BacDaotao1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        BacDaotao1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BacDaotao1.setText("Bậc đào tạo");
+        BacDaotao1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        LoaiHinhdaotao.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        LoaiHinhdaotao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LoaiHinhdaotao.setText("Loại hình đào tạo:");
+        LoaiHinhdaotao.setPreferredSize(new java.awt.Dimension(80, 50));
+
+        LoaiHinhdaotao1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        LoaiHinhdaotao1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LoaiHinhdaotao1.setText("Loại hình đào tạo");
+        LoaiHinhdaotao1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        Khoahoc.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
+        Khoahoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Khoahoc.setText("Khóa học:");
+        Khoahoc.setPreferredSize(new java.awt.Dimension(80, 50));
+
+        Khoahoc1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        Khoahoc1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Khoahoc1.setText("Khóa học");
+        Khoahoc1.setPreferredSize(new java.awt.Dimension(70, 50));
+
+        javax.swing.GroupLayout ThongtinSinhvien3Layout = new javax.swing.GroupLayout(ThongtinSinhvien3);
+        ThongtinSinhvien3.setLayout(ThongtinSinhvien3Layout);
+        ThongtinSinhvien3Layout.setHorizontalGroup(
+            ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThongtinSinhvien3Layout.createSequentialGroup()
+                .addGroup(ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Lophoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Khoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Nganh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Khoa1, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                    .addComponent(Lophoc1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Nganh1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(6, 6, 6))
+            .addGroup(ThongtinSinhvien3Layout.createSequentialGroup()
+                .addComponent(BacDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(BacDaotao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(ThongtinSinhvien3Layout.createSequentialGroup()
+                .addComponent(LoaiHinhdaotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(LoaiHinhdaotao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(ThongtinSinhvien3Layout.createSequentialGroup()
+                .addComponent(Khoahoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(Khoahoc1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        ThongtinSinhvien3Layout.setVerticalGroup(
+            ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThongtinSinhvien3Layout.createSequentialGroup()
+                .addGroup(ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Lophoc1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Lophoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ThongtinSinhvien3Layout.createSequentialGroup()
+                        .addComponent(Khoa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(Nganh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThongtinSinhvien3Layout.createSequentialGroup()
+                        .addComponent(Khoa1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(Nganh1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, 0)
+                .addGroup(ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BacDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BacDaotao1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LoaiHinhdaotao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LoaiHinhdaotao1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(ThongtinSinhvien3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Khoahoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Khoahoc1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 70, Short.MAX_VALUE))
+        );
+
+        jPanel14.add(ThongtinSinhvien3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 70, 370, 370));
+
+        ThongTinSinhVien.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 1040, 450));
+
+        jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/80081542_p0_master1200.jpg"))); // NOI18N
+        ThongTinSinhVien.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         RealContentLayout.add(ThongTinSinhVien, "card2");
 
@@ -3367,43 +3329,58 @@ public class DashboardJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.raven.avatar.ImageAvatar Avatar;
     private javax.swing.JLabel BacDaotao;
-    private javax.swing.JLabel Background;
+    private javax.swing.JLabel BacDaotao1;
     private javax.swing.JLabel CCCD;
+    private javax.swing.JLabel CCCD1;
     private javax.swing.JPanel CacMonHocLai;
     private javax.swing.JPanel ChuongTrinhKhung;
     private javax.swing.JPanel ContentLayout;
     private javax.swing.JLabel Dantoc;
+    private javax.swing.JLabel Dantoc1;
     private javax.swing.JPanel DecoratedBar;
     private javax.swing.JPanel DiemTichLuy;
     private javax.swing.JPanel DoThi;
     private javax.swing.JLabel Email;
-    private javax.swing.JLabel Gioitinh;
+    private javax.swing.JLabel Email1;
+    private javax.swing.JLabel GioiTinh;
+    private javax.swing.JLabel GioiTinh1;
     private javax.swing.JPanel GopY;
-    private javax.swing.JLabel HoKhau;
     private javax.swing.JLabel Hoten;
-    private javax.swing.JLabel Hoten2;
+    private javax.swing.JLabel Hoten1;
     private javax.swing.JLabel Khoa;
-    private javax.swing.JLabel KhoaHoc;
-    private javax.swing.JLabel LoaiHinhDaotao;
+    private javax.swing.JLabel Khoa1;
+    private javax.swing.JLabel Khoahoc;
+    private javax.swing.JLabel Khoahoc1;
+    private javax.swing.JLabel LoaiHinhdaotao;
+    private javax.swing.JLabel LoaiHinhdaotao1;
     private javax.swing.JLabel Lophoc;
+    private javax.swing.JLabel Lophoc1;
     private javax.swing.JPanel MainLayout;
     private javax.swing.JPanel MonHocConLai;
     private javax.swing.JLabel Mssv;
+    private javax.swing.JLabel Mssv1;
     private javax.swing.JLabel Nganh;
+    private javax.swing.JLabel Nganh1;
     private javax.swing.JLabel Ngaysinh;
+    private javax.swing.JLabel Ngaysinh1;
     private javax.swing.JLabel Noisinh;
-    private javax.swing.JLabel Quoctich;
+    private javax.swing.JLabel Noisinh1;
     private javax.swing.JPanel RealContentLayout;
+    private javax.swing.JLabel Sodienthoai;
+    private javax.swing.JLabel Sodienthoai1;
     private javax.swing.JPanel SonOfToolBar_1;
     private javax.swing.JPanel SonOfToolBar_2;
     private javax.swing.JPanel ThongBao;
     private javax.swing.JPanel ThongKe;
     private javax.swing.JPanel ThongTinSinhVien;
-    private javax.swing.JPanel ThongtinCanhan2;
-    private javax.swing.JPanel ThongtinHocvan;
-    private javax.swing.JPanel ThongtinSinhvien;
     private javax.swing.JPanel ThongtinSinhvien1;
+    private javax.swing.JPanel ThongtinSinhvien2;
+    private javax.swing.JPanel ThongtinSinhvien3;
+    private javax.swing.JLabel ThongtinSinhvienTitle;
+    private javax.swing.JLabel Thuongtru;
+    private javax.swing.JLabel Thuongtru1;
     private javax.swing.JPanel TinhToanThongKe;
     private javax.swing.JPanel TitleThongTinLopHoc;
     private javax.swing.JPanel TitleXemKhoa;
@@ -3413,7 +3390,6 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel XemKhoa;
     private javax.swing.JPanel XemLop;
     private javax.swing.JPanel XemNganh;
-    private com.raven.avatar.ImageAvatar imageAvatar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -3422,20 +3398,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -3460,7 +3423,6 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
@@ -3469,7 +3431,6 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
@@ -3485,8 +3446,6 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -3494,6 +3453,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
