@@ -4,14 +4,10 @@
  */
 package javaapplication24;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import java.awt.*;
+import java.awt.image.*;
+import javax.swing.*;
+
 
 /**
  *
@@ -71,13 +67,8 @@ class BieuDoPanel extends javax.swing.JPanel {
 
 
 public class DashboardJFrame extends javax.swing.JFrame {
-
-    /**
-     * Creates new form DashboardJFrame
-     */
     private int x;
-    private int y;
-    
+    private int y;              
     
     public DashboardJFrame() {
         initComponents();
@@ -214,39 +205,48 @@ public class DashboardJFrame extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         RealContentLayout = new javax.swing.JPanel();
         ThongTinSinhVien = new javax.swing.JPanel();
-        avatar = new javax.swing.JPanel();
-        BasicInfor = new javax.swing.JPanel();
+        ThongtinSinhvien = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        imageAvatar = new com.raven.avatar.ImageAvatar();
+        ThongtinSinhvien1 = new javax.swing.JPanel();
+        Hoten = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        Mssv = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        Gioitinh = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        ThongtinCanhan2 = new javax.swing.JPanel();
+        Ngaysinh = new javax.swing.JLabel();
+        CCCD = new javax.swing.JLabel();
+        Email = new javax.swing.JLabel();
+        Hoten2 = new javax.swing.JLabel();
+        Noisinh = new javax.swing.JLabel();
+        HoKhau = new javax.swing.JLabel();
+        Dantoc = new javax.swing.JLabel();
+        Quoctich = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
-        jPanel16 = new javax.swing.JPanel();
-        ThongTinHocVan = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jPanel17 = new javax.swing.JPanel();
-        jPanel29 = new javax.swing.JPanel();
-        jPanel30 = new javax.swing.JPanel();
-        jPanel31 = new javax.swing.JPanel();
-        ThongTinCaNhan = new javax.swing.JPanel();
-        jPanel34 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jPanel24 = new javax.swing.JPanel();
+        ThongtinHocvan = new javax.swing.JPanel();
+        Lophoc = new javax.swing.JLabel();
+        Khoa = new javax.swing.JLabel();
+        Nganh = new javax.swing.JLabel();
+        BacDaotao = new javax.swing.JLabel();
+        LoaiHinhDaotao = new javax.swing.JLabel();
+        KhoaHoc = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jPanel35 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
-        jPanel36 = new javax.swing.JPanel();
-        jPanel18 = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jPanel19 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        jPanel20 = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
+        jLabel73 = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
         XemDiem = new javax.swing.JPanel();
         jPanel21 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -949,401 +949,401 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         ThongTinSinhVien.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        avatar.setBackground(new java.awt.Color(255, 255, 255));
-        avatar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 80, 100)));
-        avatar.setPreferredSize(new java.awt.Dimension(150, 150));
+        ThongtinSinhvien.setBackground(new java.awt.Color(255, 255, 255, 80));
+        ThongtinSinhvien.setPreferredSize(new java.awt.Dimension(1075, 467));
+        ThongtinSinhvien.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout avatarLayout = new javax.swing.GroupLayout(avatar);
-        avatar.setLayout(avatarLayout);
-        avatarLayout.setHorizontalGroup(
-            avatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 148, Short.MAX_VALUE)
-        );
-        avatarLayout.setVerticalGroup(
-            avatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 148, Short.MAX_VALUE)
-        );
-
-        ThongTinSinhVien.add(avatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 150, 150));
-
-        BasicInfor.setBackground(new java.awt.Color(255, 255, 255));
-        BasicInfor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 80, 100)));
-        BasicInfor.setVerifyInputWhenFocusTarget(false);
-        BasicInfor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel5.setText("Họ tên:");
-        BasicInfor.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, -1, -1));
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel18.setText("MSSV:");
-        BasicInfor.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 70, -1, -1));
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel19.setText("Giới tính:");
-        BasicInfor.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 131, -1, -1));
-
-        jPanel14.setPreferredSize(new java.awt.Dimension(150, 40));
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 148, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        BasicInfor.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 90, 148, 40));
-
-        jPanel15.setPreferredSize(new java.awt.Dimension(150, 40));
-
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 148, Short.MAX_VALUE)
-        );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        BasicInfor.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 30, 148, 40));
-
-        jPanel16.setPreferredSize(new java.awt.Dimension(150, 40));
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 148, Short.MAX_VALUE)
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        BasicInfor.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 150, 148, -1));
-
-        ThongTinSinhVien.add(BasicInfor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 150, 200));
-
-        ThongTinHocVan.setBackground(new java.awt.Color(255, 255, 255));
-        ThongTinHocVan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 80, 100)));
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel20.setText("Lớp:");
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel21.setText("Khoa:");
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel22.setText("Chuyên ngành:");
-
-        jLabel23.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel23.setText("Bậc đào tạo:");
-
-        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
-        jPanel17.setLayout(jPanel17Layout);
-        jPanel17Layout.setHorizontalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 222, Short.MAX_VALUE)
-        );
-        jPanel17Layout.setVerticalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 77, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
-        jPanel29.setLayout(jPanel29Layout);
-        jPanel29Layout.setHorizontalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel29Layout.setVerticalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 65, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
-        jPanel30.setLayout(jPanel30Layout);
-        jPanel30Layout.setHorizontalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 222, Short.MAX_VALUE)
-        );
-        jPanel30Layout.setVerticalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 77, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
-        jPanel31.setLayout(jPanel31Layout);
-        jPanel31Layout.setHorizontalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel31Layout.setVerticalGroup(
-            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 65, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout ThongTinHocVanLayout = new javax.swing.GroupLayout(ThongTinHocVan);
-        ThongTinHocVan.setLayout(ThongTinHocVanLayout);
-        ThongTinHocVanLayout.setHorizontalGroup(
-            ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ThongTinHocVanLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThongTinHocVanLayout.createSequentialGroup()
-                        .addGroup(ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel21))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThongTinHocVanLayout.createSequentialGroup()
-                        .addGroup(ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel23))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel31, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(22, 22, 22))
-        );
-        ThongTinHocVanLayout.setVerticalGroup(
-            ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ThongTinHocVanLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20)
-                    .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21)
-                    .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22)
-                    .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(ThongTinHocVanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel23)
-                    .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        ThongTinSinhVien.add(ThongTinHocVan, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 100, 380, 380));
-
-        ThongTinCaNhan.setBackground(new java.awt.Color(255, 255, 255));
-        ThongTinCaNhan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 80, 100)));
-
-        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
-        jPanel34.setLayout(jPanel34Layout);
-        jPanel34Layout.setHorizontalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel34Layout.setVerticalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 65, Short.MAX_VALUE)
-        );
-
-        jLabel24.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel24.setText("Email:");
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel25.setText("Số điện thoại:");
-
-        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
-        jPanel24.setLayout(jPanel24Layout);
-        jPanel24Layout.setHorizontalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 222, Short.MAX_VALUE)
-        );
-        jPanel24Layout.setVerticalGroup(
-            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 77, Short.MAX_VALUE)
-        );
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel26.setText("Ngày sinh:");
-
-        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
-        jPanel35.setLayout(jPanel35Layout);
-        jPanel35Layout.setHorizontalGroup(
-            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel35Layout.setVerticalGroup(
-            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 65, Short.MAX_VALUE)
-        );
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel27.setText("CCCD:");
-
-        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
-        jPanel36.setLayout(jPanel36Layout);
-        jPanel36Layout.setHorizontalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 222, Short.MAX_VALUE)
-        );
-        jPanel36Layout.setVerticalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 77, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout ThongTinCaNhanLayout = new javax.swing.GroupLayout(ThongTinCaNhan);
-        ThongTinCaNhan.setLayout(ThongTinCaNhanLayout);
-        ThongTinCaNhanLayout.setHorizontalGroup(
-            ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ThongTinCaNhanLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThongTinCaNhanLayout.createSequentialGroup()
-                        .addGroup(ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel27))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                        .addGroup(ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThongTinCaNhanLayout.createSequentialGroup()
-                        .addGroup(ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel25))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(22, 22, 22))
-        );
-        ThongTinCaNhanLayout.setVerticalGroup(
-            ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ThongTinCaNhanLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel26)
-                    .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel27)
-                    .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel24)
-                    .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(ThongTinCaNhanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel25)
-                    .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        ThongTinSinhVien.add(ThongTinCaNhan, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 380, 380));
-
-        jPanel18.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 80, 100)));
-        jPanel18.setPreferredSize(new java.awt.Dimension(100, 30));
-
-        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Thông tin cá nhân");
-
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 378, Short.MAX_VALUE)
-            .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel18Layout.createSequentialGroup()
-                    .addGap(0, 139, Short.MAX_VALUE)
-                    .addComponent(jLabel16)
-                    .addGap(0, 140, Short.MAX_VALUE)))
-        );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 28, Short.MAX_VALUE)
-            .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel18Layout.createSequentialGroup()
-                    .addGap(0, 6, Short.MAX_VALUE)
-                    .addComponent(jLabel16)
-                    .addGap(0, 6, Short.MAX_VALUE)))
-        );
-
-        ThongTinSinhVien.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 380, 30));
-
-        jPanel19.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel19.setPreferredSize(new java.awt.Dimension(100, 30));
-
-        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Thông tin học vấn");
-
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 378, Short.MAX_VALUE)
-            .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel19Layout.createSequentialGroup()
-                    .addGap(0, 139, Short.MAX_VALUE)
-                    .addComponent(jLabel15)
-                    .addGap(0, 140, Short.MAX_VALUE)))
-        );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 28, Short.MAX_VALUE)
-            .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel19Layout.createSequentialGroup()
-                    .addGap(0, 6, Short.MAX_VALUE)
-                    .addComponent(jLabel15)
-                    .addGap(0, 6, Short.MAX_VALUE)))
-        );
-
-        ThongTinSinhVien.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 70, 380, -1));
-
-        jPanel20.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 80, 100)));
-        jPanel20.setPreferredSize(new java.awt.Dimension(100, 30));
-
-        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("Ảnh nhận diện");
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Thông tin sinh viên");
+        jLabel17.setPreferredSize(new java.awt.Dimension(160, 30));
+        ThongtinSinhvien.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, -1));
 
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 148, Short.MAX_VALUE)
-            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel20Layout.createSequentialGroup()
-                    .addGap(0, 33, Short.MAX_VALUE)
-                    .addComponent(jLabel17)
-                    .addGap(0, 34, Short.MAX_VALUE)))
+        jSeparator1.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
+        jSeparator1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jSeparator1.setPreferredSize(new java.awt.Dimension(1055, 3));
+        ThongtinSinhvien.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        imageAvatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/LOGO_DHXD_1.png"))); // NOI18N
+
+        javax.swing.GroupLayout imageAvatarLayout = new javax.swing.GroupLayout(imageAvatar);
+        imageAvatar.setLayout(imageAvatarLayout);
+        imageAvatarLayout.setHorizontalGroup(
+            imageAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 28, Short.MAX_VALUE)
-            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel20Layout.createSequentialGroup()
-                    .addGap(0, 6, Short.MAX_VALUE)
-                    .addComponent(jLabel17)
-                    .addGap(0, 6, Short.MAX_VALUE)))
+        imageAvatarLayout.setVerticalGroup(
+            imageAvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
         );
 
-        ThongTinSinhVien.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 150, 30));
+        ThongtinSinhvien.add(imageAvatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 200, 200));
 
-        jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/80081542_p0_master1200.jpg"))); // NOI18N
-        ThongTinSinhVien.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        ThongtinSinhvien1.setBackground(new java.awt.Color(255, 255, 255, 128));
+        ThongtinSinhvien1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Hoten.setBackground(new java.awt.Color(255, 255, 255));
+        Hoten.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Hoten.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Hoten.setText("Họ tên:");
+        Hoten.setMaximumSize(new java.awt.Dimension(40, 20));
+        Hoten.setMinimumSize(new java.awt.Dimension(40, 20));
+        Hoten.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinSinhvien1.add(Hoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 66, 42));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel5.setText("jLabel5");
+        jLabel5.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel5.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel5.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinSinhvien1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 130, 42));
+
+        Mssv.setBackground(new java.awt.Color(255, 255, 255));
+        Mssv.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Mssv.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Mssv.setText("MSSV:");
+        Mssv.setMaximumSize(new java.awt.Dimension(40, 20));
+        Mssv.setMinimumSize(new java.awt.Dimension(40, 20));
+        Mssv.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinSinhvien1.add(Mssv, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 42, 66, 42));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel15.setText("jLabel15");
+        jLabel15.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel15.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel15.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinSinhvien1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 42, 130, 42));
+
+        Gioitinh.setBackground(new java.awt.Color(255, 255, 255));
+        Gioitinh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Gioitinh.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Gioitinh.setText("Giới tính:");
+        Gioitinh.setMaximumSize(new java.awt.Dimension(40, 20));
+        Gioitinh.setMinimumSize(new java.awt.Dimension(40, 20));
+        Gioitinh.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinSinhvien1.add(Gioitinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 84, 66, 42));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel16.setText("jLabel16");
+        jLabel16.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel16.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel16.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinSinhvien1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 84, 130, 42));
+
+        ThongtinSinhvien.add(ThongtinSinhvien1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 200, 127));
+
+        ThongtinCanhan2.setBackground(new java.awt.Color(255, 255, 255, 128));
+        ThongtinCanhan2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Ngaysinh.setBackground(new java.awt.Color(255, 255, 255));
+        Ngaysinh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Ngaysinh.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Ngaysinh.setText("Ngày sinh:");
+        Ngaysinh.setMaximumSize(new java.awt.Dimension(40, 20));
+        Ngaysinh.setMinimumSize(new java.awt.Dimension(40, 20));
+        Ngaysinh.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinCanhan2.add(Ngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 90, 42));
+
+        CCCD.setBackground(new java.awt.Color(255, 255, 255));
+        CCCD.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CCCD.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        CCCD.setText("Số CCCD:");
+        CCCD.setMaximumSize(new java.awt.Dimension(40, 20));
+        CCCD.setMinimumSize(new java.awt.Dimension(40, 20));
+        CCCD.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinCanhan2.add(CCCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 90, 42));
+
+        Email.setBackground(new java.awt.Color(255, 255, 255));
+        Email.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Email.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Email.setText("Email:");
+        Email.setMaximumSize(new java.awt.Dimension(40, 20));
+        Email.setMinimumSize(new java.awt.Dimension(40, 20));
+        Email.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinCanhan2.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 90, 42));
+
+        Hoten2.setBackground(new java.awt.Color(255, 255, 255));
+        Hoten2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Hoten2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Hoten2.setText("Số điện thoại:");
+        Hoten2.setMaximumSize(new java.awt.Dimension(40, 20));
+        Hoten2.setMinimumSize(new java.awt.Dimension(40, 20));
+        Hoten2.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinCanhan2.add(Hoten2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 90, 42));
+
+        Noisinh.setBackground(new java.awt.Color(255, 255, 255));
+        Noisinh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Noisinh.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Noisinh.setText("Nơi sinh:");
+        Noisinh.setMaximumSize(new java.awt.Dimension(40, 20));
+        Noisinh.setMinimumSize(new java.awt.Dimension(40, 20));
+        Noisinh.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinCanhan2.add(Noisinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 90, 42));
+
+        HoKhau.setBackground(new java.awt.Color(255, 255, 255));
+        HoKhau.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        HoKhau.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        HoKhau.setText("Thường trú:");
+        HoKhau.setMaximumSize(new java.awt.Dimension(40, 20));
+        HoKhau.setMinimumSize(new java.awt.Dimension(40, 20));
+        HoKhau.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinCanhan2.add(HoKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 90, 42));
+
+        Dantoc.setBackground(new java.awt.Color(255, 255, 255));
+        Dantoc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Dantoc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Dantoc.setText("Dân tộc:");
+        Dantoc.setMaximumSize(new java.awt.Dimension(40, 20));
+        Dantoc.setMinimumSize(new java.awt.Dimension(40, 20));
+        Dantoc.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinCanhan2.add(Dantoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 90, 42));
+
+        Quoctich.setBackground(new java.awt.Color(255, 255, 255));
+        Quoctich.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Quoctich.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Quoctich.setText("Quốc tịch:");
+        Quoctich.setMaximumSize(new java.awt.Dimension(40, 20));
+        Quoctich.setMinimumSize(new java.awt.Dimension(40, 20));
+        Quoctich.setPreferredSize(new java.awt.Dimension(40, 66));
+        ThongtinCanhan2.add(Quoctich, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 90, 42));
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel25.setText("jLabel5");
+        jLabel25.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel25.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel25.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinCanhan2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 300, 42));
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel18.setText("jLabel5");
+        jLabel18.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel18.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel18.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinCanhan2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 300, 42));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel19.setText("jLabel15");
+        jLabel19.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel19.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel19.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinCanhan2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 300, 42));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel20.setText("jLabel16");
+        jLabel20.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel20.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel20.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinCanhan2.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 300, 42));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel21.setText("jLabel5");
+        jLabel21.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel21.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel21.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinCanhan2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 300, 42));
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel22.setText("jLabel15");
+        jLabel22.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel22.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel22.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinCanhan2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 300, 42));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel23.setText("jLabel16");
+        jLabel23.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel23.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel23.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinCanhan2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 300, 42));
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel24.setText("jLabel5");
+        jLabel24.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel24.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel24.setPreferredSize(new java.awt.Dimension(160, 66));
+        ThongtinCanhan2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 300, 42));
+
+        ThongtinSinhvien.add(ThongtinCanhan2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 400, 347));
+
+        ThongtinHocvan.setBackground(new java.awt.Color(255, 255, 255, 128));
+
+        Lophoc.setBackground(new java.awt.Color(255, 255, 255));
+        Lophoc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Lophoc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Lophoc.setText("Lớp học:");
+        Lophoc.setMaximumSize(new java.awt.Dimension(40, 20));
+        Lophoc.setMinimumSize(new java.awt.Dimension(40, 20));
+        Lophoc.setPreferredSize(new java.awt.Dimension(40, 66));
+
+        Khoa.setBackground(new java.awt.Color(255, 255, 255));
+        Khoa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Khoa.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Khoa.setText("Khoa:");
+        Khoa.setMaximumSize(new java.awt.Dimension(40, 20));
+        Khoa.setMinimumSize(new java.awt.Dimension(40, 20));
+        Khoa.setPreferredSize(new java.awt.Dimension(40, 66));
+
+        Nganh.setBackground(new java.awt.Color(255, 255, 255));
+        Nganh.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Nganh.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        Nganh.setText("Ngành:");
+        Nganh.setMaximumSize(new java.awt.Dimension(40, 20));
+        Nganh.setMinimumSize(new java.awt.Dimension(40, 20));
+        Nganh.setPreferredSize(new java.awt.Dimension(40, 66));
+
+        BacDaotao.setBackground(new java.awt.Color(255, 255, 255));
+        BacDaotao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        BacDaotao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        BacDaotao.setText("Bậc đào tạo:");
+        BacDaotao.setMaximumSize(new java.awt.Dimension(40, 20));
+        BacDaotao.setMinimumSize(new java.awt.Dimension(40, 20));
+        BacDaotao.setPreferredSize(new java.awt.Dimension(40, 66));
+
+        LoaiHinhDaotao.setBackground(new java.awt.Color(255, 255, 255));
+        LoaiHinhDaotao.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LoaiHinhDaotao.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        LoaiHinhDaotao.setText("Loại hình đào tạo:");
+        LoaiHinhDaotao.setMaximumSize(new java.awt.Dimension(40, 20));
+        LoaiHinhDaotao.setMinimumSize(new java.awt.Dimension(40, 20));
+        LoaiHinhDaotao.setPreferredSize(new java.awt.Dimension(40, 66));
+
+        KhoaHoc.setBackground(new java.awt.Color(255, 255, 255));
+        KhoaHoc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        KhoaHoc.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        KhoaHoc.setText("Khóa học:");
+        KhoaHoc.setMaximumSize(new java.awt.Dimension(40, 20));
+        KhoaHoc.setMinimumSize(new java.awt.Dimension(40, 20));
+        KhoaHoc.setPreferredSize(new java.awt.Dimension(40, 66));
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel26.setText("jLabel15");
+        jLabel26.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel26.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel26.setPreferredSize(new java.awt.Dimension(160, 66));
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel27.setText("jLabel16");
+        jLabel27.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel27.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel27.setPreferredSize(new java.awt.Dimension(160, 66));
+
+        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel58.setText("jLabel5");
+        jLabel58.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel58.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel58.setPreferredSize(new java.awt.Dimension(160, 66));
+
+        jLabel63.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel63.setText("jLabel15");
+        jLabel63.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel63.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel63.setPreferredSize(new java.awt.Dimension(160, 66));
+
+        jLabel72.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel72.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel72.setText("jLabel16");
+        jLabel72.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel72.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel72.setPreferredSize(new java.awt.Dimension(160, 66));
+
+        jLabel73.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel73.setText("jLabel5");
+        jLabel73.setMaximumSize(new java.awt.Dimension(160, 66));
+        jLabel73.setMinimumSize(new java.awt.Dimension(160, 66));
+        jLabel73.setPreferredSize(new java.awt.Dimension(160, 66));
+
+        javax.swing.GroupLayout ThongtinHocvanLayout = new javax.swing.GroupLayout(ThongtinHocvan);
+        ThongtinHocvan.setLayout(ThongtinHocvanLayout);
+        ThongtinHocvanLayout.setHorizontalGroup(
+            ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ThongtinHocvanLayout.createSequentialGroup()
+                .addGap(0, 3, Short.MAX_VALUE)
+                .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Lophoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Nganh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Khoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LoaiHinhDaotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(KhoaHoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BacDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        ThongtinHocvanLayout.setVerticalGroup(
+            ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                        .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                                .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                                        .addGap(40, 40, 40)
+                                        .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, 0)
+                        .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                        .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                                .addComponent(Lophoc, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(38, 38, 38)
+                                .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                                        .addGap(40, 40, 40)
+                                        .addComponent(BacDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Nganh, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(Khoa, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, 0)
+                        .addGroup(ThongtinHocvanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LoaiHinhDaotao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(ThongtinHocvanLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(KhoaHoc, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 103, Short.MAX_VALUE))
+        );
+
+        ThongtinSinhvien.add(ThongtinHocvan, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 410, 347));
+
+        ThongTinSinhVien.add(ThongtinSinhvien, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 50, -1, -1));
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/80081542_p0_master1200.jpg"))); // NOI18N
+        ThongTinSinhVien.add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         RealContentLayout.add(ThongTinSinhVien, "card2");
 
@@ -3319,7 +3319,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel59MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        Object[] options = {"Yes","No"};
+        Object[] options = {"Có","Không"};
         int n = JOptionPane.showOptionDialog(GopY,
 "Bạn muốn gửi tới hòm thư?",null, JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
     }//GEN-LAST:event_jButton1MouseClicked
@@ -3367,24 +3367,43 @@ public class DashboardJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BasicInfor;
+    private javax.swing.JLabel BacDaotao;
+    private javax.swing.JLabel Background;
+    private javax.swing.JLabel CCCD;
     private javax.swing.JPanel CacMonHocLai;
     private javax.swing.JPanel ChuongTrinhKhung;
     private javax.swing.JPanel ContentLayout;
+    private javax.swing.JLabel Dantoc;
     private javax.swing.JPanel DecoratedBar;
     private javax.swing.JPanel DiemTichLuy;
     private javax.swing.JPanel DoThi;
+    private javax.swing.JLabel Email;
+    private javax.swing.JLabel Gioitinh;
     private javax.swing.JPanel GopY;
+    private javax.swing.JLabel HoKhau;
+    private javax.swing.JLabel Hoten;
+    private javax.swing.JLabel Hoten2;
+    private javax.swing.JLabel Khoa;
+    private javax.swing.JLabel KhoaHoc;
+    private javax.swing.JLabel LoaiHinhDaotao;
+    private javax.swing.JLabel Lophoc;
     private javax.swing.JPanel MainLayout;
     private javax.swing.JPanel MonHocConLai;
+    private javax.swing.JLabel Mssv;
+    private javax.swing.JLabel Nganh;
+    private javax.swing.JLabel Ngaysinh;
+    private javax.swing.JLabel Noisinh;
+    private javax.swing.JLabel Quoctich;
     private javax.swing.JPanel RealContentLayout;
     private javax.swing.JPanel SonOfToolBar_1;
     private javax.swing.JPanel SonOfToolBar_2;
     private javax.swing.JPanel ThongBao;
     private javax.swing.JPanel ThongKe;
-    private javax.swing.JPanel ThongTinCaNhan;
-    private javax.swing.JPanel ThongTinHocVan;
     private javax.swing.JPanel ThongTinSinhVien;
+    private javax.swing.JPanel ThongtinCanhan2;
+    private javax.swing.JPanel ThongtinHocvan;
+    private javax.swing.JPanel ThongtinSinhvien;
+    private javax.swing.JPanel ThongtinSinhvien1;
     private javax.swing.JPanel TinhToanThongKe;
     private javax.swing.JPanel TitleThongTinLopHoc;
     private javax.swing.JPanel TitleXemKhoa;
@@ -3394,7 +3413,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel XemKhoa;
     private javax.swing.JPanel XemLop;
     private javax.swing.JPanel XemNganh;
-    private javax.swing.JPanel avatar;
+    private com.raven.avatar.ImageAvatar imageAvatar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -3450,6 +3469,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
@@ -3465,6 +3485,8 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -3472,31 +3494,17 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
-    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
-    private javax.swing.JPanel jPanel34;
-    private javax.swing.JPanel jPanel35;
-    private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel39;
@@ -3556,6 +3564,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
