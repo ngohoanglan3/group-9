@@ -1024,7 +1024,7 @@
                         <Container class="javax.swing.JPanel" name="ThongtinSinhvien1">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                              <Connection code="new java.awt.Color(255, 255, 255, 100)" type="code"/>
+                              <Connection code="new java.awt.Color(255, 255, 255, 160)" type="code"/>
                             </Property>
                           </Properties>
                           <Constraints>
@@ -1154,7 +1154,7 @@
                         <Container class="javax.swing.JPanel" name="ThongtinSinhvien2">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                              <Connection code="new java.awt.Color(255, 255, 255, 100)" type="code"/>
+                              <Connection code="new java.awt.Color(255, 255, 255, 160)" type="code"/>
                             </Property>
                           </Properties>
                           <Constraints>
@@ -1424,7 +1424,7 @@
                         <Container class="javax.swing.JPanel" name="ThongtinSinhvien3">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                              <Connection code="new java.awt.Color(255, 255, 255, 100)" type="code"/>
+                              <Connection code="new java.awt.Color(255, 255, 255, 160)" type="code"/>
                             </Property>
                           </Properties>
                           <Constraints>

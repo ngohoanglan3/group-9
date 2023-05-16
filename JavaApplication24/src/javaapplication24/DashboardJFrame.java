@@ -966,7 +966,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         Avatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/pp,840x830-pad,1000x1000,f8f8f8.jpg"))); // NOI18N
         jPanel14.add(Avatar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 210, 210));
 
-        ThongtinSinhvien1.setBackground(new java.awt.Color(255, 255, 255, 100));
+        ThongtinSinhvien1.setBackground(new java.awt.Color(255, 255, 255, 160));
 
         Hoten.setFont(new java.awt.Font("Segoe UI Semilight", 1, 14)); // NOI18N
         Hoten.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1034,7 +1034,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jPanel14.add(ThongtinSinhvien1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 210, 150));
 
-        ThongtinSinhvien2.setBackground(new java.awt.Color(255, 255, 255, 100));
+        ThongtinSinhvien2.setBackground(new java.awt.Color(255, 255, 255, 160));
 
         Ngaysinh.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         Ngaysinh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1178,7 +1178,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jPanel14.add(ThongtinSinhvien2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 400, 370));
 
-        ThongtinSinhvien3.setBackground(new java.awt.Color(255, 255, 255, 100));
+        ThongtinSinhvien3.setBackground(new java.awt.Color(255, 255, 255, 160));
 
         Lophoc.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         Lophoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
