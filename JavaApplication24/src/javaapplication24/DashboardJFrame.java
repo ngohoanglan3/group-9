@@ -71,10 +71,8 @@ public class DashboardJFrame extends javax.swing.JFrame {
     
     public DashboardJFrame() {
         initComponents();
-        SonOfToolBar_1.setVisible(false);
-        SonOfToolBar_2.setVisible(false);
         //Add Dynamic Components
-        int n = 30;
+        int n = 10;
         int m = 4;
         HocKiPanel[] HocKi = new HocKiPanel[n];
         BieuDoPanel[] BieuDo = new BieuDoPanel[n];
@@ -160,6 +158,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
         ThongBao.setVisible(false);
         GopY.setVisible(false);
         ChuongTrinhKhung.setVisible(false);
+        DoiMatKhau.setVisible(false);
     };
     /**
      * This method is called from within the constructor to initialize the form.
@@ -189,6 +188,8 @@ public class DashboardJFrame extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
         ContentLayout = new javax.swing.JPanel();
         SonOfToolBar_1 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -202,6 +203,11 @@ public class DashboardJFrame extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
+        SonOfToolBar_3 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
         RealContentLayout = new javax.swing.JPanel();
         ThongTinSinhVien = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
@@ -375,6 +381,19 @@ public class DashboardJFrame extends javax.swing.JFrame {
         TitleThongTinLopHoc = new javax.swing.JPanel();
         jLabel57 = new javax.swing.JLabel();
         jLabel71 = new javax.swing.JLabel();
+        DoiMatKhau = new javax.swing.JPanel();
+        jPanel29 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jTextField32 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jTextField33 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jTextField34 = new javax.swing.JTextField();
+        jButton42 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel72 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(250, 250, 250));
@@ -699,11 +718,54 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         ToolBar.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, -5, -1, 60));
 
+        jPanel15.setBackground(new java.awt.Color(0, 80, 100));
+        jPanel15.setPreferredSize(new java.awt.Dimension(130, 50));
+        jPanel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel15MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel15MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel15MouseExited(evt);
+            }
+        });
+
+        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel15.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Cài đặt");
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                    .addContainerGap(46, Short.MAX_VALUE)
+                    .addComponent(jLabel15)
+                    .addContainerGap(46, Short.MAX_VALUE)))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                    .addContainerGap(22, Short.MAX_VALUE)
+                    .addComponent(jLabel15)
+                    .addContainerGap(22, Short.MAX_VALUE)))
+        );
+
+        ToolBar.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, -5, -1, 60));
+
         MainLayout.add(ToolBar, java.awt.BorderLayout.PAGE_START);
 
         ContentLayout.setBackground(new java.awt.Color(255, 255, 255));
         ContentLayout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        SonOfToolBar_1.setVisible(false);
         SonOfToolBar_1.setBackground(new java.awt.Color(0, 100, 150));
         SonOfToolBar_1.setPreferredSize(new java.awt.Dimension(130, 100));
         SonOfToolBar_1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -802,6 +864,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         ContentLayout.add(SonOfToolBar_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
+        SonOfToolBar_2.setVisible(false);
         SonOfToolBar_2.setBackground(new java.awt.Color(0, 100, 150));
         SonOfToolBar_2.setPreferredSize(new java.awt.Dimension(130, 150));
         SonOfToolBar_2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -941,6 +1004,104 @@ public class DashboardJFrame extends javax.swing.JFrame {
         SonOfToolBar_2.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
 
         ContentLayout.add(SonOfToolBar_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
+
+        SonOfToolBar_3.setVisible(false);
+        SonOfToolBar_3.setBackground(new java.awt.Color(0, 100, 150));
+        SonOfToolBar_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SonOfToolBar_3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SonOfToolBar_3MouseExited(evt);
+            }
+        });
+        SonOfToolBar_3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel16.setBackground(new java.awt.Color(255, 75, 0));
+        jPanel16.setPreferredSize(new java.awt.Dimension(130, 50));
+        jPanel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel16MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel16MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel16MouseExited(evt);
+            }
+        });
+
+        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel16.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Đăng xuất");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                    .addContainerGap(36, Short.MAX_VALUE)
+                    .addComponent(jLabel16)
+                    .addContainerGap(37, Short.MAX_VALUE)))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                    .addContainerGap(17, Short.MAX_VALUE)
+                    .addComponent(jLabel16)
+                    .addContainerGap(17, Short.MAX_VALUE)))
+        );
+
+        SonOfToolBar_3.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
+
+        jPanel17.setBackground(new java.awt.Color(255, 75, 0));
+        jPanel17.setPreferredSize(new java.awt.Dimension(130, 50));
+        jPanel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel17MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel17MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel17MouseExited(evt);
+            }
+        });
+
+        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Đổi mật khẩu");
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                    .addContainerGap(28, Short.MAX_VALUE)
+                    .addComponent(jLabel17)
+                    .addContainerGap(28, Short.MAX_VALUE)))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                    .addContainerGap(17, Short.MAX_VALUE)
+                    .addComponent(jLabel17)
+                    .addContainerGap(17, Short.MAX_VALUE)))
+        );
+
+        SonOfToolBar_3.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        ContentLayout.add(SonOfToolBar_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 0, -1, -1));
 
         RealContentLayout.setLayout(new java.awt.CardLayout());
 
@@ -2963,6 +3124,72 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         RealContentLayout.add(XemLop, "card7");
 
+        DoiMatKhau.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel29.setBackground(new java.awt.Color(255, 255, 255,90));
+        jPanel29.setPreferredSize(new java.awt.Dimension(300, 400));
+        jPanel29.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setText("Tài khoản:");
+        jPanel29.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jTextField12.setOpaque(true);
+        jTextField12.setPreferredSize(new java.awt.Dimension(150, 30));
+        jPanel29.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 75, 175, -1));
+
+        jLabel23.setText("Mật khẩu:");
+        jPanel29.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        jTextField32.setOpaque(true);
+        jTextField32.setPreferredSize(new java.awt.Dimension(150, 30));
+        jPanel29.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 125, 175, -1));
+
+        jLabel24.setText("Mật khẩu mới:");
+        jPanel29.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+
+        jTextField33.setOpaque(true);
+        jTextField33.setPreferredSize(new java.awt.Dimension(150, 30));
+        jTextField33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField33ActionPerformed(evt);
+            }
+        });
+        jPanel29.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 225, 175, -1));
+
+        jLabel25.setText("Nhập lại:");
+        jPanel29.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
+        jTextField34.setOpaque(true);
+        jTextField34.setPreferredSize(new java.awt.Dimension(150, 30));
+        jPanel29.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 275, 175, -1));
+
+        jButton42.setBackground(new java.awt.Color(51, 0, 255));
+        jButton42.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jButton42.setForeground(new java.awt.Color(255, 255, 255));
+        jButton42.setText("Xác nhận");
+        jButton42.setPreferredSize(new java.awt.Dimension(100, 25));
+        jButton42.setRequestFocusEnabled(false);
+        jButton42.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton42MouseClicked(evt);
+            }
+        });
+        jPanel29.add(jButton42, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
+
+        DoiMatKhau.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 75, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel26.setText("THAY ĐỔI MẬT KHẨU");
+        jLabel26.setPreferredSize(new java.awt.Dimension(300, 50));
+        DoiMatKhau.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 25, -1, -1));
+
+        jLabel72.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/80081542_p0_master1200.jpg"))); // NOI18N
+        DoiMatKhau.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        RealContentLayout.add(DoiMatKhau, "card10");
+
         ContentLayout.add(RealContentLayout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1140, 550));
 
         MainLayout.add(ContentLayout, java.awt.BorderLayout.CENTER);
@@ -3289,6 +3516,74 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPanel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel15MouseClicked
+
+    private void jPanel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseEntered
+        changeColor(jPanel15, new Color(255,75,0));
+        SonOfToolBar_3.setVisible(true);
+    }//GEN-LAST:event_jPanel15MouseEntered
+
+    private void jPanel15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseExited
+        changeColor(jPanel15, new Color(0,80,100));
+        SonOfToolBar_3.setVisible(false);
+    }//GEN-LAST:event_jPanel15MouseExited
+
+    private void jPanel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseClicked
+        this.setVisible(false);
+        LoginJFrame login = new LoginJFrame();
+        login.setVisible(true);
+    }//GEN-LAST:event_jPanel16MouseClicked
+
+    private void jPanel16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseEntered
+        changeColor(jPanel15, new Color(255,75,0));
+        changeColor(jPanel16, new Color(255,125,0));
+        SonOfToolBar_3.setVisible(true);
+    }//GEN-LAST:event_jPanel16MouseEntered
+
+    private void jPanel16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseExited
+        changeColor(jPanel15, new Color(0,80,100));
+        changeColor(jPanel16, new Color(255,75,0));
+        SonOfToolBar_3.setVisible(false);
+    }//GEN-LAST:event_jPanel16MouseExited
+
+    private void jPanel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseClicked
+        invisibleAllContentLayout();
+        DoiMatKhau.setVisible(true);
+    }//GEN-LAST:event_jPanel17MouseClicked
+
+    private void jPanel17MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseEntered
+        changeColor(jPanel15, new Color(255,75,0));
+        changeColor(jPanel17, new Color(255,125,0));
+        SonOfToolBar_3.setVisible(true);
+    }//GEN-LAST:event_jPanel17MouseEntered
+
+    private void jPanel17MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseExited
+        changeColor(jPanel15, new Color(0,80,100));
+        changeColor(jPanel17, new Color(255,75,0));
+        SonOfToolBar_3.setVisible(false);
+    }//GEN-LAST:event_jPanel17MouseExited
+
+    private void SonOfToolBar_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SonOfToolBar_3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SonOfToolBar_3MouseEntered
+
+    private void SonOfToolBar_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SonOfToolBar_3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SonOfToolBar_3MouseExited
+
+    private void jTextField33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField33ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField33ActionPerformed
+
+    private void jButton42MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton42MouseClicked
+        Object[] options = {"Có","Không"};
+        int n = JOptionPane.showOptionDialog(DoiMatKhau,
+            "Bạn muốn thay đổi mật khẩu?",null, JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+
+    }//GEN-LAST:event_jButton42MouseClicked
      
     /**
      * @param args the command line arguments
@@ -3341,6 +3636,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel DecoratedBar;
     private javax.swing.JPanel DiemTichLuy;
     private javax.swing.JPanel DoThi;
+    private javax.swing.JPanel DoiMatKhau;
     private javax.swing.JLabel Email;
     private javax.swing.JLabel Email1;
     private javax.swing.JLabel GioiTinh;
@@ -3371,6 +3667,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel Sodienthoai1;
     private javax.swing.JPanel SonOfToolBar_1;
     private javax.swing.JPanel SonOfToolBar_2;
+    private javax.swing.JPanel SonOfToolBar_3;
     private javax.swing.JPanel ThongBao;
     private javax.swing.JPanel ThongKe;
     private javax.swing.JPanel ThongTinSinhVien;
@@ -3392,13 +3689,22 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javaapplication24.ImageAvatar imageAvatar2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton42;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -3446,6 +3752,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
+    private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -3454,6 +3761,9 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
@@ -3462,6 +3772,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
@@ -3533,6 +3844,10 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField32;
+    private javax.swing.JTextField jTextField33;
+    private javax.swing.JTextField jTextField34;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }

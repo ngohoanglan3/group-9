@@ -82,7 +82,6 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     public DashboardJFrameAdmin() {
         initComponents();
         
-        
     }
     
     
@@ -519,7 +518,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("QUẢN LÝ ĐIỂM HUCE");
+        jLabel10.setText("QUẢN LÝ ĐIỂM HUCE-ADMIN");
         jLabel10.setPreferredSize(new java.awt.Dimension(125, 25));
         DecoratedBar.add(jLabel10, java.awt.BorderLayout.CENTER);
 
@@ -1340,7 +1339,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jLabel63.setBackground(new java.awt.Color(255, 255, 255));
         jLabel63.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel63.setText("GIỚI THIỆU NGÀNH");
+        jLabel63.setText("QUẢN LÝ TÀI KHOẢN SINH VIÊN");
 
         javax.swing.GroupLayout jPanel79Layout = new javax.swing.GroupLayout(jPanel79);
         jPanel79.setLayout(jPanel79Layout);
@@ -2377,13 +2376,13 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Mã môn", "Tên ngành"
+                "Thứ tự kỳ", "Mã môn", "Tên ngành"
             }
         ));
         jScrollPane4.setViewportView(jTable2);
@@ -2393,16 +2392,31 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jPanel90.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 40, 210, 180));
 
         jPanel23.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel97.setBackground(new java.awt.Color(255, 255, 255));
         jLabel97.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel97.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel97.setText("Các môn học thuộc ngành");
+        jLabel97.setText("Cập nhật chương trình khung");
         jLabel97.setPreferredSize(new java.awt.Dimension(75, 15));
         jLabel97.setRequestFocusEnabled(false);
         jLabel97.setVerifyInputWhenFocusTarget(false);
-        jPanel23.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 5, 150, -1));
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
+        );
 
         jPanel90.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 15, 210, 30));
 
@@ -3289,7 +3303,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         DoiMatKhau.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 75, -1, -1));
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(4, 78, 183));
+        jLabel26.setForeground(new java.awt.Color(102, 255, 255));
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel26.setText("THAY ĐỔI MẬT KHẨU");
         jLabel26.setPreferredSize(new java.awt.Dimension(300, 50));
@@ -3560,7 +3574,9 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel15MouseExited
 
     private void jPanel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseClicked
-        // TODO add your handling code here:
+        this.setVisible(false);
+        LoginJFrame login = new LoginJFrame();
+        login.setVisible(true);
     }//GEN-LAST:event_jPanel16MouseClicked
 
     private void jPanel16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseEntered
@@ -3702,7 +3718,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
     private void jButton42MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton42MouseClicked
         Object[] options = {"Có","Không"};
-        int n = JOptionPane.showOptionDialog(GuiThongBao,
+        int n = JOptionPane.showOptionDialog(DoiMatKhau,
 "Bạn muốn thay đổi mật khẩu?",null, JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
     
     }//GEN-LAST:event_jButton42MouseClicked

@@ -35,14 +35,43 @@ public class ConsoleJFrame extends javax.swing.JFrame {
     
     public void CacHocPhanDaHoanThanh(){
         this.setTitle("Các học phần đã hoàn thành");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Mã học phần", "Tên học phần", "Số tín chỉ", "Số tiết"
+            }
+        ));
     };
     
     public void CacKhoaKhac(){
         this.setTitle("Danh sách các khoa");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Mã khoa", "Tên khoa"
+            }
+        ));
     };
     
     public void CacNganhKhac(){
         this.setTitle("Danh sách các ngành thuộc khoa");
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Mã ngành", "Tên ngành"
+            }
+        ));
     };
     
     /**
