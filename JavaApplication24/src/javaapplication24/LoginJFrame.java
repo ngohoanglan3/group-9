@@ -511,7 +511,7 @@ public final class LoginJFrame extends javax.swing.JFrame {
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         this.setVisible(false);
-        DashboardJFrameAdmin dash = new DashboardJFrameAdmin();
+        DashboardJFrame dash = new DashboardJFrame();
         dash.setVisible(true);
     }//GEN-LAST:event_jLabel7MouseClicked
 
