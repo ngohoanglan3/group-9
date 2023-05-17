@@ -1339,7 +1339,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jLabel63.setBackground(new java.awt.Color(255, 255, 255));
         jLabel63.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel63.setText("QUẢN LÝ TÀI KHOẢN SINH VIÊN");
+        jLabel63.setText("CẬP NHẬT TÀI KHOẢN SINH VIÊN");
 
         javax.swing.GroupLayout jPanel79Layout = new javax.swing.GroupLayout(jPanel79);
         jPanel79.setLayout(jPanel79Layout);

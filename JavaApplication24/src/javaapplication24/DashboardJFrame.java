@@ -1478,13 +1478,13 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Mã môn", "Tên môn", "Số tín chỉ", "Điểm chuyên cần", "Điểm giữa kỳ", "Điểm kết thúc", "Điểm trung bình", "Điểm chữ", "số lần học", "Tình trạng"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -1791,13 +1791,13 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Mã môn", "Tên môn", "Số tín chỉ"
             }
         ));
         jScrollPane4.setViewportView(jTable2);
@@ -1856,13 +1856,13 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Mã môn", "Tên môn", "Số tín chỉ"
             }
         ));
         jScrollPane5.setViewportView(jTable3);
@@ -2162,13 +2162,13 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Mã ngành", "Tên ngành"
             }
         ));
         jScrollPane6.setViewportView(jTable4);
@@ -2463,13 +2463,13 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Mã môn", "Tên môn", "Số tín chỉ"
             }
         ));
         jScrollPane7.setViewportView(jTable5);
@@ -2841,13 +2841,13 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jTable7.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Mã môn", "Tên môn", "Số tín chỉ", "Số tiết", "Bắt buộc", "Tự chọn", "Môn tiên quyết", "Môn song hành"
             }
         ));
         jScrollPane12.setViewportView(jTable7);
@@ -3060,13 +3060,13 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jTable6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "MSSV", "Họ", "Tên", "Giới tính", "Ngày sinh", "Email"
             }
         ));
         jScrollPane8.setViewportView(jTable6);

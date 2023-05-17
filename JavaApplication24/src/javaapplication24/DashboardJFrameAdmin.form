@@ -1706,7 +1706,7 @@
                                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
-                                <Property name="text" type="java.lang.String" value="QU&#x1ea2;N L&#xdd; T&#xc0;I KHO&#x1ea2;N SINH VI&#xca;N"/>
+                                <Property name="text" type="java.lang.String" value="C&#x1eac;P NH&#x1eac;T T&#xc0;I KHO&#x1ea2;N SINH VI&#xca;N"/>
                               </Properties>
                             </Component>
                           </SubComponents>

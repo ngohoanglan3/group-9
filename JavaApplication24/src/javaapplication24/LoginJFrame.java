@@ -53,7 +53,16 @@ public final class LoginJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jPanel30 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel73 = new javax.swing.JLabel();
+        jTextField36 = new javax.swing.JTextField();
+        jButton43 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -84,12 +93,77 @@ public final class LoginJFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 42, 92));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 450));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(new java.awt.CardLayout());
+
+        jPanel11.setOpaque(false);
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/logo_trans.png"))); // NOI18N
         jLabel3.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 75, -1, -1));
+        jPanel11.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 75, -1, -1));
+
+        jPanel1.add(jPanel11, "card2");
+
+        jPanel12.setOpaque(false);
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel30.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel30.setOpaque(false);
+        jPanel30.setPreferredSize(new java.awt.Dimension(300, 400));
+        jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel27.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel27.setText("Nhập tên:");
+        jPanel30.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jTextField13.setOpaque(true);
+        jTextField13.setPreferredSize(new java.awt.Dimension(150, 30));
+        jPanel30.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 75, 175, -1));
+
+        jLabel73.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel73.setText("Nhập MSSV:");
+        jPanel30.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+        jTextField36.setOpaque(true);
+        jTextField36.setPreferredSize(new java.awt.Dimension(150, 30));
+        jTextField36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField36ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 175, -1));
+
+        jButton43.setBackground(new java.awt.Color(51, 0, 255));
+        jButton43.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jButton43.setForeground(new java.awt.Color(255, 255, 255));
+        jButton43.setBorder(null);
+        jButton43.setLabel("Gửi yêu cầu");
+        jButton43.setPreferredSize(new java.awt.Dimension(100, 25));
+        jButton43.setRequestFocusEnabled(false);
+        jButton43.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton43MouseClicked(evt);
+            }
+        });
+        jButton43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton43ActionPerformed(evt);
+            }
+        });
+        jPanel30.add(jButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 110, -1));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setLabelFor(jPanel2);
+        jLabel11.setText("NHẬP THÔNG TIN ");
+        jLabel11.setPreferredSize(new java.awt.Dimension(300, 50));
+        jPanel30.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jPanel12.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 75, -1, 320));
+
+        jPanel1.add(jPanel12, "card3");
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -196,6 +270,17 @@ public final class LoginJFrame extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Quên Mật Khẩu?");
         jLabel8.setPreferredSize(new java.awt.Dimension(100, 16));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel8MouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -425,9 +510,42 @@ public final class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel10MouseDragged
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        DashboardJFrame dash = new DashboardJFrame();
+        this.setVisible(false);
+        DashboardJFrameAdmin dash = new DashboardJFrameAdmin();
         dash.setVisible(true);
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField36ActionPerformed
+
+    private void jButton43MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton43MouseClicked
+           Object[] options = {"Có","Không"};
+            int n = JOptionPane.showOptionDialog(jPanel12,
+            "Bạn muốn yêu cầu cấp lại mật khẩu?",null, JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+            if (n==1 || n==0){
+                jPanel12.setVisible(false);
+                jPanel11.setVisible(true);
+            };
+
+    }//GEN-LAST:event_jButton43MouseClicked
+
+    private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton43ActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        jPanel11.setVisible(false);
+        jPanel12.setVisible(true);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+        jLabel8.setForeground(Color.white);
+    }//GEN-LAST:event_jLabel8MouseEntered
+
+    private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
+        jLabel8.setForeground(new Color(4,87,183));
+    }//GEN-LAST:event_jLabel8MouseExited
 
     
     /**
@@ -467,20 +585,27 @@ public final class LoginJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton43;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -491,5 +616,7 @@ public final class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField36;
     // End of variables declaration//GEN-END:variables
 }

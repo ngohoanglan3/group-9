@@ -40,10 +40,9 @@ public class ConsoleJFrame extends javax.swing.JFrame {
                 {null, null, null, null},
                 {null, null, null, null},
                 {null, null, null, null},
-                {null, null, null, null}
             },
             new String [] {
-                "Mã học phần", "Tên học phần", "Số tín chỉ", "Số tiết"
+                "Mã học phần", "Tên học phần", "Số tín chỉ"
             }
         ));
     };
