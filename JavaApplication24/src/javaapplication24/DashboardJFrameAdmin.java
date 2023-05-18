@@ -95,6 +95,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         QuanLyMonHoc.setVisible(false);
         QuanLyKhoa.setVisible(false);
         QuanLyNganh.setVisible(false);
+        QuanLyKhoaHoc.setVisible(false);
         QuanLyLop.setVisible(false);
         GuiThongBao.setVisible(false);
         HomThu.setVisible(false);
@@ -145,6 +146,8 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
+        jPanel29 = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
         SonOfToolBar_3 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
@@ -318,6 +321,35 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jButton30 = new javax.swing.JButton();
         jButton31 = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
+        QuanLyKhoaHoc = new javax.swing.JPanel();
+        jPanel103 = new javax.swing.JPanel();
+        jPanel104 = new javax.swing.JPanel();
+        jLabel116 = new javax.swing.JLabel();
+        jTextField35 = new javax.swing.JTextField();
+        jButton43 = new javax.swing.JButton();
+        jButton44 = new javax.swing.JButton();
+        jTextField36 = new javax.swing.JTextField();
+        jLabel118 = new javax.swing.JLabel();
+        jTextField37 = new javax.swing.JTextField();
+        jLabel122 = new javax.swing.JLabel();
+        jButton45 = new javax.swing.JButton();
+        jButton46 = new javax.swing.JButton();
+        jButton47 = new javax.swing.JButton();
+        jLabel123 = new javax.swing.JLabel();
+        jTextField38 = new javax.swing.JTextField();
+        jLabel124 = new javax.swing.JLabel();
+        jTextField39 = new javax.swing.JTextField();
+        jPanel105 = new javax.swing.JPanel();
+        jLabel128 = new javax.swing.JLabel();
+        jPanel106 = new javax.swing.JPanel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        jTable13 = new javax.swing.JTable();
+        jPanel107 = new javax.swing.JPanel();
+        jLabel129 = new javax.swing.JLabel();
+        jLabel130 = new javax.swing.JLabel();
+        TitleKhoaHoc = new javax.swing.JPanel();
+        jLabel131 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
         QuanLyLop = new javax.swing.JPanel();
         TitleThongTinLopHoc = new javax.swing.JPanel();
         jLabel57 = new javax.swing.JLabel();
@@ -924,7 +956,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         SonOfToolBar_2.setVisible(false);
         SonOfToolBar_2.setBackground(new java.awt.Color(0, 100, 150));
-        SonOfToolBar_2.setPreferredSize(new java.awt.Dimension(130, 150));
+        SonOfToolBar_2.setPreferredSize(new java.awt.Dimension(130, 200));
         SonOfToolBar_2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 SonOfToolBar_2MouseEntered(evt);
@@ -1017,7 +1049,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
                     .addContainerGap(17, Short.MAX_VALUE)))
         );
 
-        SonOfToolBar_2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
+        SonOfToolBar_2.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
         jPanel13.setBackground(new java.awt.Color(0, 125, 175));
         jPanel13.setPreferredSize(new java.awt.Dimension(130, 50));
@@ -1060,6 +1092,48 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         );
 
         SonOfToolBar_2.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, -1, -1));
+
+        jPanel29.setBackground(new java.awt.Color(0, 125, 175));
+        jPanel29.setPreferredSize(new java.awt.Dimension(130, 50));
+        jPanel29.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel29MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel29MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel29MouseExited(evt);
+            }
+        });
+
+        jLabel36.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel36.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("Khóa");
+
+        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
+        jPanel29.setLayout(jPanel29Layout);
+        jPanel29Layout.setHorizontalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+            .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel29Layout.createSequentialGroup()
+                    .addContainerGap(51, Short.MAX_VALUE)
+                    .addComponent(jLabel36)
+                    .addContainerGap(51, Short.MAX_VALUE)))
+        );
+        jPanel29Layout.setVerticalGroup(
+            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel29Layout.createSequentialGroup()
+                    .addContainerGap(17, Short.MAX_VALUE)
+                    .addComponent(jLabel36)
+                    .addContainerGap(17, Short.MAX_VALUE)))
+        );
+
+        SonOfToolBar_2.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
 
         ContentLayout.add(SonOfToolBar_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, -1, -1));
 
@@ -1240,12 +1314,12 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButton3.setText("Làm mới");
         jButton3.setPreferredSize(new java.awt.Dimension(75, 25));
-        jPanel74.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 15, -1, -1));
+        jPanel74.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 15, 80, -1));
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButton4.setText("Chế độ bảo trì");
         jButton4.setPreferredSize(new java.awt.Dimension(100, 25));
-        jPanel74.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 260, -1, -1));
+        jPanel74.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 260, 110, -1));
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButton5.setText("Thêm");
@@ -1461,7 +1535,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         jButton10.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButton10.setText("Làm mới");
-        jButton10.setPreferredSize(new java.awt.Dimension(75, 25));
+        jButton10.setPreferredSize(new java.awt.Dimension(80, 25));
         jPanel77.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 15, -1, -1));
 
         jButton12.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
@@ -1669,7 +1743,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         jButton15.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButton15.setText("Làm mới");
-        jButton15.setPreferredSize(new java.awt.Dimension(75, 25));
+        jButton15.setPreferredSize(new java.awt.Dimension(80, 25));
         jPanel82.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 15, -1, -1));
 
         jButton16.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
@@ -1941,7 +2015,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         jButton20.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButton20.setText("Làm mới");
-        jButton20.setPreferredSize(new java.awt.Dimension(75, 25));
+        jButton20.setPreferredSize(new java.awt.Dimension(80, 25));
         jPanel86.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 15, -1, -1));
 
         jButton22.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
@@ -2268,7 +2342,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         jButton21.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButton21.setText("Làm mới");
-        jButton21.setPreferredSize(new java.awt.Dimension(75, 25));
+        jButton21.setPreferredSize(new java.awt.Dimension(80, 25));
         jPanel90.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 15, -1, -1));
 
         jButton23.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
@@ -2478,6 +2552,225 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         RealContentLayout.add(QuanLyNganh, "card6");
 
+        QuanLyKhoaHoc.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel103.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel103.setOpaque(false);
+        jPanel103.setPreferredSize(new java.awt.Dimension(1040, 400));
+        jPanel103.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel104.setBackground(new java.awt.Color(255, 255, 255,90));
+        jPanel104.setPreferredSize(new java.awt.Dimension(400, 300));
+        jPanel104.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel116.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel116.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel116.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel116.setText("Nhập mã:");
+        jLabel116.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel116.setRequestFocusEnabled(false);
+        jLabel116.setVerifyInputWhenFocusTarget(false);
+        jPanel104.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 15, -1, -1));
+
+        jTextField35.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel104.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 15, -1, -1));
+
+        jButton43.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton43.setText("Tìm");
+        jButton43.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel104.add(jButton43, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 15, -1, -1));
+
+        jButton44.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton44.setText("Sửa");
+        jButton44.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel104.add(jButton44, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 270, -1, -1));
+
+        jTextField36.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel104.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 75, 160, -1));
+
+        jLabel118.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel118.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel118.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel118.setText("Hệ số DCC:");
+        jLabel118.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel118.setRequestFocusEnabled(false);
+        jLabel118.setVerifyInputWhenFocusTarget(false);
+        jPanel104.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 125, 80, -1));
+
+        jTextField37.setPreferredSize(new java.awt.Dimension(75, 25));
+        jTextField37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField37ActionPerformed(evt);
+            }
+        });
+        jPanel104.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 125, 160, -1));
+
+        jLabel122.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel122.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel122.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel122.setText("Hệ số DGK:");
+        jLabel122.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel122.setRequestFocusEnabled(false);
+        jLabel122.setVerifyInputWhenFocusTarget(false);
+        jPanel104.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 175, -1, -1));
+
+        jButton45.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton45.setText("Làm mới");
+        jButton45.setPreferredSize(new java.awt.Dimension(80, 25));
+        jPanel104.add(jButton45, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 15, -1, -1));
+
+        jButton46.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton46.setText("Thêm");
+        jButton46.setPreferredSize(new java.awt.Dimension(75, 25));
+        jButton46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton46ActionPerformed(evt);
+            }
+        });
+        jPanel104.add(jButton46, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 270, -1, -1));
+
+        jButton47.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButton47.setText("Xóa");
+        jButton47.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel104.add(jButton47, new org.netbeans.lib.awtextra.AbsoluteConstraints(195, 270, -1, -1));
+
+        jLabel123.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel123.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel123.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel123.setText("Hệ số DKT:");
+        jLabel123.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel123.setRequestFocusEnabled(false);
+        jLabel123.setVerifyInputWhenFocusTarget(false);
+        jPanel104.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 225, -1, -1));
+
+        jTextField38.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel104.add(jTextField38, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 225, 160, -1));
+
+        jLabel124.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel124.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel124.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel124.setText("Mã khóa:");
+        jLabel124.setPreferredSize(new java.awt.Dimension(75, 15));
+        jLabel124.setRequestFocusEnabled(false);
+        jLabel124.setVerifyInputWhenFocusTarget(false);
+        jPanel104.add(jLabel124, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 75, -1, -1));
+
+        jTextField39.setPreferredSize(new java.awt.Dimension(75, 25));
+        jPanel104.add(jTextField39, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 175, 160, -1));
+
+        jPanel103.add(jPanel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 75, -1, -1));
+
+        jPanel105.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel105.setPreferredSize(new java.awt.Dimension(330, 25));
+        jPanel105.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel128.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel128.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel128.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel128.setText("Danh sách khóa học");
+        jPanel105.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 6, -1, -1));
+
+        jPanel103.add(jPanel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 25, 560, -1));
+
+        jPanel106.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel106.setPreferredSize(new java.awt.Dimension(200, 300));
+
+        jTable13.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Mã khóa", "Tên khóa", "Hệ số DCC", "Hệ số DGK", "Hệ số DKT"
+            }
+        ));
+        jScrollPane17.setViewportView(jTable13);
+
+        javax.swing.GroupLayout jPanel106Layout = new javax.swing.GroupLayout(jPanel106);
+        jPanel106.setLayout(jPanel106Layout);
+        jPanel106Layout.setHorizontalGroup(
+            jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
+        );
+        jPanel106Layout.setVerticalGroup(
+            jPanel106Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+        );
+
+        jPanel103.add(jPanel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 560, 325));
+
+        jPanel107.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel107.setPreferredSize(new java.awt.Dimension(400, 50));
+
+        jLabel129.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel129.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel129.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel129.setText("CẬP NHẬT KHÓA HỌC");
+
+        javax.swing.GroupLayout jPanel107Layout = new javax.swing.GroupLayout(jPanel107);
+        jPanel107.setLayout(jPanel107Layout);
+        jPanel107Layout.setHorizontalGroup(
+            jPanel107Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jPanel107Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel107Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel129)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel107Layout.setVerticalGroup(
+            jPanel107Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(jPanel107Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel107Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel129)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        jPanel103.add(jPanel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 25, -1, -1));
+        jPanel103.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        QuanLyKhoaHoc.add(jPanel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 75, -1, -1));
+
+        TitleKhoaHoc.setBackground(new java.awt.Color(0, 102, 102));
+        TitleKhoaHoc.setPreferredSize(new java.awt.Dimension(250, 50));
+
+        jLabel131.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel131.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jLabel131.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel131.setText("QUẢN LÝ KHÓA HỌC");
+
+        javax.swing.GroupLayout TitleKhoaHocLayout = new javax.swing.GroupLayout(TitleKhoaHoc);
+        TitleKhoaHoc.setLayout(TitleKhoaHocLayout);
+        TitleKhoaHocLayout.setHorizontalGroup(
+            TitleKhoaHocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1040, Short.MAX_VALUE)
+            .addGroup(TitleKhoaHocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleKhoaHocLayout.createSequentialGroup()
+                    .addContainerGap(404, Short.MAX_VALUE)
+                    .addComponent(jLabel131)
+                    .addContainerGap(404, Short.MAX_VALUE)))
+        );
+        TitleKhoaHocLayout.setVerticalGroup(
+            TitleKhoaHocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+            .addGroup(TitleKhoaHocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TitleKhoaHocLayout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel131)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        QuanLyKhoaHoc.add(TitleKhoaHoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 25, 1040, -1));
+
+        jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/86815858_p0_master1200.jpg"))); // NOI18N
+        QuanLyKhoaHoc.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -130, 1210, 730));
+
+        RealContentLayout.add(QuanLyKhoaHoc, "card4");
+
         QuanLyLop.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TitleThongTinLopHoc.setBackground(new java.awt.Color(0, 102, 102));
@@ -2575,8 +2868,8 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 
         jButton33.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButton33.setText("Làm mới");
-        jButton33.setPreferredSize(new java.awt.Dimension(75, 25));
-        jPanel94.add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 15, -1, -1));
+        jButton33.setPreferredSize(new java.awt.Dimension(80, 25));
+        jPanel94.add(jButton33, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 15, 80, -1));
 
         jButton34.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jButton34.setText("Xóa");
@@ -3571,6 +3864,31 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
 "Bạn muốn thay đổi mật khẩu?",null, JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
     
     }//GEN-LAST:event_jButton42MouseClicked
+
+    private void jTextField37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField37ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField37ActionPerformed
+
+    private void jButton46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton46ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton46ActionPerformed
+
+    private void jPanel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel29MouseClicked
+        invisibleAllContentLayout();
+        QuanLyKhoaHoc.setVisible(true);
+    }//GEN-LAST:event_jPanel29MouseClicked
+
+    private void jPanel29MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel29MouseEntered
+        changeColor(jPanel3, new Color(0,100,150));
+        changeColor(jPanel29, new Color(0,150,200));
+        SonOfToolBar_2.setVisible(true);
+    }//GEN-LAST:event_jPanel29MouseEntered
+
+    private void jPanel29MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel29MouseExited
+        changeColor(jPanel3, new Color(0,80,100));
+        changeColor(jPanel29, new Color(0,125,175));
+        SonOfToolBar_2.setVisible(false);
+    }//GEN-LAST:event_jPanel29MouseExited
      
     /**
      * @param args the command line arguments
@@ -3623,6 +3941,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel MainLayout;
     private javax.swing.JPanel QuanLyHocKy;
     private javax.swing.JPanel QuanLyKhoa;
+    private javax.swing.JPanel QuanLyKhoaHoc;
     private javax.swing.JPanel QuanLyLop;
     private javax.swing.JPanel QuanLyMonHoc;
     private javax.swing.JPanel QuanLyNganh;
@@ -3632,6 +3951,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel SonOfToolBar_2;
     private javax.swing.JPanel SonOfToolBar_3;
     private javax.swing.JPanel TitleHocKy;
+    private javax.swing.JPanel TitleKhoaHoc;
     private javax.swing.JPanel TitleMonHoc;
     private javax.swing.JPanel TitleSinhVien;
     private javax.swing.JPanel TitleThongTinLopHoc;
@@ -3675,6 +3995,11 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JButton jButton40;
     private javax.swing.JButton jButton41;
     private javax.swing.JButton jButton42;
+    private javax.swing.JButton jButton43;
+    private javax.swing.JButton jButton44;
+    private javax.swing.JButton jButton45;
+    private javax.swing.JButton jButton46;
+    private javax.swing.JButton jButton47;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -3701,11 +4026,20 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel113;
     private javax.swing.JLabel jLabel114;
     private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
+    private javax.swing.JLabel jLabel122;
+    private javax.swing.JLabel jLabel123;
+    private javax.swing.JLabel jLabel124;
+    private javax.swing.JLabel jLabel128;
+    private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel130;
+    private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -3729,6 +4063,8 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
@@ -3786,6 +4122,11 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel100;
     private javax.swing.JPanel jPanel101;
     private javax.swing.JPanel jPanel102;
+    private javax.swing.JPanel jPanel103;
+    private javax.swing.JPanel jPanel104;
+    private javax.swing.JPanel jPanel105;
+    private javax.swing.JPanel jPanel106;
+    private javax.swing.JPanel jPanel107;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
@@ -3805,6 +4146,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
@@ -3856,6 +4198,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -3871,6 +4214,7 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JTable jTable10;
     private javax.swing.JTable jTable11;
     private javax.swing.JTable jTable12;
+    private javax.swing.JTable jTable13;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
@@ -3906,6 +4250,11 @@ public class DashboardJFrameAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField32;
     private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField34;
+    private javax.swing.JTextField jTextField35;
+    private javax.swing.JTextField jTextField36;
+    private javax.swing.JTextField jTextField37;
+    private javax.swing.JTextField jTextField38;
+    private javax.swing.JTextField jTextField39;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
