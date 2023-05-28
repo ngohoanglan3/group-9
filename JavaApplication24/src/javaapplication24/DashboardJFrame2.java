@@ -5,6 +5,7 @@
 package javaapplication24;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
@@ -16,6 +17,40 @@ import javax.swing.JPanel;
  *
  * @author ngoho
  */
+
+class HocKiPanel extends javax.swing.JPanel {
+    javax.swing.JLabel t;
+    boolean flag;
+    public HocKiPanel(String s){
+        super();
+        this.flag = false;
+        this.t = new javax.swing.JLabel();
+        t.setText(s);
+        t.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12));
+        t.setForeground(Color.white);
+        super.add(t);
+        super.setBackground(new Color(0, 150, 150));
+    };
+    public void changeFlag(){
+        if (flag == false){flag=true;}
+        else flag=false;
+    };
+    public void changeColor(JPanel hover, Color rand) {
+        hover.setBackground(rand);
+    }
+    public void addTextLabel(String s){
+        t.setText(s);
+    };
+    public void HocKiPanelMouseEntered() {
+        if (this.flag==false)
+    super.setBackground(new Color(0, 200, 200));
+    };
+    public void HocKiPanelMouseExited() {
+    if (this.flag==false)
+    super.setBackground(new Color(0, 150, 150));
+    };
+}
+
 public class DashboardJFrame2 extends javax.swing.JFrame {
 
     /**
@@ -26,11 +61,80 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     
     public DashboardJFrame2() {
         initComponents();
-        chart2.addLegend("HỌC KỲ 1", new Color(245, 189, 135));
-        chart2.addLegend("HỌC KỲ 2", new Color(135, 189, 245));
-        chart2.addLegend("HỌC KỲ 3", new Color(189, 135, 245));
-        chart2.addLegend("HỌC KỲ 4", new Color(139, 229, 222));
-        chart2.addData(new ModelChart("HỌC KỲ", new double[]{10, 9, 8, 7}));
+        
+        // CAP NHAT CAC HOC KY
+        int m = 70;
+        int n = 16;
+        HocKiPanel[] HocKi = new HocKiPanel[n];
+        HocKiPanel[] HocKiChuongTrinhKhung = new HocKiPanel[m];
+        
+        for (int i=0;i<m;i++){
+            HocKiChuongTrinhKhung[i]= new HocKiPanel("Học kỳ " + (1+i));
+            HocKiChuongTrinhKhung[i].setBounds(10, i*50+20, 120,40);
+            final int j = i;
+            HocKiChuongTrinhKhung[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                for (int t=0;t<m;t++){
+                    HocKiChuongTrinhKhung[t].flag=false;
+                    HocKiChuongTrinhKhung[t].HocKiPanelMouseExited();
+                }
+                changeColor(HocKiChuongTrinhKhung[j],new Color(0,250,250));///////////////////////KIEM THU
+                HocKiChuongTrinhKhung[j].flag=true;
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                HocKiChuongTrinhKhung[j].HocKiPanelMouseEntered();
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                if (HocKiChuongTrinhKhung[j].flag==false){
+                    HocKiChuongTrinhKhung[j].HocKiPanelMouseExited();
+                            }
+            }
+        });
+            jPanel15.setPreferredSize(new Dimension(120, m*50+30));
+            jPanel15.add(HocKiChuongTrinhKhung[i]);
+        };
+        
+        for (int i=0;i<n;i++){
+            
+            // Add HocKiPanel
+            HocKi[i] = new HocKiPanel("Học kỳ " + (1+i));
+            HocKi[i].setBounds(10, i*50+20, 120,40);
+            final int j = i;
+            HocKi[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                for (int t=0;t<n;t++){
+                    HocKi[t].flag=false;
+                    HocKi[t].HocKiPanelMouseExited();
+                }
+                changeColor(HocKi[j],new Color(0,250,250));///////////////////////KIEM THU
+                HocKi[j].flag=true;
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                HocKi[j].HocKiPanelMouseEntered();
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                if (HocKi[j].flag==false){
+                    HocKi[j].HocKiPanelMouseExited();
+                            }
+            }
+            });
+            jPanel14.setPreferredSize(new Dimension(120, n*50+30));
+            jPanel14.add(HocKi[i]);
+        };
+        
+        double diem[] = new double[n];
+        for(int i = 0; i < n;i++){
+        chart2.addLegend(""+(i+1), new Color(230, 190, 135));
+        diem[i]= i+1;
+        }
+        chart2.addData(new ModelChart("HỌC KỲ", diem));
+        //chart2.addLegend("HỌC KỲ 1", new Color(245, 189, 135));
+        //chart2.addLegend("HỌC KỲ 2", new Color(135, 189, 245));
+        //chart2.addLegend("HỌC KỲ 3", new Color(189, 135, 245));
+        //chart2.addLegend("HỌC KỲ 4", new Color(139, 229, 222));
+        //chart2.addData(new ModelChart("HỌC KỲ", new double[]{10, 9, 8, 7}));
+        
+        
         
         NoScalingIcon icon1 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/pepe.jpg")));
         avatar.setIcon(icon1);
@@ -46,6 +150,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         
         jPanel9.setVisible(false);
         jPanel12.setVisible(false);
+        
     }
     
     public void changeColor(JPanel hover, Color rand) {
@@ -76,6 +181,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         passwordField3 = new javaapplication24.PasswordField();
         jPanel24 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
+        jPanel13 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Setting = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -128,6 +234,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         scrollPaneWin111 = new javaapplication24.ScrollPaneWin11();
+        jPanel14 = new javax.swing.JPanel();
         DanhSachmon = new javax.swing.JPanel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
@@ -155,6 +262,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         scrollPaneWin113 = new javaapplication24.ScrollPaneWin11();
+        jPanel15 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         scrollPaneWin114 = new javaapplication24.ScrollPaneWin11();
         table3 = new javaapplication24.Table();
@@ -196,6 +304,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jPanel67 = new javax.swing.JPanel();
         scrollPaneWin117 = new javaapplication24.ScrollPaneWin11();
         jPanel66 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
         GopY = new javax.swing.JPanel();
         roundPanel7 = new javaapplication24.RoundPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -368,7 +477,26 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 1140, 600));
 
+        jPanel13.setOpaque(false);
+        jPanel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel13MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel13MouseExited(evt);
+            }
+        });
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jPanel2.setBackground(new java.awt.Color(23, 100, 126));
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel2MouseExited(evt);
+            }
+        });
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         Setting.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -385,9 +513,21 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         });
         jPanel2.add(Setting, java.awt.BorderLayout.CENTER);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1095, 31, 35, 35));
+        jPanel13.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 35, 35));
 
-        jPanel9.setBackground(new Color(0, 0, 0, 0));
+        getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1095, 31, 35, 37));
+        jPanel13.getAccessibleContext().setAccessibleName("");
+
+        jPanel9.setBackground(new Color(0, 0, 0));
+        jPanel9.setOpaque(false);
+        jPanel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel9MouseExited(evt);
+            }
+        });
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         changePassword1.setBackground(new Color(47, 84, 97));
@@ -408,6 +548,22 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setText("ĐỔI MẬT KHẨU");
+        jLabel31.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jLabel31MouseDragged(evt);
+            }
+        });
+        jLabel31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel31MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel31MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel31MouseExited(evt);
+            }
+        });
         changePassword1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 0, 93, 35));
 
         jPanel9.add(changePassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 125, 35));
@@ -816,6 +972,20 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Hocky.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 150, -1));
 
         scrollPaneWin111.setBackground(new Color(255, 255, 255, 100));
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 148, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 398, Short.MAX_VALUE)
+        );
+
+        scrollPaneWin111.setViewportView(jPanel14);
+
         Hocky.add(scrollPaneWin111, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, 150, 400));
 
         QuatrinhHoctap.add(Hocky, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 460));
@@ -986,6 +1156,20 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Hocky1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 150, -1));
 
         scrollPaneWin113.setBackground(new Color(255, 255, 255, 100));
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 148, Short.MAX_VALUE)
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 411, Short.MAX_VALUE)
+        );
+
+        scrollPaneWin113.setViewportView(jPanel15);
+
         Hocky1.add(scrollPaneWin113, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, 150, 413));
 
         ChuongtrinhKhung.add(Hocky1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, 470));
@@ -1088,7 +1272,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         roundPanel1Layout.setHorizontalGroup(
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundPanel1Layout.createSequentialGroup()
-                .addComponent(chart2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(chart2, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         roundPanel1Layout.setVerticalGroup(
@@ -1134,8 +1318,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("CÁC MÔN CHƯA ĐẠT");
-        roundPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 30));
+        jLabel4.setText("CÁC MÔN HỌC CẢI THIỆN");
+        roundPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 260, 30));
 
         Separator3.setBackground(new java.awt.Color(0, 0, 0));
         Separator3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1332,6 +1516,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
             }
         });
         jPanel66.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel66.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         scrollPaneWin117.setViewportView(jPanel66);
 
         jSplitPane1.setRightComponent(scrollPaneWin117);
@@ -1371,7 +1557,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel27.setText("NHẬP TIÊU ĐỀ:");
+        jLabel27.setText("NHẬP NỘI DUNG:");
         roundPanel8.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 50));
 
         jTextArea1.setColumns(20);
@@ -1519,17 +1705,13 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
     private void SettingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingMouseExited
         changeColor(jPanel2, new Color(23,100,126));  
-//        jPanel9.setVisible(false);
+        jPanel9.setVisible(false);
     }//GEN-LAST:event_SettingMouseExited
 
     private void SettingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingMouseEntered
         changeColor(jPanel2, new Color(23, 111, 126));   
-//        jPanel9.setVisible(true);
+        jPanel9.setVisible(true);
     }//GEN-LAST:event_SettingMouseEntered
-
-    private void jPanel66HierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jPanel66HierarchyChanged
-
-    }//GEN-LAST:event_jPanel66HierarchyChanged
 
     private void jSplitPane1AncestorMoved(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jSplitPane1AncestorMoved
 
@@ -1574,18 +1756,22 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
     private void changePassword1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePassword1MouseEntered
         changeColor(changePassword1, new Color(47, 97, 95));
+        jPanel9.setVisible(true);
     }//GEN-LAST:event_changePassword1MouseEntered
 
     private void changePassword1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePassword1MouseExited
         changeColor(changePassword1, new Color(47, 84, 97));
+        jPanel9.setVisible(false);
     }//GEN-LAST:event_changePassword1MouseExited
 
     private void Logout1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logout1MouseEntered
         changeColor(Logout1, new Color(47, 97, 95));
+        jPanel9.setVisible(true);
     }//GEN-LAST:event_Logout1MouseEntered
 
     private void Logout1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logout1MouseExited
         changeColor(Logout1, new Color(47, 84, 97));
+        jPanel9.setVisible(false);
     }//GEN-LAST:event_Logout1MouseExited
 
     private void Logout1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logout1MouseClicked
@@ -1608,6 +1794,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
             materialTabbed.setVisible(true);
         }
         else if (n == JOptionPane.NO_OPTION) {
+            materialTabbed.setVisible(true);
             jPanel12.setVisible(false);
         }
     }//GEN-LAST:event_jLabel33MouseClicked
@@ -1619,6 +1806,57 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private void jPanel24MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel24MouseExited
+
+    private void jLabel31MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel31MouseDragged
+
+    private void jPanel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseEntered
+        jPanel9.setVisible(true);
+    }//GEN-LAST:event_jPanel9MouseEntered
+
+    private void jPanel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseExited
+        jPanel9.setVisible(false);
+    }//GEN-LAST:event_jPanel9MouseExited
+
+    private void jPanel13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseEntered
+        changeColor(jPanel2, new Color(23, 111, 126));   
+        jPanel9.setVisible(true);
+    }//GEN-LAST:event_jPanel13MouseEntered
+
+    private void jPanel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseExited
+        changeColor(jPanel2, new Color(23,100,126));  
+        //jPanel9.setVisible(false);
+    }//GEN-LAST:event_jPanel13MouseExited
+
+    private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
+        changeColor(jPanel2, new Color(23, 111, 126));   
+        jPanel9.setVisible(true);
+    }//GEN-LAST:event_jPanel2MouseEntered
+
+    private void jPanel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseExited
+        changeColor(jPanel2, new Color(23,100,126));  
+        //jPanel9.setVisible(false);
+    }//GEN-LAST:event_jPanel2MouseExited
+
+    private void jLabel31MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseEntered
+        changeColor(changePassword1, new Color(47, 97, 95));
+        jPanel9.setVisible(true);
+    }//GEN-LAST:event_jLabel31MouseEntered
+
+    private void jLabel31MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseExited
+        changeColor(changePassword1, new Color(47, 84, 97));
+        jPanel9.setVisible(false);
+    }//GEN-LAST:event_jLabel31MouseExited
+
+    private void jLabel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseClicked
+        jPanel12.setVisible(true);
+        materialTabbed.setVisible(false);
+    }//GEN-LAST:event_jLabel31MouseClicked
+
+    private void jPanel66HierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jPanel66HierarchyChanged
+
+    }//GEN-LAST:event_jPanel66HierarchyChanged
 
     /**
      * @param args the command line arguments
@@ -1752,6 +1990,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1762,6 +2001,9 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel24;
