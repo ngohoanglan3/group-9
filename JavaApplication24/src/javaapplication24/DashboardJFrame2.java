@@ -1,21 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package javaapplication24;
 
-import java.awt.Color;
-import java.awt.geom.RoundRectangle2D;
-import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import java.awt.*;
+import javax.swing.*;
 
-/**
- *
- * @author ngoho
- */
+
+class HocKiPanel extends javax.swing.JPanel {
+    javax.swing.JLabel t;
+    boolean flag;
+    public HocKiPanel(String s){
+        super();
+        this.flag = false;
+        this.t = new javax.swing.JLabel();
+        t.setText(s);
+        t.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12));
+        t.setForeground(Color.white);
+        super.add(t);
+        super.setBackground(new Color(0, 150, 150));
+    };
+    public void changeFlag(){
+        if (flag == false){flag=true;}
+        else flag=false;
+    };
+    public void changeColor(JPanel hover, Color rand) {
+        hover.setBackground(rand);
+    }
+    public void addTextLabel(String s){
+        t.setText(s);
+    };
+    public void HocKiPanelMouseEntered() {
+        if (this.flag==false)
+    super.setBackground(new Color(0, 200, 200));
+    };
+    public void HocKiPanelMouseExited() {
+    if (this.flag==false)
+    super.setBackground(new Color(0, 150, 150));
+    };
+}
+
 public class DashboardJFrame2 extends javax.swing.JFrame {
 
     /**
@@ -26,11 +47,87 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     
     public DashboardJFrame2() {
         initComponents();
-        chart2.addLegend("HỌC KỲ 1", new Color(245, 189, 135));
-        chart2.addLegend("HỌC KỲ 2", new Color(135, 189, 245));
-        chart2.addLegend("HỌC KỲ 3", new Color(189, 135, 245));
-        chart2.addLegend("HỌC KỲ 4", new Color(139, 229, 222));
-        chart2.addData(new ModelChart("HỌC KỲ", new double[]{10, 9, 8, 7}));
+        // CAP NHAT CAC HOC KY
+        int m = 70;
+        int n = 16;
+        HocKiPanel[] HocKi = new HocKiPanel[n];
+        HocKiPanel[] HocKiChuongTrinhKhung = new HocKiPanel[m];
+        
+        for (int i=0;i<m;i++){
+            HocKiChuongTrinhKhung[i]= new HocKiPanel("Học kỳ " + (1+i));
+            HocKiChuongTrinhKhung[i].setBounds(10, i*50+20, 120,40);
+            final int j = i;
+            HocKiChuongTrinhKhung[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                for (int t=0;t<m;t++){
+                    HocKiChuongTrinhKhung[t].flag=false;
+                    HocKiChuongTrinhKhung[t].HocKiPanelMouseExited();
+                }
+                changeColor(HocKiChuongTrinhKhung[j],new Color(0,250,250));///////////////////////KIEM THU
+                HocKiChuongTrinhKhung[j].flag=true;
+            }
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                HocKiChuongTrinhKhung[j].HocKiPanelMouseEntered();
+            }
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                if (HocKiChuongTrinhKhung[j].flag==false){
+                    HocKiChuongTrinhKhung[j].HocKiPanelMouseExited();
+                            }
+            }
+        });
+            jPanel15.setPreferredSize(new Dimension(120, m*50+30));
+            jPanel15.add(HocKiChuongTrinhKhung[i]);
+        }
+        
+        for (int i=0;i<n;i++){
+            
+            // Add HocKiPanel
+            HocKi[i] = new HocKiPanel("Học kỳ " + (1+i));
+            HocKi[i].setBounds(10, i*50+20, 120,40);
+            final int j = i;
+            HocKi[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                for (int t=0;t<n;t++){
+                    HocKi[t].flag=false;
+                    HocKi[t].HocKiPanelMouseExited();
+                }
+                changeColor(HocKi[j],new Color(0,250,250));///////////////////////KIEM THU
+                HocKi[j].flag=true;
+            }
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                HocKi[j].HocKiPanelMouseEntered();
+            }
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                if (HocKi[j].flag==false){
+                    HocKi[j].HocKiPanelMouseExited();
+                            }
+            }
+            });
+            jPanel14.setPreferredSize(new Dimension(120, n*50+30));
+            jPanel14.add(HocKi[i]);
+        }
+        
+//        double diem[] = new double[n];
+//        for(int i = 0; i < n;i++){
+//        chart2.addLegend(""+(i+1), new Color(230, 190, 135));
+//        diem[i]= i+1;
+//        }
+//        chart2.addData(new ModelChart("HỌC KỲ", diem));
+        chart2.addLegend("", Color.yellow);
+        for(int i = 1; i <= 8; i++) {
+            chart2.addData(new ModelChart("Học Kỳ " + i, new double[]{i}));            
+        }
+//        chart2.addLegend("HỌC KỲ 1", new Color(245, 189, 135));
+//        chart2.addLegend("HỌC KỲ 2", new Color(135, 189, 245));
+//        chart2.addLegend("HỌC KỲ 3", new Color(189, 135, 245));
+//        chart2.addLegend("HỌC KỲ 4", new Color(139, 229, 222));
+//        chart2.addData(new ModelChart("HỌC KỲ", new double[]{10, 9, 8, 7}));
         
         NoScalingIcon icon1 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/pepe.jpg")));
         avatar.setIcon(icon1);
@@ -47,6 +144,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jPanel9.setVisible(false);
         jPanel12.setVisible(false);
     }
+
     
     public void changeColor(JPanel hover, Color rand) {
         hover.setBackground(rand);
@@ -76,6 +174,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         passwordField3 = new javaapplication24.PasswordField();
         jPanel24 = new javax.swing.JPanel();
         jLabel33 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Setting = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -128,13 +228,14 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         scrollPaneWin111 = new javaapplication24.ScrollPaneWin11();
-        DanhSachmon = new javax.swing.JPanel();
+        jPanel14 = new javax.swing.JPanel();
+        DanhSachmon = new javaapplication24.RoundPanel();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         scrollPaneWin112 = new javaapplication24.ScrollPaneWin11();
         table1 = new javaapplication24.Table();
-        Danhgia = new javax.swing.JPanel();
+        Danhgia = new javaapplication24.RoundPanel();
         jLabel16 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
@@ -155,22 +256,13 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         scrollPaneWin113 = new javaapplication24.ScrollPaneWin11();
+        jPanel15 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         scrollPaneWin114 = new javaapplication24.ScrollPaneWin11();
-        table3 = new javaapplication24.Table();
+        table2 = new javaapplication24.Table();
         ThongkeHoctap = new javax.swing.JPanel();
         roundPanel1 = new javaapplication24.RoundPanel();
         chart2 = new javaapplication24.Chart();
-        roundPanel2 = new javaapplication24.RoundPanel();
-        jLabel3 = new javax.swing.JLabel();
-        Separator2 = new javax.swing.JSeparator();
-        scrollPaneWin115 = new javaapplication24.ScrollPaneWin11();
-        table4 = new javaapplication24.Table();
-        roundPanel3 = new javaapplication24.RoundPanel();
-        jLabel4 = new javax.swing.JLabel();
-        Separator3 = new javax.swing.JSeparator();
-        scrollPaneWin116 = new javaapplication24.ScrollPaneWin11();
-        table5 = new javaapplication24.Table();
         roundPanel4 = new javaapplication24.RoundPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -186,6 +278,16 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        roundPanel10 = new javaapplication24.RoundPanel();
+        jLabel34 = new javax.swing.JLabel();
+        Separator4 = new javax.swing.JSeparator();
+        scrollPaneWin120 = new javaapplication24.ScrollPaneWin11();
+        table8 = new javaapplication24.Table();
+        roundPanel11 = new javaapplication24.RoundPanel();
+        jLabel35 = new javax.swing.JLabel();
+        Separator5 = new javax.swing.JSeparator();
+        scrollPaneWin121 = new javaapplication24.ScrollPaneWin11();
+        table7 = new javaapplication24.Table();
         ThongBao = new javax.swing.JPanel();
         roundPanel5 = new javaapplication24.RoundPanel();
         jLabel24 = new javax.swing.JLabel();
@@ -320,14 +422,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         roundPanel9.add(passwordField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 380, -1));
 
         jPanel24.setBackground(new java.awt.Color(255, 90, 0));
-        jPanel24.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel24MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel24MouseExited(evt);
-            }
-        });
         jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel33.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
@@ -340,10 +434,40 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel33MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel33MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel33MouseExited(evt);
+            }
         });
         jPanel24.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         roundPanel9.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 400, -1, -1));
+
+        jPanel25.setBackground(new java.awt.Color(255, 90, 0));
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel36.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel36.setText("HỦY ");
+        jLabel36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabel36.setPreferredSize(new java.awt.Dimension(225, 32));
+        jLabel36.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel36MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel36MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel36MouseExited(evt);
+            }
+        });
+        jPanel25.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        roundPanel9.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 350, -1, -1));
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -816,9 +940,23 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Hocky.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 150, -1));
 
         scrollPaneWin111.setBackground(new Color(255, 255, 255, 100));
-        Hocky.add(scrollPaneWin111, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, 150, 400));
 
-        QuatrinhHoctap.add(Hocky, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 460));
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 148, Short.MAX_VALUE)
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 453, Short.MAX_VALUE)
+        );
+
+        scrollPaneWin111.setViewportView(jPanel14);
+
+        Hocky.add(scrollPaneWin111, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, 150, 455));
+
+        QuatrinhHoctap.add(Hocky, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 515));
 
         DanhSachmon.setBackground(new java.awt.Color(27,36,52, 127));
         DanhSachmon.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -840,25 +978,75 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         table1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "STT", "Mã học phần", "Tên học phần", "Số tín chỉ", "ĐQT", "ĐKT", "Điểm tổng kết", "Điểm 4", "Điểm chữ", "Đạt"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Short.class, java.lang.String.class, java.lang.String.class, java.lang.Short.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
         table1.setMaximumSize(new java.awt.Dimension(2147483647, 2000));
         table1.setMinimumSize(new java.awt.Dimension(60, 2000));
         table1.setPreferredSize(new java.awt.Dimension(300, 2000));
+        table1.getTableHeader().setReorderingAllowed(false);
         scrollPaneWin112.setViewportView(table1);
+        if (table1.getColumnModel().getColumnCount() > 0) {
+            table1.getColumnModel().getColumn(0).setPreferredWidth(35);
+            table1.getColumnModel().getColumn(0).setMaxWidth(35);
+            table1.getColumnModel().getColumn(1).setPreferredWidth(85);
+            table1.getColumnModel().getColumn(1).setMaxWidth(85);
+            table1.getColumnModel().getColumn(2).setPreferredWidth(675);
+            table1.getColumnModel().getColumn(2).setMaxWidth(675);
+            table1.getColumnModel().getColumn(3).setPreferredWidth(65);
+            table1.getColumnModel().getColumn(3).setMaxWidth(65);
+            table1.getColumnModel().getColumn(4).setPreferredWidth(40);
+            table1.getColumnModel().getColumn(4).setMaxWidth(40);
+            table1.getColumnModel().getColumn(4).setHeaderValue("ĐQT");
+            table1.getColumnModel().getColumn(5).setPreferredWidth(40);
+            table1.getColumnModel().getColumn(5).setMaxWidth(40);
+            table1.getColumnModel().getColumn(5).setHeaderValue("ĐKT");
+            table1.getColumnModel().getColumn(6).setPreferredWidth(95);
+            table1.getColumnModel().getColumn(6).setMaxWidth(95);
+            table1.getColumnModel().getColumn(6).setHeaderValue("Điểm tổng kết");
+            table1.getColumnModel().getColumn(7).setPreferredWidth(55);
+            table1.getColumnModel().getColumn(7).setMaxWidth(55);
+            table1.getColumnModel().getColumn(7).setHeaderValue("Điểm 4");
+            table1.getColumnModel().getColumn(8).setPreferredWidth(70);
+            table1.getColumnModel().getColumn(8).setMaxWidth(70);
+            table1.getColumnModel().getColumn(8).setHeaderValue("Điểm chữ");
+            table1.getColumnModel().getColumn(9).setPreferredWidth(35);
+            table1.getColumnModel().getColumn(9).setMaxWidth(35);
+        }
 
-        jPanel18.add(scrollPaneWin112, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 240));
+        jPanel18.add(scrollPaneWin112, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 300));
 
-        DanhSachmon.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 55, 870, 240));
+        DanhSachmon.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 55, 870, 300));
 
-        QuatrinhHoctap.add(DanhSachmon, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 880, 300));
+        QuatrinhHoctap.add(DanhSachmon, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 880, 360));
 
         Danhgia.setBackground(new java.awt.Color(27,36,52, 127));
         Danhgia.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -951,7 +1139,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         Danhgia.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 0, 780, 140));
 
-        QuatrinhHoctap.add(Danhgia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 880, 140));
+        QuatrinhHoctap.add(Danhgia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 880, 140));
 
         materialTabbed.addTab("QUÁ TRÌNH HỌC TẬP", QuatrinhHoctap);
 
@@ -986,6 +1174,20 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Hocky1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 150, -1));
 
         scrollPaneWin113.setBackground(new Color(255, 255, 255, 100));
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 148, Short.MAX_VALUE)
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 411, Short.MAX_VALUE)
+        );
+
+        scrollPaneWin113.setViewportView(jPanel15);
+
         Hocky1.add(scrollPaneWin113, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, 150, 413));
 
         ChuongtrinhKhung.add(Hocky1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, 470));
@@ -995,68 +1197,28 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         scrollPaneWin114.setPreferredSize(new java.awt.Dimension(1090, 465));
 
-        table3.setModel(new javax.swing.table.DefaultTableModel(
+        table2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {1, "Lập trình OOP", "041412", 3, "66IT1", true},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "STT", "Tên học phần", "Mã học phần", "Số tín chỉ", "Lớp học phần", "Đạt"
+                "STT", "Mã học phần", "Tên học phần", "Số tín chỉ", "Đạt"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Short.class, java.lang.String.class, java.lang.String.class, java.lang.Short.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Short.class, java.lang.String.class, java.lang.String.class, java.lang.Short.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1067,7 +1229,24 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        scrollPaneWin114.setViewportView(table3);
+        table2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
+        table2.setMaximumSize(new java.awt.Dimension(2147483647, 2000));
+        table2.setMinimumSize(new java.awt.Dimension(60, 2000));
+        table2.setPreferredSize(new java.awt.Dimension(300, 2000));
+        table2.getTableHeader().setReorderingAllowed(false);
+        scrollPaneWin114.setViewportView(table2);
+        if (table2.getColumnModel().getColumnCount() > 0) {
+            table2.getColumnModel().getColumn(0).setPreferredWidth(35);
+            table2.getColumnModel().getColumn(0).setMaxWidth(35);
+            table2.getColumnModel().getColumn(1).setPreferredWidth(85);
+            table2.getColumnModel().getColumn(1).setMaxWidth(85);
+            table2.getColumnModel().getColumn(2).setPreferredWidth(675);
+            table2.getColumnModel().getColumn(2).setMaxWidth(675);
+            table2.getColumnModel().getColumn(3).setPreferredWidth(65);
+            table2.getColumnModel().getColumn(3).setMaxWidth(65);
+            table2.getColumnModel().getColumn(4).setPreferredWidth(35);
+            table2.getColumnModel().getColumn(4).setMaxWidth(35);
+        }
 
         jPanel1.add(scrollPaneWin114, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 5, 915, 465));
 
@@ -1082,125 +1261,80 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         roundPanel1.setPreferredSize(new java.awt.Dimension(1000, 382));
 
         chart2.setBackground(new Color(23,100,126, 0));
+        chart2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
 
         javax.swing.GroupLayout roundPanel1Layout = new javax.swing.GroupLayout(roundPanel1);
         roundPanel1.setLayout(roundPanel1Layout);
         roundPanel1Layout.setHorizontalGroup(
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(roundPanel1Layout.createSequentialGroup()
-                .addComponent(chart2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(chart2, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
         );
         roundPanel1Layout.setVerticalGroup(
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(chart2, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+            .addGroup(roundPanel1Layout.createSequentialGroup()
+                .addComponent(chart2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        ThongkeHoctap.add(roundPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 400, 310));
-
-        roundPanel2.setBackground(new Color(23,100,126, 127));
-        roundPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("CÁC MÔN CHƯA ĐẠT");
-        roundPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 30));
-
-        Separator2.setBackground(new java.awt.Color(0, 0, 0));
-        Separator2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        roundPanel2.add(Separator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 670, 3));
-
-        table4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        scrollPaneWin115.setViewportView(table4);
-
-        roundPanel2.add(scrollPaneWin115, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 33, 664, 200));
-
-        ThongkeHoctap.add(roundPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 670, 240));
-
-        roundPanel3.setBackground(new Color(23,100,126, 127));
-        roundPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("CÁC MÔN CHƯA ĐẠT");
-        roundPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 30));
-
-        Separator3.setBackground(new java.awt.Color(0, 0, 0));
-        Separator3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        roundPanel3.add(Separator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 670, 3));
-
-        table5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        scrollPaneWin116.setViewportView(table5);
-
-        roundPanel3.add(scrollPaneWin116, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 33, 664, 200));
-
-        ThongkeHoctap.add(roundPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 670, 240));
+        ThongkeHoctap.add(roundPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 770, 280));
 
         roundPanel4.setBackground(new Color(0, 0, 0, 85));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setForeground(new java.awt.Color(204, 204, 204));
         jLabel17.setText("Điểm Trung Bình Tích Lũy Hệ 10:");
 
         jLabel18.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setText("Điểm Trung Bình Tích Lũy Hệ 4:");
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setForeground(new java.awt.Color(204, 204, 204));
         jLabel19.setText("Số Tín Chỉ Tích Lũy:");
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel20.setForeground(new java.awt.Color(204, 204, 204));
         jLabel20.setText("Điều kiện ra trường:");
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setForeground(new java.awt.Color(204, 204, 204));
         jLabel21.setText("Bằng giỏi:");
 
         jLabel22.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setForeground(new java.awt.Color(204, 204, 204));
         jLabel22.setText("Bằng khá:");
 
         jLabel23.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setForeground(new java.awt.Color(204, 204, 204));
         jLabel23.setText("Yêu cầu tối thiểu:");
 
-        jLabel7.setText("jLabel7");
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("DATA");
 
-        jLabel8.setText("jLabel8");
+        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("DATA");
 
-        jLabel9.setText("jLabel9");
+        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("DATA");
 
-        jLabel11.setText("jLabel11");
+        jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("DATA");
 
-        jLabel12.setText("jLabel12");
+        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("DATA");
 
-        jLabel13.setText("jLabel13");
+        jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("DATA");
 
-        jLabel14.setText("jLabel14");
+        jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("DATA");
 
         javax.swing.GroupLayout roundPanel4Layout = new javax.swing.GroupLayout(roundPanel4);
         roundPanel4.setLayout(roundPanel4Layout);
@@ -1210,9 +1344,23 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(roundPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel19)
+                        .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(roundPanel4Layout.createSequentialGroup()
+                        .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(roundPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel9))
+                            .addGroup(roundPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel13))
+                            .addGroup(roundPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel14)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(roundPanel4Layout.createSequentialGroup()
                         .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1225,23 +1373,10 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel8))
                             .addGroup(roundPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel21)
+                                .addComponent(jLabel23)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel13))
-                            .addGroup(roundPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel22)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel14)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(roundPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel20)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel12)
-                        .addGap(13, 13, 13))))
+                                .addComponent(jLabel12)))
+                        .addGap(0, 37, Short.MAX_VALUE))))
         );
         roundPanel4Layout.setVerticalGroup(
             roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1250,32 +1385,156 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
                     .addComponent(jLabel7))
-                .addGap(5, 5, 5)
+                .addGap(6, 6, 6)
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(jLabel8))
-                .addGap(4, 4, 4)
+                .addGap(6, 6, 6)
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
+                .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel12))
+                .addGap(6, 6, 6)
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel11))
+                .addGap(6, 6, 6)
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
                     .addComponent(jLabel13))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(jLabel14))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        ThongkeHoctap.add(roundPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 400, 160));
+        ThongkeHoctap.add(roundPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, 300, 190));
+
+        roundPanel10.setBackground(new Color(23,100,126, 127));
+        roundPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel34.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel34.setText("CÁC MÔN HỌC CẢI THIỆN");
+        roundPanel10.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 24));
+
+        Separator4.setBackground(new java.awt.Color(0, 0, 0));
+        Separator4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        roundPanel10.add(Separator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 24, 525, 3));
+
+        table8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "STT", "Mã học phần", "Tên học phần", "Số tín chỉ"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Short.class, java.lang.String.class, java.lang.String.class, java.lang.Short.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollPaneWin120.setViewportView(table8);
+        if (table8.getColumnModel().getColumnCount() > 0) {
+            table8.getColumnModel().getColumn(0).setPreferredWidth(35);
+            table8.getColumnModel().getColumn(0).setMaxWidth(35);
+            table8.getColumnModel().getColumn(1).setPreferredWidth(85);
+            table8.getColumnModel().getColumn(1).setMaxWidth(85);
+            table8.getColumnModel().getColumn(2).setPreferredWidth(310);
+            table8.getColumnModel().getColumn(2).setMaxWidth(310);
+            table8.getColumnModel().getColumn(3).setPreferredWidth(80);
+            table8.getColumnModel().getColumn(3).setMaxWidth(80);
+        }
+
+        roundPanel10.add(scrollPaneWin120, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 27, 525, 180));
+
+        ThongkeHoctap.add(roundPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 310, 525, 210));
+
+        roundPanel11.setBackground(new Color(23,100,126, 127));
+        roundPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel35.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setText("CÁC MÔN CHƯA ĐẠT");
+        roundPanel11.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 24));
+
+        Separator5.setBackground(new java.awt.Color(0, 0, 0));
+        Separator5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        roundPanel11.add(Separator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 24, 525, 3));
+
+        table7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "STT", "Mã học phần", "Tên học phần", "Số tín chỉ"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Short.class, java.lang.String.class, java.lang.String.class, java.lang.Short.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollPaneWin121.setViewportView(table7);
+        if (table7.getColumnModel().getColumnCount() > 0) {
+            table7.getColumnModel().getColumn(0).setPreferredWidth(35);
+            table7.getColumnModel().getColumn(0).setMaxWidth(35);
+            table7.getColumnModel().getColumn(1).setPreferredWidth(85);
+            table7.getColumnModel().getColumn(1).setMaxWidth(85);
+            table7.getColumnModel().getColumn(2).setPreferredWidth(310);
+            table7.getColumnModel().getColumn(2).setMaxWidth(310);
+            table7.getColumnModel().getColumn(3).setPreferredWidth(80);
+            table7.getColumnModel().getColumn(3).setMaxWidth(80);
+        }
+
+        roundPanel11.add(scrollPaneWin121, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 27, 525, 180));
+
+        ThongkeHoctap.add(roundPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 525, 210));
 
         materialTabbed.addTab("THỐNG KÊ HỌC TẬP", ThongkeHoctap);
 
@@ -1608,17 +1867,29 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
             materialTabbed.setVisible(true);
         }
         else if (n == JOptionPane.NO_OPTION) {
-            jPanel12.setVisible(false);
         }
     }//GEN-LAST:event_jLabel33MouseClicked
 
-    private void jPanel24MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel24MouseEntered
+    private void jLabel33MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseEntered
+        changeColor(jPanel24, new Color(220, 86, 13));
+    }//GEN-LAST:event_jLabel33MouseEntered
 
-    private void jPanel24MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel24MouseExited
+    private void jLabel33MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseExited
+        changeColor(jPanel24, new Color(255,90,0));
+    }//GEN-LAST:event_jLabel33MouseExited
+
+    private void jLabel36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel36MouseClicked
+        jPanel12.setVisible(false);
+        materialTabbed.setVisible(true);
+    }//GEN-LAST:event_jLabel36MouseClicked
+
+    private void jLabel36MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel36MouseEntered
+        changeColor(jPanel25, new Color(220, 86, 13));
+    }//GEN-LAST:event_jLabel36MouseEntered
+
+    private void jLabel36MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel36MouseExited
+        changeColor(jPanel25, new Color(255,90,0));
+    }//GEN-LAST:event_jLabel36MouseExited
 
     /**
      * @param args the command line arguments
@@ -1663,8 +1934,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JLabel CCCD;
     private javax.swing.JLabel CCCD1;
     private javax.swing.JPanel ChuongtrinhKhung;
-    private javax.swing.JPanel DanhSachmon;
-    private javax.swing.JPanel Danhgia;
+    private javaapplication24.RoundPanel DanhSachmon;
+    private javaapplication24.RoundPanel Danhgia;
     private javax.swing.JLabel Dantoc;
     private javax.swing.JLabel Dantoc1;
     private javax.swing.JLabel Diem10;
@@ -1703,8 +1974,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JPanel QuatrinhHoctap;
     private javax.swing.JSeparator Separator;
     private javax.swing.JSeparator Separator1;
-    private javax.swing.JSeparator Separator2;
-    private javax.swing.JSeparator Separator3;
+    private javax.swing.JSeparator Separator4;
+    private javax.swing.JSeparator Separator5;
     private javax.swing.JLabel Setting;
     private javax.swing.JLabel SoTinchi;
     private javax.swing.JLabel Sodienthoai;
@@ -1747,12 +2018,13 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1762,9 +2034,12 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -1787,8 +2062,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javaapplication24.PasswordField passwordField2;
     private javaapplication24.PasswordField passwordField3;
     private javaapplication24.RoundPanel roundPanel1;
-    private javaapplication24.RoundPanel roundPanel2;
-    private javaapplication24.RoundPanel roundPanel3;
+    private javaapplication24.RoundPanel roundPanel10;
+    private javaapplication24.RoundPanel roundPanel11;
     private javaapplication24.RoundPanel roundPanel4;
     private javaapplication24.RoundPanel roundPanel5;
     private javaapplication24.RoundPanel roundPanel6;
@@ -1800,14 +2075,14 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javaapplication24.ScrollPaneWin11 scrollPaneWin112;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin113;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin114;
-    private javaapplication24.ScrollPaneWin11 scrollPaneWin115;
-    private javaapplication24.ScrollPaneWin11 scrollPaneWin116;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin117;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin118;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin119;
+    private javaapplication24.ScrollPaneWin11 scrollPaneWin120;
+    private javaapplication24.ScrollPaneWin11 scrollPaneWin121;
     private javaapplication24.Table table1;
-    private javaapplication24.Table table3;
-    private javaapplication24.Table table4;
-    private javaapplication24.Table table5;
+    private javaapplication24.Table table2;
+    private javaapplication24.Table table7;
+    private javaapplication24.Table table8;
     // End of variables declaration//GEN-END:variables
 }
