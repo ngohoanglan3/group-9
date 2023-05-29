@@ -1008,38 +1008,32 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        table1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_LAST_COLUMN);
         table1.setMaximumSize(new java.awt.Dimension(2147483647, 2000));
         table1.setMinimumSize(new java.awt.Dimension(60, 2000));
         table1.setPreferredSize(new java.awt.Dimension(300, 2000));
         table1.getTableHeader().setReorderingAllowed(false);
         scrollPaneWin112.setViewportView(table1);
         if (table1.getColumnModel().getColumnCount() > 0) {
-            table1.getColumnModel().getColumn(0).setPreferredWidth(35);
-            table1.getColumnModel().getColumn(0).setMaxWidth(35);
-            table1.getColumnModel().getColumn(1).setPreferredWidth(85);
-            table1.getColumnModel().getColumn(1).setMaxWidth(85);
-            table1.getColumnModel().getColumn(2).setPreferredWidth(675);
-            table1.getColumnModel().getColumn(2).setMaxWidth(675);
-            table1.getColumnModel().getColumn(3).setPreferredWidth(65);
-            table1.getColumnModel().getColumn(3).setMaxWidth(65);
-            table1.getColumnModel().getColumn(4).setPreferredWidth(40);
-            table1.getColumnModel().getColumn(4).setMaxWidth(40);
-            table1.getColumnModel().getColumn(4).setHeaderValue("ĐQT");
-            table1.getColumnModel().getColumn(5).setPreferredWidth(40);
-            table1.getColumnModel().getColumn(5).setMaxWidth(40);
-            table1.getColumnModel().getColumn(5).setHeaderValue("ĐKT");
-            table1.getColumnModel().getColumn(6).setPreferredWidth(95);
-            table1.getColumnModel().getColumn(6).setMaxWidth(95);
-            table1.getColumnModel().getColumn(6).setHeaderValue("Điểm tổng kết");
-            table1.getColumnModel().getColumn(7).setPreferredWidth(55);
-            table1.getColumnModel().getColumn(7).setMaxWidth(55);
-            table1.getColumnModel().getColumn(7).setHeaderValue("Điểm 4");
-            table1.getColumnModel().getColumn(8).setPreferredWidth(70);
-            table1.getColumnModel().getColumn(8).setMaxWidth(70);
-            table1.getColumnModel().getColumn(8).setHeaderValue("Điểm chữ");
-            table1.getColumnModel().getColumn(9).setPreferredWidth(35);
-            table1.getColumnModel().getColumn(9).setMaxWidth(35);
+            table1.getColumnModel().getColumn(0).setResizable(false);
+            table1.getColumnModel().getColumn(0).setPreferredWidth(0);
+            table1.getColumnModel().getColumn(1).setResizable(false);
+            table1.getColumnModel().getColumn(1).setPreferredWidth(60);
+            table1.getColumnModel().getColumn(2).setResizable(false);
+            table1.getColumnModel().getColumn(2).setPreferredWidth(300);
+            table1.getColumnModel().getColumn(3).setResizable(false);
+            table1.getColumnModel().getColumn(3).setPreferredWidth(40);
+            table1.getColumnModel().getColumn(4).setResizable(false);
+            table1.getColumnModel().getColumn(4).setPreferredWidth(0);
+            table1.getColumnModel().getColumn(5).setResizable(false);
+            table1.getColumnModel().getColumn(5).setPreferredWidth(0);
+            table1.getColumnModel().getColumn(6).setResizable(false);
+            table1.getColumnModel().getColumn(6).setPreferredWidth(65);
+            table1.getColumnModel().getColumn(7).setResizable(false);
+            table1.getColumnModel().getColumn(7).setPreferredWidth(25);
+            table1.getColumnModel().getColumn(8).setResizable(false);
+            table1.getColumnModel().getColumn(8).setPreferredWidth(45);
+            table1.getColumnModel().getColumn(9).setResizable(false);
+            table1.getColumnModel().getColumn(9).setPreferredWidth(20);
         }
 
         jPanel18.add(scrollPaneWin112, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 300));
