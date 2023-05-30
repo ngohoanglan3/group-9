@@ -186,7 +186,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Logout = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         materialTabbed = new javaapplication24.MaterialTabbed();
-        ThongtinSinhvien = new javax.swing.JPanel();
+        ThongtinSinhvien = new javaapplication24.RoundPanel();
         Separator = new javax.swing.JSeparator();
         TITLE = new javax.swing.JLabel();
         ThongtinSinhvien1 = new javaapplication24.RoundPanel();
@@ -223,7 +223,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         BacDaotao1 = new javax.swing.JLabel();
         Khoahoc1 = new javax.swing.JLabel();
         avatar = new javax.swing.JLabel();
-        QuatrinhHoctap = new javax.swing.JPanel();
+        QuatrinhHoctap2 = new javaapplication24.RoundPanel();
         Hocky = new javaapplication24.RoundPanel();
         jLabel5 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -249,7 +249,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Hocluc = new javax.swing.JLabel();
         Hoten3 = new javax.swing.JLabel();
         Hoten5 = new javax.swing.JLabel();
-        ChuongtrinhKhung = new javax.swing.JPanel();
+        ChuongtrinhKhung2 = new javaapplication24.RoundPanel();
         Separator1 = new javax.swing.JSeparator();
         TITLE1 = new javax.swing.JLabel();
         Hocky1 = new javaapplication24.RoundPanel();
@@ -562,9 +562,10 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1008, 68, -1, -1));
 
         materialTabbed.setBackground(new java.awt.Color(255, 255, 255));
+        materialTabbed.setForeground(new java.awt.Color(255, 255, 255));
+        materialTabbed.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
 
         ThongtinSinhvien.setBackground(new java.awt.Color(255, 255, 255, 80));
-        ThongtinSinhvien.setVerifyInputWhenFocusTarget(false);
         ThongtinSinhvien.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Separator.setBackground(new java.awt.Color(0, 0, 0));
@@ -920,8 +921,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         materialTabbed.addTab("THÔNG TIN SINH VIÊN", ThongtinSinhvien);
 
-        QuatrinhHoctap.setBackground(new java.awt.Color(255, 255, 255, 80));
-        QuatrinhHoctap.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        QuatrinhHoctap2.setBackground(new java.awt.Color(255, 255, 255, 80));
+        QuatrinhHoctap2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Hocky.setBackground(new java.awt.Color(27,36,52, 127));
         Hocky.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -956,7 +957,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         Hocky.add(scrollPaneWin111, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, 150, 455));
 
-        QuatrinhHoctap.add(Hocky, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 515));
+        QuatrinhHoctap2.add(Hocky, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 150, 515));
 
         DanhSachmon.setBackground(new java.awt.Color(27,36,52, 127));
         DanhSachmon.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1040,7 +1041,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         DanhSachmon.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 55, 870, 300));
 
-        QuatrinhHoctap.add(DanhSachmon, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 880, 360));
+        QuatrinhHoctap2.add(DanhSachmon, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 880, 360));
 
         Danhgia.setBackground(new java.awt.Color(27,36,52, 127));
         Danhgia.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1133,22 +1134,22 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         Danhgia.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 0, 780, 140));
 
-        QuatrinhHoctap.add(Danhgia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 880, 140));
+        QuatrinhHoctap2.add(Danhgia, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 880, 140));
 
-        materialTabbed.addTab("QUÁ TRÌNH HỌC TẬP", QuatrinhHoctap);
+        materialTabbed.addTab("QUÁ TRÌNH HỌC TẬP", QuatrinhHoctap2);
 
-        ChuongtrinhKhung.setBackground(new java.awt.Color(255, 255, 255, 80));
-        ChuongtrinhKhung.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        ChuongtrinhKhung2.setBackground(new java.awt.Color(255, 255, 255, 80));
+        ChuongtrinhKhung2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Separator1.setBackground(new java.awt.Color(0, 0, 0));
         Separator1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        ChuongtrinhKhung.add(Separator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1105, 3));
+        ChuongtrinhKhung2.add(Separator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1105, 3));
 
         TITLE1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         TITLE1.setForeground(new java.awt.Color(255, 255, 255));
         TITLE1.setText("CHƯƠNG TRÌNH KHUNG");
         TITLE1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        ChuongtrinhKhung.add(TITLE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 1090, 50));
+        ChuongtrinhKhung2.add(TITLE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 1090, 50));
 
         Hocky1.setBackground(new java.awt.Color(27,36,52, 127));
         Hocky1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1184,7 +1185,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         Hocky1.add(scrollPaneWin113, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 55, 150, 413));
 
-        ChuongtrinhKhung.add(Hocky1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, 470));
+        ChuongtrinhKhung2.add(Hocky1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 150, 470));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255, 160));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1244,9 +1245,9 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         jPanel1.add(scrollPaneWin114, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 5, 915, 465));
 
-        ChuongtrinhKhung.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 915, 470));
+        ChuongtrinhKhung2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 915, 470));
 
-        materialTabbed.addTab("CHƯƠNG TRÌNH KHUNG", ChuongtrinhKhung);
+        materialTabbed.addTab("CHƯƠNG TRÌNH KHUNG", ChuongtrinhKhung2);
 
         ThongkeHoctap.setBackground(new java.awt.Color(255, 255, 255, 80));
         ThongkeHoctap.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1927,7 +1928,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JLabel Background;
     private javax.swing.JLabel CCCD;
     private javax.swing.JLabel CCCD1;
-    private javax.swing.JPanel ChuongtrinhKhung;
+    private javaapplication24.RoundPanel ChuongtrinhKhung2;
     private javaapplication24.RoundPanel DanhSachmon;
     private javaapplication24.RoundPanel Danhgia;
     private javax.swing.JLabel Dantoc;
@@ -1965,7 +1966,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JLabel Noisinh;
     private javax.swing.JLabel Noisinh1;
     private javax.swing.JLabel Noisinh2;
-    private javax.swing.JPanel QuatrinhHoctap;
+    private javaapplication24.RoundPanel QuatrinhHoctap2;
     private javax.swing.JSeparator Separator;
     private javax.swing.JSeparator Separator1;
     private javax.swing.JSeparator Separator4;
@@ -1978,7 +1979,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JLabel TITLE1;
     private javax.swing.JPanel ThongBao;
     private javax.swing.JPanel ThongkeHoctap;
-    private javax.swing.JPanel ThongtinSinhvien;
+    private javaapplication24.RoundPanel ThongtinSinhvien;
     private javaapplication24.RoundPanel ThongtinSinhvien1;
     private javaapplication24.RoundPanel ThongtinSinhvien2;
     private javaapplication24.RoundPanel ThongtinSinhvien3;

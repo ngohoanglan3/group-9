@@ -4,15 +4,10 @@
  */
 package javaapplication24;
 
-import java.awt.Color;
-//import java.awt.geom.RoundRectangle2D;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-//import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+import java.awt.*;
+import javax.swing.*;
+
+
 
 /**
  *
