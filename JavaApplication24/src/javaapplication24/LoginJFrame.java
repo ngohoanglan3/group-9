@@ -7,6 +7,8 @@ package javaapplication24;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -58,9 +60,9 @@ public final class LoginJFrame extends javax.swing.JFrame {
         jPanel12 = new javax.swing.JPanel();
         jPanel30 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        txtName = new javax.swing.JTextField();
         jLabel73 = new javax.swing.JLabel();
-        jTextField36 = new javax.swing.JTextField();
+        txtMSSV = new javax.swing.JTextField();
         jButton43 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -117,22 +119,22 @@ public final class LoginJFrame extends javax.swing.JFrame {
         jLabel27.setText("Nhập tên:");
         jPanel30.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        jTextField13.setOpaque(true);
-        jTextField13.setPreferredSize(new java.awt.Dimension(150, 30));
-        jPanel30.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 75, 175, -1));
+        txtName.setOpaque(true);
+        txtName.setPreferredSize(new java.awt.Dimension(150, 30));
+        jPanel30.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 75, 175, -1));
 
         jLabel73.setForeground(new java.awt.Color(204, 204, 204));
         jLabel73.setText("Nhập MSSV:");
         jPanel30.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
-        jTextField36.setOpaque(true);
-        jTextField36.setPreferredSize(new java.awt.Dimension(150, 30));
-        jTextField36.addActionListener(new java.awt.event.ActionListener() {
+        txtMSSV.setOpaque(true);
+        txtMSSV.setPreferredSize(new java.awt.Dimension(150, 30));
+        txtMSSV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField36ActionPerformed(evt);
+                txtMSSVActionPerformed(evt);
             }
         });
-        jPanel30.add(jTextField36, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 175, -1));
+        jPanel30.add(txtMSSV, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 175, -1));
 
         jButton43.setBackground(new java.awt.Color(51, 0, 255));
         jButton43.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -515,9 +517,9 @@ public final class LoginJFrame extends javax.swing.JFrame {
         dash.setVisible(true);
     }//GEN-LAST:event_jLabel7MouseClicked
 
-    private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
+    private void txtMSSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMSSVActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField36ActionPerformed
+    }//GEN-LAST:event_txtMSSVActionPerformed
 
     private void jButton43MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton43MouseClicked
            Object[] options = {"Có","Không"};
@@ -530,8 +532,22 @@ public final class LoginJFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton43MouseClicked
 
+    
+    List<SINH_VIEN> dataList;
     private void jButton43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton43ActionPerformed
         // TODO add your handling code here:
+        String Name, MSSV;
+        Name = txtName.getText();
+        MSSV = txtMSSV.getText();
+        dataList = SINH_VIENDAO.getDataList();
+        for (SINH_VIEN std : dataList){
+            if(std.getTen().equals(Name)){
+                if(std.getMaSV().equals(MSSV)) {
+                    SINH_VIENDAO.passwordChange(std);
+                    JOptionPane.showMessageDialog(null, "Your password has been changed to 1111");
+                }
+            }
+        }
     }//GEN-LAST:event_jButton43ActionPerformed
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
@@ -616,7 +632,7 @@ public final class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField36;
+    private javax.swing.JTextField txtMSSV;
+    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
 }

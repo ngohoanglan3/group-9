@@ -5,7 +5,10 @@
 package javaapplication24;
 
 import java.awt.*;
+import java.util.ArrayList;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.util.List;
 
 
 /**
@@ -367,6 +370,8 @@ public class DashboardJFrame extends javax.swing.JFrame {
         jPanel66 = new javax.swing.JPanel();
         jScrollPane11 = new javax.swing.JScrollPane();
         jLabel54 = new javax.swing.JLabel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        TableThongBao = new javax.swing.JTable();
         jPanel72 = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         jPanel73 = new javax.swing.JPanel();
@@ -2683,6 +2688,21 @@ public class DashboardJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setRightComponent(jScrollPane11);
 
+        TableThongBao.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Mã Thông Báo", "Tiêu Đề", "Link Nội Dung"
+            }
+        ));
+        jScrollPane17.setViewportView(TableThongBao);
+
+        jSplitPane1.setRightComponent(jScrollPane17);
+
         ThongBao.add(jSplitPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 75, -1, 410));
 
         jPanel72.setBackground(new java.awt.Color(0, 102, 102));
@@ -3440,8 +3460,30 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseClicked
         invisibleAllContentLayout();
         ThongBao.setVisible(true);
+        
+        tableModel = (DefaultTableModel) TableThongBao.getModel();
+        dataList = new ArrayList<>();
+        
+        showDataOnTable();
     }//GEN-LAST:event_jPanel8MouseClicked
 
+    DefaultTableModel tableModel;
+    
+    List<THONG_BAO> dataList;
+    private void showDataOnTable() {
+        dataList = THONG_BAODAO.getDataList();
+        
+        tableModel.setRowCount(0);
+        
+        for (THONG_BAO th : dataList) {
+            tableModel.addRow(new Object[] {
+                tableModel.getRowCount() + 1,
+                th.getMaThongBao(),
+                th.getTieuDe(),
+                th.getLinkNoiDung()
+            });
+        }
+    }
     private void jPanel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseClicked
         invisibleAllContentLayout();
         GopY.setVisible(true);
@@ -3683,6 +3725,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel SonOfToolBar_1;
     private javax.swing.JPanel SonOfToolBar_2;
     private javax.swing.JPanel SonOfToolBar_3;
+    private javax.swing.JTable TableThongBao;
     private javax.swing.JPanel ThongBao;
     private javax.swing.JPanel ThongKe;
     private javax.swing.JPanel ThongTinSinhVien;
@@ -3854,6 +3897,7 @@ public class DashboardJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
