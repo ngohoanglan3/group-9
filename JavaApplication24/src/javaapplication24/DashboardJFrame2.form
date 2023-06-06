@@ -344,35 +344,59 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel2">
+    <Container class="javax.swing.JPanel" name="jPanel15">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="7e" green="64" red="17" type="rgb"/>
-        </Property>
+        <Property name="opaque" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel15MouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel15MouseExited"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="1095" y="31" width="35" height="35"/>
+          <AbsoluteConstraints x="1095" y="31" width="35" height="40"/>
         </Constraint>
       </Constraints>
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="false"/>
+      </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="Setting">
+        <Container class="javax.swing.JPanel" name="jPanel2">
           <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="7e" green="64" red="17" type="rgb"/>
+            </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SettingMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SettingMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SettingMouseExited"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel2MouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel2MouseExited"/>
           </Events>
           <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-              <BorderConstraints direction="Center"/>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="0" y="0" width="35" height="35"/>
             </Constraint>
           </Constraints>
-        </Component>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="Setting">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SettingMouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SettingMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SettingMouseExited"/>
+              </Events>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="Center"/>
+                </Constraint>
+              </Constraints>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel9">
@@ -381,6 +405,10 @@
           <Connection code="new Color(0, 0, 0, 0)" type="code"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel9MouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanel9MouseExited"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="1008" y="68" width="-1" height="-1"/>
@@ -394,7 +422,7 @@
         <Container class="javaapplication24.RoundPanel" name="changePassword1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new Color(47, 84, 97)" type="code"/>
+              <Connection code="new Color(47, 84, 95)" type="code"/>
             </Property>
           </Properties>
           <Events>
@@ -752,7 +780,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="Sodienthoai1" alignment="1" max="32767" attributes="0"/>
                               <Component id="Noisinh1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="Noisinh2" alignment="1" max="32767" attributes="0"/>
+                              <Component id="Thuongtru1" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -788,7 +816,7 @@
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="Thuongtru" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="Noisinh2" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="Thuongtru1" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -993,7 +1021,7 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="Noisinh2">
+                <Component class="javax.swing.JLabel" name="Thuongtru1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Light" size="14" style="0"/>
@@ -1022,21 +1050,25 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="Lophoc" min="-2" pref="85" max="-2" attributes="0"/>
-                              <Component id="Khoa" min="-2" pref="85" max="-2" attributes="0"/>
-                              <Component id="Nganh" min="-2" pref="85" max="-2" attributes="0"/>
-                              <Component id="BacDaotao" min="-2" pref="85" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="Khoahoc" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Lophoc" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="Khoa" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="Nganh" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="BacDaotao" min="-2" pref="85" max="-2" attributes="0"/>
+                                  <Component id="Loaihinh" min="-2" pref="85" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="Nganh1" alignment="0" max="32767" attributes="0"/>
                               <Component id="Khoa1" alignment="0" max="32767" attributes="0"/>
                               <Component id="Lophoc1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="BacDaotao1" alignment="0" pref="147" max="32767" attributes="0"/>
+                              <Component id="Loaihinh1" alignment="0" pref="153" max="32767" attributes="0"/>
                               <Component id="Khoahoc1" alignment="1" max="32767" attributes="0"/>
+                              <Component id="BacDaotao1" alignment="1" pref="153" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1053,9 +1085,10 @@
                                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                                   <Component id="Nganh" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                  <Component id="BacDaotao" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                  <Component id="Khoahoc" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="BacDaotao" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="BacDaotao1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="Lophoc1" min="-2" pref="50" max="-2" attributes="0"/>
@@ -1063,13 +1096,19 @@
                                   <Component id="Khoa1" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                                   <Component id="Nganh1" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                  <Component id="BacDaotao1" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                                  <Component id="Khoahoc1" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="Loaihinh" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="Loaihinh1" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="148" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="Khoahoc1" min="-2" pref="50" max="-2" attributes="0"/>
+                              <Component id="Khoahoc" alignment="0" min="-2" pref="50" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="92" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1127,7 +1166,7 @@
                     <Property name="text" type="java.lang.String" value="B&#x1ead;c &#x111;&#xe0;o t&#x1ea1;o:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="Khoahoc">
+                <Component class="javax.swing.JLabel" name="Loaihinh">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Light" size="14" style="1"/>
@@ -1136,7 +1175,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="4"/>
-                    <Property name="text" type="java.lang.String" value="Kh&#xf3;a h&#x1ecd;c:"/>
+                    <Property name="text" type="java.lang.String" value="Lo&#x1ea1;i h&#xec;nh:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Lophoc1">
@@ -1179,7 +1218,7 @@
                     <Property name="text" type="java.lang.String" value="Ng&#xe0;nh"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="BacDaotao1">
+                <Component class="javax.swing.JLabel" name="Loaihinh1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI Light" size="14" style="0"/>
@@ -1188,7 +1227,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="B&#x1ead;c &#x111;&#xe0;o t&#x1ea1;o"/>
+                    <Property name="text" type="java.lang.String" value="Lo&#x1ea1;i h&#xec;nh &#x111;&#xe0;o t&#x1ea1;o"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Khoahoc1">
@@ -1201,6 +1240,30 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Kh&#xf3;a h&#x1ecd;c"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="Khoahoc">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Light" size="14" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="4"/>
+                    <Property name="text" type="java.lang.String" value="Kh&#xf3;a h&#x1ecd;c:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="BacDaotao1">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Light" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="horizontalAlignment" type="int" value="2"/>
+                    <Property name="text" type="java.lang.String" value="B&#x1ead;c &#x111;&#xe0;o t&#x1ea1;o"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1308,6 +1371,23 @@
                   </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="jPanel13">
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="148" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="398" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                    </Container>
+                  </SubComponents>
                 </Container>
               </SubComponents>
             </Container>
@@ -1380,6 +1460,9 @@
                   </Layout>
                   <SubComponents>
                     <Container class="javaapplication24.ScrollPaneWin11" name="scrollPaneWin112">
+                      <AccessibilityProperties>
+                        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+                      </AccessibilityProperties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                           <AbsoluteConstraints x="0" y="0" width="870" height="240"/>
@@ -1391,13 +1474,17 @@
                         <Component class="javaapplication24.Table" name="table1">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="4" rowCount="4">
-                                <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                                <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                                <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                              <Table columnCount="7" rowCount="0">
+                                <Column editable="true" title="T&#xea;n m&#xf4;n" type="java.lang.Object"/>
+                                <Column editable="true" title="&#x110;i&#x1ec3;m chuy&#xea;n c&#x1ea7;n" type="java.lang.Float"/>
+                                <Column editable="true" title="&#x110;i&#x1ec3;m gi&#x1eef;a K&#x1ef3;" type="java.lang.Float"/>
+                                <Column editable="true" title="&#x110;i&#x1ec3;m K&#x1ebf;t th&#xfa;c" type="java.lang.Float"/>
+                                <Column editable="true" title="&#x110;i&#x1ec3;m trung b&#xec;nh" type="java.lang.Float"/>
+                                <Column editable="true" title="&#x110;i&#x1ec3;m ch&#x1eef;" type="java.lang.Object"/>
+                                <Column editable="true" title="&#x110;&#x1ea1;t" type="java.lang.Boolean"/>
                               </Table>
                             </Property>
+                            <Property name="enabled" type="boolean" value="false"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[2147483647, 2000]"/>
                             </Property>
@@ -1817,6 +1904,23 @@
                   </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="jPanel14">
+
+                      <Layout>
+                        <DimensionLayout dim="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="148" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                        <DimensionLayout dim="1">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="0" pref="411" max="32767" attributes="0"/>
+                          </Group>
+                        </DimensionLayout>
+                      </Layout>
+                    </Container>
+                  </SubComponents>
                 </Container>
               </SubComponents>
             </Container>
@@ -1852,8 +1956,13 @@
                   <SubComponents>
                     <Component class="javaapplication24.Table" name="table3">
                       <Properties>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="new javax.swing.table.DefaultTableModel(&#xa;    new Object [][] {&#xa;        {1, &quot;L&#x1ead;p tr&#xec;nh OOP&quot;, &quot;041412&quot;, 3, &quot;66IT1&quot;, true},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null},&#xa;        {null, null, null, null, null, null}&#xa;    },&#xa;    new String [] {&#xa;        &quot;STT&quot;, &quot;T&#xea;n h&#x1ecd;c ph&#x1ea7;n&quot;, &quot;M&#xe3; h&#x1ecd;c ph&#x1ea7;n&quot;, &quot;S&#x1ed1; t&#xed;n ch&#x1ec9;&quot;, &quot;L&#x1edb;p h&#x1ecd;c ph&#x1ea7;n&quot;, &quot;&#x110;&#x1ea1;t&quot;&#xa;    }&#xa;) {&#xa;    Class[] types = new Class [] {&#xa;        java.lang.Short.class, java.lang.String.class, java.lang.String.class, java.lang.Short.class, java.lang.String.class, java.lang.Boolean.class&#xa;    };&#xa;    boolean[] canEdit = new boolean [] {&#xa;        false, false, false, false, false, false&#xa;    };&#xa;&#xa;    public Class getColumnClass(int columnIndex) {&#xa;        return types [columnIndex];&#xa;    }&#xa;&#xa;    public boolean isCellEditable(int rowIndex, int columnIndex) {&#xa;        return canEdit [columnIndex];&#xa;    }&#xa;}" type="code"/>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="4" rowCount="2">
+                            <Column editable="false" title="M&#xe3; h&#x1ecd;c ph&#x1ea7;n" type="java.lang.String"/>
+                            <Column editable="false" title="T&#xea;n h&#x1ecd;c ph&#x1ea7;n" type="java.lang.String"/>
+                            <Column editable="false" title="H&#x1ecd;c ph&#x1ea7;n song h&#xe0;nh" type="java.lang.String"/>
+                            <Column editable="false" title="H&#x1ecd;c ph&#x1ea7;n ti&#xea;n quy&#x1ebf;t" type="java.lang.String"/>
+                          </Table>
                         </Property>
                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                           <TableColumnModel selectionModel="0"/>
@@ -1992,11 +2101,10 @@
                     <Component class="javaapplication24.Table" name="table4">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          <Table columnCount="3" rowCount="4">
+                            <Column editable="true" title="M&#xe3; h&#x1ecd;c ph&#x1ea7;n" type="java.lang.String"/>
+                            <Column editable="true" title="T&#xea;n h&#x1ecd;c ph&#x1ea7;n" type="java.lang.String"/>
+                            <Column editable="true" title="&#x110;i&#x1ec3;m trung b&#xec;nh" type="java.lang.Float"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -2067,11 +2175,10 @@
                     <Component class="javaapplication24.Table" name="table5">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          <Table columnCount="3" rowCount="4">
+                            <Column editable="true" title="M&#xe3; h&#x1ecd;c ph&#x1ea7;n" type="java.lang.String"/>
+                            <Column editable="true" title="T&#xea;n h&#x1ecd;c ph&#x1ea7;n" type="java.lang.String"/>
+                            <Column editable="true" title="&#x110;i&#x1ec3;m trung b&#xec;nh" type="java.lang.Float"/>
                           </Table>
                         </Property>
                       </Properties>

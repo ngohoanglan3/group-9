@@ -4,7 +4,9 @@
  */
 package javaapplication24;
 
+import database.SINH_VIEN_DAO;
 import java.awt.Color;
+import java.util.ArrayList;
 //import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -13,7 +15,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
+import models.SINH_VIEN;
+import java.sql.Connection;
+import models.DIEM;
+import database.DIEM_DAO;
 /**
  *
  * @author ngoho
@@ -23,6 +28,8 @@ public class LoginJFrame extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame1
      */
+    private String user;
+    private String password;
     private int x;
     private int y;
     public LoginJFrame() {
@@ -318,8 +325,14 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         textField3.setBackground(new java.awt.Color(191, 211, 222));
         textField3.setBorder(null);
+        textField3.setText("ST0002");
         textField3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         textField3.setLabelText("TÀI KHOẢN");
+        textField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textField3ActionPerformed(evt);
+            }
+        });
         jPanel14.add(textField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
 
         jPanel12.add(jPanel14, java.awt.BorderLayout.EAST);
@@ -344,6 +357,7 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         passwordField1.setBackground(new java.awt.Color(191, 211, 222));
         passwordField1.setBorder(null);
+        passwordField1.setText("123456");
         passwordField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         passwordField1.setLabelText("MẬT KHẨU");
         jPanel17.add(passwordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
@@ -546,9 +560,49 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel4formMousePressed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        
+       
+        String user = textField3.getText();
+        String password = "";
+        char[] getpassword = passwordField1.getPassword();
+        for(int i=0;i < getpassword.length;i++){
+            password+=getpassword[i];
+        };
+        SINH_VIEN x = new SINH_VIEN("ST0162","123456");
+        SINH_VIEN_DAO sinhvien1 = new SINH_VIEN_DAO();
+        //ArrayList<DIEM> xu = new DIEM_DAO().getDanhSachDiem(user, "001");
+        //for(int i=0;i<xu.size();i++){
+          //  System.out.print(xu.get(i).getDiemChuyenCan());
+        //}
+                
+        int t = sinhvien1.insert(x);
+        System.out.print(t);
+        //System.out.print(password);
+        //String query =" select * from SINH_VIEN where MaSV = '"+ user + "' and MatKhau = '" + password +"'" ;
+        try{
+        SINH_VIEN_DAO sinhvien = new SINH_VIEN_DAO();
+        SINH_VIEN thongtin = sinhvien.getThongTin(user,password);
+        
+        //System.out.print(thongtin.get(0).getMaSV());
+        if (thongtin.getMaSV().equals(user) && thongtin.getMatKhau().equals(password)){
         this.setVisible(false);
-        DashboardJFrame2 dash = new DashboardJFrame2();
-        dash.setVisible(true);
+        DashboardJFrame2 dash = new DashboardJFrame2(thongtin);
+        dash.setVisible(true);}
+        }
+        catch(Exception ex){      
+        Object[] options = {"Nhập lại"};
+        int n = JOptionPane.showOptionDialog(jPanel12,"Bạn đã nhập sai tài khoản !",
+                null,JOptionPane.CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE,null,
+                options,options[0]);
+        };
+        try{
+//        SINH_VIEN x = new SINH_VIEN("ST0162","123456");
+//        SINH_VIEN_DAO sinhvien = new SINH_VIEN_DAO();
+//        int t = sinhvien.insert(x);
+//        System.out.print(t);
+        }
+        catch(Exception ex){}
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
@@ -612,6 +666,10 @@ public class LoginJFrame extends javax.swing.JFrame {
         changeColor(jPanel8, new Color(255,90,0));
     }//GEN-LAST:event_jLabel7MouseExited
 
+    private void textField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textField3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -639,7 +697,8 @@ public class LoginJFrame extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        //String user;
+        //String password;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
