@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Dell/Documents/group-9/JavaApplication24/src/javaapplication24/ConsoleJFrame.java</file>
-            <file>file:/C:/Users/Dell/Documents/group-9/JavaApplication24/src/javaapplication24/SINH_VIEN.java</file>
-            <file>file:/C:/Users/Dell/Documents/group-9/JavaApplication24/src/javaapplication24/THONG_BAO.java</file>
-            <file>file:/C:/Users/Dell/Documents/group-9/JavaApplication24/src/javaapplication24/DashboardJFrameAdmin.java</file>
-            <file>file:/C:/Users/Dell/Documents/group-9/JavaApplication24/src/javaapplication24/THONG_BAODAO.java</file>
-            <file>file:/C:/Users/Dell/Documents/group-9/JavaApplication24/src/javaapplication24/LoginJFrame.java</file>
-            <file>file:/C:/Users/Dell/Documents/group-9/JavaApplication24/src/javaapplication24/DashboardJFrame.java</file>
-            <file>file:/C:/Users/Dell/Documents/group-9/JavaApplication24/src/javaapplication24/SINH_VIENDAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/group-9/JavaApplication24/src/database/SINH_VIEN_DAO.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/group-9/JavaApplication24/src/database/BDConnect.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/group-9/JavaApplication24/src/javaapplication24/LoginJFrame.java</file>
+            <file>file:/C:/Users/Admin/Documents/GitHub/group-9/JavaApplication24/src/javaapplication24/DashboardJFrame2.java</file>
         </group>
     </open-files>
 </project-private>
