@@ -86,4 +86,58 @@ public class SINH_VIEN_DAO extends BDConnect{
 		return kq;
 	}
     
+        public ArrayList<SINH_VIEN> getDataList() {
+        ArrayList<SINH_VIEN> dataList = new ArrayList<>();
+        
+        String sql = "select * from SINH_VIEN";
+        try {
+            PreparedStatement atm = conn.prepareStatement(sql);
+            ResultSet resultSet = atm.executeQuery();
+
+            
+            while(resultSet.next()) {
+                SINH_VIEN std = new SINH_VIEN(
+                        resultSet.getString("MaSV"), 
+                        resultSet.getString("MatKhau"), 
+                        resultSet.getString("Ho"), 
+                        resultSet.getString("Ten"), 
+                        resultSet.getString("CCCD"), 
+                        resultSet.getString("Email"),
+                        resultSet.getString("SDT"),
+                        resultSet.getString("NgaySinh"),
+                        resultSet.getBoolean("GioiTinh"),
+                        resultSet.getString("NoiSinh"),
+                        resultSet.getString("HoKhauThuongTru"),
+                        resultSet.getString("DanToc"),
+                        resultSet.getString("MaKhoaHoc"),
+                        resultSet.getString("MaLop"),
+                        resultSet.getString("MaNganh"),
+                        resultSet.getString("MaBac"),
+                        resultSet.getString("MaLoaiHinhDaoTao"),
+                        resultSet.getBoolean("flag")
+                );
+                dataList.add(std);
+            }
+        } catch (Exception ex) {
+        }
+        
+        
+        return dataList;
+    }
+        
+    public void passwordChange(String name, String MSSV) {
+        ArrayList<SINH_VIEN> dataList = new ArrayList<>();
+        
+        String sql = "update SINH_VIEN set MatKhau = 1111 where Ten = ? and MaSV = ?";
+        try {
+            PreparedStatement atm = conn.prepareStatement(sql);
+//            atm.setString(1, "1111");
+            atm.setString(1, name);
+            atm.setString(2, MSSV);
+            atm.executeQuery();
+        } catch (Exception ex) {
+        }
+        
+        
+    }
 }

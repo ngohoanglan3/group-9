@@ -105,12 +105,12 @@ public class LoginJFrame extends javax.swing.JFrame {
         jPanel27 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
-        textField4 = new javaapplication24.TextField();
+        changePassName = new javaapplication24.TextField();
         jPanel29 = new javax.swing.JPanel();
         jPanel30 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jPanel31 = new javax.swing.JPanel();
-        passwordField2 = new javaapplication24.PasswordField();
+        changePassMSSV = new javaapplication24.PasswordField();
         jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -470,11 +470,11 @@ public class LoginJFrame extends javax.swing.JFrame {
         jPanel28.setBackground(new java.awt.Color(191, 211, 222));
         jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        textField4.setBackground(new java.awt.Color(191, 211, 222));
-        textField4.setBorder(null);
-        textField4.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        textField4.setLabelText("NHẬP TÊN ");
-        jPanel28.add(textField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
+        changePassName.setBackground(new java.awt.Color(191, 211, 222));
+        changePassName.setBorder(null);
+        changePassName.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        changePassName.setLabelText("NHẬP TÊN ");
+        jPanel28.add(changePassName, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
 
         jPanel26.add(jPanel28, java.awt.BorderLayout.EAST);
 
@@ -494,11 +494,11 @@ public class LoginJFrame extends javax.swing.JFrame {
         jPanel31.setBackground(new java.awt.Color(191, 211, 222));
         jPanel31.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        passwordField2.setBackground(new java.awt.Color(191, 211, 222));
-        passwordField2.setBorder(null);
-        passwordField2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        passwordField2.setLabelText("NHẬP MSSV");
-        jPanel31.add(passwordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
+        changePassMSSV.setBackground(new java.awt.Color(191, 211, 222));
+        changePassMSSV.setBorder(null);
+        changePassMSSV.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        changePassMSSV.setLabelText("NHẬP MSSV");
+        jPanel31.add(changePassMSSV, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
 
         jPanel29.add(jPanel31, java.awt.BorderLayout.EAST);
 
@@ -621,14 +621,27 @@ public class LoginJFrame extends javax.swing.JFrame {
         jPanel20.setVisible(true);
 
     }//GEN-LAST:event_jLabel8MouseClicked
-
+    
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:    }
         Object[] options = {"Có", "Không"};
         int n = JOptionPane.showOptionDialog(jPanel12,"Bạn muốn yêu cầu cấp lại mật khẩu?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
         if (n == JOptionPane.YES_OPTION) {
-        jPanel19.setVisible(true);
-        jPanel20.setVisible(false);
+            String Name, MSSV;
+            Name = changePassName.getText();
+            MSSV = changePassMSSV.getLabelText();
+            ArrayList<SINH_VIEN> dataList = new SINH_VIEN_DAO().getDataList();
+            for (SINH_VIEN std : dataList){
+                if(std.getTen().equals(Name)){
+                    if(std.getMaSV().equals(MSSV)) {
+                        SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
+                        temp.passwordChange(Name, MSSV);
+                        JOptionPane.showMessageDialog(null, "Your password has been changed to 1111");
+                    }
+                }
+            }
+            jPanel19.setVisible(true);
+            jPanel20.setVisible(false);
         } 
         else if (n == JOptionPane.NO_OPTION) {
         }
@@ -708,6 +721,8 @@ public class LoginJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javaapplication24.PasswordField changePassMSSV;
+    private javaapplication24.TextField changePassName;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -756,8 +771,10 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javaapplication24.PasswordField passwordField1;
-    private javaapplication24.PasswordField passwordField2;
     private javaapplication24.TextField textField3;
-    private javaapplication24.TextField textField4;
     // End of variables declaration//GEN-END:variables
+
+    private Object SINH_VIEN_DAO() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

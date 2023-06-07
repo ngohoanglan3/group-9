@@ -15,6 +15,7 @@ import database.LOP_DAO;
 import database.MON_HOC_DAO;
 import database.NGANH_DAO;
 import database.SINH_VIEN_DAO;
+import database.THONG_BAO_DAO;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.geom.RoundRectangle2D;
@@ -32,6 +33,7 @@ import models.KHOA;
 import models.LOP;
 import models.MON_HOC;
 import models.SINH_VIEN;
+import models.THONG_BAO;
 
 /**
  *
@@ -423,6 +425,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jPanel67 = new javax.swing.JPanel();
         scrollPaneWin117 = new javaapplication24.ScrollPaneWin11();
         jPanel66 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TableThongBao = new javax.swing.JTable();
         GopY = new javax.swing.JPanel();
         roundPanel7 = new javaapplication24.RoundPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -541,6 +545,11 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         roundPanel9.add(passwordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 380, -1));
 
         passwordField2.setLabelText("Mật khẩu cũ");
+        passwordField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordField2ActionPerformed(evt);
+            }
+        });
         roundPanel9.add(passwordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 380, -1));
 
         passwordField3.setLabelText("Mật khẩu mới");
@@ -1608,6 +1617,22 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
             }
         });
         jPanel66.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        TableThongBao.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(TableThongBao);
+
+        jPanel66.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 410));
+
         scrollPaneWin117.setViewportView(jPanel66);
 
         jSplitPane1.setRightComponent(scrollPaneWin117);
@@ -1881,6 +1906,29 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         else if (n == JOptionPane.NO_OPTION) {
             materialTabbed.setVisible(true);
             jPanel12.setVisible(false);
+            
+            
+            
+            
+            
+            
+            tableModel = (DefaultTableModel) TableThongBao.getModel();
+            dataList = new ArrayList<>();
+
+            showDataOnTable();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
         }
     }//GEN-LAST:event_jLabel33MouseClicked
 
@@ -1948,6 +1996,10 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jPanel12.setVisible(true);
     }//GEN-LAST:event_changePassword1MouseClicked
 
+    private void passwordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordField2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1982,6 +2034,24 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 new DashboardJFrame2().setVisible(true);
             }
         });
+    }
+    
+    DefaultTableModel tableModel;
+    ArrayList<THONG_BAO> dataList;
+    
+    private void showDataOnTable() {
+        dataList = new THONG_BAO_DAO().getDataList();
+        
+        tableModel.setRowCount(0);
+        
+        for (THONG_BAO th : dataList) {
+            tableModel.addRow(new Object[] {
+                tableModel.getRowCount() + 1,
+                th.getMaThongBao(),
+                th.getTieuDe(),
+                th.getLinkNoiDung()
+            });
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2040,6 +2110,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JLabel Sodienthoai1;
     private javax.swing.JLabel TITLE;
     private javax.swing.JLabel TITLE1;
+    private javax.swing.JTable TableThongBao;
     private javax.swing.JPanel ThongBao;
     private javax.swing.JPanel ThongkeHoctap;
     private javax.swing.JPanel ThongtinSinhvien;
@@ -2107,6 +2178,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;

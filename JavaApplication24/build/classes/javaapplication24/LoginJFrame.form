@@ -879,7 +879,7 @@
                                 <Property name="useNullLayout" type="boolean" value="false"/>
                               </Layout>
                               <SubComponents>
-                                <Component class="javaapplication24.TextField" name="textField4">
+                                <Component class="javaapplication24.TextField" name="changePassName">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="de" green="d3" red="bf" type="rgb"/>
@@ -958,7 +958,7 @@
                                 <Property name="useNullLayout" type="boolean" value="false"/>
                               </Layout>
                               <SubComponents>
-                                <Component class="javaapplication24.PasswordField" name="passwordField2">
+                                <Component class="javaapplication24.PasswordField" name="changePassMSSV">
                                   <Properties>
                                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="de" green="d3" red="bf" type="rgb"/>
