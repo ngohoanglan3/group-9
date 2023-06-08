@@ -5,6 +5,7 @@
 package javaapplication24;
 
 import database.BAC_DAO_TAO_DAO;
+import database.CHUONG_TRINH_KHUNG_DAO;
 import database.DIEM_DAO;
 import database.HOC_KY_DAO;
 import database.KHOA_DAO;
@@ -26,6 +27,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import models.BAC_DAO_TAO;
+import models.CHUONG_TRINH_KHUNG;
 import models.DIEM;
 import models.HOC_KY;
 import models.KHOA;
@@ -129,18 +131,24 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Loaihinh1.setText(new LOAI_HINH_DAO_TAO_DAO().getThongTin(sinhvien.getMaLoaiHinhDaoTao()).getTenLoaiHinhDaoTao());
         
 
-// CAP NHAT CAC HOC KY
+// khoi tao cac bien
         
         
         ArrayList<String> danhsachhocky = new SINH_VIEN_DAO().getDanhSachHocKy(sinhvien.getMaSV());
+        ArrayList<Integer> danhsachchuongtrinhkhung = new CHUONG_TRINH_KHUNG_DAO().getDanhSachHocKy(sinhvien.getMaNganh());
         int n = danhsachhocky.size();
-        int m = 70;
+        int m = danhsachchuongtrinhkhung.size();
         HocKiPanel[] HocKi = new HocKiPanel[n];
         HocKiPanel[] HocKiChuongTrinhKhung = new HocKiPanel[m];
         
+        
+//CHUONG_TRINH_KHUNG
         for (int i=0;i<m;i++){
+            //crk = new CHUONG_TRINH_KHUNG_DAO().;
+            ArrayList<MON_HOC> danhsach = new CHUONG_TRINH_KHUNG_DAO().getDanhSachChuongTrinhKhung(sinhvien.getMaNganh(), danhsachchuongtrinhkhung.get(i));
             HocKiChuongTrinhKhung[i]= new HocKiPanel("Học kỳ " + (1+i));
             HocKiChuongTrinhKhung[i].setBounds(10, i*50+20, 120,40);
+            HocKiChuongTrinhKhung[i].setMonHoc(danhsach);
             final int j = i;
             HocKiChuongTrinhKhung[i].addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -150,6 +158,39 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 }
                 changeColor(HocKiChuongTrinhKhung[j],new Color(0,250,250));///////////////////////KIEM THU
                 HocKiChuongTrinhKhung[j].flag=true;
+                
+                table3.setModel(new javax.swing.table.DefaultTableModel(
+                        new Object [][] {
+
+                        },
+                        new String [] {
+                            "Mã học phần", "Tên học phần", "Học phần song hành", "Học phần tiên quyết"
+                        }
+                    ) {
+                        Class[] types = new Class [] {
+                            java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                        };
+                        boolean[] canEdit = new boolean [] {
+                            false, false, false, false
+                        };
+
+                        public Class getColumnClass(int columnIndex) {
+                            return types [columnIndex];
+                        }
+
+                        public boolean isCellEditable(int rowIndex, int columnIndex) {
+                            return canEdit [columnIndex];
+                        }
+                    });
+                for(int t=0;t< HocKiChuongTrinhKhung[j].MonHoc.size();t++){
+                    String ma =HocKiChuongTrinhKhung[j].MonHoc.get(t).getMaMon();
+                    String ten =HocKiChuongTrinhKhung[j].MonHoc.get(t).getTenMon();
+                    String songhanh=HocKiChuongTrinhKhung[j].MonHoc.get(t).getSongHanh();
+                    String tienquyet=HocKiChuongTrinhKhung[j].MonHoc.get(t).getTienQuyet();
+                    Object[] data = {ma, ten, songhanh, tienquyet};
+                    table3.addRow(data);
+                
+                }
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 HocKiChuongTrinhKhung[j].HocKiPanelMouseEntered();
@@ -163,6 +204,9 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
             jPanel14.setPreferredSize(new Dimension(120, m*50+30));
             jPanel14.add(HocKiChuongTrinhKhung[i]);
         };
+        
+
+//HOC_KY        
         HOC_KY hocky;
         for (int i=0;i<n;i++){
             
@@ -173,6 +217,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
             
             HocKi[i].setDiem(new DIEM_DAO().getDanhSachDiem(sinhvien.getMaSV(), danhsachhocky.get(i)));
             final int j = i;
+            
             HocKi[i].addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 for (int t=0;t<n;t++){
@@ -202,26 +247,85 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 int cc = new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getHeSoDCC();
                 int gk = new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getHeSoDGK();
                 int kt = new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getHeSoDKT();
+                int tinchi =0;
+                int tinchihoclai=0;
+                double tongdiem10 = 0;
+                double tongdiem4 = 0;
                 for(int t=0;t< HocKi[j].Diem.size();t++){
                     String ten = new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getTenMon(); 
+                    tinchi += new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
                     Float dcc = HocKi[j].Diem.get(t).getDiemChuyenCan();
                     Float dgk = HocKi[j].Diem.get(t).getDiemGiuaKy();
                     Float dkt = HocKi[j].Diem.get(t).getDiemKetThuc();
-                    double dtb = Math.floor(((dcc*cc+ dgk*gk)/100*(100-kt) + dkt*kt))/100;    
+                    double dtb = Math.ceil(((dcc*cc+ dgk*gk)/100*(100-kt) + dkt*kt))/100;
+                    //if(Math.ceil(((dcc*cc+ dgk*gk)/100*(100-kt) + dkt*kt))/100 <4.0) dtb = 0;
+                    tongdiem10+= dtb * new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();;
                     String dc ="A";
-                    if (dtb>=8.6) dc = "A";
-                    else if (dtb>=8) dc = "B+";
-                    else if (dtb>=7) dc = "B";
-                    else if (dtb>=6) dc = "C+";
-                    else if (dtb>=5) dc = "C";
-                    else if (dtb>=4) dc = "D";
-                    else if (dtb>=0) dc = "F";
+                    if (dtb>=8.6) {
+                        dc = "A";
+                        tongdiem4 += 4 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                    }
+                    else if (dtb>=8) {
+                        dc = "B+";
+                        tongdiem4 += 3.5 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                    }
+                    else if (dtb>=7) {
+                        dc = "B";
+                        tongdiem4 += 3 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                    }
+                    else if (dtb>=6) {
+                        dc = "C+";
+                        tongdiem4 += 2.5 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                    }
+                    else if (dtb>=5) {
+                        dc = "C";
+                        tongdiem4 += 2 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                    }
+                    else if (dtb>=4) {
+                        dc = "D";
+                        tongdiem4 += 1.5 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                    }
+                    else if (dtb>=0) {
+                        dc = "F";
+                        tongdiem4 += 1 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                    }
                     Boolean dat;
                     if(dtb >=4) dat = true;
-                    else dat = false;
+                    else {
+                        dat = false;
+                        tinchihoclai+=new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                    }
                     Object[] data = {ten, dcc, dgk, dkt, dtb, dc, dat};
                 table1.addRow(data);
             }
+                String hocluc = "Giỏi";
+                double dtbhk4 = Math.ceil(tongdiem4/tinchi*100)/100;
+                if (dtbhk4>=3.6) {
+                        hocluc = "Xuất sắc";
+                        }
+                    else if (dtbhk4>=3.2) {
+                        hocluc = "Giỏi";
+                       }
+                    else if (dtbhk4>=2.5) {
+                        hocluc = "Khá";
+                        }
+                    else if (dtbhk4>=2) {
+                        hocluc = "TB";
+                        }
+                    else if (dtbhk4>=0) {
+                        hocluc = "Kém";
+                        }
+                Diem10.setText(String.valueOf(Math.ceil(tongdiem10/tinchi*100)/100));
+                Diem10.setOpaque(true);
+                Diem4.setText(String.valueOf(dtbhk4));
+                Diem4.setOpaque(true);
+                Tinchi.setText(String.valueOf(tinchi));
+                Tinchi.setOpaque(true);
+                TinChiDaHoanThanh.setText(String.valueOf(tinchi - tinchihoclai));
+                TinChiDaHoanThanh.setOpaque(true);
+                Hocluc.setText(hocluc);
+                Hocluc.setOpaque(true);
+                
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 HocKi[j].HocKiPanelMouseEntered();
@@ -236,18 +340,77 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
             jPanel13.add(HocKi[i]);
         };
         
+        //THONG_KE
+        float diemtichluy=0;
         double diem[] = new double[n];
+        double diem1[] = new double[n];
         for(int i = 0; i < n;i++){
-        chart2.addLegend(""+(i+1), new Color(230, 190, 135));
-        diem[i]= i+1;
+        int chart = (int) Math.round(new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i)));
+        if (chart < 5)
+        chart2.addLegend(""+(i+1), new Color(255, chart*25, 0));
+        else chart2.addLegend(""+(i+1), new Color(255-chart*25, 250, 0));
+        diem[i]= new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i));
+        //if(new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i)) < 4.0)
+        //{diem[i]=0;}
+        diemtichluy+=diem[i];
         }
         chart2.addData(new ModelChart("HỌC KỲ", diem));
+        
+        
+        jLabel7.setText(String.valueOf(Math.ceil(diemtichluy/n*100)/100));
+        diemtichluy=0;
+        for(int i = 0; i < n;i++){
+        diem1[i]= new DIEM_DAO().getDiemTrungBinhHocKy4(sinhvien.getMaSV(), danhsachhocky.get(i));
+        diemtichluy+=diem1[i];
+        }
+        
+        
+        jLabel8.setText(String.valueOf(Math.ceil(diemtichluy/n*100)/100));
+        
+        
+        jLabel9.setText(String.valueOf(new DIEM_DAO().getSoTinChiTichLuu(sinhvien.getMaSV())));
+        
+        
+        float totnghiep =(float) (Math.ceil((2.0*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100);
+        float banggioi =(float) (Math.ceil((3.2*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100);
+        float bangkha =(float) (Math.ceil((2.5*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100);
+        if (totnghiep >4.0) jLabel12.setText("Không khả thi");
+        else jLabel12.setText(String.valueOf(Math.ceil((2.0*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100));
+        if (banggioi >4.0) jLabel13.setText("Không khả thi");
+        else jLabel13.setText(String.valueOf(Math.ceil((3.2*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100));
+        if (bangkha >4.0) jLabel14.setText("Không khả thi");
+        else jLabel14.setText(String.valueOf(Math.ceil((2.5*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100));
+        
+        
+        ArrayList<DIEM> monhoclai = new DIEM_DAO().getMonHocLai(sinhvien.getMaSV());
+        for(int i=0;i<monhoclai.size();i++){
+            String mamon = monhoclai.get(i).getMaMon();
+            String ten= new MON_HOC_DAO().getThongTin(mamon).getTenMon();
+            DIEM moncaonhat = new DIEM_DAO().getKiemTraDiemCaoNhat(sinhvien.getMaSV(),mamon);
+            if(new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon)<4.0)
+            {Object[] data = {mamon,ten};
+            table4.addRow(data);}
+                    }
+        
+        
+        ArrayList<DIEM> monhocnangdiem = new DIEM_DAO().getMonHocNangDiem(sinhvien.getMaSV());
+        for(int i=0;i<monhocnangdiem.size();i++){
+            String mamon = monhocnangdiem.get(i).getMaMon();
+            String ten= new MON_HOC_DAO().getThongTin(mamon).getTenMon();
+            DIEM moncaonhat = new DIEM_DAO().getKiemTraDiemCaoNhat(sinhvien.getMaSV(),mamon);
+            if(new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon)>=4.0 && new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon)< 5.0)
+            {Object[] data = {mamon,ten,new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon)};
+            table5.addRow(data);}
+                    }
+        
         //chart2.addLegend("HỌC KỲ 1", new Color(245, 189, 135));
         //chart2.addLegend("HỌC KỲ 2", new Color(135, 189, 245));
         //chart2.addLegend("HỌC KỲ 3", new Color(189, 135, 245));
         //chart2.addLegend("HỌC KỲ 4", new Color(139, 229, 222));
         //chart2.addData(new ModelChart("HỌC KỲ", new double[]{10, 9, 8, 7}));
         
+        
+        //SET_ANH
         try{
         NoScalingIcon icon1 = new NoScalingIcon(new ImageIcon(getClass().getResource("/Avatar/"+sinhvien.getMaSV()+".jpg")));
         avatar.setIcon(icon1);}
@@ -372,8 +535,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Tinchi = new javax.swing.JLabel();
         XeploaiHocluc = new javax.swing.JLabel();
         Hocluc = new javax.swing.JLabel();
-        Hoten3 = new javax.swing.JLabel();
-        Hoten5 = new javax.swing.JLabel();
+        SoTinChiDaHoanThanh = new javax.swing.JLabel();
+        TinChiDaHoanThanh = new javax.swing.JLabel();
         ChuongtrinhKhung = new javax.swing.JPanel();
         Separator1 = new javax.swing.JSeparator();
         TITLE1 = new javax.swing.JLabel();
@@ -405,11 +568,9 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -1180,12 +1341,12 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Dienhe10.setPreferredSize(new java.awt.Dimension(60, 50));
         jPanel3.add(Dienhe10, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 5, 200, -1));
 
+        Diem10.setBackground(new java.awt.Color(0, 153, 153));
         Diem10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Diem10.setForeground(new java.awt.Color(255, 255, 255));
         Diem10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Diem10.setText("10.0");
-        Diem10.setPreferredSize(new java.awt.Dimension(70, 50));
-        jPanel3.add(Diem10, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 5, -1, -1));
+        Diem10.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel3.add(Diem10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
 
         Diemhe4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         Diemhe4.setForeground(new java.awt.Color(255, 255, 255));
@@ -1194,12 +1355,12 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Diemhe4.setPreferredSize(new java.awt.Dimension(60, 50));
         jPanel3.add(Diemhe4, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 85, 200, -1));
 
+        Diem4.setBackground(new java.awt.Color(0, 153, 153));
         Diem4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Diem4.setForeground(new java.awt.Color(255, 255, 255));
         Diem4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Diem4.setText("4.0");
-        Diem4.setPreferredSize(new java.awt.Dimension(70, 50));
-        jPanel3.add(Diem4, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 85, -1, -1));
+        Diem4.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel3.add(Diem4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
 
         SoTinchi.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         SoTinchi.setForeground(new java.awt.Color(255, 255, 255));
@@ -1208,12 +1369,12 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         SoTinchi.setPreferredSize(new java.awt.Dimension(60, 50));
         jPanel3.add(SoTinchi, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 5, 130, -1));
 
+        Tinchi.setBackground(new java.awt.Color(0, 153, 153));
         Tinchi.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Tinchi.setForeground(new java.awt.Color(255, 255, 255));
         Tinchi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Tinchi.setText("20");
-        Tinchi.setPreferredSize(new java.awt.Dimension(70, 50));
-        jPanel3.add(Tinchi, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 5, -1, -1));
+        Tinchi.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel3.add(Tinchi, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 20, -1, -1));
 
         XeploaiHocluc.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         XeploaiHocluc.setForeground(new java.awt.Color(255, 255, 255));
@@ -1222,26 +1383,27 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         XeploaiHocluc.setPreferredSize(new java.awt.Dimension(60, 50));
         jPanel3.add(XeploaiHocluc, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 85, 130, -1));
 
+        Hocluc.setBackground(new java.awt.Color(0, 153, 153));
         Hocluc.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         Hocluc.setForeground(new java.awt.Color(255, 255, 255));
         Hocluc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Hocluc.setText("Giỏi");
-        Hocluc.setPreferredSize(new java.awt.Dimension(70, 50));
-        jPanel3.add(Hocluc, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 85, -1, -1));
+        Hocluc.setPreferredSize(new java.awt.Dimension(70, 25));
+        Hocluc.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel3.add(Hocluc, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 100, -1, -1));
 
-        Hoten3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        Hoten3.setForeground(new java.awt.Color(255, 255, 255));
-        Hoten3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Hoten3.setText("Số tín chỉ đã hoàn thành:");
-        Hoten3.setPreferredSize(new java.awt.Dimension(60, 50));
-        jPanel3.add(Hoten3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 5, 170, -1));
+        SoTinChiDaHoanThanh.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        SoTinChiDaHoanThanh.setForeground(new java.awt.Color(255, 255, 255));
+        SoTinChiDaHoanThanh.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        SoTinChiDaHoanThanh.setText("Số tín chỉ đã hoàn thành:");
+        SoTinChiDaHoanThanh.setPreferredSize(new java.awt.Dimension(60, 50));
+        jPanel3.add(SoTinChiDaHoanThanh, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 5, 170, -1));
 
-        Hoten5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        Hoten5.setForeground(new java.awt.Color(255, 255, 255));
-        Hoten5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Hoten5.setText("15");
-        Hoten5.setPreferredSize(new java.awt.Dimension(70, 50));
-        jPanel3.add(Hoten5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 5, 70, -1));
+        TinChiDaHoanThanh.setBackground(new java.awt.Color(0, 153, 153));
+        TinChiDaHoanThanh.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        TinChiDaHoanThanh.setForeground(new java.awt.Color(255, 255, 255));
+        TinChiDaHoanThanh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        TinChiDaHoanThanh.setPreferredSize(new java.awt.Dimension(70, 25));
+        jPanel3.add(TinChiDaHoanThanh, new org.netbeans.lib.awtextra.AbsoluteConstraints(685, 20, 70, -1));
 
         Danhgia.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 0, 780, 140));
 
@@ -1305,8 +1467,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         table3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Mã học phần", "Tên học phần", "Học phần song hành", "Học phần tiên quyết"
@@ -1353,7 +1514,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         );
         roundPanel1Layout.setVerticalGroup(
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(chart2, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+            .addComponent(chart2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         ThongkeHoctap.add(roundPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 400, 310));
@@ -1373,17 +1534,14 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         table4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
-                "Mã học phần", "Tên học phần", "Điểm trung bình"
+                "Mã học phần", "Tên học phần"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Float.class
+                java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1402,8 +1560,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("CÁC MÔN CHƯA ĐẠT");
-        roundPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 30));
+        jLabel4.setText("CÁC MÔN HỌC NÂNG ĐIỂM");
+        roundPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 280, 30));
 
         Separator3.setBackground(new java.awt.Color(0, 0, 0));
         Separator3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1411,10 +1569,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         table5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Mã học phần", "Tên học phần", "Điểm trung bình"
@@ -1450,32 +1605,38 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Điều kiện ra trường:");
+        jLabel20.setText("Để ra trường, các môn cần có GPA tối thiểu:");
 
         jLabel21.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Bằng giỏi:");
+        jLabel21.setText("Để có bằng giỏi:");
 
         jLabel22.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Bằng khá:");
+        jLabel22.setText("Để có bằng khá:");
 
-        jLabel23.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("Yêu cầu tối thiểu:");
-
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("jLabel7");
 
+        jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("jLabel8");
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("jLabel9");
 
-        jLabel11.setText("jLabel11");
-
+        jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("jLabel12");
 
+        jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("jLabel13");
 
+        jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("jLabel14");
 
         javax.swing.GroupLayout roundPanel4Layout = new javax.swing.GroupLayout(roundPanel4);
@@ -1485,11 +1646,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
             .addGroup(roundPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(roundPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(roundPanel4Layout.createSequentialGroup()
                         .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(roundPanel4Layout.createSequentialGroup()
@@ -1508,16 +1664,18 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                                 .addComponent(jLabel22)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel14)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 127, Short.MAX_VALUE))
                     .addGroup(roundPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel20)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel12)
-                        .addGap(13, 13, 13))))
+                        .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(roundPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel9))
+                            .addGroup(roundPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel12)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         roundPanel4Layout.setVerticalGroup(
             roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1537,8 +1695,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel11)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2009,8 +2165,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JLabel Hocluc;
     private javax.swing.JLabel Hoten;
     private javax.swing.JLabel Hoten1;
-    private javax.swing.JLabel Hoten3;
-    private javax.swing.JLabel Hoten5;
     private javax.swing.JLabel Khoa;
     private javax.swing.JLabel Khoa1;
     private javax.swing.JLabel Khoahoc;
@@ -2035,6 +2189,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JSeparator Separator2;
     private javax.swing.JSeparator Separator3;
     private javax.swing.JLabel Setting;
+    private javax.swing.JLabel SoTinChiDaHoanThanh;
     private javax.swing.JLabel SoTinchi;
     private javax.swing.JLabel Sodienthoai;
     private javax.swing.JLabel Sodienthoai1;
@@ -2048,6 +2203,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javaapplication24.RoundPanel ThongtinSinhvien3;
     private javax.swing.JLabel Thuongtru;
     private javax.swing.JLabel Thuongtru1;
+    private javax.swing.JLabel TinChiDaHoanThanh;
     private javax.swing.JLabel Tinchi;
     private javax.swing.JPanel Titlebar;
     private javax.swing.JLabel XeploaiHocluc;
@@ -2057,7 +2213,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javaapplication24.Chart chart2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -2070,7 +2225,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
