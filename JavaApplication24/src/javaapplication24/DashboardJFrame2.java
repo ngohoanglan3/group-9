@@ -8,14 +8,15 @@ import database.BAC_DAO_TAO_DAO;
 import database.CHUONG_TRINH_KHUNG_DAO;
 import database.DIEM_DAO;
 import database.HOC_KY_DAO;
+import database.HOM_THU_DAO;
 import database.KHOA_DAO;
 import database.KHOA_HOC_DAO;
-//import database.KHOA_HOC_DAO;
 import database.LOAI_HINH_DAO_TAO_DAO;
 import database.LOP_DAO;
 import database.MON_HOC_DAO;
 import database.NGANH_DAO;
 import database.SINH_VIEN_DAO;
+import database.THONG_BAO_DAO;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.geom.RoundRectangle2D;
@@ -30,10 +31,12 @@ import models.BAC_DAO_TAO;
 import models.CHUONG_TRINH_KHUNG;
 import models.DIEM;
 import models.HOC_KY;
+import models.HOM_THU;
 import models.KHOA;
 import models.LOP;
 import models.MON_HOC;
 import models.SINH_VIEN;
+import models.THONG_BAO;
 
 /**
  *
@@ -80,6 +83,30 @@ class HocKiPanel extends javax.swing.JPanel {
     public void HocKiPanelMouseExited() {
     if (this.flag==false)
     super.setBackground(new Color(0, 150, 150));
+    };
+}
+
+
+class ThongBaoPanel extends javax.swing.JLabel {
+    Boolean flag;
+    public ThongBaoPanel(String s){
+        super();
+        this.flag = false;
+        this.setText(s);
+        this.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14));
+        this.setForeground(new Color(51,51,51));
+    };
+    public void changeFlag(){
+        if (flag == false){flag=true;}
+        else flag=false;
+    };
+    public void ThongBaoPanelMouseEntered() {
+    if (this.flag==false)
+    super.setForeground(new Color(51,204,255));
+    };
+    public void ThongBaoPanelMouseExited() {
+    if (this.flag==false)
+    super.setForeground(new Color(51,51,51));
     };
 }
 
@@ -136,13 +163,57 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         
         ArrayList<String> danhsachhocky = new SINH_VIEN_DAO().getDanhSachHocKy(sinhvien.getMaSV());
         ArrayList<Integer> danhsachchuongtrinhkhung = new CHUONG_TRINH_KHUNG_DAO().getDanhSachHocKy(sinhvien.getMaNganh());
+        ArrayList<THONG_BAO> thongbao = new THONG_BAO_DAO().getThongTin(15);
         int n = danhsachhocky.size();
         int m = danhsachchuongtrinhkhung.size();
         HocKiPanel[] HocKi = new HocKiPanel[n];
         HocKiPanel[] HocKiChuongTrinhKhung = new HocKiPanel[m];
+        ThongBaoPanel[] DanhSachThongBao= new ThongBaoPanel[thongbao.size()];
         
+
+
+        javax.swing.JLabel[] mess = new javax.swing.JLabel[thongbao.size()];
+        for(int i=0;i<thongbao.size();i++){
+            NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/Folder/mess.png")));
+            mess[i] = new javax.swing.JLabel();
+            mess[i].setIcon(thongbaoimage);
+            DanhSachThongBao[i] = new ThongBaoPanel(thongbao.get(i).getTieuDe());
+            //DanhSachThongBao[i].setText(thongbao.get(i).getTieuDe());
+            mess[i].setBounds(10, i*50+20, 400,40);
+            DanhSachThongBao[i].setBounds(60, i*50+20, 400,40);
+            final int j = i;
+            DanhSachThongBao[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                for (int t=0;t<thongbao.size();t++){
+                    DanhSachThongBao[t].flag=false;
+                    DanhSachThongBao[t].ThongBaoPanelMouseExited();
+                }
+                DanhSachThongBao[j].setForeground(new Color(0,255,255));
+                DanhSachThongBao[j].flag=true;
+                try{
+                    NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/ThongBao/"+thongbao.get(j).getMaThongBao()+".jpg")));
+                    jLabel11.setIcon(thongbaoimage);}
+                catch(Exception ex){
+                    NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/unknown.jpg")));
+                    jLabel11.setIcon(thongbaoimage);
+                    }
+                
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DanhSachThongBao[j].ThongBaoPanelMouseEntered();
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DanhSachThongBao[j].ThongBaoPanelMouseExited();
+            }
+        });
+            jPanel16.setPreferredSize(new Dimension(120, i*50+30));
+            jPanel16.add(mess[i]);
+            jPanel16.add(DanhSachThongBao[i]);
+        }
+
         
 //CHUONG_TRINH_KHUNG
+
         for (int i=0;i<m;i++){
             //crk = new CHUONG_TRINH_KHUNG_DAO().;
             ArrayList<MON_HOC> danhsach = new CHUONG_TRINH_KHUNG_DAO().getDanhSachChuongTrinhKhung(sinhvien.getMaNganh(), danhsachchuongtrinhkhung.get(i));
@@ -431,6 +502,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jPanel9.setVisible(false);
         jPanel12.setVisible(false);
         
+        
+
     }
     
     public void changeColor(JPanel hover, Color rand) {
@@ -581,9 +654,10 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jSplitPane1 = new javax.swing.JSplitPane();
         scrollPaneWin118 = new javaapplication24.ScrollPaneWin11();
-        jPanel67 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
         scrollPaneWin117 = new javaapplication24.ScrollPaneWin11();
-        jPanel66 = new javax.swing.JPanel();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         GopY = new javax.swing.JPanel();
         roundPanel7 = new javaapplication24.RoundPanel();
         jLabel26 = new javax.swing.JLabel();
@@ -1744,27 +1818,30 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
             }
         });
 
-        jPanel67.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel67.setPreferredSize(new java.awt.Dimension(300, 410));
-        jPanel67.addHierarchyListener(new java.awt.event.HierarchyListener() {
-            public void hierarchyChanged(java.awt.event.HierarchyEvent evt) {
-                jPanel67HierarchyChanged(evt);
-            }
-        });
-        jPanel67.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        scrollPaneWin118.setViewportView(jPanel67);
+        scrollPaneWin118.setBackground(new java.awt.Color(255, 255, 255));
+        scrollPaneWin118.setMinimumSize(new java.awt.Dimension(300, 20));
+
+        jPanel16.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 148, Short.MAX_VALUE)
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 408, Short.MAX_VALUE)
+        );
+
+        scrollPaneWin118.setViewportView(jPanel16);
 
         jSplitPane1.setLeftComponent(scrollPaneWin118);
 
-        jPanel66.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel66.setPreferredSize(new java.awt.Dimension(600, 410));
-        jPanel66.addHierarchyListener(new java.awt.event.HierarchyListener() {
-            public void hierarchyChanged(java.awt.event.HierarchyEvent evt) {
-                jPanel66HierarchyChanged(evt);
-            }
-        });
-        jPanel66.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        scrollPaneWin117.setViewportView(jPanel66);
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel17.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, -80, -1, -1));
+
+        scrollPaneWin117.setViewportView(jPanel17);
 
         jSplitPane1.setRightComponent(scrollPaneWin117);
 
@@ -1967,10 +2044,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jSplitPane1AncestorResized
 
-    private void jPanel67HierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jPanel67HierarchyChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel67HierarchyChanged
-
     private void jPanel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseEntered
         changeColor(jPanel7, new Color(220, 86, 13));
     }//GEN-LAST:event_jPanel7MouseEntered
@@ -1993,7 +2066,22 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
     private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseClicked
         Object[] options = {"Có", "Không"};
-        int n = JOptionPane.showOptionDialog(GopY, "Bạn muốn gửi tới hòm thư?", null, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+        if((jTextArea2.getText().equals(null) && jTextArea1.equals(null)||
+           (jTextArea2.getText().equals(null) && jTextArea1.getText().equals(""))||
+           (jTextArea2.getText().equals("") && jTextArea1.getText().equals(null))||
+           (jTextArea2.getText().equals("") && jTextArea1.getText().equals(""))))
+           {JOptionPane.showMessageDialog(null, "Bạn phải nhập tiêu đề và nội dung thư","Nhắc nhở",JOptionPane.INFORMATION_MESSAGE);}
+        else if(jTextArea1.getText().equals("") || jTextArea2.getText().equals(null)){JOptionPane.showMessageDialog(null, "Bạn phải nhập nội dung","Nhắc nhở",JOptionPane.INFORMATION_MESSAGE);}
+        else if(jTextArea2.getText().equals("") || jTextArea2.getText().equals(null)){JOptionPane.showMessageDialog(null, "Bạn phải nhập tiêu đề","Nhắc nhở",JOptionPane.INFORMATION_MESSAGE);}
+        else{int n = JOptionPane.showOptionDialog(GopY, "Bạn muốn gửi tới hòm thư?", null, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+        if (n == JOptionPane.YES_OPTION) {
+            HOM_THU thugui = new HOM_THU(new HOM_THU_DAO().getSoThu()+1,jTextArea2.getText(),jTextArea1.getText(),sinhvien.getMaSV(),false);
+            int t = new HOM_THU_DAO().insert(thugui);
+            if (t==1) JOptionPane.showMessageDialog(null, "Bạn đã gửi thư thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+            jTextArea2.setText("");
+            jTextArea1.setText("");
+        }
+        }
     }//GEN-LAST:event_jPanel8MouseClicked
 
     private void SettingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingMouseClicked
@@ -2027,12 +2115,39 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     }//GEN-LAST:event_Logout1MouseClicked
 
     private void jLabel33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseClicked
-        // TODO add your handling code here:    }
+        String password1 = "";
+        char[] getpassword1 = passwordField1.getPassword();
+        for(int i=0;i < getpassword1.length;i++){
+            password1+=getpassword1[i];
+        };
+        
+        String password2 = "";
+        char[] getpassword2 = passwordField2.getPassword();
+        for(int i=0;i < getpassword2.length;i++){
+            password2+=getpassword2[i];
+        };
+        
+        String password3 = "";
+        char[] getpassword3 = passwordField3.getPassword();
+        for(int i=0;i < getpassword3.length;i++){
+            password3+=getpassword3[i];
+        };
+        
         Object[] options = {"Có", "Không"};
         int n = JOptionPane.showOptionDialog(jPanel12,"Bạn muốn yêu cầu cấp lại mật khẩu?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
-        if (n == JOptionPane.YES_OPTION) {            
+        if (n == JOptionPane.YES_OPTION) {
+            if ((sinhvien.getMatKhau().equals(password2)) && (password1.equals(password3))){
+            SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
+            temp.passwordChange(sinhvien.getTen(),sinhvien.getMaSV(),password3);
             jPanel12.setVisible(false);
             materialTabbed.setVisible(true);
+                JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);}
+            else {
+                System.out.println(password2);
+                System.out.println(password1);
+                System.out.println(password3);
+                JOptionPane.showMessageDialog(null, "Mật khẩu không đúng, xin hãy nhập lại","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+            }
         }
         else if (n == JOptionPane.NO_OPTION) {
             materialTabbed.setVisible(true);
@@ -2076,10 +2191,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jPanel12.setVisible(true);
         materialTabbed.setVisible(false);
     }//GEN-LAST:event_jLabel31MouseClicked
-
-    private void jPanel66HierarchyChanged(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_jPanel66HierarchyChanged
-
-    }//GEN-LAST:event_jPanel66HierarchyChanged
 
     private void jPanel15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseExited
         changeColor(jPanel2, new Color(23,100,126));  
@@ -2213,6 +2324,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javaapplication24.Chart chart2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -2249,6 +2361,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel24;
@@ -2256,8 +2370,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel66;
-    private javax.swing.JPanel jPanel67;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;

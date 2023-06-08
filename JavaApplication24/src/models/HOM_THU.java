@@ -9,17 +9,17 @@ package models;
  * @author Admin
  */
 public class HOM_THU {
-    private String MaThu;
+    private int MaThu;
     private String TieuDe;
     private String NoiDung;
     private String MaSV;
     private boolean Flag;
 
-    public String getMaThu() {
+    public int getMaThu() {
         return MaThu;
     }
 
-    public void setMaThu(String MaThu) {
+    public void setMaThu(int MaThu) {
         this.MaThu = MaThu;
     }
 
@@ -47,7 +47,7 @@ public class HOM_THU {
         this.MaSV = MaSV;
     }
 
-    public boolean isFlag() {
+    public boolean getFlag() {
         return Flag;
     }
 
@@ -58,7 +58,7 @@ public class HOM_THU {
     public HOM_THU() {
     }
 
-    public HOM_THU(String MaThu, String TieuDe, String NoiDung, String MaSV, boolean Flag) {
+    public HOM_THU(int MaThu, String TieuDe, String NoiDung, String MaSV, boolean Flag) {
         this.MaThu = MaThu;
         this.TieuDe = TieuDe;
         this.NoiDung = NoiDung;

@@ -11,32 +11,33 @@ import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import models.THONG_BAO;
 
 /**
  *
  * @author Admin
  */
-public class _DAO extends BDConnect{
+public class THONG_BAO_DAO extends BDConnect{
     
 
-    public _DAO() {
+    public THONG_BAO_DAO() {
        
     }
     
-    public SINH_VIEN getThongTin(String MaSV,String MatKhau){
-        ArrayList<SINH_VIEN> sinhvien = new ArrayList<SINH_VIEN>();
-        String query =" select * from SINH_VIEN where MaSV = '"+ MaSV + "' and MatKhau = '" + MatKhau +"'" ;
+    public ArrayList<THONG_BAO> getThongTin(int number){
+        ArrayList<THONG_BAO> thongbao = new ArrayList<THONG_BAO>();
+        String query ="select TOP "+ number+ " * from THONG_BAO order by MaThongBao DESC" ;
       try{
           PreparedStatement atm = conn.prepareStatement(query);
           ResultSet rs = atm.executeQuery();
           while (rs.next()){
-              sinhvien.add(new SINH_VIEN(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getBoolean(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),rs.getString(17),rs.getBoolean(18)));
+              thongbao.add(new THONG_BAO(rs.getInt(1),rs.getString(2),rs.getBoolean(3)));
           }
       }
       catch(Exception e){
           e.printStackTrace();
       };
-      return sinhvien.get(0);
+      return thongbao;
     };
     
     

@@ -55,35 +55,58 @@ public class SINH_VIEN_DAO extends BDConnect{
       return sinhvien.get(0);
     };
     
-    	public int insert(SINH_VIEN t) {
-		int kq = 0;
-		try {
-			String sql = "INSERT INTO SINH_VIEN(MaSV, MatKhau,Ho, Ten, CCCD, Email, SDT,NgaySinh,GioiTinh,NoiSinh,HoKhauThuongTru,DanToc,MaKhoaHoc,MaLop,MaNganh,MaBac,MaLoaiHinhDaoTao, Flag) "+"VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-			PreparedStatement pst = conn.prepareStatement(sql);
-			pst.setString(1, t.getMaSV());
-			pst.setString(2, t.getMatKhau());
-                        pst.setString(3, t.getHo());
-                        pst.setString(4, t.getTen());
-                        pst.setString(5, t.getCCCD());
-                        pst.setString(6, t.getEmail());
-                        pst.setString(7, t.getSDT());
-                        pst.setString(8, t.getNgaySinh());
-                        pst.setBoolean(9, t.getGioiTinh());
-                        pst.setString(10, t.getNoiSinh());
-                        pst.setString(11, t.getHoKhauThuongTru());
-                        pst.setString(12, t.getDanToc());
-                        pst.setString(13, t.getMaKhoaHoc());
-                        pst.setString(14, t.getMaLop());
-                        pst.setString(15, t.getMaNganh());
-                        pst.setString(16, t.getMaBac());
-                        pst.setString(17, t.getMaLoaiHinhDaoTao());
-                        pst.setBoolean(18, t.getFlag());
-			kq = pst.executeUpdate();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return kq;
-	}
+    public ArrayList<SINH_VIEN> getDataList() {
+        ArrayList<SINH_VIEN> dataList = new ArrayList<>();
+        
+        String sql = "select * from SINH_VIEN";
+        try {
+            PreparedStatement atm = conn.prepareStatement(sql);
+            ResultSet resultSet = atm.executeQuery();
+
+            
+            while(resultSet.next()) {
+                SINH_VIEN std = new SINH_VIEN(
+                        resultSet.getString("MaSV"), 
+                        resultSet.getString("MatKhau"), 
+                        resultSet.getString("Ho"), 
+                        resultSet.getString("Ten"), 
+                        resultSet.getString("CCCD"), 
+                        resultSet.getString("Email"),
+                        resultSet.getString("SDT"),
+                        resultSet.getString("NgaySinh"),
+                        resultSet.getBoolean("GioiTinh"),
+                        resultSet.getString("NoiSinh"),
+                        resultSet.getString("HoKhauThuongTru"),
+                        resultSet.getString("DanToc"),
+                        resultSet.getString("MaKhoaHoc"),
+                        resultSet.getString("MaLop"),
+                        resultSet.getString("MaNganh"),
+                        resultSet.getString("MaBac"),
+                        resultSet.getString("MaLoaiHinhDaoTao"),
+                        resultSet.getBoolean("flag")
+                );
+                dataList.add(std);
+            }
+        } catch (Exception ex) {
+        }
+        
+        
+        return dataList;
+    }
+        
+    public void passwordChange(String name, String MSSV, String password) {
+        ArrayList<SINH_VIEN> dataList = new ArrayList<>();
+        
+        String sql = "update SINH_VIEN set MatKhau = "+password+" where Ten = ? and MaSV = ?";
+        try {
+            PreparedStatement atm = conn.prepareStatement(sql);
+            atm.setString(1, name);
+            atm.setString(2, MSSV);
+            atm.executeQuery();
+        } catch (Exception ex) {
+        }
+        
+        
+    }
     
 }
