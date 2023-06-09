@@ -19,6 +19,7 @@ import models.SINH_VIEN;
 import java.sql.Connection;
 import models.DIEM;
 import database.DIEM_DAO;
+import database.DIEU_KHIEN_DAO;
 /**
  *
  * @author ngoho
@@ -568,25 +569,17 @@ public class LoginJFrame extends javax.swing.JFrame {
         for(int i=0;i < getpassword.length;i++){
             password+=getpassword[i];
         };
-        //SINH_VIEN x = new SINH_VIEN("ST0162","123456");
-        //SINH_VIEN_DAO sinhvien1 = new SINH_VIEN_DAO();
-        //ArrayList<DIEM> xu = new DIEM_DAO().getDanhSachDiem(user, "001");
-        //for(int i=0;i<xu.size();i++){
-          //  System.out.print(xu.get(i).getDiemChuyenCan());
-        //}
-                
-       
-        //System.out.print(password);
-        //String query =" select * from SINH_VIEN where MaSV = '"+ user + "' and MatKhau = '" + password +"'" ;
+        if(new DIEU_KHIEN_DAO().getVoHieuHoa().isVoHieuHoaSinhVien() == true){
         try{
         SINH_VIEN_DAO sinhvien = new SINH_VIEN_DAO();
         SINH_VIEN thongtin = sinhvien.getThongTin(user,password);
-        
+        if (thongtin.getFlag()==true){
         //System.out.print(thongtin.get(0).getMaSV());
         if (thongtin.getMaSV().equals(user) && thongtin.getMatKhau().equals(password)){
         this.setVisible(false);
         DashboardJFrame2 dash = new DashboardJFrame2(thongtin);
-        dash.setVisible(true);}
+        dash.setVisible(true);}}
+        else {JOptionPane.showMessageDialog(null, "Tài khoản của bạn hiện đang vô hiệu hóa","Đăng nhập đã bị chặn",JOptionPane.INFORMATION_MESSAGE);}
         }
         catch(Exception ex){      
         Object[] options = {"Nhập lại"};
@@ -601,7 +594,9 @@ public class LoginJFrame extends javax.swing.JFrame {
 //        int t = sinhvien.insert(x);
 //        System.out.print(t);
         }
-        catch(Exception ex){}
+        catch(Exception ex){}}
+        else {JOptionPane.showMessageDialog(null, "Hệ thống đang bảo trì","Đăng nhập đã bị chặn",JOptionPane.INFORMATION_MESSAGE);
+                }
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited

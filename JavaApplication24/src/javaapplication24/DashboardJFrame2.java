@@ -145,71 +145,38 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         
         Dantoc1.setText(sinhvien.getDanToc());
         
-        Nganh1.setText(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getTenNganh());
+        if(sinhvien.getMaNganh()!=null) if(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getFlag()==true)
+        {Nganh1.setText(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getTenNganh());
         
-        Khoa1.setText(new KHOA_DAO().getThongTin(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa()).getTenKhoa());
+        Khoa1.setText(new KHOA_DAO().getThongTin(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa()).getTenKhoa());}
         
+        if(sinhvien.getMaKhoaHoc()!=null ) if(new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getFlag()==true)
         Khoahoc1.setText(sinhvien.getMaKhoaHoc());
         
+        if(new LOP_DAO().getThongTin(sinhvien.getMaLop()).getFlag()==true)
         Lophoc1.setText(new LOP_DAO().getThongTin(sinhvien.getMaLop()).getTenLop());
         
+        if(sinhvien.getMaBac()!=null) if(new BAC_DAO_TAO_DAO().getThongTin(sinhvien.getMaBac()).getFlag()==true)
         BacDaotao1.setText(new BAC_DAO_TAO_DAO().getThongTin(sinhvien.getMaBac()).getTenBac());
         
+        if(sinhvien.getMaLoaiHinhDaoTao()!=null) if(new LOAI_HINH_DAO_TAO_DAO().getThongTin(sinhvien.getMaLoaiHinhDaoTao()).getFlag()==true)
         Loaihinh1.setText(new LOAI_HINH_DAO_TAO_DAO().getThongTin(sinhvien.getMaLoaiHinhDaoTao()).getTenLoaiHinhDaoTao());
         
 
 // khoi tao cac bien
-        
-        
+        if(sinhvien.getMaNganh()!=null ) if(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getFlag()==true)
+        if(sinhvien.getMaKhoaHoc()!=null ) if(new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getFlag()==true)
+        try{
         ArrayList<String> danhsachhocky = new SINH_VIEN_DAO().getDanhSachHocKy(sinhvien.getMaSV());
         ArrayList<Integer> danhsachchuongtrinhkhung = new CHUONG_TRINH_KHUNG_DAO().getDanhSachHocKy(sinhvien.getMaNganh());
-        ArrayList<THONG_BAO> thongbao = new THONG_BAO_DAO().getThongTin(15);
         int n = danhsachhocky.size();
         int m = danhsachchuongtrinhkhung.size();
         HocKiPanel[] HocKi = new HocKiPanel[n];
         HocKiPanel[] HocKiChuongTrinhKhung = new HocKiPanel[m];
-        ThongBaoPanel[] DanhSachThongBao= new ThongBaoPanel[thongbao.size()];
         
 
 
-        javax.swing.JLabel[] mess = new javax.swing.JLabel[thongbao.size()];
-        for(int i=0;i<thongbao.size();i++){
-            NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/Folder/mess.png")));
-            mess[i] = new javax.swing.JLabel();
-            mess[i].setIcon(thongbaoimage);
-            DanhSachThongBao[i] = new ThongBaoPanel(thongbao.get(i).getTieuDe());
-            //DanhSachThongBao[i].setText(thongbao.get(i).getTieuDe());
-            mess[i].setBounds(10, i*50+20, 400,40);
-            DanhSachThongBao[i].setBounds(60, i*50+20, 400,40);
-            final int j = i;
-            DanhSachThongBao[i].addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                for (int t=0;t<thongbao.size();t++){
-                    DanhSachThongBao[t].flag=false;
-                    DanhSachThongBao[t].ThongBaoPanelMouseExited();
-                }
-                DanhSachThongBao[j].setForeground(new Color(0,255,255));
-                DanhSachThongBao[j].flag=true;
-                try{
-                    NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/ThongBao/"+thongbao.get(j).getMaThongBao()+".jpg")));
-                    jLabel11.setIcon(thongbaoimage);}
-                catch(Exception ex){
-                    NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/unknown.jpg")));
-                    jLabel11.setIcon(thongbaoimage);
-                    }
-                
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                DanhSachThongBao[j].ThongBaoPanelMouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                DanhSachThongBao[j].ThongBaoPanelMouseExited();
-            }
-        });
-            jPanel16.setPreferredSize(new Dimension(120, i*50+30));
-            jPanel16.add(mess[i]);
-            jPanel16.add(DanhSachThongBao[i]);
-        }
+        
 
         
 //CHUONG_TRINH_KHUNG
@@ -480,6 +447,49 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         //chart2.addLegend("HỌC KỲ 3", new Color(189, 135, 245));
         //chart2.addLegend("HỌC KỲ 4", new Color(139, 229, 222));
         //chart2.addData(new ModelChart("HỌC KỲ", new double[]{10, 9, 8, 7}));
+        }
+        catch(Exception ex){ex.printStackTrace();}
+        
+        ArrayList<THONG_BAO> thongbao = new THONG_BAO_DAO().getThongTin(15);
+        ThongBaoPanel[] DanhSachThongBao= new ThongBaoPanel[thongbao.size()];
+        javax.swing.JLabel[] mess = new javax.swing.JLabel[thongbao.size()];
+        for(int i=0;i<thongbao.size();i++){
+            NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/Folder/mess.png")));
+            mess[i] = new javax.swing.JLabel();
+            mess[i].setIcon(thongbaoimage);
+            DanhSachThongBao[i] = new ThongBaoPanel(thongbao.get(i).getTieuDe());
+            //DanhSachThongBao[i].setText(thongbao.get(i).getTieuDe());
+            mess[i].setBounds(10, i*50+20, 400,40);
+            DanhSachThongBao[i].setBounds(60, i*50+20, 400,40);
+            final int j = i;
+            DanhSachThongBao[i].addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                for (int t=0;t<thongbao.size();t++){
+                    DanhSachThongBao[t].flag=false;
+                    DanhSachThongBao[t].ThongBaoPanelMouseExited();
+                }
+                DanhSachThongBao[j].setForeground(new Color(0,255,255));
+                DanhSachThongBao[j].flag=true;
+                try{
+                    NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/ThongBao/"+thongbao.get(j).getMaThongBao()+".jpg")));
+                    jLabel11.setIcon(thongbaoimage);}
+                catch(Exception ex){
+                    NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/unknown.jpg")));
+                    jLabel11.setIcon(thongbaoimage);
+                    }
+                
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DanhSachThongBao[j].ThongBaoPanelMouseEntered();
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DanhSachThongBao[j].ThongBaoPanelMouseExited();
+            }
+        });
+            jPanel16.setPreferredSize(new Dimension(120, i*50+30));
+            jPanel16.add(mess[i]);
+            jPanel16.add(DanhSachThongBao[i]);
+        }
         
         
         //SET_ANH
@@ -968,19 +978,16 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Hoten1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Hoten1.setForeground(new java.awt.Color(255, 255, 255));
         Hoten1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Hoten1.setText("Họ & tên");
         Hoten1.setPreferredSize(new java.awt.Dimension(70, 50));
 
         Mssv1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Mssv1.setForeground(new java.awt.Color(255, 255, 255));
         Mssv1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Mssv1.setText("Mã Số Sinh Viên");
         Mssv1.setPreferredSize(new java.awt.Dimension(70, 50));
 
         GioiTinh1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         GioiTinh1.setForeground(new java.awt.Color(255, 255, 255));
         GioiTinh1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        GioiTinh1.setText("Giới tính");
         GioiTinh1.setPreferredSize(new java.awt.Dimension(70, 50));
 
         javax.swing.GroupLayout ThongtinSinhvien1Layout = new javax.swing.GroupLayout(ThongtinSinhvien1);
@@ -1033,7 +1040,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Ngaysinh1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Ngaysinh1.setForeground(new java.awt.Color(255, 255, 255));
         Ngaysinh1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Ngaysinh1.setText("Ngày sinh");
         Ngaysinh1.setPreferredSize(new java.awt.Dimension(70, 50));
 
         CCCD.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
@@ -1045,7 +1051,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         CCCD1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         CCCD1.setForeground(new java.awt.Color(255, 255, 255));
         CCCD1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        CCCD1.setText("Mã CCCD");
         CCCD1.setPreferredSize(new java.awt.Dimension(70, 50));
 
         Email.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
@@ -1057,7 +1062,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Email1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Email1.setForeground(new java.awt.Color(255, 255, 255));
         Email1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Email1.setText("Email");
         Email1.setPreferredSize(new java.awt.Dimension(70, 50));
 
         Sodienthoai.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
@@ -1069,7 +1073,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Sodienthoai1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Sodienthoai1.setForeground(new java.awt.Color(255, 255, 255));
         Sodienthoai1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Sodienthoai1.setText("Số Điện Thoại");
         Sodienthoai1.setPreferredSize(new java.awt.Dimension(70, 50));
 
         Noisinh.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
@@ -1081,7 +1084,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Noisinh1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Noisinh1.setForeground(new java.awt.Color(255, 255, 255));
         Noisinh1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Noisinh1.setText("55 Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội, Việt Nam");
 
         Thuongtru.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         Thuongtru.setForeground(new java.awt.Color(255, 255, 255));
@@ -1098,13 +1100,11 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Dantoc1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Dantoc1.setForeground(new java.awt.Color(255, 255, 255));
         Dantoc1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Dantoc1.setText("Dân tộc");
         Dantoc1.setPreferredSize(new java.awt.Dimension(70, 50));
 
         Thuongtru1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Thuongtru1.setForeground(new java.awt.Color(255, 255, 255));
         Thuongtru1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Thuongtru1.setText("55 Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội, Việt Nam");
 
         javax.swing.GroupLayout ThongtinSinhvien2Layout = new javax.swing.GroupLayout(ThongtinSinhvien2);
         ThongtinSinhvien2.setLayout(ThongtinSinhvien2Layout);
@@ -1209,29 +1209,24 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         Lophoc1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Lophoc1.setForeground(new java.awt.Color(255, 255, 255));
         Lophoc1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Lophoc1.setText("Lớp học");
         Lophoc1.setToolTipText("");
         Lophoc1.setPreferredSize(new java.awt.Dimension(55, 50));
 
         Khoa1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Khoa1.setForeground(new java.awt.Color(255, 255, 255));
         Khoa1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Khoa1.setText("Khoa");
 
         Nganh1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Nganh1.setForeground(new java.awt.Color(255, 255, 255));
         Nganh1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Nganh1.setText("Ngành");
 
         Loaihinh1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Loaihinh1.setForeground(new java.awt.Color(255, 255, 255));
         Loaihinh1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Loaihinh1.setText("Loại hình đào tạo");
 
         Khoahoc1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         Khoahoc1.setForeground(new java.awt.Color(255, 255, 255));
         Khoahoc1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Khoahoc1.setText("Khóa học");
 
         Khoahoc.setFont(new java.awt.Font("Segoe UI Light", 1, 14)); // NOI18N
         Khoahoc.setForeground(new java.awt.Color(255, 255, 255));
@@ -1241,7 +1236,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         BacDaotao1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         BacDaotao1.setForeground(new java.awt.Color(255, 255, 255));
         BacDaotao1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        BacDaotao1.setText("Bậc đào tạo");
 
         javax.swing.GroupLayout ThongtinSinhvien3Layout = new javax.swing.GroupLayout(ThongtinSinhvien3);
         ThongtinSinhvien3.setLayout(ThongtinSinhvien3Layout);

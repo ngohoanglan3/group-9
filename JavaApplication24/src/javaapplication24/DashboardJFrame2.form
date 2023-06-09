@@ -693,7 +693,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="H&#x1ecd; &amp; t&#xea;n"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 50]"/>
                     </Property>
@@ -708,7 +707,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="M&#xe3; S&#x1ed1; Sinh Vi&#xea;n"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 50]"/>
                     </Property>
@@ -723,7 +721,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Gi&#x1edb;i t&#xed;nh"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 50]"/>
                     </Property>
@@ -853,7 +850,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Ng&#xe0;y sinh"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 50]"/>
                     </Property>
@@ -883,7 +879,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="M&#xe3; CCCD"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 50]"/>
                     </Property>
@@ -913,7 +908,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Email"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 50]"/>
                     </Property>
@@ -943,7 +937,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="S&#x1ed1; &#x110;i&#x1ec7;n Tho&#x1ea1;i"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 50]"/>
                     </Property>
@@ -973,7 +966,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="55 Gi&#x1ea3;i Ph&#xf3;ng, &#x110;&#x1ed3;ng T&#xe2;m, Hai B&#xe0; Tr&#x1b0;ng, H&#xe0; N&#x1ed9;i, Vi&#x1ec7;t Nam"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Thuongtru">
@@ -1015,7 +1007,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="D&#xe2;n t&#x1ed9;c"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[70, 50]"/>
                     </Property>
@@ -1030,7 +1021,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="55 Gi&#x1ea3;i Ph&#xf3;ng, &#x110;&#x1ed3;ng T&#xe2;m, Hai B&#xe0; Tr&#x1b0;ng, H&#xe0; N&#x1ed9;i, Vi&#x1ec7;t Nam"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -1187,7 +1177,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="L&#x1edb;p h&#x1ecd;c"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[55, 50]"/>
@@ -1203,7 +1192,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Khoa"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Nganh1">
@@ -1215,7 +1203,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Ng&#xe0;nh"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Loaihinh1">
@@ -1227,7 +1214,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Lo&#x1ea1;i h&#xec;nh &#x111;&#xe0;o t&#x1ea1;o"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Khoahoc1">
@@ -1239,7 +1225,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Kh&#xf3;a h&#x1ecd;c"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="Khoahoc">
@@ -1263,7 +1248,6 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="B&#x1ead;c &#x111;&#xe0;o t&#x1ea1;o"/>
                   </Properties>
                 </Component>
               </SubComponents>
