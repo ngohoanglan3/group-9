@@ -55,6 +55,10 @@ public class SINH_VIEN_DAO extends BDConnect{
       return sinhvien.get(0);
     };
     
+    
+    
+    
+    
     public ArrayList<SINH_VIEN> getDataList() {
         ArrayList<SINH_VIEN> dataList = new ArrayList<>();
         
@@ -108,5 +112,22 @@ public class SINH_VIEN_DAO extends BDConnect{
         
         
     }
+ 
     
+    
+    public SINH_VIEN getThongTin2(String Ten,String MaSV){
+        ArrayList<SINH_VIEN> sinhvien = new ArrayList<SINH_VIEN>();
+        String query =" select * from SINH_VIEN where MaSV = '"+ MaSV + "' and Ten = '" + Ten +"'" ;
+      try{
+          PreparedStatement atm = conn.prepareStatement(query);
+          ResultSet rs = atm.executeQuery();
+          while (rs.next()){
+              sinhvien.add(new SINH_VIEN(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getBoolean(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),rs.getString(17),rs.getBoolean(18)));
+          }
+      }
+      catch(Exception e){
+          e.printStackTrace();
+      };
+      return sinhvien.get(0);
+    };
 }

@@ -295,7 +295,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                     HocKi[t].flag=false;
                     HocKi[t].HocKiPanelMouseExited();
                 }
-                changeColor(HocKi[j],new Color(0,250,250));///////////////////////KIEM THU
+                changeColor(HocKi[j],new Color(0,250,250));
                 HocKi[j].flag=true;
                 
                 
@@ -425,6 +425,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         //{diem[i]=0;}
         diemtichluy+=diem[i];
         }
+        //for (int i=0;i<5;i++){diem[3+i]=10; chart2.addLegend("11", Color.yellow);};
         chart2.addData(new ModelChart("HỌC KỲ", diem));
         
         
@@ -1379,7 +1380,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         table1.setEnabled(false);
         table1.setMaximumSize(new java.awt.Dimension(2147483647, 2000));
         table1.setMinimumSize(new java.awt.Dimension(60, 2000));
-        table1.setPreferredSize(new java.awt.Dimension(300, 2000));
         scrollPaneWin112.setViewportView(table1);
 
         jPanel18.add(scrollPaneWin112, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 240));
@@ -1562,6 +1562,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        table3.setEnabled(false);
         scrollPaneWin114.setViewportView(table3);
 
         jPanel1.add(scrollPaneWin114, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 5, 915, 465));
@@ -1622,6 +1623,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        table4.setEnabled(false);
         scrollPaneWin115.setViewportView(table4);
 
         roundPanel2.add(scrollPaneWin115, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 33, 664, 200));
@@ -1657,6 +1659,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        table5.setEnabled(false);
         scrollPaneWin116.setViewportView(table5);
 
         roundPanel3.add(scrollPaneWin116, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 33, 664, 200));

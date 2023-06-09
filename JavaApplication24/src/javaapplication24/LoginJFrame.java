@@ -645,6 +645,8 @@ public class LoginJFrame extends javax.swing.JFrame {
                     }
                 }
             }
+            //System.out.println(MSSV);
+            //System.out.print(Name);
             jPanel19.setVisible(true);
             jPanel20.setVisible(false);
         } 
