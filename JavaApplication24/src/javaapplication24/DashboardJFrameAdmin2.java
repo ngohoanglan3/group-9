@@ -1,8 +1,11 @@
 package javaapplication24;
 
 import java.awt.*;
+import java.io.File;
+import java.nio.file.spi.FileTypeDetector;
 import java.util.ArrayList;
 import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
 
 public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private int x;
@@ -99,8 +102,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         roundPanel10 = new javaapplication24.RoundPanel();
@@ -213,7 +214,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jTextField17 = new javax.swing.JTextField();
         jLabel47 = new javax.swing.JLabel();
         jTextField18 = new javax.swing.JTextField();
-        jLabel48 = new javax.swing.JLabel();
         roundPanel46 = new javaapplication24.RoundPanel();
         jLabel65 = new javax.swing.JLabel();
         roundPanel47 = new javaapplication24.RoundPanel();
@@ -226,8 +226,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         table6 = new javaapplication24.Table();
         roundPanel52 = new javaapplication24.RoundPanel();
         jLabel49 = new javax.swing.JLabel();
-        scrollPaneWin111 = new javaapplication24.ScrollPaneWin11();
-        jTextArea1 = new javax.swing.JTextArea();
         jLabel50 = new javax.swing.JLabel();
         jTextField19 = new javax.swing.JTextField();
         roundPanel53 = new javaapplication24.RoundPanel();
@@ -256,7 +254,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jTextField21 = new javax.swing.JTextField();
         jLabel55 = new javax.swing.JLabel();
         jTextField22 = new javax.swing.JTextField();
-        jLabel56 = new javax.swing.JLabel();
         roundPanel60 = new javaapplication24.RoundPanel();
         jLabel72 = new javax.swing.JLabel();
         roundPanel61 = new javaapplication24.RoundPanel();
@@ -269,8 +266,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         table7 = new javaapplication24.Table();
         roundPanel64 = new javaapplication24.RoundPanel();
         jLabel57 = new javax.swing.JLabel();
-        scrollPaneWin118 = new javaapplication24.ScrollPaneWin11();
-        jTextArea2 = new javax.swing.JTextArea();
         jLabel58 = new javax.swing.JLabel();
         jTextField23 = new javax.swing.JTextField();
         roundPanel65 = new javaapplication24.RoundPanel();
@@ -353,6 +348,8 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         roundPanel91 = new javaapplication24.RoundPanel();
         jLabel98 = new javax.swing.JLabel();
         jTextField33 = new javax.swing.JTextField();
+        jLabel107 = new javax.swing.JLabel();
+        jTextField34 = new javax.swing.JTextField();
         roundPanel92 = new javaapplication24.RoundPanel();
         roundPanel93 = new javaapplication24.RoundPanel();
         jLabel99 = new javax.swing.JLabel();
@@ -376,6 +373,28 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         scrollPaneWin124 = new javaapplication24.ScrollPaneWin11();
         jPanel66 = new javax.swing.JPanel();
         Homthu = new javaapplication24.RoundPanel();
+        roundPanel97 = new javaapplication24.RoundPanel();
+        roundPanel98 = new javaapplication24.RoundPanel();
+        jLabel48 = new javax.swing.JLabel();
+        scrollPaneWin118 = new javaapplication24.ScrollPaneWin11();
+        table12 = new javaapplication24.Table();
+        roundPanel99 = new javaapplication24.RoundPanel();
+        roundPanel100 = new javaapplication24.RoundPanel();
+        jLabel56 = new javax.swing.JLabel();
+        scrollPaneWin127 = new javaapplication24.ScrollPaneWin11();
+        table14 = new javaapplication24.Table();
+        CapNhatTaiKhoanSinhVien7 = new javaapplication24.RoundPanel();
+        roundPanel101 = new javaapplication24.RoundPanel();
+        Title14 = new javax.swing.JLabel();
+        roundPanel102 = new javaapplication24.RoundPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel110 = new javax.swing.JLabel();
+        jTextField35 = new javax.swing.JTextField();
+        jLabel111 = new javax.swing.JLabel();
+        scrollPaneWin111 = new javaapplication24.ScrollPaneWin11();
+        jTextArea1 = new javax.swing.JTextArea();
+        NhapDiem = new javaapplication24.RoundPanel();
         QuanLyGiangVien = new javaapplication24.RoundPanel();
         jLabel100 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
@@ -527,7 +546,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel4.setText("LÀM MỚI");
         roundPanel9.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
-        roundPanel7.add(roundPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 10, 80, 40));
+        roundPanel7.add(roundPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 10, 80, 40));
 
         roundPanel8.setBackground(new java.awt.Color(0, 153, 0));
         roundPanel8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -546,7 +565,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel5.setText("TÌM");
         roundPanel8.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 55, 40));
 
-        roundPanel7.add(roundPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 55, 40));
+        roundPanel7.add(roundPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 10, 55, 40));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -558,25 +577,15 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jTextField2.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
         roundPanel7.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 210, 40));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setText("TÀI KHOẢN:");
-        roundPanel7.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 90, 40));
-
-        jTextField3.setBackground(new Color(255, 255, 255, 180));
-        jTextField3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jTextField3.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
-        roundPanel7.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 105, 210, 40));
-
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel8.setText("MẬT KHẨU:");
-        roundPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 90, 40));
+        roundPanel7.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 90, 40));
 
         jTextField4.setBackground(new Color(255, 255, 255, 180));
         jTextField4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jTextField4.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
-        roundPanel7.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 210, 40));
+        roundPanel7.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 105, 210, 40));
 
         roundPanel10.setBackground(new java.awt.Color(0, 153, 255));
         roundPanel10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -693,26 +702,26 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         table2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "MSSV", "Họ", "Tên ", "Tài khoản ", "Mật khẩu"
+                "MSSV", "Họ", "Tên ", "Mật khẩu"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -732,11 +741,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
             table2.getColumnModel().getColumn(2).setResizable(false);
             table2.getColumnModel().getColumn(2).setPreferredWidth(60);
             table2.getColumnModel().getColumn(3).setResizable(false);
-            table2.getColumnModel().getColumn(3).setPreferredWidth(40);
-            table2.getColumnModel().getColumn(3).setHeaderValue("Tài khoản ");
-            table2.getColumnModel().getColumn(4).setResizable(false);
-            table2.getColumnModel().getColumn(4).setPreferredWidth(50);
-            table2.getColumnModel().getColumn(4).setHeaderValue("Mật khẩu");
+            table2.getColumnModel().getColumn(3).setPreferredWidth(50);
         }
 
         roundPanel6.add(scrollPaneWin112, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 535, 290));
@@ -997,6 +1002,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
             table3.getColumnModel().getColumn(1).setPreferredWidth(40);
             table3.getColumnModel().getColumn(2).setResizable(false);
             table3.getColumnModel().getColumn(2).setPreferredWidth(60);
+            table3.getColumnModel().getColumn(2).setHeaderValue("Thứ tự");
         }
 
         roundPanel27.add(scrollPaneWin113, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 535, 290));
@@ -1254,26 +1260,26 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         table4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Mã học kỳ", "Năm học", "Thứ tự"
+                "Mã học phần", "Tên học phần"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1290,9 +1296,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
             table4.getColumnModel().getColumn(0).setPreferredWidth(0);
             table4.getColumnModel().getColumn(1).setResizable(false);
             table4.getColumnModel().getColumn(1).setPreferredWidth(40);
-            table4.getColumnModel().getColumn(2).setResizable(false);
-            table4.getColumnModel().getColumn(2).setPreferredWidth(60);
-            table4.getColumnModel().getColumn(2).setHeaderValue("Thứ tự");
         }
 
         roundPanel38.add(scrollPaneWin114, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 535, 320));
@@ -1444,11 +1447,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jTextField18.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
         roundPanel43.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 105, 200, 40));
 
-        jLabel48.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel48.setText("Mô tả:");
-        roundPanel43.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 95, 40));
-
         roundPanel46.setBackground(new java.awt.Color(0, 153, 255));
         roundPanel46.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1542,7 +1540,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Mã học kỳ", "Năm học"
+                "Mã ngành", "Tên ngành"
             }
         ) {
             Class[] types = new Class [] {
@@ -1601,17 +1599,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         );
 
         roundPanel43.add(roundPanel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 220, 40));
-
-        scrollPaneWin111.setBackground(new Color(255, 255, 255, 180));
-        scrollPaneWin111.setPreferredSize(new java.awt.Dimension(160, 86));
-
-        jTextArea1.setBackground(new Color(255, 255, 255, 180));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setPreferredSize(new java.awt.Dimension(160, 84));
-        scrollPaneWin111.setViewportView(jTextArea1);
-
-        roundPanel43.add(scrollPaneWin111, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 220, 80));
 
         jLabel50.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel50.setText("Nhập mã ngành:");
@@ -1692,7 +1679,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Mã học kỳ", "Năm học"
+                "Mã khoa", "Tên khoa"
             }
         ) {
             Class[] types = new Class [] {
@@ -1820,11 +1807,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jTextField22.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
         roundPanel57.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 105, 200, 40));
 
-        jLabel56.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel56.setText("Mô tả:");
-        roundPanel57.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 95, 40));
-
         roundPanel60.setBackground(new java.awt.Color(0, 153, 255));
         roundPanel60.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -1918,7 +1900,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Mã học kỳ", "Năm học"
+                "Mã môn ", "Tên môn"
             }
         ) {
             Class[] types = new Class [] {
@@ -1977,17 +1959,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         );
 
         roundPanel57.add(roundPanel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 220, 40));
-
-        scrollPaneWin118.setBackground(new Color(255, 255, 255, 180));
-        scrollPaneWin118.setPreferredSize(new java.awt.Dimension(160, 86));
-
-        jTextArea2.setBackground(new Color(255, 255, 255, 180));
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setPreferredSize(new java.awt.Dimension(160, 84));
-        scrollPaneWin118.setViewportView(jTextArea2);
-
-        roundPanel57.add(scrollPaneWin118, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 220, 80));
 
         jLabel58.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel58.setText("Nhập mã ngành:");
@@ -2068,7 +2039,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Mã học kỳ", "Năm học"
+                "Mã ngành", "Tên ngành"
             }
         ) {
             Class[] types = new Class [] {
@@ -2155,7 +2126,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel85.setText("LÀM MỚI");
         roundPanel83.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
-        roundPanel82.add(roundPanel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 10, 80, 40));
+        roundPanel82.add(roundPanel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 10, 80, 40));
 
         roundPanel84.setBackground(new java.awt.Color(0, 153, 0));
         roundPanel84.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2174,7 +2145,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel86.setText("TÌM");
         roundPanel84.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 55, 40));
 
-        roundPanel82.add(roundPanel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 55, 40));
+        roundPanel82.add(roundPanel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 10, 55, 40));
 
         jLabel87.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel87.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -2315,26 +2286,26 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         table10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Mã học kỳ", "Năm học", "Thứ tự"
+                "Mã khóa", "Hệ số DCC", "Hệ số DGK", "Hệ số DKT"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -2351,7 +2322,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
             table10.getColumnModel().getColumn(0).setPreferredWidth(0);
             table10.getColumnModel().getColumn(1).setResizable(false);
             table10.getColumnModel().getColumn(1).setPreferredWidth(40);
-            table10.getColumnModel().getColumn(2).setResizable(false);
             table10.getColumnModel().getColumn(2).setPreferredWidth(60);
         }
 
@@ -2418,7 +2388,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel60.setText("LÀM MỚI");
         roundPanel72.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
-        roundPanel71.add(roundPanel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, 40));
+        roundPanel71.add(roundPanel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 10, 80, 40));
 
         roundPanel73.setBackground(new java.awt.Color(0, 153, 0));
         roundPanel73.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2437,7 +2407,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel61.setText("TÌM");
         roundPanel73.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 55, 40));
 
-        roundPanel71.add(roundPanel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 55, 40));
+        roundPanel71.add(roundPanel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 10, 55, 40));
 
         jLabel62.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -2545,26 +2515,26 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         table9.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Mã học kỳ", "Năm học"
+                "MSSV", "Họ & Tên đệm", "Tên"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -2580,7 +2550,9 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
             table9.getColumnModel().getColumn(0).setResizable(false);
             table9.getColumnModel().getColumn(0).setPreferredWidth(0);
             table9.getColumnModel().getColumn(1).setResizable(false);
-            table9.getColumnModel().getColumn(1).setPreferredWidth(40);
+            table9.getColumnModel().getColumn(1).setPreferredWidth(60);
+            table9.getColumnModel().getColumn(2).setResizable(false);
+            table9.getColumnModel().getColumn(2).setPreferredWidth(10);
         }
 
         roundPanel71.add(scrollPaneWin120, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 55, 220, 175));
@@ -2669,6 +2641,18 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jTextField33.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
         roundPanel71.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 200, 40));
 
+        jLabel107.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel107.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel107.setText("Mã khóa học:");
+        jLabel107.setRequestFocusEnabled(false);
+        roundPanel71.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 195, 95, 40));
+
+        jTextField34.setBackground(new Color(255, 255, 255, 180));
+        jTextField34.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField34.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        jTextField34.setRequestFocusEnabled(false);
+        roundPanel71.add(jTextField34, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 195, 200, 40));
+
         CapNhatTaiKhoanSinhVien5.add(roundPanel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 610, 320));
 
         roundPanel40.add(CapNhatTaiKhoanSinhVien5, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 140, 610, 455));
@@ -2701,7 +2685,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "Mã học kỳ", "Năm học"
+                "Mã lớp", "Tên lớp"
             }
         ) {
             Class[] types = new Class [] {
@@ -2892,19 +2876,192 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         Homthu.setBackground(new java.awt.Color(255, 255, 255, 80));
         Homthu.setPreferredSize(new java.awt.Dimension(1125, 685));
+        Homthu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout HomthuLayout = new javax.swing.GroupLayout(Homthu);
-        Homthu.setLayout(HomthuLayout);
-        HomthuLayout.setHorizontalGroup(
-            HomthuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        roundPanel97.setBackground(new Color(0, 0, 0, 0));
+        roundPanel97.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        roundPanel98.setBackground(new Color(102, 102, 102, 200));
+        roundPanel98.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel48.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setText("CÁC THƯ GẦN ĐÂY");
+        roundPanel98.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 60));
+
+        roundPanel97.add(roundPanel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 60));
+
+        table12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "MSSV", "Tiêu đề "
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollPaneWin118.setViewportView(table12);
+        if (table12.getColumnModel().getColumnCount() > 0) {
+            table12.getColumnModel().getColumn(0).setResizable(false);
+            table12.getColumnModel().getColumn(0).setPreferredWidth(0);
+            table12.getColumnModel().getColumn(1).setResizable(false);
+            table12.getColumnModel().getColumn(1).setPreferredWidth(40);
+        }
+
+        roundPanel97.add(scrollPaneWin118, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 350, 420));
+
+        Homthu.add(roundPanel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 30, 350, 485));
+
+        roundPanel99.setBackground(new Color(0, 0, 0, 0));
+        roundPanel99.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        roundPanel100.setBackground(new Color(102, 102, 102, 200));
+        roundPanel100.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel56.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        jLabel56.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel56.setText("THƯ MỚI");
+        roundPanel100.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 60));
+
+        roundPanel99.add(roundPanel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 60));
+
+        table14.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "MSSV", "Tiêu đề "
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollPaneWin127.setViewportView(table14);
+        if (table14.getColumnModel().getColumnCount() > 0) {
+            table14.getColumnModel().getColumn(0).setResizable(false);
+            table14.getColumnModel().getColumn(0).setPreferredWidth(0);
+            table14.getColumnModel().getColumn(1).setResizable(false);
+            table14.getColumnModel().getColumn(1).setPreferredWidth(40);
+        }
+
+        roundPanel99.add(scrollPaneWin127, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 350, 420));
+
+        Homthu.add(roundPanel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 350, 485));
+
+        CapNhatTaiKhoanSinhVien7.setBackground(new Color(0, 0, 0, 0));
+        CapNhatTaiKhoanSinhVien7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        roundPanel101.setBackground(new Color(0,102,102, 200));
+        roundPanel101.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Title14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        Title14.setForeground(new java.awt.Color(255, 255, 255));
+        Title14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Title14.setText("ĐỌC THƯ");
+        roundPanel101.add(Title14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 16, 340, -1));
+
+        CapNhatTaiKhoanSinhVien7.add(roundPanel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 60));
+
+        roundPanel102.setBackground(new Color(255, 255, 255, 128));
+        roundPanel102.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel7.setText("MSSV:");
+        roundPanel102.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 90, 40));
+
+        jTextField3.setBackground(new Color(255,90,0, 100));
+        jTextField3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField3.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel102.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 220, 40));
+
+        jLabel110.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel110.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel110.setText("Tiêu đề:");
+        roundPanel102.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 90, 40));
+
+        jTextField35.setBackground(new Color(255, 255, 255, 180));
+        jTextField35.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField35.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel102.add(jTextField35, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 220, 40));
+
+        jLabel111.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel111.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel111.setText("Nội dung:");
+        roundPanel102.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 90, 40));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        scrollPaneWin111.setViewportView(jTextArea1);
+
+        roundPanel102.add(scrollPaneWin111, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 105, 220, 100));
+
+        CapNhatTaiKhoanSinhVien7.add(roundPanel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 340, 415));
+
+        Homthu.add(CapNhatTaiKhoanSinhVien7, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 30, 340, 485));
+
+        materialTabbed1.addTab("HÒM THƯ ", Homthu);
+
+        NhapDiem.setBackground(new java.awt.Color(255, 255, 255, 80));
+
+        javax.swing.GroupLayout NhapDiemLayout = new javax.swing.GroupLayout(NhapDiem);
+        NhapDiem.setLayout(NhapDiemLayout);
+        NhapDiemLayout.setHorizontalGroup(
+            NhapDiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1125, Short.MAX_VALUE)
         );
-        HomthuLayout.setVerticalGroup(
-            HomthuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        NhapDiemLayout.setVerticalGroup(
+            NhapDiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 543, Short.MAX_VALUE)
         );
 
-        materialTabbed1.addTab("HÒM THƯ ", Homthu);
+        materialTabbed1.addTab("NHẬP ĐIỂM", NhapDiem);
 
         QuanLyGiangVien.setBackground(new java.awt.Color(255, 255, 255, 80));
         QuanLyGiangVien.setPreferredSize(new java.awt.Dimension(1125, 685));
@@ -2926,7 +3083,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         );
         QuanLyGiangVienLayout.setVerticalGroup(
             QuanLyGiangVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 543, Short.MAX_VALUE)
+            .addGap(0, 685, Short.MAX_VALUE)
             .addGroup(QuanLyGiangVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(QuanLyGiangVienLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -3411,7 +3568,25 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     }//GEN-LAST:event_roundPanel96MouseExited
 
     private void jLabel103MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel103MouseClicked
-        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileFilter(new FileFilter() {
+
+           @Override
+           public String getDescription() {
+               return "JPG Images (*.jpg)";
+           }
+
+           @Override
+           public boolean accept(File f) {
+               if (f.isDirectory()) {
+                   return true;
+               } else {
+                   String filename = f.getName().toLowerCase();
+                   return filename.endsWith(".jpg") || filename.endsWith(".jpeg") ;
+               }
+           }
+        });
+        int result = fileChooser.showOpenDialog(null);
     }//GEN-LAST:event_jLabel103MouseClicked
 
     public static void main(String args[]) {
@@ -3456,8 +3631,10 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.RoundPanel CapNhatTaiKhoanSinhVien4;
     private javaapplication24.RoundPanel CapNhatTaiKhoanSinhVien5;
     private javaapplication24.RoundPanel CapNhatTaiKhoanSinhVien6;
+    private javaapplication24.RoundPanel CapNhatTaiKhoanSinhVien7;
     private javaapplication24.RoundPanel GuiThongbao;
     private javaapplication24.RoundPanel Homthu;
+    private javaapplication24.RoundPanel NhapDiem;
     private javaapplication24.RoundPanel QuanLyGiangVien;
     private javaapplication24.RoundPanel QuanlyBomon;
     private javaapplication24.RoundPanel QuanlyHoctap;
@@ -3468,6 +3645,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel Title11;
     private javax.swing.JLabel Title12;
     private javax.swing.JLabel Title13;
+    private javax.swing.JLabel Title14;
     private javax.swing.JLabel Title2;
     private javax.swing.JLabel Title3;
     private javax.swing.JLabel Title4;
@@ -3488,7 +3666,10 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -3593,7 +3774,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel67;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
@@ -3622,6 +3802,8 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField32;
     private javax.swing.JTextField jTextField33;
+    private javax.swing.JTextField jTextField34;
+    private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -3633,6 +3815,9 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.MultipleButton multipleButton2;
     private javaapplication24.RoundPanel roundPanel1;
     private javaapplication24.RoundPanel roundPanel10;
+    private javaapplication24.RoundPanel roundPanel100;
+    private javaapplication24.RoundPanel roundPanel101;
+    private javaapplication24.RoundPanel roundPanel102;
     private javaapplication24.RoundPanel roundPanel11;
     private javaapplication24.RoundPanel roundPanel12;
     private javaapplication24.RoundPanel roundPanel13;
@@ -3727,6 +3912,9 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.RoundPanel roundPanel94;
     private javaapplication24.RoundPanel roundPanel95;
     private javaapplication24.RoundPanel roundPanel96;
+    private javaapplication24.RoundPanel roundPanel97;
+    private javaapplication24.RoundPanel roundPanel98;
+    private javaapplication24.RoundPanel roundPanel99;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin111;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin112;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin113;
@@ -3742,8 +3930,11 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.ScrollPaneWin11 scrollPaneWin123;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin124;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin125;
+    private javaapplication24.ScrollPaneWin11 scrollPaneWin127;
     private javaapplication24.Table table10;
     private javaapplication24.Table table11;
+    private javaapplication24.Table table12;
+    private javaapplication24.Table table14;
     private javaapplication24.Table table2;
     private javaapplication24.Table table3;
     private javaapplication24.Table table4;
