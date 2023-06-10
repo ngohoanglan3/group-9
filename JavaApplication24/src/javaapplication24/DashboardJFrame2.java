@@ -1634,7 +1634,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         roundPanel8.add(scrollPaneWin1110, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 10, 930, 240));
 
-        jPanel4.setBackground(new Color(27,36,52, 90));
+        jPanel4.setBackground(new Color(0,0,0,0));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel7.setBackground(new java.awt.Color(255, 90, 0));

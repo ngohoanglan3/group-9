@@ -40,16 +40,31 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         multipleButton2.setEvent(new EventItemSelected() {
             @Override
             public void selected(int index) {
-                if(index == 0) {
-                    multipleButton2.setVisible(false);
-                    roundPanel1.setVisible(true);
-                }
-                if(index == 1) {
-                    multipleButton2.setVisible(false);
-                    roundPanel2.setVisible(true);
+                switch (index) {
+                    case 0 -> {
+                        multipleButton2.setVisible(false);
+                        roundPanel1.setVisible(true);
+                    }
+                    case 1 -> {
+                        multipleButton2.setVisible(false);
+                        roundPanel2.setVisible(true);
+                    }
+                    case 2 -> {
+                        multipleButton2.setVisible(false);
+                        roundPanel3.setVisible(true);
+                    }
+                    case 3-> {
+                        multipleButton2.setVisible(false);
+                        roundPanel40.setVisible(true);
+                    }
+                    default -> {
+                    }
                 }
             }
         });
+        
+        NoScalingIcon icon1 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/upload.png")));
+        jLabel103.setIcon(icon1);
     }
     
     public void changeColor(JPanel hover, Color rand) {
@@ -268,10 +283,101 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         scrollPaneWin119 = new javaapplication24.ScrollPaneWin11();
         table8 = new javaapplication24.Table();
         roundPanel3 = new javaapplication24.RoundPanel();
+        roundPanel80 = new javaapplication24.RoundPanel();
+        Title12 = new javax.swing.JLabel();
+        CapNhatTaiKhoanSinhVien6 = new javaapplication24.RoundPanel();
+        roundPanel81 = new javaapplication24.RoundPanel();
+        Title13 = new javax.swing.JLabel();
+        roundPanel82 = new javaapplication24.RoundPanel();
+        jLabel84 = new javax.swing.JLabel();
+        jTextField28 = new javax.swing.JTextField();
+        roundPanel83 = new javaapplication24.RoundPanel();
+        jLabel85 = new javax.swing.JLabel();
+        roundPanel84 = new javaapplication24.RoundPanel();
+        jLabel86 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        jTextField29 = new javax.swing.JTextField();
+        jLabel88 = new javax.swing.JLabel();
+        jTextField30 = new javax.swing.JTextField();
+        jLabel89 = new javax.swing.JLabel();
+        jTextField31 = new javax.swing.JTextField();
+        roundPanel85 = new javaapplication24.RoundPanel();
+        jLabel90 = new javax.swing.JLabel();
+        roundPanel86 = new javaapplication24.RoundPanel();
+        jLabel91 = new javax.swing.JLabel();
+        roundPanel87 = new javaapplication24.RoundPanel();
+        jLabel92 = new javax.swing.JLabel();
+        roundPanel88 = new javaapplication24.RoundPanel();
+        jLabel93 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jTextField32 = new javax.swing.JTextField();
+        roundPanel89 = new javaapplication24.RoundPanel();
+        roundPanel90 = new javaapplication24.RoundPanel();
+        jLabel94 = new javax.swing.JLabel();
+        scrollPaneWin121 = new javaapplication24.ScrollPaneWin11();
+        table10 = new javaapplication24.Table();
         roundPanel40 = new javaapplication24.RoundPanel();
+        roundPanel69 = new javaapplication24.RoundPanel();
+        Title10 = new javax.swing.JLabel();
+        CapNhatTaiKhoanSinhVien5 = new javaapplication24.RoundPanel();
+        roundPanel70 = new javaapplication24.RoundPanel();
+        Title11 = new javax.swing.JLabel();
+        roundPanel71 = new javaapplication24.RoundPanel();
+        jLabel59 = new javax.swing.JLabel();
+        jTextField24 = new javax.swing.JTextField();
+        roundPanel72 = new javaapplication24.RoundPanel();
+        jLabel60 = new javax.swing.JLabel();
+        roundPanel73 = new javaapplication24.RoundPanel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jTextField25 = new javax.swing.JTextField();
+        jLabel63 = new javax.swing.JLabel();
+        jTextField26 = new javax.swing.JTextField();
+        jLabel64 = new javax.swing.JLabel();
+        roundPanel74 = new javaapplication24.RoundPanel();
+        jLabel79 = new javax.swing.JLabel();
+        roundPanel75 = new javaapplication24.RoundPanel();
+        jLabel80 = new javax.swing.JLabel();
+        roundPanel76 = new javaapplication24.RoundPanel();
+        jLabel81 = new javax.swing.JLabel();
+        roundPanel77 = new javaapplication24.RoundPanel();
+        jLabel82 = new javax.swing.JLabel();
+        scrollPaneWin120 = new javaapplication24.ScrollPaneWin11();
+        table9 = new javaapplication24.Table();
+        roundPanel78 = new javaapplication24.RoundPanel();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel96 = new javax.swing.JLabel();
+        jTextField27 = new javax.swing.JTextField();
+        roundPanel79 = new javaapplication24.RoundPanel();
+        jLabel97 = new javax.swing.JLabel();
+        roundPanel91 = new javaapplication24.RoundPanel();
+        jLabel98 = new javax.swing.JLabel();
+        jTextField33 = new javax.swing.JTextField();
+        roundPanel92 = new javaapplication24.RoundPanel();
+        roundPanel93 = new javaapplication24.RoundPanel();
+        jLabel99 = new javax.swing.JLabel();
+        scrollPaneWin123 = new javaapplication24.ScrollPaneWin11();
+        table11 = new javaapplication24.Table();
         GuiThongbao = new javaapplication24.RoundPanel();
+        roundPanel94 = new javaapplication24.RoundPanel();
+        jLabel101 = new javax.swing.JLabel();
+        roundPanel95 = new javaapplication24.RoundPanel();
+        jLabel102 = new javax.swing.JLabel();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        scrollPaneWin122 = new javaapplication24.ScrollPaneWin11();
+        jPanel67 = new javax.swing.JPanel();
+        jLabel103 = new javax.swing.JLabel();
+        jLabel104 = new javax.swing.JLabel();
+        scrollPaneWin125 = new javaapplication24.ScrollPaneWin11();
+        jTextArea3 = new javax.swing.JTextArea();
+        jLabel105 = new javax.swing.JLabel();
+        roundPanel96 = new javaapplication24.RoundPanel();
+        jLabel106 = new javax.swing.JLabel();
+        scrollPaneWin124 = new javaapplication24.ScrollPaneWin11();
+        jPanel66 = new javax.swing.JPanel();
         Homthu = new javaapplication24.RoundPanel();
         QuanLyGiangVien = new javaapplication24.RoundPanel();
+        jLabel100 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1993,31 +2099,637 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         roundPanel2.add(roundPanel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(715, 140, 335, 455));
 
         roundPanel3.setBackground(new Color(0, 0, 0, 0));
+        roundPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout roundPanel3Layout = new javax.swing.GroupLayout(roundPanel3);
-        roundPanel3.setLayout(roundPanel3Layout);
-        roundPanel3Layout.setHorizontalGroup(
-            roundPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1125, Short.MAX_VALUE)
-        );
-        roundPanel3Layout.setVerticalGroup(
-            roundPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
-        );
+        roundPanel80.setBackground(new Color(0,102,102, 128));
+        roundPanel80.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Title12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        Title12.setForeground(new java.awt.Color(255, 255, 255));
+        Title12.setText("QUẢN LÝ KHÓA HỌC");
+        roundPanel80.add(Title12, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 19, -1, -1));
+
+        roundPanel3.add(roundPanel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 925, 80));
+
+        CapNhatTaiKhoanSinhVien6.setBackground(new Color(0, 0, 0, 0));
+        CapNhatTaiKhoanSinhVien6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        roundPanel81.setBackground(new Color(0,102,102, 200));
+        roundPanel81.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Title13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        Title13.setForeground(new java.awt.Color(255, 255, 255));
+        Title13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Title13.setText("CẬP NHẬT KHÓA HỌC ");
+        roundPanel81.add(Title13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 16, 370, -1));
+
+        CapNhatTaiKhoanSinhVien6.add(roundPanel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 60));
+
+        roundPanel82.setBackground(new Color(255, 255, 255, 128));
+        roundPanel82.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel84.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel84.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel84.setText("Nhập mã:");
+        roundPanel82.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 90, 40));
+
+        jTextField28.setBackground(new Color(255,90,0, 100));
+        jTextField28.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField28.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel82.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 120, 40));
+
+        roundPanel83.setBackground(new java.awt.Color(0, 153, 0));
+        roundPanel83.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel83MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel83MouseExited(evt);
+            }
+        });
+        roundPanel83.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel85.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel85.setText("LÀM MỚI");
+        roundPanel83.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
+
+        roundPanel82.add(roundPanel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 10, 80, 40));
+
+        roundPanel84.setBackground(new java.awt.Color(0, 153, 0));
+        roundPanel84.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel84MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel84MouseExited(evt);
+            }
+        });
+        roundPanel84.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel86.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel86.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel86.setText("TÌM");
+        roundPanel84.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 55, 40));
+
+        roundPanel82.add(roundPanel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 55, 40));
+
+        jLabel87.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel87.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel87.setText("Mã khóa:");
+        roundPanel82.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 90, 40));
+
+        jTextField29.setBackground(new Color(255, 255, 255, 180));
+        jTextField29.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField29.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel82.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 210, 40));
+
+        jLabel88.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel88.setText("Hệ số DCC:");
+        roundPanel82.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 90, 40));
+
+        jTextField30.setBackground(new Color(255, 255, 255, 180));
+        jTextField30.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField30.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel82.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 105, 210, 40));
+
+        jLabel89.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel89.setText("Hệ số DGK:");
+        roundPanel82.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 90, 40));
+
+        jTextField31.setBackground(new Color(255, 255, 255, 180));
+        jTextField31.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField31.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel82.add(jTextField31, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 210, 40));
+
+        roundPanel85.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel85.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel85MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel85MouseExited(evt);
+            }
+        });
+        roundPanel85.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel90.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel90.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel90.setText("THÊM");
+        roundPanel85.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        roundPanel82.add(roundPanel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 245, 80, 30));
+
+        roundPanel86.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel86.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel86MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel86MouseExited(evt);
+            }
+        });
+        roundPanel86.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel91.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel91.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel91.setText("SỬA");
+        roundPanel86.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        roundPanel82.add(roundPanel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 245, 80, 30));
+
+        roundPanel87.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel87.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel87MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel87MouseExited(evt);
+            }
+        });
+        roundPanel87.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel92.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel92.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel92.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel92.setText("XÓA");
+        roundPanel87.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        roundPanel82.add(roundPanel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 285, 80, 30));
+
+        roundPanel88.setBackground(new java.awt.Color(255, 90, 0));
+        roundPanel88.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roundPanel88MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel88MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel88MouseExited(evt);
+            }
+        });
+        roundPanel88.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel93.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel93.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel93.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel93.setText("QUAY LẠI");
+        roundPanel88.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 30));
+
+        roundPanel82.add(roundPanel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 285, 140, 30));
+
+        jLabel95.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel95.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel95.setText("Hệ số DKT:");
+        roundPanel82.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 195, 90, 40));
+
+        jTextField32.setBackground(new Color(255, 255, 255, 180));
+        jTextField32.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField32.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel82.add(jTextField32, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 195, 210, 40));
+
+        CapNhatTaiKhoanSinhVien6.add(roundPanel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 370, 320));
+
+        roundPanel3.add(CapNhatTaiKhoanSinhVien6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 370, 455));
+
+        roundPanel89.setBackground(new Color(0, 0, 0, 0));
+        roundPanel89.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        roundPanel90.setBackground(new Color(102, 102, 102, 200));
+        roundPanel90.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel94.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        jLabel94.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel94.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel94.setText("DANH SÁCH KHÓA HỌC ");
+        roundPanel90.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 535, 60));
+
+        roundPanel89.add(roundPanel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 535, 60));
+
+        table10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Mã học kỳ", "Năm học", "Thứ tự"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollPaneWin121.setViewportView(table10);
+        if (table10.getColumnModel().getColumnCount() > 0) {
+            table10.getColumnModel().getColumn(0).setResizable(false);
+            table10.getColumnModel().getColumn(0).setPreferredWidth(0);
+            table10.getColumnModel().getColumn(1).setResizable(false);
+            table10.getColumnModel().getColumn(1).setPreferredWidth(40);
+            table10.getColumnModel().getColumn(2).setResizable(false);
+            table10.getColumnModel().getColumn(2).setPreferredWidth(60);
+        }
+
+        roundPanel89.add(scrollPaneWin121, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 535, 320));
+
+        roundPanel3.add(roundPanel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 535, 455));
 
         roundPanel40.setBackground(new Color(0, 0, 0, 0));
         roundPanel40.setPreferredSize(new java.awt.Dimension(1125, 685));
+        roundPanel40.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout roundPanel40Layout = new javax.swing.GroupLayout(roundPanel40);
-        roundPanel40.setLayout(roundPanel40Layout);
-        roundPanel40Layout.setHorizontalGroup(
-            roundPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1125, Short.MAX_VALUE)
+        roundPanel69.setBackground(new Color(0,102,102, 128));
+        roundPanel69.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Title10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 30)); // NOI18N
+        Title10.setForeground(new java.awt.Color(255, 255, 255));
+        Title10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Title10.setText("THÔNG TIN LỚP HỌC");
+        roundPanel69.add(Title10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 19, 975, -1));
+
+        roundPanel40.add(roundPanel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 30, 975, 80));
+
+        CapNhatTaiKhoanSinhVien5.setBackground(new Color(0, 0, 0, 0));
+        CapNhatTaiKhoanSinhVien5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        roundPanel70.setBackground(new Color(0,102,102, 200));
+        roundPanel70.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Title11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        Title11.setForeground(new java.awt.Color(255, 255, 255));
+        Title11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Title11.setText("CẬP NHẬT LỚP");
+        roundPanel70.add(Title11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 16, 610, -1));
+
+        CapNhatTaiKhoanSinhVien5.add(roundPanel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 60));
+
+        roundPanel71.setBackground(new Color(255, 255, 255, 128));
+        roundPanel71.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel59.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel59.setText("Nhập mã:");
+        roundPanel71.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 90, 40));
+
+        jTextField24.setBackground(new Color(255,90,0, 100));
+        jTextField24.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField24.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel71.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 120, 40));
+
+        roundPanel72.setBackground(new java.awt.Color(0, 153, 0));
+        roundPanel72.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel72MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel72MouseExited(evt);
+            }
+        });
+        roundPanel72.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel60.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel60.setText("LÀM MỚI");
+        roundPanel72.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
+
+        roundPanel71.add(roundPanel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, 40));
+
+        roundPanel73.setBackground(new java.awt.Color(0, 153, 0));
+        roundPanel73.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel73MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel73MouseExited(evt);
+            }
+        });
+        roundPanel73.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel61.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel61.setText("TÌM");
+        roundPanel73.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 55, 40));
+
+        roundPanel71.add(roundPanel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 55, 40));
+
+        jLabel62.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel62.setText("Mã khoa:");
+        roundPanel71.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 95, 40));
+
+        jTextField25.setBackground(new Color(255, 255, 255, 180));
+        jTextField25.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField25.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel71.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 200, 40));
+
+        jLabel63.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel63.setText("Mã lớp:");
+        roundPanel71.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 95, 40));
+
+        jTextField26.setBackground(new Color(255, 255, 255, 180));
+        jTextField26.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField26.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel71.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 105, 200, 40));
+
+        jLabel64.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel64.setText("Tên lớp:");
+        roundPanel71.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 95, 40));
+
+        roundPanel74.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel74.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel74MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel74MouseExited(evt);
+            }
+        });
+        roundPanel74.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel79.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel79.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel79.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel79.setText("THÊM KHOA");
+        roundPanel74.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        roundPanel71.add(roundPanel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 80, 30));
+
+        roundPanel75.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel75.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel75MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel75MouseExited(evt);
+            }
+        });
+        roundPanel75.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel80.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel80.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel80.setText("SỬA KHOA");
+        roundPanel75.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        roundPanel71.add(roundPanel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 80, 30));
+
+        roundPanel76.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel76.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel76MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel76MouseExited(evt);
+            }
+        });
+        roundPanel76.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel81.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel81.setText("XÓA KHOA");
+        roundPanel76.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        roundPanel71.add(roundPanel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, 30));
+
+        roundPanel77.setBackground(new java.awt.Color(255, 90, 0));
+        roundPanel77.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roundPanel77MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel77MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel77MouseExited(evt);
+            }
+        });
+        roundPanel77.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel82.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel82.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel82.setText("QUAY LẠI");
+        roundPanel77.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 30));
+
+        roundPanel71.add(roundPanel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 140, 30));
+
+        table9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Mã học kỳ", "Năm học"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollPaneWin120.setViewportView(table9);
+        if (table9.getColumnModel().getColumnCount() > 0) {
+            table9.getColumnModel().getColumn(0).setResizable(false);
+            table9.getColumnModel().getColumn(0).setPreferredWidth(0);
+            table9.getColumnModel().getColumn(1).setResizable(false);
+            table9.getColumnModel().getColumn(1).setPreferredWidth(40);
+        }
+
+        roundPanel71.add(scrollPaneWin120, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 55, 220, 175));
+
+        roundPanel78.setBackground(new Color(102, 102, 102, 200)
         );
-        roundPanel40Layout.setVerticalGroup(
-            roundPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 685, Short.MAX_VALUE)
+
+        jLabel83.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel83.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel83.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel83.setText("SINH VIÊN THUỘC LỚP");
+
+        javax.swing.GroupLayout roundPanel78Layout = new javax.swing.GroupLayout(roundPanel78);
+        roundPanel78.setLayout(roundPanel78Layout);
+        roundPanel78Layout.setHorizontalGroup(
+            roundPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+            .addGroup(roundPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(roundPanel78Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel83)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
+        roundPanel78Layout.setVerticalGroup(
+            roundPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 40, Short.MAX_VALUE)
+            .addGroup(roundPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(roundPanel78Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel83)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        roundPanel71.add(roundPanel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 220, 40));
+
+        jLabel96.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel96.setText("Nhập mã ngành:");
+        roundPanel71.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, 30));
+
+        jTextField27.setBackground(new Color(255,90,0, 100));
+        jTextField27.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField27.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel71.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(475, 240, 120, 30));
+
+        roundPanel79.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel79.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel79MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel79MouseExited(evt);
+            }
+        });
+        roundPanel79.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel97.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel97.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel97.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel97.setText("XÓA NGÀNH");
+        roundPanel79.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        roundPanel71.add(roundPanel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 80, 30));
+
+        roundPanel91.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel91.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel91MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel91MouseExited(evt);
+            }
+        });
+        roundPanel91.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel98.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel98.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel98.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel98.setText("THÊM NGÀNH");
+        roundPanel91.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
+
+        roundPanel71.add(roundPanel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 90, 30));
+
+        jTextField33.setBackground(new Color(255, 255, 255, 180));
+        jTextField33.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField33.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        roundPanel71.add(jTextField33, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 200, 40));
+
+        CapNhatTaiKhoanSinhVien5.add(roundPanel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 610, 320));
+
+        roundPanel40.add(CapNhatTaiKhoanSinhVien5, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 140, 610, 455));
+
+        roundPanel92.setBackground(new Color(0, 0, 0, 0));
+        roundPanel92.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        roundPanel93.setBackground(new Color(102, 102, 102, 200));
+        roundPanel93.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel99.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        jLabel99.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel99.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel99.setText("DANH SÁCH LỚP");
+        roundPanel93.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 335, 60));
+
+        roundPanel92.add(roundPanel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 335, 60));
+
+        table11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Mã học kỳ", "Năm học"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        scrollPaneWin123.setViewportView(table11);
+        if (table11.getColumnModel().getColumnCount() > 0) {
+            table11.getColumnModel().getColumn(0).setResizable(false);
+            table11.getColumnModel().getColumn(0).setPreferredWidth(0);
+            table11.getColumnModel().getColumn(1).setResizable(false);
+            table11.getColumnModel().getColumn(1).setPreferredWidth(40);
+        }
+
+        roundPanel92.add(scrollPaneWin123, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 335, 320));
+
+        roundPanel40.add(roundPanel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(715, 140, 335, 455));
 
         javax.swing.GroupLayout QuanlyBomonLayout = new javax.swing.GroupLayout(QuanlyBomon);
         QuanlyBomon.setLayout(QuanlyBomonLayout);
@@ -2042,12 +2754,12 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
             .addGroup(QuanlyBomonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(QuanlyBomonLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(roundPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roundPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(QuanlyBomonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(QuanlyBomonLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(roundPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roundPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, 1125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         QuanlyBomonLayout.setVerticalGroup(
@@ -2071,12 +2783,12 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
             .addGroup(QuanlyBomonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(QuanlyBomonLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(roundPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roundPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(QuanlyBomonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(QuanlyBomonLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(roundPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roundPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -2088,22 +2800,138 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         materialTabbed1.addTab("QUẢN LÝ BỘ MÔN", QuanlyBomon);
 
         GuiThongbao.setBackground(new java.awt.Color(255, 255, 255, 80));
+        GuiThongbao.setPreferredSize(new java.awt.Dimension(1125, 685));
+        GuiThongbao.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        roundPanel94.setBackground(new java.awt.Color(255, 255, 255, 100));
+        roundPanel94.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel101.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jLabel101.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel101.setText("BẢNG TIN");
+        roundPanel94.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 74));
+
+        GuiThongbao.add(roundPanel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 12, 300, 74));
+
+        roundPanel95.setBackground(new java.awt.Color(255, 255, 255, 100));
+        roundPanel95.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel102.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
+        jLabel102.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel102.setText("THÔNG BÁO");
+        roundPanel95.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 74));
+
+        GuiThongbao.add(roundPanel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(375, 12, 710, 74));
+
+        jSplitPane1.setPreferredSize(new java.awt.Dimension(1040, 500));
+
+        jPanel67.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel67.setPreferredSize(new java.awt.Dimension(300, 410));
+        jPanel67.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel103.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel103MouseClicked(evt);
+            }
+        });
+        jPanel67.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 35, 128, 128));
+
+        jLabel104.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel104.setText("<tên file>");
+        jPanel67.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 170, -1, -1));
+
+        scrollPaneWin125.setBackground(new Color(255, 255, 255, 180));
+        scrollPaneWin125.setPreferredSize(new java.awt.Dimension(160, 86));
+
+        jTextArea3.setBackground(new Color(255, 255, 255, 180));
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jTextArea3.setPreferredSize(new java.awt.Dimension(160, 84));
+        scrollPaneWin125.setViewportView(jTextArea3);
+
+        jPanel67.add(scrollPaneWin125, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 175, 80));
+
+        jLabel105.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel105.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel105.setText("Nhập tiêu đề:");
+        jPanel67.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 95, 40));
+
+        roundPanel96.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel96.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel96MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel96MouseExited(evt);
+            }
+        });
+        roundPanel96.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel106.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel106.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel106.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel106.setText("GỬI");
+        roundPanel96.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        jPanel67.add(roundPanel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 80, 30));
+
+        scrollPaneWin122.setViewportView(jPanel67);
+
+        jSplitPane1.setLeftComponent(scrollPaneWin122);
+
+        jPanel66.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel66.setPreferredSize(new java.awt.Dimension(600, 410));
+        jPanel66.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        scrollPaneWin124.setViewportView(jPanel66);
+
+        jSplitPane1.setRightComponent(scrollPaneWin124);
+
+        GuiThongbao.add(jSplitPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 410));
+
         materialTabbed1.addTab("GỬI THÔNG BÁO", GuiThongbao);
 
         Homthu.setBackground(new java.awt.Color(255, 255, 255, 80));
+        Homthu.setPreferredSize(new java.awt.Dimension(1125, 685));
+
+        javax.swing.GroupLayout HomthuLayout = new javax.swing.GroupLayout(Homthu);
+        Homthu.setLayout(HomthuLayout);
+        HomthuLayout.setHorizontalGroup(
+            HomthuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1125, Short.MAX_VALUE)
+        );
+        HomthuLayout.setVerticalGroup(
+            HomthuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 543, Short.MAX_VALUE)
+        );
+
         materialTabbed1.addTab("HÒM THƯ ", Homthu);
 
         QuanLyGiangVien.setBackground(new java.awt.Color(255, 255, 255, 80));
+        QuanLyGiangVien.setPreferredSize(new java.awt.Dimension(1125, 685));
+
+        jLabel100.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
+        jLabel100.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel100.setText("TÍNH NĂNG SẮP RA MẮT");
 
         javax.swing.GroupLayout QuanLyGiangVienLayout = new javax.swing.GroupLayout(QuanLyGiangVien);
         QuanLyGiangVien.setLayout(QuanLyGiangVienLayout);
         QuanLyGiangVienLayout.setHorizontalGroup(
             QuanLyGiangVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1125, Short.MAX_VALUE)
+            .addGroup(QuanLyGiangVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(QuanLyGiangVienLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel100)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         QuanLyGiangVienLayout.setVerticalGroup(
             QuanLyGiangVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 543, Short.MAX_VALUE)
+            .addGroup(QuanLyGiangVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(QuanLyGiangVienLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel100)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         materialTabbed1.addTab("QUẢN LÝ GIẢNG VIÊN", QuanLyGiangVien);
@@ -2384,72 +3212,207 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     }//GEN-LAST:event_roundPanel54MouseExited
 
     private void roundPanel58MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel58MouseEntered
-        // TODO add your handling code here:
+        changeColor(roundPanel58, new Color(105, 153, 0));        
     }//GEN-LAST:event_roundPanel58MouseEntered
 
     private void roundPanel58MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel58MouseExited
-        // TODO add your handling code here:
+        changeColor(roundPanel58, new Color(0,153,0));
     }//GEN-LAST:event_roundPanel58MouseExited
 
     private void roundPanel59MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel59MouseEntered
-        // TODO add your handling code here:
+        changeColor(roundPanel59, new Color(105, 153, 0));        
     }//GEN-LAST:event_roundPanel59MouseEntered
 
     private void roundPanel59MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel59MouseExited
-        // TODO add your handling code here:
+        changeColor(roundPanel59, new Color(0,153,0));
     }//GEN-LAST:event_roundPanel59MouseExited
 
     private void roundPanel60MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel60MouseEntered
-        // TODO add your handling code here:
+        changeColor(roundPanel60, new Color(0, 187, 255));
     }//GEN-LAST:event_roundPanel60MouseEntered
 
     private void roundPanel60MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel60MouseExited
-        // TODO add your handling code here:
+        changeColor(roundPanel60, new Color(0,153,255));
     }//GEN-LAST:event_roundPanel60MouseExited
 
     private void roundPanel61MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel61MouseEntered
-        // TODO add your handling code here:
+        changeColor(roundPanel61, new Color(0, 187, 255));
     }//GEN-LAST:event_roundPanel61MouseEntered
 
     private void roundPanel61MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel61MouseExited
-        // TODO add your handling code here:
+        changeColor(roundPanel61, new Color(0,153,255));
     }//GEN-LAST:event_roundPanel61MouseExited
 
     private void roundPanel62MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel62MouseEntered
-        // TODO add your handling code here:
+        changeColor(roundPanel62, new Color(0, 187, 255));
     }//GEN-LAST:event_roundPanel62MouseEntered
 
     private void roundPanel62MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel62MouseExited
-        // TODO add your handling code here:
+        changeColor(roundPanel62, new Color(0,153,255));
     }//GEN-LAST:event_roundPanel62MouseExited
 
     private void roundPanel63MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel63MouseClicked
-        // TODO add your handling code here:
+        roundPanel2.setVisible(false);
+        multipleButton2.setVisible(true);        
     }//GEN-LAST:event_roundPanel63MouseClicked
 
     private void roundPanel63MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel63MouseEntered
-        // TODO add your handling code here:
+        changeColor(roundPanel63, new Color(220, 86, 13));
     }//GEN-LAST:event_roundPanel63MouseEntered
 
     private void roundPanel63MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel63MouseExited
-        // TODO add your handling code here:
+        changeColor(roundPanel63, new Color(255,90,0));
     }//GEN-LAST:event_roundPanel63MouseExited
 
     private void roundPanel65MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel65MouseEntered
-        // TODO add your handling code here:
+        changeColor(roundPanel65, new Color(0, 187, 255));
     }//GEN-LAST:event_roundPanel65MouseEntered
 
     private void roundPanel65MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel65MouseExited
-        // TODO add your handling code here:
+        changeColor(roundPanel65, new Color(0,153,255));
     }//GEN-LAST:event_roundPanel65MouseExited
 
     private void roundPanel66MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel66MouseEntered
-        // TODO add your handling code here:
+        changeColor(roundPanel66, new Color(0, 187, 255));
     }//GEN-LAST:event_roundPanel66MouseEntered
 
     private void roundPanel66MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel66MouseExited
-        // TODO add your handling code here:
+        changeColor(roundPanel66, new Color(0,153,255));
     }//GEN-LAST:event_roundPanel66MouseExited
+
+    private void roundPanel83MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel83MouseEntered
+        changeColor(roundPanel83, new Color(105, 153, 0));        
+    }//GEN-LAST:event_roundPanel83MouseEntered
+
+    private void roundPanel83MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel83MouseExited
+        changeColor(roundPanel83, new Color(0,153,0));
+    }//GEN-LAST:event_roundPanel83MouseExited
+
+    private void roundPanel84MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel84MouseEntered
+        changeColor(roundPanel84, new Color(105, 153, 0));        
+    }//GEN-LAST:event_roundPanel84MouseEntered
+
+    private void roundPanel84MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel84MouseExited
+        changeColor(roundPanel84, new Color(0,153,0));
+    }//GEN-LAST:event_roundPanel84MouseExited
+
+    private void roundPanel85MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel85MouseEntered
+        changeColor(roundPanel85, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel85MouseEntered
+
+    private void roundPanel85MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel85MouseExited
+        changeColor(roundPanel85, new Color(0,153,255));
+    }//GEN-LAST:event_roundPanel85MouseExited
+
+    private void roundPanel86MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel86MouseEntered
+        changeColor(roundPanel86, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel86MouseEntered
+
+    private void roundPanel86MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel86MouseExited
+        changeColor(roundPanel86, new Color(0,153,255));
+    }//GEN-LAST:event_roundPanel86MouseExited
+
+    private void roundPanel87MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel87MouseEntered
+        changeColor(roundPanel87, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel87MouseEntered
+
+    private void roundPanel87MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel87MouseExited
+        changeColor(roundPanel87, new Color(0,153,255));
+    }//GEN-LAST:event_roundPanel87MouseExited
+
+    private void roundPanel88MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel88MouseClicked
+        roundPanel3.setVisible(false);
+        multipleButton2.setVisible(true);        
+    }//GEN-LAST:event_roundPanel88MouseClicked
+
+    private void roundPanel88MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel88MouseEntered
+        changeColor(roundPanel88, new Color(220, 86, 13));
+    }//GEN-LAST:event_roundPanel88MouseEntered
+
+    private void roundPanel88MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel88MouseExited
+        changeColor(roundPanel88, new Color(255,90,0));
+    }//GEN-LAST:event_roundPanel88MouseExited
+
+    private void roundPanel72MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel72MouseEntered
+        changeColor(roundPanel72, new Color(105, 153, 0));        
+    }//GEN-LAST:event_roundPanel72MouseEntered
+
+    private void roundPanel72MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel72MouseExited
+        changeColor(roundPanel72, new Color(0,153,0));
+    }//GEN-LAST:event_roundPanel72MouseExited
+
+    private void roundPanel73MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel73MouseEntered
+        changeColor(roundPanel73, new Color(105, 153, 0));        
+    }//GEN-LAST:event_roundPanel73MouseEntered
+
+    private void roundPanel73MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel73MouseExited
+        changeColor(roundPanel73, new Color(0,153,0));
+    }//GEN-LAST:event_roundPanel73MouseExited
+
+    private void roundPanel74MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel74MouseEntered
+        changeColor(roundPanel74, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel74MouseEntered
+
+    private void roundPanel74MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel74MouseExited
+        changeColor(roundPanel74, new Color(0,153,255));
+    }//GEN-LAST:event_roundPanel74MouseExited
+
+    private void roundPanel75MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel75MouseEntered
+        changeColor(roundPanel75, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel75MouseEntered
+
+    private void roundPanel75MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel75MouseExited
+        changeColor(roundPanel75, new Color(0,153,255));
+    }//GEN-LAST:event_roundPanel75MouseExited
+
+    private void roundPanel76MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel76MouseEntered
+        changeColor(roundPanel76, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel76MouseEntered
+
+    private void roundPanel76MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel76MouseExited
+        changeColor(roundPanel76, new Color(0,153,255));
+    }//GEN-LAST:event_roundPanel76MouseExited
+
+    private void roundPanel77MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel77MouseClicked
+        roundPanel40.setVisible(false);
+        multipleButton2.setVisible(true);        
+    }//GEN-LAST:event_roundPanel77MouseClicked
+
+    private void roundPanel77MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel77MouseEntered
+        changeColor(roundPanel77, new Color(220, 86, 13));
+    }//GEN-LAST:event_roundPanel77MouseEntered
+
+    private void roundPanel77MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel77MouseExited
+        changeColor(roundPanel77, new Color(255,90,0));
+    }//GEN-LAST:event_roundPanel77MouseExited
+
+    private void roundPanel79MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel79MouseEntered
+        changeColor(roundPanel79, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel79MouseEntered
+
+    private void roundPanel79MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel79MouseExited
+        changeColor(roundPanel79, new Color(0,153,255));
+    }//GEN-LAST:event_roundPanel79MouseExited
+
+    private void roundPanel91MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel91MouseEntered
+        changeColor(roundPanel91, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel91MouseEntered
+
+    private void roundPanel91MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel91MouseExited
+        changeColor(roundPanel91, new Color(0,153,255));
+    }//GEN-LAST:event_roundPanel91MouseExited
+
+    private void roundPanel96MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel96MouseEntered
+        changeColor(roundPanel96, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel96MouseEntered
+
+    private void roundPanel96MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel96MouseExited
+        changeColor(roundPanel96, new Color(0,153,255));
+    }//GEN-LAST:event_roundPanel96MouseExited
+
+    private void jLabel103MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel103MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel103MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -2491,6 +3454,8 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.RoundPanel CapNhatTaiKhoanSinhVien2;
     private javaapplication24.RoundPanel CapNhatTaiKhoanSinhVien3;
     private javaapplication24.RoundPanel CapNhatTaiKhoanSinhVien4;
+    private javaapplication24.RoundPanel CapNhatTaiKhoanSinhVien5;
+    private javaapplication24.RoundPanel CapNhatTaiKhoanSinhVien6;
     private javaapplication24.RoundPanel GuiThongbao;
     private javaapplication24.RoundPanel Homthu;
     private javaapplication24.RoundPanel QuanLyGiangVien;
@@ -2499,6 +3464,10 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.RoundPanel QuanlySinhvien;
     private javax.swing.JLabel Title;
     private javax.swing.JLabel Title1;
+    private javax.swing.JLabel Title10;
+    private javax.swing.JLabel Title11;
+    private javax.swing.JLabel Title12;
+    private javax.swing.JLabel Title13;
     private javax.swing.JLabel Title2;
     private javax.swing.JLabel Title3;
     private javax.swing.JLabel Title4;
@@ -2512,6 +3481,13 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.JCheckBoxCustom jCheckBoxCustom2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -2564,7 +3540,13 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
@@ -2580,14 +3562,39 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
+    private javax.swing.JLabel jLabel92;
+    private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel66;
+    private javax.swing.JPanel jPanel67;
+    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -2604,7 +3611,17 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField jTextField27;
+    private javax.swing.JTextField jTextField28;
+    private javax.swing.JTextField jTextField29;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField30;
+    private javax.swing.JTextField jTextField31;
+    private javax.swing.JTextField jTextField32;
+    private javax.swing.JTextField jTextField33;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -2679,9 +3696,37 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.RoundPanel roundPanel66;
     private javaapplication24.RoundPanel roundPanel67;
     private javaapplication24.RoundPanel roundPanel68;
+    private javaapplication24.RoundPanel roundPanel69;
     private javaapplication24.RoundPanel roundPanel7;
+    private javaapplication24.RoundPanel roundPanel70;
+    private javaapplication24.RoundPanel roundPanel71;
+    private javaapplication24.RoundPanel roundPanel72;
+    private javaapplication24.RoundPanel roundPanel73;
+    private javaapplication24.RoundPanel roundPanel74;
+    private javaapplication24.RoundPanel roundPanel75;
+    private javaapplication24.RoundPanel roundPanel76;
+    private javaapplication24.RoundPanel roundPanel77;
+    private javaapplication24.RoundPanel roundPanel78;
+    private javaapplication24.RoundPanel roundPanel79;
     private javaapplication24.RoundPanel roundPanel8;
+    private javaapplication24.RoundPanel roundPanel80;
+    private javaapplication24.RoundPanel roundPanel81;
+    private javaapplication24.RoundPanel roundPanel82;
+    private javaapplication24.RoundPanel roundPanel83;
+    private javaapplication24.RoundPanel roundPanel84;
+    private javaapplication24.RoundPanel roundPanel85;
+    private javaapplication24.RoundPanel roundPanel86;
+    private javaapplication24.RoundPanel roundPanel87;
+    private javaapplication24.RoundPanel roundPanel88;
+    private javaapplication24.RoundPanel roundPanel89;
     private javaapplication24.RoundPanel roundPanel9;
+    private javaapplication24.RoundPanel roundPanel90;
+    private javaapplication24.RoundPanel roundPanel91;
+    private javaapplication24.RoundPanel roundPanel92;
+    private javaapplication24.RoundPanel roundPanel93;
+    private javaapplication24.RoundPanel roundPanel94;
+    private javaapplication24.RoundPanel roundPanel95;
+    private javaapplication24.RoundPanel roundPanel96;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin111;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin112;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin113;
@@ -2691,6 +3736,14 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.ScrollPaneWin11 scrollPaneWin117;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin118;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin119;
+    private javaapplication24.ScrollPaneWin11 scrollPaneWin120;
+    private javaapplication24.ScrollPaneWin11 scrollPaneWin121;
+    private javaapplication24.ScrollPaneWin11 scrollPaneWin122;
+    private javaapplication24.ScrollPaneWin11 scrollPaneWin123;
+    private javaapplication24.ScrollPaneWin11 scrollPaneWin124;
+    private javaapplication24.ScrollPaneWin11 scrollPaneWin125;
+    private javaapplication24.Table table10;
+    private javaapplication24.Table table11;
     private javaapplication24.Table table2;
     private javaapplication24.Table table3;
     private javaapplication24.Table table4;
@@ -2698,5 +3751,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.Table table6;
     private javaapplication24.Table table7;
     private javaapplication24.Table table8;
+    private javaapplication24.Table table9;
     // End of variables declaration//GEN-END:variables
 }
