@@ -41,4 +41,34 @@ public class DIEU_KHIEN_DAO extends BDConnect{
       return dieukhien.get(0);
     };
     
+    
+    public int VoHieu() {
+		
+		int kq = 0;
+		try {
+			
+			String sql = "UPDATE DIEU_KHIEN SET VoHieuHoaSinhVien = 0  WHERE VoHieuHoaSinhVien=1";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return kq;
+	}
+    
+    public int KichHoat() {
+		
+		int kq = 0;
+		try {
+			
+			String sql = "UPDATE DIEU_KHIEN SET VoHieuHoaSinhVien = 1  WHERE VoHieuHoaSinhVien= 0";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return kq;
+	}
 }

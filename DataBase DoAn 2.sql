@@ -133,6 +133,8 @@ alter table CHUONG_TRINH_KHUNG add constraint CHUONG_TRINH_KHUNG_NGANH foreign k
 alter table CHUONG_TRINH_KHUNG add constraint CHUONG_TRINH_KHUNG_MON_HOC foreign key (MaMon) references MON_HOC(MaMon);
 
 
+insert into DIEU_KHIEN(VoHieuHoaSinhVien) values(1);
+
 
 insert into THONG_BAO(MaThongBao,TieuDe,Flag)
 values(1,N'đóng học phí',1);

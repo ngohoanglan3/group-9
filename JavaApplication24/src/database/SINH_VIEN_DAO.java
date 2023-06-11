@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Types;
 
 /**
  *
@@ -130,4 +131,138 @@ public class SINH_VIEN_DAO extends BDConnect{
       };
       return sinhvien.get(0);
     };
+    
+    public SINH_VIEN getThongTin3(String MaSV){
+        ArrayList<SINH_VIEN> sinhvien = new ArrayList<SINH_VIEN>();
+        String query =" select * from SINH_VIEN where MaSV = '"+ MaSV + "'" ;
+      try{
+          PreparedStatement atm = conn.prepareStatement(query);
+          ResultSet rs = atm.executeQuery();
+          while (rs.next()){
+              sinhvien.add(new SINH_VIEN(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getBoolean(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15),rs.getString(16),rs.getString(17),rs.getBoolean(18)));
+          }
+      }
+      catch(Exception e){
+          e.printStackTrace();
+      };
+      return sinhvien.get(0);
+    };
+    
+    public int insert(SINH_VIEN t) {
+		int kq = 0;
+		try {
+			
+			String sql = "INSERT SINH_VIEN (MaSV , Ho , Ten, Email, MaLop, MaNganh , GioiTinh, NoiSinh, HoKhauThuongTru, MaBac, MaLoaiHinhDaoTao, CCCD, MatKhau, NgaySinh , DanToc, MaKhoaHoc, Flag, SDT) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, t.getMaSV());
+			pst.setString(2, t.getHo());
+			pst.setString(3, t.getTen());
+			pst.setString(4, t.getEmail());
+			pst.setString(5, t.getMaLop());
+			pst.setString(6, t.getMaNganh());
+			pst.setNull(7, Types.NULL);
+			pst.setString(8, t.getNoiSinh());
+			pst.setString(9, t.getHoKhauThuongTru());
+			pst.setString(10, t.getMaBac());
+			pst.setString(11, t.getMaLoaiHinhDaoTao());
+			pst.setString(12, t.getCCCD());
+			pst.setString(13, t.getMatKhau());
+			pst.setString(14, t.getNgaySinh());
+			pst.setString(15, t.getDanToc());
+			pst.setString(16, t.getMaKhoaHoc());
+			pst.setBoolean(17, false);
+			pst.setString(18, t.getSDT());
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
+    
+    public int update(String MaSV,SINH_VIEN t) {
+		
+		int kq = 0;
+		try {
+			
+			String sql = "UPDATE SINH_VIEN SET Ho=? , Ten=?, Email=?, MaLop=?, MaNganh=? , GioiTinh=?, NoiSinh=?, HoKhauThuongTru=?, MaBac=?, MaLoaiHinhDaoTao=?, CCCD=?, MatKhau=?, NgaySinh=? , DanToc=?, MaKhoaHoc=?, Flag=?, SDT=? WHERE MaSV=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, t.getHo());
+			pst.setString(2, t.getTen());
+			pst.setString(3, t.getEmail());
+			pst.setString(4, t.getMaLop());
+			pst.setString(5, t.getMaNganh());
+			pst.setBoolean(6, t.getGioiTinh());
+			pst.setString(7, t.getNoiSinh());
+			pst.setString(8, t.getHoKhauThuongTru());
+			pst.setString(9, t.getMaBac());
+			pst.setString(10, t.getMaLoaiHinhDaoTao());
+			pst.setString(11, t.getCCCD());
+			pst.setString(12, t.getMatKhau());
+			pst.setString(13, t.getNgaySinh());
+			pst.setString(14, t.getDanToc());
+			pst.setString(15, t.getMaKhoaHoc());
+			pst.setBoolean(16, t.getFlag());
+			pst.setString(17, t.getSDT());
+			pst.setString(18, MaSV);
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
+    
+    
+    public int XoaDong(String MaSV) {
+		
+		int kq = 0;
+		try {
+			
+			String sql = "UPDATE SINH_VIEN SET Flag = NULL, MatKhau='' WHERE MaSV = ?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, MaSV);
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return kq;
+	}
+    
+    public int VoHieu(String MaSV) {
+		
+		int kq = 0;
+		try {
+			
+			String sql = "UPDATE SINH_VIEN SET Flag = 0  WHERE MaSV = ?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, MaSV);
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return kq;
+	}
+    
+    public int KichHoat(String MaSV) {
+		
+		int kq = 0;
+		try {
+			
+			String sql = "UPDATE SINH_VIEN SET Flag = 1 WHERE MaSV = ?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, MaSV);
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return kq;
+	}
 }
