@@ -1,26 +1,26 @@
-﻿--create database CoSoDuLieu;
+﻿--create database CoSoDuLieu1;
 
 create table DIEU_KHIEN(
 VoHieuHoaSinhVien bit,
 );
 create table SINH_VIEN(
-MaSV char(6) primary key,
-MatKhau varchar(100) not null, 
+MaSV nvarchar(6) primary key,
+MatKhau nvarchar(100) not null, 
 Ho nvarchar(50),
 Ten nvarchar(30),
-CCCD char(12),
-Email varchar(50),
+CCCD nvarchar(12),
+Email nvarchar(50),
 SDT nvarchar(10),
 NgaySinh date check ((year(getdate())- year(NgaySinh))>=18),
 GioiTinh bit,
 NoiSinh nvarchar(50),
 HoKhauThuongTru nvarchar(100),
 DanToc nvarchar(50),
-MaKhoaHoc char(4),
-MaLop char(5),
-MaNganh char(5),
-MaBac char(5),
-MaLoaiHinhDaoTao char(5),
+MaKhoaHoc nvarchar(4),
+MaLop nvarchar(5),
+MaNganh nvarchar(5),
+MaBac nvarchar(5),
+MaLoaiHinhDaoTao nvarchar(5),
 Flag bit,
 );
 
@@ -28,7 +28,7 @@ create table HOM_THU(
 MaThu int primary key,
 TieuDe nvarchar(200),
 NoiDung nvarchar(2000),
-MaSV char(6),
+MaSV nvarchar(6),
 Flag bit,
 );
 
@@ -39,7 +39,7 @@ Flag bit,
 );
 
 create table KHOA_HOC(
-MaKhoaHoc char(4) primary key,
+MaKhoaHoc nvarchar(4) primary key,
 HeSoDCC tinyint check(HeSoDCC < 100 and HeSoDCC >0),
 HeSoDGK tinyint check(HeSoDGK < 100 and HeSoDGK >0),
 HeSoDKT tinyint check(HeSoDKT < 100 and HeSoDKT >0),
@@ -47,57 +47,57 @@ Flag bit,
 );
 
 create table LOP(
-MaLop char(5) primary key,
-TenLop varchar(10) not null,
-MaKhoa varchar(10) not null,
-MaKhoaHoc char(4) not null,
+MaLop nvarchar(5) primary key,
+TenLop nvarchar(10) not null,
+MaKhoa nvarchar(10) not null,
+MaKhoaHoc nvarchar(4) not null,
 Flag bit,
 );
 
 create table NGANH(
-MaNganh char(5) primary key,
+MaNganh nvarchar(5) primary key,
 TenNganh nvarchar(50) not null,
-MaKhoa varchar(10),
+MaKhoa nvarchar(10),
 Flag bit,
 );
 
 create table KHOA(
-MaKhoa varchar(10) primary key,
+MaKhoa nvarchar(10) primary key,
 TenKhoa nvarchar(50) not null,
 Flag bit,
 );
 
 create table CHUONG_TRINH_KHUNG(
-MaMon varchar(10) not null,
-MaNganh char(5) not null,
+MaMon nvarchar(10) not null,
+MaNganh nvarchar(5) not null,
 HocKy tinyint,
 Flag bit,
 );
 alter table CHUONG_TRINH_KHUNG add primary key (MaMon,MaNganh);
 
 create table MON_HOC(
-MaMon varchar(10) primary key,
+MaMon nvarchar(10) primary key,
 TenMon nvarchar(50),
 SoTinChi tinyint,
 SoTiet tinyint,
 BatBuoc bit,
-TuChon bit,
-TienQuyet varchar(10),
-SongHanh varchar(10),
+--TuChon bit,
+TienQuyet nvarchar(10),
+SongHanh nvarchar(10),
 Flag bit,
 );
 
 create table HOC_KY(
-MaHocKy varchar(10) primary key,
+MaHocKy nvarchar(10) primary key,
 Nam char(9) not null,
 SoThuTu tinyint not null,
 Flag bit,
 );
 
 create table DIEM(
-MaSV char(6) not null, 
-MaHocKy varchar(10) not null,
-MaMon varchar(10) not null,
+MaSV nvarchar(6) not null, 
+MaHocKy nvarchar(10) not null,
+MaMon nvarchar(10) not null,
 DiemChuyenCan float check(DiemChuyenCan >=0 and DiemChuyenCan <=10),
 DiemGiuaKy float check(DiemGiuaKy >=0 and DiemGiuaKy <=10),
 DiemKetThuc float check(DiemKetThuc >=0 and DiemKetThuc <=10),
@@ -106,13 +106,13 @@ Flag bit,
 alter table DIEM add primary key (MaMon,MaSV,MaHocKy);
 
 create table BAC_DAO_TAO(
-MaBac char(5) primary key,
+MaBac nvarchar(5) primary key,
 TenBac nvarchar(50) not null,
 Flag bit,
 );
 
 create table LOAI_HINH_DAO_TAO(
-MaLoaiHinhDaoTao char(5) primary key,
+MaLoaiHinhDaoTao nvarchar(5) primary key,
 TenLoaiHinhDaoTao nvarchar(50) not null ,
 Flag bit,
 );
@@ -202,105 +202,105 @@ values(2,N'du học liên kết Việt- Nhật',1);
 	VALUES ('004',N'Tương mại điện tử','002',1);
 
 
-	INSERT INTO MON_HOC (MaMon, TenMon, SoTinChi, SoTiet, BatBuoc, TuChon, TienQuyet, SongHanh, Flag)
+	INSERT INTO MON_HOC (MaMon, TenMon, SoTinChi, SoTiet, BatBuoc, TienQuyet, SongHanh, Flag)
 	VALUES
-    ('101', N'Cơ sở dữ liệu', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('102', N'Lập trình C/C++', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('103', N'Lập trình Java', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('104', N'Lập trình Python', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('105', N'Kỹ thuật lập trình web', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('106', N'Hệ điều hành',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('107', N'Mạng máy tính', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('108', N'Kỹ thuật phần mềm',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('109', N'Kiến trúc máy tính',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('110', N'An toàn thông tin', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('111', N'Học máy', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('112', N'Trí tuệ nhân tạo', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('113', N'Phân tích dữ liệu', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '101', NULL, 1),
-    ('114', N'Truyền thông mạng', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('115', N'Công nghệ di động ',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('116', N'Trực quan hóa dữ liệu ',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '101', NULL, 1),
-    ('117', N'Quản lý dự án phần mềm',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('118', N'Kỹ thuật mạng',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('119', N'Kỹ thuật ảo hóa',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '101', NULL, 1),                                                                                             
-    ('120', N'Internet of Things (IoT)',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '118', NULL, 1),                                                                             
-    ('121', N'Mạng không dây',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '118', NULL, 1),
-    ('122', N'Hệ thống thông tin',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '101', NULL, 1),
-    ('123', N'Công nghệ đám mây ',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '120', NULL, 1),
-    ('124', N'Thiết kế giao diện người dùng', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '108', NULL, 1),
-    ('125', N'Phân tích và thiết kế hệ thống',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '101', NULL, 1),
-    ('126', N'Xử lý ngôn ngữ tự nhiên',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('127', N'Cơ sở dữ liệu phân tán',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '101', NULL, 1),
-    ('128', N'Quản lý dữ liệu lớn', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '101', NULL, 1),
-    ('129', N'Học sâu',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('130', N'Phân tích hình ảnh và thị giác máy tính ',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '129', NULL, 1),
-    ('131', N'Công nghệ blockchain',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '101', NULL, 1),
-    ('132', N'Thiết kế game',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('133', N'Công nghệ truyền thông đa phương tiện',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('134', N'Mật mã học',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('135', N'Công nghệ ứng dụng di động',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('136', N'Công nghệ ảo thực',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('137', N'Trí tuệ nhân tạo trong điều khiển tự động',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '129', NULL, 1),                                                                                                                                                                      
-    ('138', N'An ninh mạng (Network Security)',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '134', NULL, 1),
-    ('139', N'Công nghệ phát triển phần mềm nhúng', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('140', N'Hệ thống thông tin địa lý', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1);  
+    ('101', N'Cơ sở dữ liệu', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('102', N'Lập trình C/C++', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('103', N'Lập trình Java', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, NULL, NULL, 1),
+    ('104', N'Lập trình Python', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  NULL, NULL, 1),
+    ('105', N'Kỹ thuật lập trình web', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  NULL, NULL, 1),
+    ('106', N'Hệ điều hành',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('107', N'Mạng máy tính', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('108', N'Kỹ thuật phần mềm',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('109', N'Kiến trúc máy tính',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('110', N'An toàn thông tin', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('111', N'Học máy', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, NULL, NULL, 1),
+    ('112', N'Trí tuệ nhân tạo', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  NULL, NULL, 1),
+    ('113', N'Phân tích dữ liệu', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, '101', NULL, 1),
+    ('114', N'Truyền thông mạng', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, NULL, NULL, 1),
+    ('115', N'Công nghệ di động ',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0, NULL, NULL, 1),
+    ('116', N'Trực quan hóa dữ liệu ',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '101', NULL, 1),
+    ('117', N'Quản lý dự án phần mềm',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('118', N'Kỹ thuật mạng',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('119', N'Kỹ thuật ảo hóa',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '101', NULL, 1),                                                                                             
+    ('120', N'Internet of Things (IoT)',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '118', NULL, 1),                                                                             
+    ('121', N'Mạng không dây',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '118', NULL, 1),
+    ('122', N'Hệ thống thông tin',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '101', NULL, 1),
+    ('123', N'Công nghệ đám mây ',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '120', NULL, 1),
+    ('124', N'Thiết kế giao diện người dùng', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '108', NULL, 1),
+    ('125', N'Phân tích và thiết kế hệ thống',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '101', NULL, 1),
+    ('126', N'Xử lý ngôn ngữ tự nhiên',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('127', N'Cơ sở dữ liệu phân tán',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, '101', NULL, 1),
+    ('128', N'Quản lý dữ liệu lớn', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '101', NULL, 1),
+    ('129', N'Học sâu',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  NULL, NULL, 1),
+    ('130', N'Phân tích hình ảnh và thị giác máy tính ',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '129', NULL, 1),
+    ('131', N'Công nghệ blockchain',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '101', NULL, 1),
+    ('132', N'Thiết kế game',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  NULL, NULL, 1),
+    ('133', N'Công nghệ truyền thông đa phương tiện',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('134', N'Mật mã học',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('135', N'Công nghệ ứng dụng di động',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('136', N'Công nghệ ảo thực',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('137', N'Trí tuệ nhân tạo trong điều khiển tự động',  RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '129', NULL, 1),                                                                                                                                                                      
+    ('138', N'An ninh mạng (Network Security)',  RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '134', NULL, 1),
+    ('139', N'Công nghệ phát triển phần mềm nhúng', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('140', N'Hệ thống thông tin địa lý', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, NULL, NULL, 1);  
 
 
-	INSERT INTO MON_HOC (MaMon, TenMon, SoTinChi, SoTiet, BatBuoc, TuChon, TienQuyet, SongHanh, Flag)
+	INSERT INTO MON_HOC (MaMon, TenMon, SoTinChi, SoTiet, BatBuoc, TienQuyet, SongHanh, Flag)
 	VALUES
-	('001', N'Toán học tính toán', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('002', N'Toán rời rạc', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('003', N'Giải tích 1', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('004', N'Giải tích 2', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '003', NULL, 1),
-    ('005', N'Đại số tuyến tính', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('006', N'Chủ nghĩa xã hội khoa học', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('007', N'Triết học Mac-Lenin', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('008', N'Lịch sử Đảng Cộng sản Việt Nam', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('009', N'Thể chất 1', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('010', N'Thể chất 2', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '009', NULL, 1);
+	('001', N'Toán học tính toán', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('002', N'Toán rời rạc', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('003', N'Giải tích 1', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('004', N'Giải tích 2', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, '003', NULL, 1),
+    ('005', N'Đại số tuyến tính', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('006', N'Chủ nghĩa xã hội khoa học', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('007', N'Triết học Mac-Lenin', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('008', N'Lịch sử Đảng Cộng sản Việt Nam', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('009', N'Thể chất 1', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,NULL, NULL, 1),
+    ('010', N'Thể chất 2', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, '009', NULL, 1);
 
-	INSERT INTO MON_HOC (MaMon, TenMon, SoTinChi, SoTiet, BatBuoc, TuChon, TienQuyet, SongHanh, Flag)
+	INSERT INTO MON_HOC (MaMon, TenMon, SoTinChi, SoTiet, BatBuoc, TienQuyet, SongHanh, Flag)
 	VALUES
-	('201', N'Kinh tế học cơ bản', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('202', N'Quản lý kinh tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('203', N'Kế toán doanh nghiệp', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('204', N'Thống kê kinh tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('205', N'Quản lý tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('206', N'Tiền tệ và ngân hàng', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('207', N'Kinh tế vĩ mô', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('208', N'Kinh tế học địa phương', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '201', NULL, 1),
-    ('209', N'Chính sách kinh tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('210', N'Kinh tế phát triển', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '201', NULL, 1),
-    ('211', N'Kinh tế học quốc tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '201', NULL, 1),
-    ('212', N'Kinh tế học hài hòa', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '201', NULL, 1),
-    ('213', N'Kinh tế học xã hội', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '201', NULL, 1),
-    ('214', N'Kinh tế học lượng', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '201', NULL, 1),
-	('215', N'Thị trường tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '205', NULL, 1),
-    ('216', N'Quản trị tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('217', N'Tài chính doanh nghiệp', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '203', NULL, 1),
-    ('218', N'Quản lý rủi ro tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '224', NULL, 1),
-    ('219', N'Thương mại quốc tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '211', NULL, 1),
-    ('220', N'Quản trị chuỗi cung ứng', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('221', N'Kế toán tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '216', NULL, 1),
-    ('222', N'Kiểm toán tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('223', N'Phân tích đầu tư', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('224', N'Quản trị rủi ro', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('225', N'Học kinh tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '201', NULL, 1),
-	('226', N'Học phân tích kinh tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, '225', NULL, 1),
-    ('227', N'Tài chính doanh nghiệp', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('228', N'Marketing căn bản', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('229', N'Kinh tế học lượng', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '201', NULL, 1),
-    ('230', N'Kinh tế vĩ mô toàn cầu', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, '211', NULL, 1),
-    ('231', N'Quản trị nguồn nhân lực', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('232', N'Nghiên cứu thị trường', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('233', N'Phân tích kinh tế đối ngoại', RAND()*(3)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('234', N'Quản lý chiến lược', RAND()*(3)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('235', N'Kinh tế học ngành công nghiệp', RAND()*(3)+1, RAND()*(40-30)+30, 0, 1, '201', NULL, 1),
-    ('236', N'Phân tích quyết định kinh tế', RAND()*(3)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('237', N'Chính sách tài chính', RAND()*(3)+1, RAND()*(40-30)+30, 1, 0, NULL, NULL, 1),
-    ('238', N'Phân tích kinh tế ứng dụng', RAND()*(3)+1, RAND()*(40-30)+30, 0, 1, NULL, NULL, 1),
-    ('239', N'Quản trị kinh doanh quốc tế', RAND()*(3)+1, RAND()*(40-30)+30, 0, 1,NULL,NULL,1),
-	('240', N'Kinh tế học quốc tế học', RAND()*(3)+1, RAND()*(40-30)+30, 0, 1, '211', NULL, 1);
+	('201', N'Kinh tế học cơ bản', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('202', N'Quản lý kinh tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('203', N'Kế toán doanh nghiệp', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('204', N'Thống kê kinh tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('205', N'Quản lý tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('206', N'Tiền tệ và ngân hàng', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('207', N'Kinh tế vĩ mô', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  NULL, NULL, 1),
+    ('208', N'Kinh tế học địa phương', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '201', NULL, 1),
+    ('209', N'Chính sách kinh tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('210', N'Kinh tế phát triển', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '201', NULL, 1),
+    ('211', N'Kinh tế học quốc tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '201', NULL, 1),
+    ('212', N'Kinh tế học hài hòa', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '201', NULL, 1),
+    ('213', N'Kinh tế học xã hội', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '201', NULL, 1),
+    ('214', N'Kinh tế học lượng', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '201', NULL, 1),
+	('215', N'Thị trường tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30,  0, '205', NULL, 1),
+    ('216', N'Quản trị tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  NULL, NULL, 1),
+    ('217', N'Tài chính doanh nghiệp', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '203', NULL, 1),
+    ('218', N'Quản lý rủi ro tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '224', NULL, 1),
+    ('219', N'Thương mại quốc tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '211', NULL, 1),
+    ('220', N'Quản trị chuỗi cung ứng', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('221', N'Kế toán tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '216', NULL, 1),
+    ('222', N'Kiểm toán tài chính', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, NULL, NULL, 1),
+    ('223', N'Phân tích đầu tư', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('224', N'Quản trị rủi ro', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  NULL, NULL, 1),
+    ('225', N'Học kinh tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1,  '201', NULL, 1),
+	('226', N'Học phân tích kinh tế', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, '225', NULL, 1),
+    ('227', N'Tài chính doanh nghiệp', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('228', N'Marketing căn bản', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  NULL, NULL, 1),
+    ('229', N'Kinh tế học lượng', RAND()*(3-1)+1, RAND()*(40-30)+30, 0,  '201', NULL, 1),
+    ('230', N'Kinh tế vĩ mô toàn cầu', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, '211', NULL, 1),
+    ('231', N'Quản trị nguồn nhân lực', RAND()*(3-1)+1, RAND()*(40-30)+30, 0, NULL, NULL, 1),
+    ('232', N'Nghiên cứu thị trường', RAND()*(3-1)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('233', N'Phân tích kinh tế đối ngoại', RAND()*(3)+1, RAND()*(40-30)+30, 0, NULL, NULL, 1),
+    ('234', N'Quản lý chiến lược', RAND()*(3)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('235', N'Kinh tế học ngành công nghiệp', RAND()*(3)+1, RAND()*(40-30)+30, 0, '201', NULL, 1),
+    ('236', N'Phân tích quyết định kinh tế', RAND()*(3)+1, RAND()*(40-30)+30,  0, NULL, NULL, 1),
+    ('237', N'Chính sách tài chính', RAND()*(3)+1, RAND()*(40-30)+30, 1, NULL, NULL, 1),
+    ('238', N'Phân tích kinh tế ứng dụng', RAND()*(3)+1, RAND()*(40-30)+30, 0,  NULL, NULL, 1),
+    ('239', N'Quản trị kinh doanh quốc tế', RAND()*(3)+1, RAND()*(40-30)+30, 0,NULL,NULL,1),
+	('240', N'Kinh tế học quốc tế học', RAND()*(3)+1, RAND()*(40-30)+30, 0, '211', NULL, 1);
 
 
 	INSERT [dbo].[SINH_VIEN] ([MaSV ], [Ho ], [Ten], [Email], [MaLop], [MaNganh ], [GioiTinh], [NoiSinh], [HoKhauThuongTru], [MaBac], [MaLoaiHinhDaoTao], [CCCD], [MatKhau], [NgaySinh ], [DanToc], [MaKhoaHoc], [Flag], [SDT]) VALUES (N'ST0001', N'Nguyễn Thùy', N'Vân', N'van1901@tiny.edu.vn', N'01IT1', N'001  ', 0, N'Hà Nội', N'Hai Bà Trưng - Hà Nội', N'002  ', N'001  ', N'01234567890 ', N'123456', CAST(N'2003-01-12T00:00:00.000' AS DateTime), N'Kinh', N'K01 ', 1, N'1234567890')
