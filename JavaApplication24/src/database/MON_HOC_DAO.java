@@ -143,4 +143,28 @@ public class MON_HOC_DAO extends BDConnect{
 		}
 		return kq;
 	}
+    
+    public int insert(MON_HOC t) {
+		int kq = 0;
+		try {
+			
+			String sql = "INSERT INTO mon_hoc(MaMon, TenMon, SoTinChi, SoTiet, BatBuoc,TienQuyet, SongHanh, Flag) VALUES(?,?,?,?,?,?,?,?)";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, t.getMaMon());
+			pst.setString(2, t.getTenMon());
+			pst.setInt(3, t.getSoTinChi());
+			pst.setInt(4, t.getSoTiet());
+			pst.setBoolean(5, t.isBatBuoc());
+			pst.setString(6, t.getTienQuyet());
+			pst.setString(7, t.getSongHanh());
+			pst.setBoolean(8, t.isFlag());
+			
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
+    
 }
