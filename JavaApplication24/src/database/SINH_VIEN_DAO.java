@@ -265,4 +265,77 @@ public class SINH_VIEN_DAO extends BDConnect{
 		}
 		return kq;
 	}
+    
+    public ArrayList<SINH_VIEN> seclectMaLop(String MaLop) {
+		ArrayList<SINH_VIEN> kq = new ArrayList<SINH_VIEN>();
+		try {
+			
+			String sql = "SELECT * from SINH_VIEN where MaLop = '"+MaLop+"' ";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			ResultSet resultSet = pst.executeQuery();
+			while(resultSet.next()) {
+                SINH_VIEN std = new SINH_VIEN(
+                        resultSet.getString("MaSV"), 
+                        resultSet.getString("MatKhau"), 
+                        resultSet.getString("Ho"), 
+                        resultSet.getString("Ten"), 
+                        resultSet.getString("CCCD"), 
+                        resultSet.getString("Email"),
+                        resultSet.getString("SDT"),
+                        resultSet.getString("NgaySinh"),
+                        resultSet.getBoolean("GioiTinh"),
+                        resultSet.getString("NoiSinh"),
+                        resultSet.getString("HoKhauThuongTru"),
+                        resultSet.getString("DanToc"),
+                        resultSet.getString("MaKhoaHoc"),
+                        resultSet.getString("MaLop"),
+                        resultSet.getString("MaNganh"),
+                        resultSet.getString("MaBac"),
+                        resultSet.getString("MaLoaiHinhDaoTao"),
+                        resultSet.getBoolean("flag")
+                );
+                kq.add(std);
+            }
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
+
+    public int update1(String MaSV,String MaLop) {
+        int kq = 0;
+		try {
+			
+			String sql = "UPDATE SINH_VIEN SET MaLop=? WHERE MaSV=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, MaLop);
+			pst.setString(2, MaSV);
+			
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+    }
+    
+    public int update2(String MaSV) {
+		int kq = 0;
+		try {
+			
+			String sql = "UPDATE SINH_VIEN SET MaLop= NULL WHERE MaSV=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, MaSV);
+			
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
 }

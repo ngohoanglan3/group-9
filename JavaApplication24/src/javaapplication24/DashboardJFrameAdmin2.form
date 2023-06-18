@@ -4674,6 +4674,7 @@
                             </Property>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel72MouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel72MouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel72MouseExited"/>
                           </Events>
@@ -4713,6 +4714,7 @@
                             </Property>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel73MouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel73MouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel73MouseExited"/>
                           </Events>
@@ -4751,7 +4753,7 @@
                               <Font name="Segoe UI Semibold" size="14" style="0"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="4"/>
-                            <Property name="text" type="java.lang.String" value="M&#xe3; khoa:"/>
+                            <Property name="text" type="java.lang.String" value="M&#xe3; l&#x1edb;p:"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4785,7 +4787,7 @@
                               <Font name="Segoe UI Semibold" size="14" style="0"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="4"/>
-                            <Property name="text" type="java.lang.String" value="M&#xe3; l&#x1edb;p:"/>
+                            <Property name="text" type="java.lang.String" value="T&#xea;n l&#x1edb;p:"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4819,7 +4821,7 @@
                               <Font name="Segoe UI Semibold" size="14" style="0"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="4"/>
-                            <Property name="text" type="java.lang.String" value="T&#xea;n l&#x1edb;p:"/>
+                            <Property name="text" type="java.lang.String" value="M&#xe3; khoa:"/>
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4856,8 +4858,11 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="TH&#xca;M KHOA"/>
+                                <Property name="text" type="java.lang.String" value="TH&#xca;M L&#x1eda;P"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel79MouseClicked"/>
+                              </Events>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                   <AbsoluteConstraints x="0" y="0" width="80" height="30"/>
@@ -4873,6 +4878,7 @@
                             </Property>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel75MouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel75MouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel75MouseExited"/>
                           </Events>
@@ -4895,7 +4901,7 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="S&#x1eec;A KHOA"/>
+                                <Property name="text" type="java.lang.String" value="S&#x1eec;A L&#x1eda;P"/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -4934,8 +4940,11 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="X&#xd3;A KHOA"/>
+                                <Property name="text" type="java.lang.String" value="X&#xd3;A L&#x1eda;P"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel81MouseClicked"/>
+                              </Events>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                   <AbsoluteConstraints x="0" y="0" width="80" height="30"/>
@@ -4987,7 +4996,7 @@
                         <Container class="javaapplication24.ScrollPaneWin11" name="scrollPaneWin120">
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="380" y="55" width="220" height="175"/>
+                              <AbsoluteConstraints x="320" y="55" width="280" height="175"/>
                             </Constraint>
                           </Constraints>
 
@@ -4996,9 +5005,10 @@
                             <Component class="javaapplication24.Table" name="table9">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="3" rowCount="10">
+                                  <Table columnCount="4" rowCount="0">
+                                    <Column editable="true" title="" type="java.lang.Boolean"/>
                                     <Column editable="false" title="MSSV" type="java.lang.String"/>
-                                    <Column editable="false" title="H&#x1ecd; &amp; T&#xea;n &#x111;&#x1ec7;m" type="java.lang.String"/>
+                                    <Column editable="false" title="H&#x1ecd;" type="java.lang.String"/>
                                     <Column editable="false" title="T&#xea;n" type="java.lang.String"/>
                                   </Table>
                                 </Property>
@@ -5124,6 +5134,7 @@
                             </Property>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel79MouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel79MouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="roundPanel79MouseExited"/>
                           </Events>
@@ -5146,7 +5157,7 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="X&#xd3;A NG&#xc0;NH"/>
+                                <Property name="text" type="java.lang.String" value="X&#xd3;A SV"/>
                               </Properties>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -5185,8 +5196,11 @@
                                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                 </Property>
                                 <Property name="horizontalAlignment" type="int" value="0"/>
-                                <Property name="text" type="java.lang.String" value="TH&#xca;M NG&#xc0;NH"/>
+                                <Property name="text" type="java.lang.String" value="TH&#xca;M SV"/>
                               </Properties>
+                              <Events>
+                                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel98MouseClicked"/>
+                              </Events>
                               <Constraints>
                                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                                   <AbsoluteConstraints x="0" y="0" width="90" height="30"/>
@@ -5195,6 +5209,26 @@
                             </Component>
                           </SubComponents>
                         </Container>
+                        <Component class="javax.swing.JTextField" name="jTextField34">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                              <Connection code="new Color(255, 255, 255, 180)" type="code"/>
+                            </Property>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI Semibold" size="14" style="0"/>
+                            </Property>
+                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                                <EmptyBorder bottom="3" left="8" right="3" top="3"/>
+                              </Border>
+                            </Property>
+                          </Properties>
+                          <Constraints>
+                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                              <AbsoluteConstraints x="100" y="195" width="200" height="40"/>
+                            </Constraint>
+                          </Constraints>
+                        </Component>
                         <Component class="javax.swing.JTextField" name="jTextField33">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
@@ -5227,27 +5261,6 @@
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="0" y="195" width="95" height="40"/>
-                            </Constraint>
-                          </Constraints>
-                        </Component>
-                        <Component class="javax.swing.JTextField" name="jTextField34">
-                          <Properties>
-                            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                              <Connection code="new Color(255, 255, 255, 180)" type="code"/>
-                            </Property>
-                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="Segoe UI Semibold" size="14" style="0"/>
-                            </Property>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-                                <EmptyBorder bottom="3" left="8" right="3" top="3"/>
-                              </Border>
-                            </Property>
-                            <Property name="requestFocusEnabled" type="boolean" value="false"/>
-                          </Properties>
-                          <Constraints>
-                            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="100" y="195" width="200" height="40"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -5318,9 +5331,11 @@
                         <Component class="javaapplication24.Table" name="table11">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="10">
+                              <Table columnCount="4" rowCount="0">
                                 <Column editable="false" title="M&#xe3; l&#x1edb;p" type="java.lang.String"/>
                                 <Column editable="false" title="T&#xea;n l&#x1edb;p" type="java.lang.String"/>
+                                <Column editable="false" title="M&#xe3; khoa" type="java.lang.String"/>
+                                <Column editable="false" title="M&#xe3; kh&#xf3;a" type="java.lang.String"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
