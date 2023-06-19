@@ -382,18 +382,28 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         float diemtichluy=0;
         double diem[] = new double[n];
         double diem1[] = new double[n];
+       
         for(int i = 0; i < n;i++){
-        int chart = (int) Math.round(new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i)));
-        if (chart < 5)
-        chart2.addLegend(""+(i+1), new Color(255, chart*25, 0));
-        else chart2.addLegend(""+(i+1), new Color(255-chart*25, 250, 0));
-        diem[i]= new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i));
+            int chart = (int) Math.round(new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i)));
+            if (chart < 5) {
+                chart2.addLegend(""+(i+1), new Color(255, chart*25, 0));
+            }
+            else {
+                chart2.addLegend(""+(i+1), new Color(255-chart*25, 250, 0));
+            }
+             //double diem2[] = new double[1];
+             diem[i]= new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i));
         //if(new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i)) < 4.0)
         //{diem[i]=0;}
-        diemtichluy+=diem[i];
+            ///diem2[0]=diem[i];
+             diemtichluy+=diem[i];
+             //chart2.addData(new ModelChart("HỌC KỲ " + i,diem)); 
         }
+        chart2.addData(new ModelChart("HỌC KỲ ",diem)); 
         //for (int i=0;i<5;i++){diem[3+i]=10; chart2.addLegend("11", Color.yellow);};
-        chart2.addData(new ModelChart("HỌC KỲ", diem));
+//        for(int i = 1; i <= n; i++) {
+//            
+//        }        
         
         
         jLabel7.setText(String.valueOf(Math.ceil(diemtichluy/n*100)/100));
@@ -1578,15 +1588,15 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         roundPanel1Layout.setHorizontalGroup(
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(roundPanel1Layout.createSequentialGroup()
-                .addComponent(chart2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(chart2, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         roundPanel1Layout.setVerticalGroup(
             roundPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(chart2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(chart2, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
         );
 
-        ThongkeHoctap.add(roundPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 400, 310));
+        ThongkeHoctap.add(roundPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 720, 280));
 
         roundPanel2.setBackground(new Color(23,100,126, 127));
         roundPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1620,9 +1630,9 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         table4.setEnabled(false);
         scrollPaneWin115.setViewportView(table4);
 
-        roundPanel2.add(scrollPaneWin115, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 33, 664, 200));
+        roundPanel2.add(scrollPaneWin115, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 33, 520, 180));
 
-        ThongkeHoctap.add(roundPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 670, 240));
+        ThongkeHoctap.add(roundPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 525, 210));
 
         roundPanel3.setBackground(new Color(23,100,126, 127));
         roundPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1656,9 +1666,9 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         table5.setEnabled(false);
         scrollPaneWin116.setViewportView(table5);
 
-        roundPanel3.add(scrollPaneWin116, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 33, 664, 200));
+        roundPanel3.add(scrollPaneWin116, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 33, 520, 180));
 
-        ThongkeHoctap.add(roundPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 670, 240));
+        ThongkeHoctap.add(roundPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 525, 210));
 
         roundPanel4.setBackground(new Color(0, 0, 0, 85));
 
@@ -1735,7 +1745,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                                 .addComponent(jLabel22)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel14)))
-                        .addGap(0, 127, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(roundPanel4Layout.createSequentialGroup()
                         .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(roundPanel4Layout.createSequentialGroup()
@@ -1775,10 +1785,10 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                 .addGroup(roundPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(jLabel14))
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        ThongkeHoctap.add(roundPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 400, 160));
+        ThongkeHoctap.add(roundPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 20, 350, 190));
 
         materialTabbed.addTab("THỐNG KÊ HỌC TẬP", ThongkeHoctap);
 

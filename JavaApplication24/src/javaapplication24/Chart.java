@@ -38,9 +38,9 @@ public class Chart extends javax.swing.JPanel {
     public void addLegend(String name, Color color) {
         ModelLegend data = new ModelLegend(name, color);
         legends.add(data);
-        panelLegend.add(new LegendItem(data));
-        panelLegend.repaint();
-        panelLegend.revalidate();
+//        panelLegend.add(new LegendItem(data));
+//        panelLegend.repaint();
+//        panelLegend.revalidate();
     }
 
     public void addData(ModelChart data) {
@@ -57,15 +57,11 @@ public class Chart extends javax.swing.JPanel {
     private void initComponents() {
 
         blankPlotChart = new javaapplication24.BlankPlotChart();
-        panelLegend = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
 
         blankPlotChart.setForeground(new java.awt.Color(255, 255, 255));
-
-        panelLegend.setOpaque(false);
-        panelLegend.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -73,24 +69,19 @@ public class Chart extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelLegend, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
-                    .addComponent(blankPlotChart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(blankPlotChart, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(blankPlotChart, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
-                .addGap(0, 0, 0)
-                .addComponent(panelLegend, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(blankPlotChart, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
+                .addGap(6, 6, 6))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javaapplication24.BlankPlotChart blankPlotChart;
-    private javax.swing.JPanel panelLegend;
     // End of variables declaration//GEN-END:variables
 }
