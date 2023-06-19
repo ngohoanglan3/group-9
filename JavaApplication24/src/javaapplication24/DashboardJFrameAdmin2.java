@@ -395,6 +395,8 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         scrollPaneWin111 = new javaapplication24.ScrollPaneWin11();
         jTextArea1 = new javax.swing.JTextArea();
         NhapDiem = new javaapplication24.RoundPanel();
+        scrollPaneWin1110 = new javaapplication24.ScrollPaneWin11();
+        table1 = new javaapplication24.Table();
         QuanLyGiangVien = new javaapplication24.RoundPanel();
         jLabel100 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
@@ -3049,17 +3051,22 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         materialTabbed1.addTab("HÒM THƯ ", Homthu);
 
         NhapDiem.setBackground(new java.awt.Color(255, 255, 255, 80));
+        NhapDiem.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout NhapDiemLayout = new javax.swing.GroupLayout(NhapDiem);
-        NhapDiem.setLayout(NhapDiemLayout);
-        NhapDiemLayout.setHorizontalGroup(
-            NhapDiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1125, Short.MAX_VALUE)
-        );
-        NhapDiemLayout.setVerticalGroup(
-            NhapDiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 543, Short.MAX_VALUE)
-        );
+        table1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        scrollPaneWin1110.setViewportView(table1);
+
+        NhapDiem.add(scrollPaneWin1110, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 750, 370));
 
         materialTabbed1.addTab("NHẬP ĐIỂM", NhapDiem);
 
@@ -3916,6 +3923,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.RoundPanel roundPanel98;
     private javaapplication24.RoundPanel roundPanel99;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin111;
+    private javaapplication24.ScrollPaneWin11 scrollPaneWin1110;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin112;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin113;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin114;
@@ -3931,6 +3939,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.ScrollPaneWin11 scrollPaneWin124;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin125;
     private javaapplication24.ScrollPaneWin11 scrollPaneWin127;
+    private javaapplication24.Table table1;
     private javaapplication24.Table table10;
     private javaapplication24.Table table11;
     private javaapplication24.Table table12;
