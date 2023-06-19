@@ -2072,8 +2072,20 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         else if(jTextArea2.getText().equals("") || jTextArea2.getText().equals(null)){JOptionPane.showMessageDialog(null, "Bạn phải nhập tiêu đề","Nhắc nhở",JOptionPane.INFORMATION_MESSAGE);}
         else{int n = JOptionPane.showOptionDialog(GopY, "Bạn muốn gửi tới hòm thư?", null, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
         if (n == JOptionPane.YES_OPTION) {
-            HOM_THU thugui = new HOM_THU(new HOM_THU_DAO().getSoThu()+1,jTextArea2.getText(),jTextArea1.getText(),sinhvien.getMaSV(),false);
-            int t = new HOM_THU_DAO().insert(thugui);
+            HOM_THU thugui = new HOM_THU();
+            int t =0;
+            try{
+                thugui = new HOM_THU(new HOM_THU_DAO().getSoThu2()+1,jTextArea2.getText(),jTextArea1.getText(),sinhvien.getMaSV(),false);
+                t = new HOM_THU_DAO().insert(thugui);
+            }
+            catch(Exception e){
+                thugui = new HOM_THU(new HOM_THU_DAO().getSoThu()+1,jTextArea2.getText(),jTextArea1.getText(),sinhvien.getMaSV(),false);
+                t = new HOM_THU_DAO().insert(thugui);
+            }
+            
+//            if (t==0){
+//                thugui = new HOM_THU(new HOM_THU_DAO().getSoThu()+1,jTextArea2.getText(),jTextArea1.getText(),sinhvien.getMaSV(),false);
+//                t = new HOM_THU_DAO().insert(thugui);}
             if (t==1) JOptionPane.showMessageDialog(null, "Bạn đã gửi thư thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
             jTextArea2.setText("");
             jTextArea1.setText("");

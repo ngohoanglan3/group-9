@@ -3,6 +3,7 @@ package javaapplication24;
 import database.CHUONG_TRINH_KHUNG_DAO;
 import database.DIEU_KHIEN_DAO;
 import database.HOC_KY_DAO;
+import database.HOM_THU_DAO;
 import database.KHOA_DAO;
 import database.KHOA_HOC_DAO;
 import database.LOP_DAO;
@@ -17,6 +18,7 @@ import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import models.CHUONG_TRINH_KHUNG;
 import models.HOC_KY;
+import models.HOM_THU;
 import models.KHOA;
 import models.KHOA_HOC;
 import models.LOP;
@@ -332,6 +334,35 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
             }
         });
         
+        table14.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                int row = table14.rowAtPoint(evt.getPoint());
+                int col = table14.columnAtPoint(evt.getPoint());
+                if (row >= 0 && col >= 0) {
+                    jTextField37.setText(String.valueOf(table14.getValueAt(row, 0)));
+                    jTextField3.setText(String.valueOf(table14.getValueAt(row, 1)));
+                    jTextField35.setText(String.valueOf(table14.getValueAt(row, 2)));
+                    int x = Integer.valueOf(String.valueOf(table14.getValueAt(row, 0)));
+                    jTextArea1.setText(new HOM_THU_DAO().getThongTin(x).getNoiDung());
+                }
+            }
+        });
+        
+        table12.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                int row = table12.rowAtPoint(evt.getPoint());
+                int col = table12.columnAtPoint(evt.getPoint());
+                if (row >= 0 && col >= 0) {
+                    jTextField37.setText(String.valueOf(table12.getValueAt(row, 0)));
+                    jTextField3.setText(String.valueOf(table12.getValueAt(row, 1)));
+                    jTextField35.setText(String.valueOf(table12.getValueAt(row, 2)));
+                    int x = Integer.valueOf(String.valueOf(table12.getValueAt(row, 0)));
+                    jTextArea1.setText(new HOM_THU_DAO().getThongTin(x).getNoiDung());
+                }
+            }
+        });
         
         lam_moi_sinh_vien();
         lam_moi_hoc_ky();
@@ -340,6 +371,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         lam_moi_nganh();
         lam_moi_khoa_hoc();
         lam_moi_lop();
+        lam_moi_hom_thu();
         ///KHAI BAO
         ////////
         
@@ -723,6 +755,14 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel111 = new javax.swing.JLabel();
         scrollPaneWin111 = new javaapplication24.ScrollPaneWin11();
         jTextArea1 = new javax.swing.JTextArea();
+        roundPanel103 = new javaapplication24.RoundPanel();
+        jLabel42 = new javax.swing.JLabel();
+        roundPanel104 = new javaapplication24.RoundPanel();
+        jLabel109 = new javax.swing.JLabel();
+        jLabel112 = new javax.swing.JLabel();
+        jTextField37 = new javax.swing.JTextField();
+        roundPanel105 = new javaapplication24.RoundPanel();
+        jLabel113 = new javax.swing.JLabel();
         NhapDiem = new javaapplication24.RoundPanel();
         QuanLyGiangVien = new javaapplication24.RoundPanel();
         jLabel100 = new javax.swing.JLabel();
@@ -3314,26 +3354,17 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         table12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "MSSV", "Tiêu đề "
+                "Mã Thư", "MSSV", "Tiêu đề "
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -3372,26 +3403,17 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         table14.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "MSSV", "Tiêu đề "
+                "Mã thư", "MSSV", "Tiêu đề "
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -3429,17 +3451,23 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         CapNhatTaiKhoanSinhVien7.add(roundPanel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 60));
 
         roundPanel102.setBackground(new Color(255, 255, 255, 128));
+        roundPanel102.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel102MouseEntered(evt);
+            }
+        });
         roundPanel102.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("MSSV:");
-        roundPanel102.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 90, 40));
+        roundPanel102.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 50, 40));
 
         jTextField3.setBackground(new Color(255,90,0, 100));
         jTextField3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jTextField3.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
-        roundPanel102.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 220, 40));
+        jTextField3.setEnabled(false);
+        roundPanel102.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 80, 40));
 
         jLabel110.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel110.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -3458,9 +3486,98 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setLineWrap(true);
         scrollPaneWin111.setViewportView(jTextArea1);
 
-        roundPanel102.add(scrollPaneWin111, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 105, 220, 100));
+        roundPanel102.add(scrollPaneWin111, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 115, 220, 180));
+
+        roundPanel103.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel103.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roundPanel103MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel103MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel103MouseExited(evt);
+            }
+        });
+        roundPanel103.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel42.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel42.setText("ĐỌC XONG");
+        jLabel42.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel42MouseClicked(evt);
+            }
+        });
+        roundPanel103.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        roundPanel102.add(roundPanel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 80, 30));
+
+        roundPanel104.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel104.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roundPanel104MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel104MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel104MouseExited(evt);
+            }
+        });
+        roundPanel104.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel109.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel109.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel109.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel109.setText("LÀM MỚI");
+        jLabel109.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel109MouseClicked(evt);
+            }
+        });
+        roundPanel104.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        roundPanel102.add(roundPanel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 80, 30));
+
+        jLabel112.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jLabel112.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel112.setText("Mã thư:");
+        roundPanel102.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 70, 40));
+
+        jTextField37.setBackground(new Color(255,90,0, 100));
+        jTextField37.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jTextField37.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 8, 3, 3));
+        jTextField37.setEnabled(false);
+        roundPanel102.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 80, 40));
+
+        roundPanel105.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel105.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roundPanel105MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                roundPanel105MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                roundPanel105MouseExited(evt);
+            }
+        });
+        roundPanel105.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel113.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel113.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel113.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel113.setText("XÓA TOÀN BỘ THƯ LƯU TRỮ");
+        roundPanel105.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 30));
+
+        roundPanel102.add(roundPanel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 355, 220, 30));
 
         CapNhatTaiKhoanSinhVien7.add(roundPanel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 340, 415));
 
@@ -4874,8 +4991,81 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabel79MouseClicked
 
+    private void roundPanel103MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel103MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundPanel103MouseClicked
+
+    private void roundPanel103MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel103MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundPanel103MouseEntered
+
+    private void roundPanel103MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel103MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundPanel103MouseExited
+
+    private void roundPanel104MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel104MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundPanel104MouseClicked
+
+    private void roundPanel104MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel104MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundPanel104MouseEntered
+
+    private void roundPanel104MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel104MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundPanel104MouseExited
+
+    private void jLabel109MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel109MouseClicked
+        lam_moi_hom_thu();
+    }//GEN-LAST:event_jLabel109MouseClicked
+
+    private void jLabel42MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel42MouseClicked
+        if (jTextField37.getText().equals("")){JOptionPane.showMessageDialog(null, "Bạn chưa đọc thư","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+       } else
+        {int ma = Integer.valueOf(jTextField37.getText());
+        try{
+        boolean x = new HOM_THU_DAO().getThongTin(ma).getFlag();
+        if(x==false){
+        int kq = new HOM_THU_DAO().DaDoc(ma);
+        JOptionPane.showMessageDialog(null, "Chuyển thư vào lưu trữ","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{}
+        lam_moi_hom_thu();
+        }
+        catch(Exception ex){
+        JOptionPane.showMessageDialog(null, "Lỗi","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        }}
+    }//GEN-LAST:event_jLabel42MouseClicked
+
+    private void roundPanel105MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel105MouseClicked
+        Object[] options = {"Có", "Không"};
+        int kq=0;
+        int n = JOptionPane.showOptionDialog(null,"Bạn sẽ xóa toàn bộ dữ liệu, bạn có chắc không?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+        if (n == JOptionPane.YES_OPTION) {
+           kq = new HOM_THU_DAO().XoaToanBoThuDaDoc();
+           if(kq!=0)JOptionPane.showMessageDialog(null, "Bạn đã xóa thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+           else JOptionPane.showMessageDialog(null, "Xóa không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+           lam_moi_hom_thu();
+        }
+        else if (n == JOptionPane.NO_OPTION) {
+          
+        }
+    }//GEN-LAST:event_roundPanel105MouseClicked
+
+    private void roundPanel105MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel105MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundPanel105MouseEntered
+
+    private void roundPanel105MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel105MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundPanel105MouseExited
+
+    private void roundPanel102MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel102MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundPanel102MouseEntered
+
     //PHẦN HÀM
-    private void lam_moi_khoa_hoc() { 
+           private void lam_moi_khoa_hoc() { 
      ArrayList<KHOA_HOC> danhsachkhoahoc = new KHOA_HOC_DAO().selectAll();
         roundPanel85.setVisible(true);
         roundPanel86.setVisible(false);
@@ -4924,8 +5114,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         }
     }                          
                                       
-
-     private void lam_moi_sinh_vien() { 
+           private void lam_moi_sinh_vien() { 
     ArrayList<SINH_VIEN> danhsachsinhvien = new SINH_VIEN_DAO().getDataList();
         roundPanel10.setVisible(true);
         roundPanel11.setVisible(false);
@@ -5404,7 +5593,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         }
     }
            
-           
            private void lam_moi_lop() { 
      ArrayList<LOP> danhsachlop = new LOP_DAO().seclectAll();
         roundPanel74.setVisible(true);
@@ -5580,6 +5768,79 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         }
     }
     
+           private void lam_moi_hom_thu(){
+               ArrayList<HOM_THU> danhsachthudadoc = new HOM_THU_DAO().getHomThuDaDoc(15);
+               ArrayList<HOM_THU> danhsachthuchuadoc = new HOM_THU_DAO().getHomThuChuaDoc();
+               jTextField3.setText("");
+               jTextField35.setText("");
+               jTextField37.setText("");
+               jTextArea1.setText("");
+               table12.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object [][] {
+
+                    },
+                    new String [] {
+                        "Mã Thư", "MSSV", "Tiêu đề "
+                    }
+                ) {
+                    Class[] types = new Class [] {
+                        java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                    };
+                    boolean[] canEdit = new boolean [] {
+                        false, false, false
+                    };
+
+                    public Class getColumnClass(int columnIndex) {
+                        return types [columnIndex];
+                    }
+
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit [columnIndex];
+                    }
+                });
+               
+               table14.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object [][] {
+
+                    },
+                    new String [] {
+                        "Mã thư", "MSSV", "Tiêu đề "
+                    }
+                ) {
+                    Class[] types = new Class [] {
+                        java.lang.String.class, java.lang.String.class, java.lang.String.class
+                    };
+                    boolean[] canEdit = new boolean [] {
+                        false, false, false
+                    };
+
+                    public Class getColumnClass(int columnIndex) {
+                        return types [columnIndex];
+                    }
+
+                    public boolean isCellEditable(int rowIndex, int columnIndex) {
+                        return canEdit [columnIndex];
+                    }
+                });
+               
+               for(int i=0;i<danhsachthuchuadoc.size();i++){
+                        String masv = danhsachthuchuadoc.get(i).getMaSV();
+                        int mathu = danhsachthuchuadoc.get(i).getMaThu();
+                        String ten = danhsachthuchuadoc.get(i).getTieuDe();
+                        Object[] data = {mathu,masv,ten};
+                        table14.addRow(data);
+                    }
+               for(int i=0;i<danhsachthudadoc.size();i++){
+                        String masv = danhsachthudadoc.get(i).getMaSV();
+                        int mathu = danhsachthudadoc.get(i).getMaThu();
+                        String ten = danhsachthudadoc.get(i).getTieuDe();
+                        Object[] data = {mathu,masv,ten};
+                        table12.addRow(data);
+                    }
+
+               }
+           
+           
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -5661,9 +5922,12 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -5697,6 +5961,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -5798,6 +6063,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField34;
     private javax.swing.JTextField jTextField35;
     private javax.swing.JTextField jTextField36;
+    private javax.swing.JTextField jTextField37;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -5812,6 +6078,9 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.RoundPanel roundPanel100;
     private javaapplication24.RoundPanel roundPanel101;
     private javaapplication24.RoundPanel roundPanel102;
+    private javaapplication24.RoundPanel roundPanel103;
+    private javaapplication24.RoundPanel roundPanel104;
+    private javaapplication24.RoundPanel roundPanel105;
     private javaapplication24.RoundPanel roundPanel11;
     private javaapplication24.RoundPanel roundPanel12;
     private javaapplication24.RoundPanel roundPanel13;

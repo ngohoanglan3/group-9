@@ -54,6 +54,55 @@ public class HOM_THU_DAO extends BDConnect{
 		return sothu.get(0);
     }
     
+    public int getSoThu2(){
+        ArrayList<Integer> sothu = new ArrayList<Integer>();
+        String sql = "select TOP 1 MaThu from HOM_THU order by MaThu DESC";
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+          while (rs.next()){
+           sothu.add(rs.getInt(1));
+          }
+            } 
+        catch (Exception e) {
+		}
+		return sothu.get(0);
+    }
+    
+    public ArrayList<HOM_THU> getHomThuDaDoc(int number){
+        ArrayList<HOM_THU> thu = new ArrayList<HOM_THU>();
+        String sql = "select TOP "+ number+" * from HOM_THU where Flag = 1 order by MaThu DESC";
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+          while (rs.next()){
+           thu.add(new HOM_THU(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getBoolean(5)));
+          }
+            } 
+        catch (Exception e) {
+            e.printStackTrace();
+		}
+		return thu;
+    }
+    
+    public ArrayList<HOM_THU> getHomThuChuaDoc(){
+        ArrayList<HOM_THU> thu = new ArrayList<HOM_THU>();
+        String sql = "select * from HOM_THU where Flag = 0 order by MaThu DESC";
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+          while (rs.next()){
+           thu.add(new HOM_THU(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getBoolean(5)));
+          }
+            } 
+        catch (Exception e) {
+            e.printStackTrace();
+		}
+		return thu;
+    }
+    
+     
+    
     public int insert(HOM_THU homthu) {
 		int kq = 0;
 		try {
@@ -74,4 +123,49 @@ public class HOM_THU_DAO extends BDConnect{
 		return kq;
 	}
     
+    public HOM_THU getThongTin(int MaThu){
+        ArrayList<HOM_THU> thu = new ArrayList<HOM_THU>();
+        String sql = "select * from HOM_THU where MaThu = "+MaThu;
+        try {
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rs = pst.executeQuery();
+          while (rs.next()){
+           thu.add(new HOM_THU(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getBoolean(5)));
+          }
+            } 
+        catch (Exception e) {
+            e.printStackTrace();
+		}
+		return thu.get(0);
+    }
+    
+    public int DaDoc(int MaThu) {
+		
+		int kq = 0;
+		try {
+			
+			String sql = "UPDATE HOM_THU SET Flag = 1 WHERE MaThu = "+MaThu;
+			PreparedStatement pst = conn.prepareStatement(sql);
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return kq;
+	}
+    
+    public int XoaToanBoThuDaDoc() {
+		
+		int kq = 0;
+		try {
+			
+			String sql = "DELETE from HOM_THU where Flag= 1";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return kq;
+	}
 }
