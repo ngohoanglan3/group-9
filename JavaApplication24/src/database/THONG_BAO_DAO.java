@@ -11,11 +11,7 @@ import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-<<<<<<<< HEAD:JavaApplication24/src/database/_DAO.java
-import models.SINH_VIEN;
-========
 import models.THONG_BAO;
->>>>>>>> origin/Brand-mới-của-Hoàng:JavaApplication24/src/database/THONG_BAO_DAO.java
 
 /**
  *

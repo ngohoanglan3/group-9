@@ -46,10 +46,5 @@ public class THONG_BAO {
     public THONG_BAO() {
     }
 
-    public THONG_BAO(String MaThongBao, String TieuDe, String LinkNoiDung) {
-        this.MaThongBao = MaThongBao;
-        this.TieuDe = TieuDe;
-        this.LinkNoiDung = LinkNoiDung;
-    }
     
 }
