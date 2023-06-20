@@ -19,6 +19,7 @@ import models.SINH_VIEN;
 import java.sql.Connection;
 import models.DIEM;
 import database.DIEM_DAO;
+import database.DIEU_KHIEN_DAO;
 /**
  *
  * @author ngoho
@@ -568,26 +569,17 @@ public class LoginJFrame extends javax.swing.JFrame {
         for(int i=0;i < getpassword.length;i++){
             password+=getpassword[i];
         };
-        SINH_VIEN x = new SINH_VIEN("ST0162","123456");
-        SINH_VIEN_DAO sinhvien1 = new SINH_VIEN_DAO();
-        //ArrayList<DIEM> xu = new DIEM_DAO().getDanhSachDiem(user, "001");
-        //for(int i=0;i<xu.size();i++){
-          //  System.out.print(xu.get(i).getDiemChuyenCan());
-        //}
-                
-        int t = sinhvien1.insert(x);
-        System.out.print(t);
-        //System.out.print(password);
-        //String query =" select * from SINH_VIEN where MaSV = '"+ user + "' and MatKhau = '" + password +"'" ;
+        if(new DIEU_KHIEN_DAO().getVoHieuHoa().isVoHieuHoaSinhVien() == true){
         try{
         SINH_VIEN_DAO sinhvien = new SINH_VIEN_DAO();
         SINH_VIEN thongtin = sinhvien.getThongTin(user,password);
-        
+        if (thongtin.getFlag()==true){
         //System.out.print(thongtin.get(0).getMaSV());
         if (thongtin.getMaSV().equals(user) && thongtin.getMatKhau().equals(password)){
         this.setVisible(false);
         DashboardJFrame2 dash = new DashboardJFrame2(thongtin);
-        dash.setVisible(true);}
+        dash.setVisible(true);}}
+        else {JOptionPane.showMessageDialog(null, "Tài khoản của bạn hiện đang vô hiệu hóa","Đăng nhập đã bị chặn",JOptionPane.INFORMATION_MESSAGE);}
         }
         catch(Exception ex){      
         Object[] options = {"Nhập lại"};
@@ -602,7 +594,9 @@ public class LoginJFrame extends javax.swing.JFrame {
 //        int t = sinhvien.insert(x);
 //        System.out.print(t);
         }
-        catch(Exception ex){}
+        catch(Exception ex){}}
+        else {JOptionPane.showMessageDialog(null, "Hệ thống đang bảo trì","Đăng nhập đã bị chặn",JOptionPane.INFORMATION_MESSAGE);
+                }
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
@@ -621,25 +615,33 @@ public class LoginJFrame extends javax.swing.JFrame {
         jPanel20.setVisible(true);
 
     }//GEN-LAST:event_jLabel8MouseClicked
-    
+
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:    }
         Object[] options = {"Có", "Không"};
         int n = JOptionPane.showOptionDialog(jPanel12,"Bạn muốn yêu cầu cấp lại mật khẩu?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
         if (n == JOptionPane.YES_OPTION) {
-            String Name, MSSV;
+            String Name, MSSV="";
             Name = changePassName.getText();
-            MSSV = changePassMSSV.getLabelText();
+            //String MSSV = "";
+            char[] getpassword = changePassMSSV.getPassword();
+            for(int i=0;i < getpassword.length;i++){
+                MSSV+=getpassword[i];
+            };
+            //MSSV = changePassMSSV.getText();
             ArrayList<SINH_VIEN> dataList = new SINH_VIEN_DAO().getDataList();
             for (SINH_VIEN std : dataList){
                 if(std.getTen().equals(Name)){
                     if(std.getMaSV().equals(MSSV)) {
                         SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
-                        temp.passwordChange(Name, MSSV);
-                        JOptionPane.showMessageDialog(null, "Your password has been changed to 1111");
+                        temp.passwordChange(Name, MSSV,"123456");
+                        JOptionPane.showMessageDialog(jPanel23, "Mật khẩu của bạn đã được đổi thành 123456","Cấp lại mật khẩu thành công",JOptionPane.INFORMATION_MESSAGE);
+                        break;
                     }
                 }
             }
+            //System.out.println(MSSV);
+            //System.out.print(Name);
             jPanel19.setVisible(true);
             jPanel20.setVisible(false);
         } 
@@ -773,8 +775,4 @@ public class LoginJFrame extends javax.swing.JFrame {
     private javaapplication24.PasswordField passwordField1;
     private javaapplication24.TextField textField3;
     // End of variables declaration//GEN-END:variables
-
-    private Object SINH_VIEN_DAO() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

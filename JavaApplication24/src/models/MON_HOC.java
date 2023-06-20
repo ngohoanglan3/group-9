@@ -14,7 +14,7 @@ public class MON_HOC {
     private int SoTinChi;
     private int SoTiet;
     private boolean BatBuoc ;
-    private boolean TuChon ;
+    //private boolean TuChon ;
     private String TienQuyet;
     private String SongHanh;
     private boolean Flag;
@@ -22,13 +22,13 @@ public class MON_HOC {
     public MON_HOC() {
     }
 
-    public MON_HOC(String MaMon, String TenMon, int SoTinChi, int SoTiet, boolean BatBuoc, boolean TuChon, String TienQuyet, String SongHanh, boolean Flag) {
+    public MON_HOC(String MaMon, String TenMon, int SoTinChi, int SoTiet, boolean BatBuoc,/* boolean TuChon,*/ String TienQuyet, String SongHanh, boolean Flag) {
         this.MaMon = MaMon;
         this.TenMon = TenMon;
         this.SoTinChi = SoTinChi;
         this.SoTiet = SoTiet;
         this.BatBuoc = BatBuoc;
-        this.TuChon = TuChon;
+        //this.TuChon = TuChon;
         this.TienQuyet = TienQuyet;
         this.SongHanh = SongHanh;
         this.Flag = Flag;
@@ -74,13 +74,13 @@ public class MON_HOC {
         this.BatBuoc = BatBuoc;
     }
 
-    public boolean isTuChon() {
-        return TuChon;
-    }
+//    public boolean isTuChon() {
+//        return TuChon;
+//    }
 
-    public void setTuChon(boolean TuChon) {
-        this.TuChon = TuChon;
-    }
+//    public void setTuChon(boolean TuChon) {
+//        this.TuChon = TuChon;
+//    }
 
     public String getTienQuyet() {
         return TienQuyet;

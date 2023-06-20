@@ -4,57 +4,45 @@
  */
 package database;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.sql.PreparedStatement;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+<<<<<<<< HEAD:JavaApplication24/src/database/_DAO.java
 import models.SINH_VIEN;
+========
 import models.THONG_BAO;
+>>>>>>>> origin/Brand-mới-của-Hoàng:JavaApplication24/src/database/THONG_BAO_DAO.java
 
 /**
  *
- * @author Dell
+ * @author Admin
  */
 public class THONG_BAO_DAO extends BDConnect{
-    public ArrayList<THONG_BAO> getDataList() {
-        ArrayList<THONG_BAO> dataList = new ArrayList<>();
-        
-        
-        String sql = "select * from THONG_BAO";
-        try {
-            PreparedStatement atm = conn.prepareStatement(sql);
-            
-            ResultSet resultSet = atm.executeQuery();
-            
-            while(resultSet.next()) {
-                THONG_BAO th = new THONG_BAO(
-                        resultSet.getString("MaThongBao"), 
-                        resultSet.getString("TieuDe"), 
-                        resultSet.getString("LinkNoiDung")
-//                        resultSet.getBoolean("Flag")
-                );
-                dataList.add(th);
-            }
-        } catch (Exception ex) {
-        }
-        
-        
-        return dataList;
+    
+
+    public THONG_BAO_DAO() {
+       
     }
     
-    public int insert(THONG_BAO d) {
-        int kq = 0;
-        try {
-			String sql = "INSERT INTO THONG_BAO(MaThongBao, TieuDe,LinkNoiDung, Flag) VALUES(?,?,?,?)";
-			PreparedStatement pst = conn.prepareStatement(sql);
-			pst.setString(1, d.getMaThongBao());
-			pst.setString(2, d.getTieuDe());
-                        pst.setString(3, d.getLinkNoiDung());
-                        pst.setBoolean(4, d.isFlag());
-			kq = pst.executeUpdate();
-			
-        } catch (Exception e) {
-                // TODO: handle exception
-        }
-        return kq;
-    }
+    public ArrayList<THONG_BAO> getThongTin(int number){
+        ArrayList<THONG_BAO> thongbao = new ArrayList<THONG_BAO>();
+        String query ="select TOP "+ number+ " * from THONG_BAO order by MaThongBao DESC" ;
+      try{
+          PreparedStatement atm = conn.prepareStatement(query);
+          ResultSet rs = atm.executeQuery();
+          while (rs.next()){
+              thongbao.add(new THONG_BAO(rs.getInt(1),rs.getString(2),rs.getBoolean(3)));
+          }
+      }
+      catch(Exception e){
+          e.printStackTrace();
+      };
+      return thongbao;
+    };
+    
+    
 }

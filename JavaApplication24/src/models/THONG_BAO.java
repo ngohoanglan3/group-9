@@ -9,16 +9,15 @@ package models;
  * @author Admin
  */
 public class THONG_BAO {
-    private String MaThongBao;
+    private int MaThongBao;
     private String TieuDe;
-    private String LinkNoiDung;
     private boolean Flag;
 
-    public String getMaThongBao() {
+    public int getMaThongBao() {
         return MaThongBao;
     }
 
-    public void setMaThongBao(String MaThongBao) {
+    public void setMaThongBao(int MaThongBao) {
         this.MaThongBao = MaThongBao;
     }
 
@@ -30,14 +29,6 @@ public class THONG_BAO {
         this.TieuDe = TieuDe;
     }
 
-    public String getLinkNoiDung() {
-        return LinkNoiDung;
-    }
-
-    public void setLinkNoiDung(String LinkNoiDung) {
-        this.LinkNoiDung = LinkNoiDung;
-    }
-
     public boolean isFlag() {
         return Flag;
     }
@@ -46,10 +37,9 @@ public class THONG_BAO {
         this.Flag = Flag;
     }
 
-    public THONG_BAO(String MaThongBao, String TieuDe, String LinkNoiDung, boolean Flag) {
+    public THONG_BAO(int MaThongBao, String TieuDe, boolean Flag) {
         this.MaThongBao = MaThongBao;
         this.TieuDe = TieuDe;
-        this.LinkNoiDung = LinkNoiDung;
         this.Flag = Flag;
     }
 

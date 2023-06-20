@@ -40,5 +40,87 @@ public class KHOA_HOC_DAO extends BDConnect{
       return khoahoc.get(0);
     };
     
+    public ArrayList<KHOA_HOC> selectAll() {
+		ArrayList<KHOA_HOC> kq = new ArrayList<KHOA_HOC>();
+		try {
+			
+			String sql = "SELECT * from khoa_hoc";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				String maKHOA_HOC = rs.getString("MaKhoaHoc");
+				int heSoCC = rs.getInt("HeSoDCC");
+				int heSoGK = rs.getInt("HeSoDGK");
+				int heSoKT = rs.getInt("HeSoDKT");
+				boolean flag = rs.getBoolean("Flag");
+				
+				KHOA_HOC khoahoc = new KHOA_HOC(maKHOA_HOC, heSoCC, heSoGK, heSoKT, flag);
+				kq.add(khoahoc);
+			}
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
     
+     public int insert(KHOA_HOC t) {
+		int kq = 0;
+		try {
+			
+			String sql = "INSERT INTO khoa_hoc(MaKhoaHoc, HeSoDCC, HeSoDGK, HeSoDKT, Flag) VALUES(?,?,?,?,?)";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, t.getMaKhoaHoc());
+			pst.setInt(2, t.getHeSoDCC());
+			pst.setInt(3, t.getHeSoDGK());
+			pst.setInt(4, t.getHeSoDKT());
+			pst.setBoolean(5, t.getFlag());
+			
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
+    
+     public int update(String MaKhoaHoc,KHOA_HOC t) {
+		int kq = 0;
+		try {
+			
+			String sql = "UPDATE khoa_hoc SET HeSoDCC=?, HeSoDGK=?, HeSoDKT=?, Flag=? WHERE MaKhoaHoc=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setInt(1, t.getHeSoDCC());
+			pst.setInt(2, t.getHeSoDGK());
+			pst.setInt(3, t.getHeSoDKT());
+			pst.setBoolean(4, t.getFlag());
+			pst.setString(5, MaKhoaHoc);
+			
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
+     
+      public int XoaDong(String MaKhoaHoc) {
+		
+		int kq = 0;
+		try {
+			
+			String sql = "UPDATE KHOA_HOC SET Flag = 0 WHERE MaKhoaHoc = ?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, MaKhoaHoc);
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return kq;
+	}
 }
