@@ -39,6 +39,45 @@ public class THONG_BAO_DAO extends BDConnect{
       };
       return thongbao;
     };
+     public ArrayList<THONG_BAO> selectAll() {
+        ArrayList<THONG_BAO> tb = new ArrayList<THONG_BAO>();
+        try {
+
+                String sql = "SELECT * from thong_bao";
+                PreparedStatement pst = conn.prepareStatement(sql);
+
+                ResultSet rs = pst.executeQuery();
+                while(rs.next()) {
+                        int MaTB = rs.getInt("MaThongBao");
+                        String TD = rs.getString("TieuDe");
+                        boolean flag = rs.getBoolean("Flag");
+
+                        THONG_BAO khoahoc = new THONG_BAO(MaTB, TD, flag);
+                        tb.add(khoahoc);
+                }
+
+
+        } catch (Exception e) {
+                // TODO: handle exception
+        }
+        return tb;
+    }
     
-    
+    public int insert(THONG_BAO tb) {
+		int kq = 0;
+		try {
+			
+			String sql = "INSERT INTO thong_bao(MaThongBao, TieuDe, Flag) VALUES(?,?,?)";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, tb.getMaThongBao());
+			pst.setString(2, tb.getTieuDe());
+			pst.setBoolean(3, tb.isFlag());
+			
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
 }
