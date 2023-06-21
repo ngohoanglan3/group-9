@@ -569,11 +569,19 @@ public class LoginJFrame extends javax.swing.JFrame {
         for(int i=0;i < getpassword.length;i++){
             password+=getpassword[i];
         };
-        if(new DIEU_KHIEN_DAO().getVoHieuHoa().isVoHieuHoaSinhVien() == true){
+        //if(user.charAt(0)=='A' && user.charAt(1)=='D')
+        if((new DIEU_KHIEN_DAO().getVoHieuHoa().isVoHieuHoaSinhVien() == true) || (user.charAt(0)=='A' && user.charAt(1)=='D')){
         try{
         SINH_VIEN_DAO sinhvien = new SINH_VIEN_DAO();
         SINH_VIEN thongtin = sinhvien.getThongTin(user,password);
-        if (thongtin.getFlag()==true){
+        if (thongtin.getMaSV().charAt(0)=='A' && thongtin.getMaSV().charAt(1)=='D'){
+            if (thongtin.getMaSV().equals(user) && thongtin.getMatKhau().equals(password)){
+        this.setVisible(false);
+        DashboardJFrameAdmin2 dash = new DashboardJFrameAdmin2(thongtin);
+        dash.setVisible(true);}
+        }
+        
+        else if (thongtin.getFlag()==true){
         //System.out.print(thongtin.get(0).getMaSV());
         if (thongtin.getMaSV().equals(user) && thongtin.getMatKhau().equals(password)){
         this.setVisible(false);

@@ -2,6 +2,7 @@ package javaapplication24;
 
 import database.CHUONG_TRINH_KHUNG_DAO;
 import database.DIEU_KHIEN_DAO;
+import database.Excel_DIEM_DAO;
 import database.HOC_KY_DAO;
 import database.HOM_THU_DAO;
 import database.KHOA_DAO;
@@ -29,9 +30,11 @@ import models.SINH_VIEN;
 public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private int x;
     private int y;
-    public DashboardJFrameAdmin2() {
+    private SINH_VIEN admin;
+    public DashboardJFrameAdmin2(){}
+    public DashboardJFrameAdmin2(SINH_VIEN admin) {
         initComponents();    
-        
+        this.admin = admin;
         /// KHAI BAO
         /// KHAI BAO SINH VIEN
         if (new DIEU_KHIEN_DAO().getVoHieuHoa().isVoHieuHoaSinhVien()==true){
@@ -374,6 +377,18 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         lam_moi_hom_thu();
         ///KHAI BAO
         ////////
+        NoScalingIcon icon2 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/skills.png")));
+        Setting.setIcon(icon2);
+        
+        NoScalingIcon icon3 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/changePassword.png")));
+        changePassword.setIcon(icon3);
+        
+        NoScalingIcon icon4 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/logout.png")));
+        Logout.setIcon(icon4);
+        
+        jPanel9.setVisible(false);
+        
+        jPanel12.setVisible(false);
         
         getContentPane().setBackground(new Color(255, 255, 255));
         java.util.List<String> items1 = new ArrayList<>();
@@ -447,6 +462,26 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        roundPanel106 = new javaapplication24.RoundPanel();
+        jLabel116 = new javax.swing.JLabel();
+        passwordField1 = new javaapplication24.PasswordField();
+        passwordField2 = new javaapplication24.PasswordField();
+        passwordField3 = new javaapplication24.PasswordField();
+        jPanel24 = new javax.swing.JPanel();
+        jLabel117 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel120 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        Setting = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        changePassword1 = new javaapplication24.RoundPanel();
+        changePassword = new javax.swing.JLabel();
+        jLabel118 = new javax.swing.JLabel();
+        Logout1 = new javaapplication24.RoundPanel();
+        Logout = new javax.swing.JLabel();
+        jLabel119 = new javax.swing.JLabel();
         materialTabbed1 = new javaapplication24.MaterialTabbed();
         QuanlySinhvien = new javaapplication24.RoundPanel();
         roundPanel4 = new javaapplication24.RoundPanel();
@@ -764,6 +799,11 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         roundPanel105 = new javaapplication24.RoundPanel();
         jLabel113 = new javax.swing.JLabel();
         NhapDiem = new javaapplication24.RoundPanel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel114 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel115 = new javax.swing.JLabel();
         QuanLyGiangVien = new javaapplication24.RoundPanel();
         jLabel100 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
@@ -853,6 +893,195 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         Titlebar.add(jPanel11, java.awt.BorderLayout.WEST);
 
         getContentPane().add(Titlebar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1140, 25));
+
+        jPanel12.setBackground(new Color(0, 0, 0, 100));
+
+        roundPanel106.setBackground(new java.awt.Color(255, 255, 255));
+        roundPanel106.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel116.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
+        jLabel116.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel116.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel116.setText("ĐỔI MẬT KHẨU");
+        roundPanel106.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 400, 100));
+
+        passwordField1.setLabelText("Xác nhận mật khẩu");
+        roundPanel106.add(passwordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 380, -1));
+
+        passwordField2.setLabelText("Mật khẩu cũ");
+        roundPanel106.add(passwordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 380, -1));
+
+        passwordField3.setLabelText("Mật khẩu mới");
+        roundPanel106.add(passwordField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 380, -1));
+
+        jPanel24.setBackground(new java.awt.Color(255, 90, 0));
+        jPanel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel24MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel24MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel24MouseExited(evt);
+            }
+        });
+        jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel117.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel117.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel117.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel117.setText("GỬI YÊU CẦU");
+        jLabel117.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabel117.setPreferredSize(new java.awt.Dimension(225, 32));
+        jPanel24.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        roundPanel106.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 400, -1, -1));
+
+        jPanel25.setBackground(new java.awt.Color(255, 90, 0));
+        jPanel25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel25MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel25MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel25MouseExited(evt);
+            }
+        });
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel120.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel120.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel120.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel120.setText("GỬI YÊU CẦU");
+        jLabel120.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabel120.setPreferredSize(new java.awt.Dimension(225, 32));
+        jPanel25.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        roundPanel106.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 400, -1, -1));
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1140, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel12Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(roundPanel106, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel12Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(roundPanel106, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 25, 1140, 600));
+
+        jPanel15.setOpaque(false);
+        jPanel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel15MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel15MouseExited(evt);
+            }
+        });
+        jPanel15.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(23, 100, 126));
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel2MouseExited(evt);
+            }
+        });
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        Setting.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Setting.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SettingMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                SettingMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                SettingMouseExited(evt);
+            }
+        });
+        jPanel2.add(Setting, java.awt.BorderLayout.CENTER);
+
+        jPanel15.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 35, 35));
+
+        getContentPane().add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1095, 31, 35, 40));
+
+        jPanel9.setBackground(new Color(0, 0, 0, 0));
+        jPanel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel9MouseExited(evt);
+            }
+        });
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        changePassword1.setBackground(new Color(47, 84, 95));
+        changePassword1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                changePassword1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                changePassword1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                changePassword1MouseExited(evt);
+            }
+        });
+        changePassword1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        changePassword1.add(changePassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, 32, 32));
+
+        jLabel118.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel118.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel118.setText("ĐỔI MẬT KHẨU");
+        changePassword1.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 0, 93, 35));
+
+        jPanel9.add(changePassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 125, 35));
+
+        Logout1.setBackground(new Color(47, 84, 97));
+        Logout1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Logout1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Logout1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Logout1MouseExited(evt);
+            }
+        });
+        Logout1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        Logout1.add(Logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 2, 32, 32));
+
+        jLabel119.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jLabel119.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel119.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel119.setText("ĐĂNG XUẤT");
+        Logout1.add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 0, 80, 35));
+
+        jPanel9.add(Logout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 37, 125, 35));
+
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1008, 68, -1, -1));
 
         materialTabbed1.setForeground(new java.awt.Color(255, 255, 255));
         materialTabbed1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -1207,7 +1436,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel17.setText("LÀM MỚI");
         roundPanel20.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
-        roundPanel19.add(roundPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 10, 80, 40));
+        roundPanel19.add(roundPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 10, 80, 40));
 
         roundPanel21.setBackground(new java.awt.Color(0, 153, 0));
         roundPanel21.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1229,7 +1458,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel18.setText("TÌM");
         roundPanel21.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 55, 40));
 
-        roundPanel19.add(roundPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 55, 40));
+        roundPanel19.add(roundPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 10, 55, 40));
 
         jLabel19.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -1475,7 +1704,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel28.setText("LÀM MỚI");
         roundPanel32.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
-        roundPanel31.add(roundPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, 40));
+        roundPanel31.add(roundPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 80, 40));
 
         roundPanel33.setBackground(new java.awt.Color(0, 153, 0));
         roundPanel33.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1497,7 +1726,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel29.setText("TÌM");
         roundPanel33.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
-        roundPanel31.add(roundPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 80, 40));
+        roundPanel31.add(roundPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, 40));
 
         jLabel30.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -1822,7 +2051,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel44.setText("LÀM MỚI");
         roundPanel44.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
-        roundPanel43.add(roundPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, 40));
+        roundPanel43.add(roundPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 10, 80, 40));
 
         roundPanel45.setBackground(new java.awt.Color(0, 153, 0));
         roundPanel45.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1844,7 +2073,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel45.setText("TÌM");
         roundPanel45.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 55, 40));
 
-        roundPanel43.add(roundPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 55, 40));
+        roundPanel43.add(roundPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 55, 40));
 
         jLabel46.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -2194,7 +2423,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel52.setText("LÀM MỚI");
         roundPanel58.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 40));
 
-        roundPanel57.add(roundPanel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, 40));
+        roundPanel57.add(roundPanel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 10, 80, 40));
 
         roundPanel59.setBackground(new java.awt.Color(0, 153, 0));
         roundPanel59.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -2216,7 +2445,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel53.setText("TÌM");
         roundPanel59.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 55, 40));
 
-        roundPanel57.add(roundPanel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 55, 40));
+        roundPanel57.add(roundPanel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 55, 40));
 
         jLabel54.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -2863,7 +3092,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel61.setForeground(new java.awt.Color(255, 255, 255));
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel61.setText("TÌM");
-        roundPanel73.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 55, 40));
+        roundPanel73.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 55, 20));
 
         roundPanel71.add(roundPanel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 10, 55, 40));
 
@@ -2894,6 +3123,9 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         roundPanel74.setBackground(new java.awt.Color(0, 153, 255));
         roundPanel74.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roundPanel74MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 roundPanel74MouseEntered(evt);
             }
@@ -2907,11 +3139,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel79.setForeground(new java.awt.Color(255, 255, 255));
         jLabel79.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel79.setText("THÊM LỚP");
-        jLabel79.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel79MouseClicked(evt);
-            }
-        });
         roundPanel74.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
         roundPanel71.add(roundPanel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 80, 30));
@@ -2940,6 +3167,9 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         roundPanel76.setBackground(new java.awt.Color(0, 153, 255));
         roundPanel76.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roundPanel76MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 roundPanel76MouseEntered(evt);
             }
@@ -2953,11 +3183,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel81.setForeground(new java.awt.Color(255, 255, 255));
         jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel81.setText("XÓA LỚP");
-        jLabel81.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel81MouseClicked(evt);
-            }
-        });
         roundPanel76.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
         roundPanel71.add(roundPanel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 80, 30));
@@ -3052,7 +3277,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         roundPanel71.add(roundPanel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 220, 40));
 
         jLabel96.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel96.setText("Nhập mã ngành:");
+        jLabel96.setText("Nhập mã SV:");
         roundPanel71.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, 30));
 
         jTextField27.setBackground(new Color(255,90,0, 100));
@@ -3084,6 +3309,9 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         roundPanel91.setBackground(new java.awt.Color(0, 153, 255));
         roundPanel91.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roundPanel91MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 roundPanel91MouseEntered(evt);
             }
@@ -3097,11 +3325,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel98.setForeground(new java.awt.Color(255, 255, 255));
         jLabel98.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel98.setText("THÊM SV");
-        jLabel98.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel98MouseClicked(evt);
-            }
-        });
         roundPanel91.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 30));
 
         roundPanel71.add(roundPanel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 90, 30));
@@ -3510,11 +3733,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel42.setForeground(new java.awt.Color(255, 255, 255));
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel42.setText("ĐỌC XONG");
-        jLabel42.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel42MouseClicked(evt);
-            }
-        });
         roundPanel103.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
         roundPanel102.add(roundPanel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 310, 80, 30));
@@ -3537,11 +3755,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jLabel109.setForeground(new java.awt.Color(255, 255, 255));
         jLabel109.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel109.setText("LÀM MỚI");
-        jLabel109.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel109MouseClicked(evt);
-            }
-        });
         roundPanel104.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
         roundPanel102.add(roundPanel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 80, 30));
@@ -3557,7 +3770,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jTextField37.setEnabled(false);
         roundPanel102.add(jTextField37, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 80, 40));
 
-        roundPanel105.setBackground(new java.awt.Color(0, 153, 255));
+        roundPanel105.setBackground(new java.awt.Color(252, 3, 28));
         roundPanel105.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 roundPanel105MouseClicked(evt);
@@ -3587,15 +3800,85 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         NhapDiem.setBackground(new java.awt.Color(255, 255, 255, 80));
 
+        jButton2.setBackground(new java.awt.Color(0, 153, 225));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Lưu");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setBackground(new java.awt.Color(0, 153, 0));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Chon File");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel114.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel114.setText("   File Path:");
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel115, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 35, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel115, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout NhapDiemLayout = new javax.swing.GroupLayout(NhapDiem);
         NhapDiem.setLayout(NhapDiemLayout);
         NhapDiemLayout.setHorizontalGroup(
             NhapDiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1125, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NhapDiemLayout.createSequentialGroup()
+                .addGap(271, 271, 271)
+                .addComponent(jLabel114, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(NhapDiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(NhapDiemLayout.createSequentialGroup()
+                        .addGap(0, 331, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(275, 275, 275))
         );
         NhapDiemLayout.setVerticalGroup(
             NhapDiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 543, Short.MAX_VALUE)
+            .addGroup(NhapDiemLayout.createSequentialGroup()
+                .addGap(183, 183, 183)
+                .addGroup(NhapDiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel114, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(NhapDiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(276, Short.MAX_VALUE))
         );
 
         materialTabbed1.addTab("NHẬP ĐIỂM", NhapDiem);
@@ -3611,7 +3894,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         QuanLyGiangVien.setLayout(QuanLyGiangVienLayout);
         QuanLyGiangVienLayout.setHorizontalGroup(
             QuanLyGiangVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1125, Short.MAX_VALUE)
+            .addGap(0, 1115, Short.MAX_VALUE)
             .addGroup(QuanLyGiangVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(QuanLyGiangVienLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -3630,7 +3913,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         materialTabbed1.addTab("QUẢN LÝ GIẢNG VIÊN", QuanLyGiangVien);
 
-        getContentPane().add(materialTabbed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 30, 1130, 590));
+        getContentPane().add(materialTabbed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 1120, 590));
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/folder/AdminBackground.jpg"))); // NOI18N
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1140, 625));
@@ -4515,6 +4798,10 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         if (kq==1){
         JOptionPane.showMessageDialog(null, "Bạn đã thêm thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
         lam_moi_khoa_2();
+        jTextField17.setEnabled(false);
+        roundPanel46.setVisible(false);
+        roundPanel47.setVisible(true);
+        roundPanel48.setVisible(true);
         lam_moi_nganh_thuoc_khoa(ma);}
         else
         JOptionPane.showMessageDialog(null, "Thêm không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
@@ -4528,14 +4815,10 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         try{
         int kq = new KHOA_DAO().XoaDong(ma);
         kq = new KHOA_DAO().XoaToanBoNganh(ma);
-        if (kq==1){
-        
         JOptionPane.showMessageDialog(null, "Bạn đã xóa thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
         lam_moi_khoa();}
-        else
-        JOptionPane.showMessageDialog(null, "Xóa không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-        }
         catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "Xóa không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_roundPanel48MouseClicked
 
@@ -4654,6 +4937,10 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         if (kq==1){
         JOptionPane.showMessageDialog(null, "Bạn đã thêm thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
         lam_moi_nganh_2();
+        jTextField21.setEnabled(false);
+        roundPanel60.setVisible(false);
+        roundPanel61.setVisible(true);
+        roundPanel62.setVisible(true);
         lam_moi_mon_thuoc_nganh(ma);}
         else
         JOptionPane.showMessageDialog(null, "Thêm không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
@@ -4917,23 +5204,163 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         }         
     }//GEN-LAST:event_roundPanel75MouseClicked
 
-    private void jLabel81MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel81MouseClicked
-        String ma = jTextField25.getText();
+    private void roundPanel79MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel79MouseClicked
+        int kq=0;
         try{
-        int kq = new LOP_DAO().XoaDong(ma);
-        kq = new LOP_DAO().XoaToanBoSinhVien(ma);
-        if (kq==1){
-        
-        JOptionPane.showMessageDialog(null, "Bạn đã xóa thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-        lam_moi_lop();}
-        else
-        JOptionPane.showMessageDialog(null, "Xóa không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        for (int i = 0; i<table9.getRowCount();i++)
+            if(table9.getValueAt(i, 0).equals(false)){
+               kq = new SINH_VIEN_DAO().update2(String.valueOf(table9.getValueAt(i, 1)));
+            }
+        if (kq ==0)JOptionPane.showMessageDialog(null, "Bạn chưa chọn sinh viên","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        else JOptionPane.showMessageDialog(null, "Đã xóa sinh viên khỏi lớp thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        lam_moi_sinhvien_thuoc_lop(jTextField25.getText());
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Bạn chưa chọn sinh viên","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_roundPanel79MouseClicked
+
+    private void roundPanel103MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel103MouseClicked
+        if (jTextField37.getText().equals("")){JOptionPane.showMessageDialog(null, "Bạn chưa đọc thư","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+       } else
+        {int ma = Integer.valueOf(jTextField37.getText());
+        try{
+        boolean x = new HOM_THU_DAO().getThongTin(ma).getFlag();
+        if(x==false){
+        int kq = new HOM_THU_DAO().DaDoc(ma);
+        JOptionPane.showMessageDialog(null, "Chuyển thư vào lưu trữ","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{}
+        lam_moi_hom_thu();
         }
         catch(Exception ex){
-        }
-    }//GEN-LAST:event_jLabel81MouseClicked
+        JOptionPane.showMessageDialog(null, "Lỗi","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        }}
+    }//GEN-LAST:event_roundPanel103MouseClicked
 
-    private void jLabel98MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel98MouseClicked
+    private void roundPanel103MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel103MouseEntered
+        changeColor(roundPanel103, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel103MouseEntered
+
+    private void roundPanel103MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel103MouseExited
+        changeColor(roundPanel103, new Color(0, 153, 255));
+    }//GEN-LAST:event_roundPanel103MouseExited
+
+    private void roundPanel104MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel104MouseClicked
+        lam_moi_hom_thu();
+    }//GEN-LAST:event_roundPanel104MouseClicked
+
+    private void roundPanel104MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel104MouseEntered
+        changeColor(roundPanel104, new Color(0, 187, 255));
+    }//GEN-LAST:event_roundPanel104MouseEntered
+
+    private void roundPanel104MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel104MouseExited
+        changeColor(roundPanel104, new Color(0, 153, 255));
+    }//GEN-LAST:event_roundPanel104MouseExited
+
+    private void roundPanel105MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel105MouseClicked
+        Object[] options = {"Có", "Không"};
+        int kq=0;
+        int n = JOptionPane.showOptionDialog(null,"Bạn sẽ xóa toàn bộ dữ liệu, bạn có chắc không?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+        if (n == JOptionPane.YES_OPTION) {
+           kq = new HOM_THU_DAO().XoaToanBoThuDaDoc();
+           if(kq!=0)JOptionPane.showMessageDialog(null, "Bạn đã xóa thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+           else JOptionPane.showMessageDialog(null, "Xóa không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+           lam_moi_hom_thu();
+        }
+        else if (n == JOptionPane.NO_OPTION) {
+          
+        }
+    }//GEN-LAST:event_roundPanel105MouseClicked
+
+    private void roundPanel105MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel105MouseEntered
+        changeColor(roundPanel105, new Color(252, 3, 90));
+    }//GEN-LAST:event_roundPanel105MouseEntered
+
+    private void roundPanel105MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel105MouseExited
+        changeColor(roundPanel105, new Color(252, 3, 28));
+    }//GEN-LAST:event_roundPanel105MouseExited
+
+    private void roundPanel102MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel102MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roundPanel102MouseEntered
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+//    File file = fc.getSelectedFile();
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        JFileChooser fc = new JFileChooser();
+        int result = fc.showOpenDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION){
+            File file = fc.getSelectedFile();
+            jLabel115.setText(file.getAbsolutePath());
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        String fileName = jLabel115.getText();
+        if (fileName.endsWith(".xlsx")){
+            int kq=0;
+            try {
+                kq = Excel_DIEM_DAO.getInstance().Import_excel(fileName);
+//                if (kq >=1){
+                    JOptionPane.showMessageDialog(null, "Nhập điểm thành công!","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+//                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Có thể có lỗi về mã học kì, mã môn học hoặc mã sinh viên, vui lòng kiểm tra lại file điểm","Thông báo",JOptionPane.INFORMATION_MESSAGE);   
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Bạn phải chọn file định dạng xlsx","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void roundPanel76MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel76MouseClicked
+        String ma = jTextField25.getText();
+        try{
+        int kq =0;
+        kq = new LOP_DAO().XoaDong(ma);
+        kq = new LOP_DAO().XoaToanBoSinhVien(ma);
+        JOptionPane.showMessageDialog(null, "Bạn đã xóa thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        lam_moi_lop();}
+        catch(Exception ex){
+        JOptionPane.showMessageDialog(null, "Xóa không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_roundPanel76MouseClicked
+
+    private void roundPanel74MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel74MouseClicked
+        String ma = jTextField25.getText();
+        String ten = jTextField26.getText();
+        String makhoa = jTextField33.getText();
+        String makhoahoc = jTextField34.getText();
+        if (ma.equals("") || ten.equals("")|| makhoa.equals("")|| makhoahoc.equals("")) 
+        {JOptionPane.showMessageDialog(null, "Bạn phải nhập đầy đủ thông tin","Thông báo",JOptionPane.INFORMATION_MESSAGE);}
+        else
+        try{
+        int kq = new LOP_DAO().insert(new LOP(ma,ten,makhoa,makhoahoc,true));
+        if (kq==1){
+        JOptionPane.showMessageDialog(null, "Bạn đã thêm thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        lam_moi_lop_2();
+        jTextField25.setEnabled(false);
+        roundPanel74.setVisible(false);
+        roundPanel75.setVisible(true);
+        roundPanel76.setVisible(true);
+        lam_moi_sinhvien_thuoc_lop(ma);}
+        else
+        JOptionPane.showMessageDialog(null, "Thêm không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+        }
+        catch(Exception ex){
+        }        
+    }//GEN-LAST:event_roundPanel74MouseClicked
+
+    private void roundPanel91MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel91MouseClicked
         String ma = jTextField27.getText();
         int kq = 0;
         try{
@@ -4952,117 +5379,142 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 //       System.out.print(new NGANH_DAO().getThongTin(ma).getMaKhoa());
 //       ex.printStackTrace();
         }
-    }//GEN-LAST:event_jLabel98MouseClicked
+    }//GEN-LAST:event_roundPanel91MouseClicked
 
-    private void roundPanel79MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel79MouseClicked
-        int kq=0;
-        try{
-        for (int i = 0; i<table9.getRowCount();i++)
-            if(table9.getValueAt(i, 0).equals(false)){
-               kq = new SINH_VIEN_DAO().update2(String.valueOf(table9.getValueAt(i, 1)));
-            }
-        if (kq ==0)JOptionPane.showMessageDialog(null, "Bạn chưa chọn sinh viên","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-        else JOptionPane.showMessageDialog(null, "Đã xóa sinh viên khỏi lớp thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-        lam_moi_sinhvien_thuoc_lop(jTextField25.getText());
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Bạn chưa chọn sinh viên","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-        }
-    }//GEN-LAST:event_roundPanel79MouseClicked
-
-    private void jLabel79MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel79MouseClicked
-        String ma = jTextField25.getText();
-        String ten = jTextField26.getText();
-        String makhoa = jTextField33.getText();
-        String makhoahoc = jTextField34.getText();
-        if (ma.equals("") || ten.equals("")|| makhoa.equals("")|| makhoahoc.equals("")) 
-        {JOptionPane.showMessageDialog(null, "Bạn phải nhập đầy đủ thông tin","Thông báo",JOptionPane.INFORMATION_MESSAGE);}
-        else
-        try{
-        int kq = new LOP_DAO().insert(new LOP(ma,ten,makhoa,makhoahoc,true));
-        if (kq==1){
-        JOptionPane.showMessageDialog(null, "Bạn đã thêm thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-        lam_moi_lop_2();
-        lam_moi_sinhvien_thuoc_lop(ma);}
-        else
-        JOptionPane.showMessageDialog(null, "Thêm không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-        }
-        catch(Exception ex){
-        }
-    }//GEN-LAST:event_jLabel79MouseClicked
-
-    private void roundPanel103MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel103MouseClicked
+    private void jPanel24MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_roundPanel103MouseClicked
+    }//GEN-LAST:event_jPanel24MouseEntered
 
-    private void roundPanel103MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel103MouseEntered
+    private void jPanel24MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_roundPanel103MouseEntered
+    }//GEN-LAST:event_jPanel24MouseExited
 
-    private void roundPanel103MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel103MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_roundPanel103MouseExited
+    private void SettingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingMouseClicked
+        jPanel9.setVisible(!jPanel9.isVisible());
+    }//GEN-LAST:event_SettingMouseClicked
 
-    private void roundPanel104MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel104MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_roundPanel104MouseClicked
+    private void SettingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingMouseEntered
+        changeColor(jPanel2, new Color(23, 111, 126));
+        jPanel9.setVisible(true);
+    }//GEN-LAST:event_SettingMouseEntered
 
-    private void roundPanel104MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel104MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_roundPanel104MouseEntered
+    private void SettingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingMouseExited
+        changeColor(jPanel2, new Color(23,100,126));
+        jPanel9.setVisible(false);
+    }//GEN-LAST:event_SettingMouseExited
 
-    private void roundPanel104MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel104MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_roundPanel104MouseExited
+    private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
+        changeColor(jPanel2, new Color(23, 111, 126));
+        jPanel9.setVisible(true);
+    }//GEN-LAST:event_jPanel2MouseEntered
 
-    private void jLabel109MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel109MouseClicked
-        lam_moi_hom_thu();
-    }//GEN-LAST:event_jLabel109MouseClicked
+    private void jPanel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseExited
+        changeColor(jPanel2, new Color(23,100,126));
+        jPanel9.setVisible(false);
+    }//GEN-LAST:event_jPanel2MouseExited
 
-    private void jLabel42MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel42MouseClicked
-        if (jTextField37.getText().equals("")){JOptionPane.showMessageDialog(null, "Bạn chưa đọc thư","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-       } else
-        {int ma = Integer.valueOf(jTextField37.getText());
-        try{
-        boolean x = new HOM_THU_DAO().getThongTin(ma).getFlag();
-        if(x==false){
-        int kq = new HOM_THU_DAO().DaDoc(ma);
-        JOptionPane.showMessageDialog(null, "Chuyển thư vào lưu trữ","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{}
-        lam_moi_hom_thu();
-        }
-        catch(Exception ex){
-        JOptionPane.showMessageDialog(null, "Lỗi","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-        }}
-    }//GEN-LAST:event_jLabel42MouseClicked
+    private void jPanel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseEntered
+        changeColor(jPanel2, new Color(23, 111, 126));
+        jPanel9.setVisible(true);
+    }//GEN-LAST:event_jPanel15MouseEntered
 
-    private void roundPanel105MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel105MouseClicked
+    private void jPanel15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseExited
+        changeColor(jPanel2, new Color(23,100,126));
+        jPanel9.setVisible(false);
+    }//GEN-LAST:event_jPanel15MouseExited
+
+    private void changePassword1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePassword1MouseClicked
+        materialTabbed1.setVisible(false);
+        jPanel12.setVisible(true);
+    }//GEN-LAST:event_changePassword1MouseClicked
+
+    private void changePassword1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePassword1MouseEntered
+        changeColor(changePassword1, new Color(47, 97, 97));
+        jPanel9.setVisible(true);
+    }//GEN-LAST:event_changePassword1MouseEntered
+
+    private void changePassword1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePassword1MouseExited
+        changeColor(changePassword1, new Color(47, 84, 95));
+        jPanel9.setVisible(false);
+    }//GEN-LAST:event_changePassword1MouseExited
+
+    private void Logout1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logout1MouseClicked
+        this.setVisible(false);
+        LoginJFrame login = new LoginJFrame();
+        login.setVisible(true);
+    }//GEN-LAST:event_Logout1MouseClicked
+
+    private void Logout1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logout1MouseEntered
+        changeColor(Logout1, new Color(47, 97, 97));
+        jPanel9.setVisible(true);
+    }//GEN-LAST:event_Logout1MouseEntered
+
+    private void Logout1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logout1MouseExited
+        changeColor(Logout1, new Color(47, 84, 95));
+        jPanel9.setVisible(false);
+    }//GEN-LAST:event_Logout1MouseExited
+
+    private void jPanel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseEntered
+        jPanel9.setVisible(true);
+    }//GEN-LAST:event_jPanel9MouseEntered
+
+    private void jPanel9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseExited
+        jPanel9.setVisible(false);
+    }//GEN-LAST:event_jPanel9MouseExited
+
+    private void jPanel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseClicked
+        String password1 = "";
+        char[] getpassword1 = passwordField1.getPassword();
+        for(int i=0;i < getpassword1.length;i++){
+            password1+=getpassword1[i];
+        };
+
+        String password2 = "";
+        char[] getpassword2 = passwordField2.getPassword();
+        for(int i=0;i < getpassword2.length;i++){
+            password2+=getpassword2[i];
+        };
+
+        String password3 = "";
+        char[] getpassword3 = passwordField3.getPassword();
+        for(int i=0;i < getpassword3.length;i++){
+            password3+=getpassword3[i];
+        };
+
         Object[] options = {"Có", "Không"};
-        int kq=0;
-        int n = JOptionPane.showOptionDialog(null,"Bạn sẽ xóa toàn bộ dữ liệu, bạn có chắc không?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+        int n = JOptionPane.showOptionDialog(jPanel12,"Bạn muốn yêu cầu mật khẩu mới?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
         if (n == JOptionPane.YES_OPTION) {
-           kq = new HOM_THU_DAO().XoaToanBoThuDaDoc();
-           if(kq!=0)JOptionPane.showMessageDialog(null, "Bạn đã xóa thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-           else JOptionPane.showMessageDialog(null, "Xóa không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-           lam_moi_hom_thu();
+            if ((admin.getMatKhau().equals(password2)) && (password2.equals(password3))){
+                SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
+                temp.passwordChange(admin.getTen(),admin.getMaSV(),password1);
+                jPanel12.setVisible(false);
+                materialTabbed1.setVisible(true);
+                this.admin = new SINH_VIEN_DAO().getThongTin3(admin.getMaSV());
+                JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);}
+            else {
+//                System.out.println(password2);
+//                System.out.println(password3);
+//                System.out.println(password1);
+                JOptionPane.showMessageDialog(null, "Mật khẩu cũ không đúng, xin hãy nhập lại","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+            }
         }
         else if (n == JOptionPane.NO_OPTION) {
-          
+            materialTabbed1.setVisible(true);
+            jPanel12.setVisible(false);
         }
-    }//GEN-LAST:event_roundPanel105MouseClicked
+    }//GEN-LAST:event_jPanel24MouseClicked
 
-    private void roundPanel105MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel105MouseEntered
+    private void jPanel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel25MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_roundPanel105MouseEntered
+    }//GEN-LAST:event_jPanel25MouseClicked
 
-    private void roundPanel105MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel105MouseExited
+    private void jPanel25MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel25MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_roundPanel105MouseExited
+    }//GEN-LAST:event_jPanel25MouseEntered
 
-    private void roundPanel102MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel102MouseEntered
+    private void jPanel25MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel25MouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_roundPanel102MouseEntered
+    }//GEN-LAST:event_jPanel25MouseExited
 
     //PHẦN HÀM
            private void lam_moi_khoa_hoc() { 
@@ -5889,11 +6341,14 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.RoundPanel CapNhatTaiKhoanSinhVien7;
     private javaapplication24.RoundPanel GuiThongbao;
     private javaapplication24.RoundPanel Homthu;
+    private javax.swing.JLabel Logout;
+    private javaapplication24.RoundPanel Logout1;
     private javaapplication24.RoundPanel NhapDiem;
     private javaapplication24.RoundPanel QuanLyGiangVien;
     private javaapplication24.RoundPanel QuanlyBomon;
     private javaapplication24.RoundPanel QuanlyHoctap;
     private javaapplication24.RoundPanel QuanlySinhvien;
+    private javax.swing.JLabel Setting;
     private javax.swing.JLabel Title;
     private javax.swing.JLabel Title1;
     private javax.swing.JLabel Title10;
@@ -5910,6 +6365,10 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel Title8;
     private javax.swing.JLabel Title9;
     private javax.swing.JPanel Titlebar;
+    private javax.swing.JLabel changePassword;
+    private javaapplication24.RoundPanel changePassword1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javaapplication24.JCheckBoxCustom jCheckBoxCustom1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -5928,7 +6387,14 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel111;
     private javax.swing.JLabel jLabel112;
     private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
+    private javax.swing.JLabel jLabel118;
+    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -6026,10 +6492,17 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel66;
     private javax.swing.JPanel jPanel67;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea3;
@@ -6073,6 +6546,9 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.MaterialTabbed materialTabbed1;
     private javaapplication24.MultipleButton multipleButton1;
     private javaapplication24.MultipleButton multipleButton2;
+    private javaapplication24.PasswordField passwordField1;
+    private javaapplication24.PasswordField passwordField2;
+    private javaapplication24.PasswordField passwordField3;
     private javaapplication24.RoundPanel roundPanel1;
     private javaapplication24.RoundPanel roundPanel10;
     private javaapplication24.RoundPanel roundPanel100;
@@ -6081,6 +6557,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javaapplication24.RoundPanel roundPanel103;
     private javaapplication24.RoundPanel roundPanel104;
     private javaapplication24.RoundPanel roundPanel105;
+    private javaapplication24.RoundPanel roundPanel106;
     private javaapplication24.RoundPanel roundPanel11;
     private javaapplication24.RoundPanel roundPanel12;
     private javaapplication24.RoundPanel roundPanel13;

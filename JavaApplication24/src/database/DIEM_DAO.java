@@ -220,6 +220,29 @@ public class DIEM_DAO extends BDConnect{
       };
       return monhoclai;
     }
+    
+    public int insert(DIEM t) {
+		int kq = 0;
+		try {
+			
+			String sql = "INSERT INTO diem (MaSV, MaHocKy, MaMon, DiemChuyenCan, DiemGiuaKy, DiemKetThuc, Flag) VALUES (?,?,?,?,?,?,?)";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, t.getMaSV());
+			pst.setString(2, t.getMaHocKy());
+			pst.setString(3, t.getMaMon());
+			pst.setFloat(4, t.getDiemChuyenCan());
+			pst.setFloat(5, t.getDiemGiuaKy());
+			pst.setFloat(6, t.getDiemKetThuc());
+			pst.setBoolean(7, t.isFlag());
+			
+			kq = pst.executeUpdate();
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
 }
 
   

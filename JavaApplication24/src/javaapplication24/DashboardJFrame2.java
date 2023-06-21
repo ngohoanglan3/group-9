@@ -804,6 +804,9 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         jPanel24.setBackground(new java.awt.Color(255, 90, 0));
         jPanel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel24MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPanel24MouseEntered(evt);
             }
@@ -819,11 +822,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         jLabel33.setText("GỬI YÊU CẦU");
         jLabel33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jLabel33.setPreferredSize(new java.awt.Dimension(225, 32));
-        jLabel33.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel33MouseClicked(evt);
-            }
-        });
         jPanel24.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         roundPanel9.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 400, -1, -1));
@@ -2133,47 +2131,6 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_Logout1MouseClicked
 
-    private void jLabel33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseClicked
-        String password1 = "";
-        char[] getpassword1 = passwordField1.getPassword();
-        for(int i=0;i < getpassword1.length;i++){
-            password1+=getpassword1[i];
-        };
-        
-        String password2 = "";
-        char[] getpassword2 = passwordField2.getPassword();
-        for(int i=0;i < getpassword2.length;i++){
-            password2+=getpassword2[i];
-        };
-        
-        String password3 = "";
-        char[] getpassword3 = passwordField3.getPassword();
-        for(int i=0;i < getpassword3.length;i++){
-            password3+=getpassword3[i];
-        };
-        
-        Object[] options = {"Có", "Không"};
-        int n = JOptionPane.showOptionDialog(jPanel12,"Bạn muốn yêu cầu cấp lại mật khẩu?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
-        if (n == JOptionPane.YES_OPTION) {
-            if ((sinhvien.getMatKhau().equals(password2)) && (password1.equals(password3))){
-            SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
-            temp.passwordChange(sinhvien.getTen(),sinhvien.getMaSV(),password3);
-            jPanel12.setVisible(false);
-            materialTabbed.setVisible(true);
-                JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);}
-            else {
-                System.out.println(password2);
-                System.out.println(password1);
-                System.out.println(password3);
-                JOptionPane.showMessageDialog(null, "Mật khẩu không đúng, xin hãy nhập lại","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-            }
-        }
-        else if (n == JOptionPane.NO_OPTION) {
-            materialTabbed.setVisible(true);
-            jPanel12.setVisible(false);
-        }
-    }//GEN-LAST:event_jLabel33MouseClicked
-
     private void jPanel24MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel24MouseEntered
@@ -2233,6 +2190,48 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         materialTabbed.setVisible(false);
         jPanel12.setVisible(true);
     }//GEN-LAST:event_changePassword1MouseClicked
+
+    private void jPanel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseClicked
+        String password1 = "";
+        char[] getpassword1 = passwordField1.getPassword();
+        for(int i=0;i < getpassword1.length;i++){
+            password1+=getpassword1[i];
+        };
+        
+        String password2 = "";
+        char[] getpassword2 = passwordField2.getPassword();
+        for(int i=0;i < getpassword2.length;i++){
+            password2+=getpassword2[i];
+        };
+        
+        String password3 = "";
+        char[] getpassword3 = passwordField3.getPassword();
+        for(int i=0;i < getpassword3.length;i++){
+            password3+=getpassword3[i];
+        };
+        
+        Object[] options = {"Có", "Không"};
+        int n = JOptionPane.showOptionDialog(jPanel12,"Bạn muốn yêu cầu đổi lại mật khẩu?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+        if (n == JOptionPane.YES_OPTION) {
+            if ((sinhvien.getMatKhau().equals(password2)) && (password2.equals(password3))){
+            SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
+            temp.passwordChange(sinhvien.getTen(),sinhvien.getMaSV(),password1);
+            jPanel12.setVisible(false);
+            materialTabbed.setVisible(true);
+            this.sinhvien = new SINH_VIEN_DAO().getThongTin3(sinhvien.getMaSV());
+                JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);}
+            else {
+                System.out.println(password2);
+                System.out.println(password3);
+                System.out.println(password1);
+                JOptionPane.showMessageDialog(null, "Mật khẩu không đúng, xin hãy nhập lại","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+        else if (n == JOptionPane.NO_OPTION) {
+            materialTabbed.setVisible(true);
+            jPanel12.setVisible(false);
+        }
+    }//GEN-LAST:event_jPanel24MouseClicked
 
     /**
      * @param args the command line arguments
