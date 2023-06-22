@@ -11,12 +11,21 @@ import database.LOP_DAO;
 import database.MON_HOC_DAO;
 import database.NGANH_DAO;
 import database.SINH_VIEN_DAO;
+import database.THONG_BAO_DAO;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.spi.FileTypeDetector;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import models.CHUONG_TRINH_KHUNG;
 import models.HOC_KY;
 import models.HOM_THU;
@@ -26,6 +35,7 @@ import models.LOP;
 import models.MON_HOC;
 import models.NGANH;
 import models.SINH_VIEN;
+import models.THONG_BAO;
 
 public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private int x;
@@ -767,7 +777,8 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         roundPanel96 = new javaapplication24.RoundPanel();
         jLabel106 = new javax.swing.JLabel();
         scrollPaneWin124 = new javaapplication24.ScrollPaneWin11();
-        jPanel66 = new javax.swing.JPanel();
+        jPane661 = new javax.swing.JPanel();
+        jLabel121 = new javax.swing.JLabel();
         Homthu = new javaapplication24.RoundPanel();
         roundPanel97 = new javaapplication24.RoundPanel();
         roundPanel98 = new javaapplication24.RoundPanel();
@@ -3504,7 +3515,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         jPanel67.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 35, 128, 128));
 
         jLabel104.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel104.setText("<tên file>");
         jPanel67.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 170, -1, -1));
 
         scrollPaneWin125.setBackground(new Color(255, 255, 255, 180));
@@ -3525,6 +3535,9 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         roundPanel96.setBackground(new java.awt.Color(0, 153, 255));
         roundPanel96.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roundPanel96MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 roundPanel96MouseEntered(evt);
             }
@@ -3546,10 +3559,14 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
 
         jSplitPane1.setLeftComponent(scrollPaneWin122);
 
-        jPanel66.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel66.setPreferredSize(new java.awt.Dimension(600, 410));
-        jPanel66.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        scrollPaneWin124.setViewportView(jPanel66);
+        scrollPaneWin124.setPreferredSize(new java.awt.Dimension(2, 2));
+
+        jPane661.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel121.setRequestFocusEnabled(false);
+        jPane661.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, -80, -1, -1));
+
+        scrollPaneWin124.setViewportView(jPane661);
 
         jSplitPane1.setRightComponent(scrollPaneWin124);
 
@@ -3878,7 +3895,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
                 .addGroup(NhapDiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addContainerGap(418, Short.MAX_VALUE))
         );
 
         materialTabbed1.addTab("NHẬP ĐIỂM", NhapDiem);
@@ -3894,7 +3911,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         QuanLyGiangVien.setLayout(QuanLyGiangVienLayout);
         QuanLyGiangVienLayout.setHorizontalGroup(
             QuanLyGiangVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1115, Short.MAX_VALUE)
+            .addGap(0, 1125, Short.MAX_VALUE)
             .addGroup(QuanLyGiangVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(QuanLyGiangVienLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -4374,27 +4391,59 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private void roundPanel96MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel96MouseExited
         changeColor(roundPanel96, new Color(0,153,255));
     }//GEN-LAST:event_roundPanel96MouseExited
-
+ImageIcon ii;
     private void jLabel103MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel103MouseClicked
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setFileFilter(new FileFilter() {
+//        JFileChooser fileChooser = new JFileChooser();
+//        fileChooser.setFileFilter(new FileFilter() {
+//
+//           @Override
+//           public String getDescription() {
+//               return "JPG Images (*.jpg)";
+//           }
+//
+//           @Override
+//           public boolean accept(File f) {
+//               if (f.isDirectory()) {
+//                   return true;
+//               } else {
+//                   String filename = f.getName().toLowerCase();
+//                   return filename.endsWith(".jpg") || filename.endsWith(".jpeg") ;
+//               }
+//           }
+//        });
+//        int result = fileChooser.showOpenDialog(null);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Image Files", "jpg", "png", "gif", "jpeg");
+    JFileChooser chooser = new JFileChooser();
+    chooser.showOpenDialog(null);
+    chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+    chooser.setFileFilter(filter);
+    f = chooser.getSelectedFile();
+    if (f == null) {
+        return;
+    }
+    String filename = f.getAbsolutePath();
+    jTextField1.setText(filename);
+    
+    
+    SwingWorker sw = new SwingWorker() {
+        @Override
+        protected Object doInBackground() throws Exception {
+            ii = new ImageIcon(f.getAbsolutePath());
+            Image image = ii.getImage(); 
+            Image newimg = image.getScaledInstance(900, 1300,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+            ii = new ImageIcon(newimg);  
+            return null;
+        }
 
-           @Override
-           public String getDescription() {
-               return "JPG Images (*.jpg)";
-           }
-
-           @Override
-           public boolean accept(File f) {
-               if (f.isDirectory()) {
-                   return true;
-               } else {
-                   String filename = f.getName().toLowerCase();
-                   return filename.endsWith(".jpg") || filename.endsWith(".jpeg") ;
-               }
-           }
-        });
-        int result = fileChooser.showOpenDialog(null);
+        @Override
+        protected void done() { 
+            super.done();
+            NoScalingIcon icon1 = new NoScalingIcon(ii);
+            jLabel121.setIcon(icon1);
+            jLabel104.setText(f.getName());
+        }
+    };
+    sw.execute();
     }//GEN-LAST:event_jLabel103MouseClicked
 
     private void roundPanel14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel14MouseExited
@@ -5516,6 +5565,34 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel25MouseExited
 
+    File f;
+    
+    private void roundPanel96MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roundPanel96MouseClicked
+        Path currentDir = Paths.get(".","\\src\\ThongBao");
+        if (f == null || jTextArea3 == null) {
+            JOptionPane.showMessageDialog(null, "Bạn phải nhập tiêu đề và chọn một bức ảnh","Nhắc nhở",JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        ArrayList<THONG_BAO> list = new THONG_BAO_DAO().selectAll();
+        String kc = String.valueOf(list.size()+1);
+        int t = 0;
+        try {
+            Files.copy(f.toPath(),
+            (new File(currentDir.toAbsolutePath() + "\\" + kc+".jpg")).toPath(),
+            StandardCopyOption.REPLACE_EXISTING);
+            THONG_BAO tb = new THONG_BAO(Integer.parseInt(kc), jTextArea3.getText(), true);
+            t = new THONG_BAO_DAO().insert(tb);
+            
+            if (t==1)
+            JOptionPane.showMessageDialog(null, "Bạn đã thêm thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+            else
+            JOptionPane.showMessageDialog(null, "Thêm không thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+            
+        } catch (Exception ex) {
+            //Logger.getLogger(DashboardJFrameAdmin2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_roundPanel96MouseClicked
+
     //PHẦN HÀM
            private void lam_moi_khoa_hoc() { 
      ArrayList<KHOA_HOC> danhsachkhoahoc = new KHOA_HOC_DAO().selectAll();
@@ -6395,6 +6472,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -6490,6 +6568,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
+    private javax.swing.JPanel jPane661;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -6500,7 +6579,6 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel66;
     private javax.swing.JPanel jPanel67;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JSplitPane jSplitPane1;

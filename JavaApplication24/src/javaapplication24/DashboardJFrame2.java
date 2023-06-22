@@ -37,6 +37,7 @@ import models.LOP;
 import models.MON_HOC;
 import models.SINH_VIEN;
 import models.THONG_BAO;
+import java.awt.Image;
 
 /**
  *
@@ -478,10 +479,15 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
                     DanhSachThongBao[t].flag=false;
                     DanhSachThongBao[t].ThongBaoPanelMouseExited();
                 }
+                
                 DanhSachThongBao[j].setForeground(new Color(0,255,255));
                 DanhSachThongBao[j].flag=true;
                 try{
-                    NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/ThongBao/"+thongbao.get(j).getMaThongBao()+".jpg")));
+                    ImageIcon img =new ImageIcon(getClass().getResource("/ThongBao/"+thongbao.get(j).getMaThongBao()+".jpg"));
+                    Image image = img.getImage(); 
+                    Image newimg = image.getScaledInstance(900, 1300,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+                    img = new ImageIcon(newimg);  
+                    NoScalingIcon thongbaoimage = new NoScalingIcon(img);
                     jLabel11.setIcon(thongbaoimage);}
                 catch(Exception ex){
                     NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/unknown.jpg")));
