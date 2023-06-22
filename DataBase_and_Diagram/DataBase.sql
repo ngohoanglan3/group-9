@@ -1,4 +1,4 @@
-﻿--create database CoSoDuLieu1;
+﻿--create database CoSoDuLieu;
 
 create table DIEU_KHIEN(
 VoHieuHoaSinhVien bit,
@@ -147,6 +147,9 @@ values(2,N'du học liên kết Việt- Nhật',1);
 	VALUES ('001',N'Công Nghệ thông tin',1);
 	insert into KHOA(MaKhoa,TenKhoa,Flag)
 	VALUES ('002',N'Kinh tế',1);
+	
+	insert into KHOA(MaKhoa,TenKhoa,Flag)
+	VALUES ('003',N'Cầu đường',1);
 
 	insert into KHOA_HOC(MaKhoaHoc,HeSoDCC,HeSoDGK,HeSoDKT,Flag)
 	VALUES ('K01',30,70,70,1);
@@ -180,9 +183,6 @@ values(2,N'du học liên kết Việt- Nhật',1);
 	insert into LOAI_HINH_DAO_TAO(MaLoaiHinhDaoTao,TenLoaiHinhDaoTao,Flag)
 	VALUES ('002',N'Liên kết',1);
 
-	insert into DIEU_KHIEN(VoHieuHoaSinhVien)
-	VALUES (0);
-
 	insert into HOC_KY(MaHocKy,Nam,SoThuTu,Flag)
 	VALUES ('001','2023-2024',1,1);
 	insert into HOC_KY(MaHocKy,Nam,SoThuTu,Flag)
@@ -199,7 +199,12 @@ values(2,N'du học liên kết Việt- Nhật',1);
 	insert NGANH(MaNganh,TenNganh,MaKhoa,Flag)
 	VALUES ('003',N'Kinh tế xây dựng','002',1);
 	insert NGANH(MaNganh,TenNganh,MaKhoa,Flag)
-	VALUES ('004',N'Tương mại điện tử','002',1);
+	VALUES ('004',N'Thương mại điện tử','002',1);
+
+	insert NGANH(MaNganh,TenNganh,MaKhoa,Flag)
+	VALUES ('005',N'Thoát nước',NULL,1);
+	insert NGANH(MaNganh,TenNganh,MaKhoa,Flag)
+	VALUES ('006',N'Thiết kế gầm',NULL,1);
 
 
 	INSERT INTO MON_HOC (MaMon, TenMon, SoTinChi, SoTiet, BatBuoc, TienQuyet, SongHanh, Flag)
@@ -302,6 +307,7 @@ values(2,N'du học liên kết Việt- Nhật',1);
     ('239', N'Quản trị kinh doanh quốc tế', RAND()*(3)+1, RAND()*(40-30)+30, 0,NULL,NULL,1),
 	('240', N'Kinh tế học quốc tế học', RAND()*(3)+1, RAND()*(40-30)+30, 0, '211', NULL, 1);
 
+	INSERT [dbo].[SINH_VIEN] ([MaSV ], [Ho ], [Ten], [Email], [MaLop], [MaNganh ], [GioiTinh], [NoiSinh], [HoKhauThuongTru], [MaBac], [MaLoaiHinhDaoTao], [CCCD], [MatKhau], [NgaySinh ], [DanToc], [MaKhoaHoc], [Flag], [SDT]) VALUES (N'AD0000', N'Giảng Viên', N'Một', N'Giảng Viên', N'01IT1', N'001  ', 0, N'Hà Nội', N'Hai Bà Trưng - Hà Nội', N'002  ', N'001  ', N'01234567890 ', N'123456', CAST(N'2003-01-12T00:00:00.000' AS DateTime), N'Kinh', N'K01 ', 1, N'1234567890')	
 
 	INSERT [dbo].[SINH_VIEN] ([MaSV ], [Ho ], [Ten], [Email], [MaLop], [MaNganh ], [GioiTinh], [NoiSinh], [HoKhauThuongTru], [MaBac], [MaLoaiHinhDaoTao], [CCCD], [MatKhau], [NgaySinh ], [DanToc], [MaKhoaHoc], [Flag], [SDT]) VALUES (N'ST0001', N'Nguyễn Thùy', N'Vân', N'van1901@tiny.edu.vn', N'01IT1', N'001  ', 0, N'Hà Nội', N'Hai Bà Trưng - Hà Nội', N'002  ', N'001  ', N'01234567890 ', N'123456', CAST(N'2003-01-12T00:00:00.000' AS DateTime), N'Kinh', N'K01 ', 1, N'1234567890')
 	INSERT [dbo].[SINH_VIEN] ([MaSV ], [Ho ], [Ten], [Email], [MaLop], [MaNganh ], [GioiTinh], [NoiSinh], [HoKhauThuongTru], [MaBac], [MaLoaiHinhDaoTao], [CCCD], [MatKhau], [NgaySinh ], [DanToc], [MaKhoaHoc], [Flag], [SDT]) VALUES (N'ST0002', N'Lê Văn', N'Đồng', N'dong1902@tiny.edu.vn', N'01IT1', N'002  ', 0, N'Hà Nội', N'Hai Bà Trưng - Hà Nội', N'002  ', N'001  ', N'01234567891 ', N'123456', CAST(N'2003-01-13T00:00:00.000' AS DateTime), N'Kinh', N'K01 ', 1, N'1234567891')
