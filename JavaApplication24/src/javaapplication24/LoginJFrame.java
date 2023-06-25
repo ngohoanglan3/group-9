@@ -20,6 +20,7 @@ import java.sql.Connection;
 import models.DIEM;
 import database.DIEM_DAO;
 import database.DIEU_KHIEN_DAO;
+
 /**
  *
  * @author ngoho
@@ -33,25 +34,26 @@ public class LoginJFrame extends javax.swing.JFrame {
     private String password;
     private int x;
     private int y;
+
     public LoginJFrame() {
         initComponents();
         NoScalingIcon icon1 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/logo_trans.png")));
         jLabel3.setIcon(icon1);
-        
+
         NoScalingIcon user = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/user.png")));
         jLabel6.setIcon(user);
         jLabel14.setIcon(user);
-        
+
         NoScalingIcon password = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/password.png")));
         jLabel11.setIcon(password);
-        
+
         NoScalingIcon code = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/code.png")));
-        jLabel15.setIcon(code);                       
+        jLabel15.setIcon(code);
     }
+
     public void changeColor(JPanel hover, Color rand) {
         hover.setBackground(rand);
     }
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -400,6 +402,9 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         jPanel24.setBackground(new java.awt.Color(255, 90, 0));
         jPanel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel24MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPanel24MouseEntered(evt);
             }
@@ -415,11 +420,6 @@ public class LoginJFrame extends javax.swing.JFrame {
         jLabel12.setText("GỬI YÊU CẦU");
         jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jLabel12.setPreferredSize(new java.awt.Dimension(225, 32));
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
-            }
-        });
         jPanel24.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanel23.add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
@@ -534,7 +534,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseEntered
 
     private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
-        changeColor(jPanel6, new Color(0,63,92));
+        changeColor(jPanel6, new Color(0, 63, 92));
     }//GEN-LAST:event_jLabel1MouseExited
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -542,11 +542,11 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-        changeColor(jPanel10, new Color(30,70,100));
+        changeColor(jPanel10, new Color(30, 70, 100));
     }//GEN-LAST:event_jLabel2MouseEntered
 
     private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-        changeColor(jPanel10, new Color(0,63,92));
+        changeColor(jPanel10, new Color(0, 63, 92));
     }//GEN-LAST:event_jLabel2MouseExited
 
     private void jPanel4formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4formMouseDragged
@@ -561,60 +561,55 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel4formMousePressed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        
-       
+
         String user = textField3.getText();
         String password = "";
         char[] getpassword = passwordField1.getPassword();
-        for(int i=0;i < getpassword.length;i++){
-            password+=getpassword[i];
+        for (int i = 0; i < getpassword.length; i++) {
+            password += getpassword[i];
         };
         //if(user.charAt(0)=='A' && user.charAt(1)=='D')
-        if((new DIEU_KHIEN_DAO().getVoHieuHoa().isVoHieuHoaSinhVien() == true) || (user.charAt(0)=='A' && user.charAt(1)=='D')){
-        try{
-        SINH_VIEN_DAO sinhvien = new SINH_VIEN_DAO();
-        SINH_VIEN thongtin = sinhvien.getThongTin(user,password);
-        if (thongtin.getMaSV().charAt(0)=='A' && thongtin.getMaSV().charAt(1)=='D'){
-            if (thongtin.getMaSV().equals(user) && thongtin.getMatKhau().equals(password)){
-        this.setVisible(false);
-        DashboardJFrameAdmin2 dash = new DashboardJFrameAdmin2(thongtin);
-        dash.setVisible(true);}
-        }
-        
-        else if (thongtin.getFlag()==true){
-        //System.out.print(thongtin.get(0).getMaSV());
-        if (thongtin.getMaSV().equals(user) && thongtin.getMatKhau().equals(password)){
-        this.setVisible(false);
-        DashboardJFrame2 dash = new DashboardJFrame2(thongtin);
-        dash.setVisible(true);}}
-        else {JOptionPane.showMessageDialog(null, "Tài khoản của bạn hiện đang vô hiệu hóa","Đăng nhập đã bị chặn",JOptionPane.INFORMATION_MESSAGE);}
-        }
-        catch(Exception ex){      
-        Object[] options = {"Nhập lại"};
-        int n = JOptionPane.showOptionDialog(jPanel12,"Bạn đã nhập sai tài khoản !",
-                null,JOptionPane.CANCEL_OPTION,
-                JOptionPane.QUESTION_MESSAGE,null,
-                options,options[0]);
-        };
-        try{
-//        SINH_VIEN x = new SINH_VIEN("ST0162","123456");
-//        SINH_VIEN_DAO sinhvien = new SINH_VIEN_DAO();
-//        int t = sinhvien.insert(x);
-//        System.out.print(t);
-        }
-        catch(Exception ex){}}
-        else {JOptionPane.showMessageDialog(null, "Hệ thống đang bảo trì","Đăng nhập đã bị chặn",JOptionPane.INFORMATION_MESSAGE);
+        if ((new DIEU_KHIEN_DAO().getVoHieuHoa().isVoHieuHoaSinhVien() == true) || (user.charAt(0) == 'A' && user.charAt(1) == 'D')) {
+            try {
+                SINH_VIEN_DAO sinhvien = new SINH_VIEN_DAO();
+                SINH_VIEN thongtin = sinhvien.getThongTin(user, password);
+                if (thongtin.getMaSV().charAt(0) == 'A' && thongtin.getMaSV().charAt(1) == 'D') {
+                    if (thongtin.getMaSV().equals(user) && thongtin.getMatKhau().equals(password)) {
+                        this.setVisible(false);
+                        DashboardJFrameAdmin2 dash = new DashboardJFrameAdmin2(thongtin);
+                        dash.setVisible(true);
+                    }
+                } else if (thongtin.getFlag() == true) {
+                    //System.out.print(thongtin.get(0).getMaSV());
+                    if (thongtin.getMaSV().equals(user) && thongtin.getMatKhau().equals(password)) {
+                        this.setVisible(false);
+                        DashboardJFrame2 dash = new DashboardJFrame2(thongtin);
+                        dash.setVisible(true);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Tài khoản của bạn hiện đang vô hiệu hóa", "Đăng nhập đã bị chặn", JOptionPane.INFORMATION_MESSAGE);
                 }
+            } catch (Exception ex) {
+                Object[] options = {"Nhập lại"};
+                int n = JOptionPane.showOptionDialog(jPanel12, "Bạn đã nhập sai tài khoản !",
+                        null, JOptionPane.CANCEL_OPTION,
+                        JOptionPane.QUESTION_MESSAGE, null,
+                        options, options[0]);
+            };
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Hệ thống đang bảo trì", "Đăng nhập đã bị chặn", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
         // TODO add your handling code here:
-       jLabel8.setForeground(new Color(4,78,183)); 
+        jLabel8.setForeground(new Color(4, 78, 183));
     }//GEN-LAST:event_jLabel8MouseExited
 
     private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
         // TODO add your handling code here:
-        jLabel8.setForeground(Color.WHITE); 
+        jLabel8.setForeground(Color.WHITE);
     }//GEN-LAST:event_jLabel8MouseEntered
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
@@ -623,39 +618,6 @@ public class LoginJFrame extends javax.swing.JFrame {
         jPanel20.setVisible(true);
 
     }//GEN-LAST:event_jLabel8MouseClicked
-
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-        // TODO add your handling code here:    }
-        Object[] options = {"Có", "Không"};
-        int n = JOptionPane.showOptionDialog(jPanel12,"Bạn muốn yêu cầu cấp lại mật khẩu?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
-        if (n == JOptionPane.YES_OPTION) {
-            String Name, MSSV="";
-            Name = changePassName.getText();
-            //String MSSV = "";
-            char[] getpassword = changePassMSSV.getPassword();
-            for(int i=0;i < getpassword.length;i++){
-                MSSV+=getpassword[i];
-            };
-            //MSSV = changePassMSSV.getText();
-            ArrayList<SINH_VIEN> dataList = new SINH_VIEN_DAO().getDataList();
-            for (SINH_VIEN std : dataList){
-                if(std.getTen().equals(Name)){
-                    if(std.getMaSV().equals(MSSV)) {
-                        SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
-                        temp.passwordChange(Name, MSSV,"123456");
-                        JOptionPane.showMessageDialog(jPanel23, "Mật khẩu của bạn đã được đổi thành 123456","Cấp lại mật khẩu thành công",JOptionPane.INFORMATION_MESSAGE);
-                        break;
-                    }
-                }
-            }
-            //System.out.println(MSSV);
-            //System.out.print(Name);
-            jPanel19.setVisible(true);
-            jPanel20.setVisible(false);
-        } 
-        else if (n == JOptionPane.NO_OPTION) {
-        }
-    }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jPanel24MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseEntered
         // TODO add your handling code here:
@@ -678,7 +640,7 @@ public class LoginJFrame extends javax.swing.JFrame {
 
     private void jLabel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseExited
         // TODO add your handling code here:
-        jLabel13.setForeground(new Color(4,78,183));
+        jLabel13.setForeground(new Color(4, 78, 183));
     }//GEN-LAST:event_jLabel13MouseExited
 
     private void jLabel7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseEntered
@@ -686,12 +648,45 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseEntered
 
     private void jLabel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseExited
-        changeColor(jPanel8, new Color(255,90,0));
+        changeColor(jPanel8, new Color(255, 90, 0));
     }//GEN-LAST:event_jLabel7MouseExited
 
     private void textField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textField3ActionPerformed
+
+    private void jPanel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseClicked
+        // TODO add your handling code here:    }
+        Object[] options = {"Có", "Không"};
+        int n = JOptionPane.showOptionDialog(jPanel12, "Bạn muốn yêu cầu cấp lại mật khẩu?", null, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+        if (n == JOptionPane.YES_OPTION) {
+            String Name, MSSV = "";
+            Name = changePassName.getText();
+            //String MSSV = "";
+            char[] getpassword = changePassMSSV.getPassword();
+            for (int i = 0; i < getpassword.length; i++) {
+                MSSV += getpassword[i];
+            };
+            if (MSSV.charAt(0) == 'A' && MSSV.charAt(1) == 'D') {
+                JOptionPane.showMessageDialog(jPanel23, "Không khả thi vì đây là tài khoản quản trị viên", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                ArrayList<SINH_VIEN> dataList = new SINH_VIEN_DAO().getDataList();
+                for (SINH_VIEN std : dataList) {
+                    if (std.getTen().equals(Name)) {
+                        if (std.getMaSV().equals(MSSV)) {
+                            SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
+                            temp.passwordChange(Name, MSSV, "123456");
+                            JOptionPane.showMessageDialog(jPanel23, "Mật khẩu của bạn đã được đổi thành 123456", "Cấp lại mật khẩu thành công", JOptionPane.INFORMATION_MESSAGE);
+                            break;
+                        }
+                    }
+                }
+                jPanel19.setVisible(true);
+                jPanel20.setVisible(false);
+            }
+        } else if (n == JOptionPane.NO_OPTION) {
+        }
+    }//GEN-LAST:event_jPanel24MouseClicked
 
     /**
      * @param args the command line arguments
