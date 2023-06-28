@@ -656,7 +656,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_textField3ActionPerformed
 
     private void jPanel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseClicked
-        // TODO add your handling code here:    }
+        boolean check = false;
         Object[] options = {"Có", "Không"};
         int n = JOptionPane.showOptionDialog(jPanel12, "Bạn muốn yêu cầu cấp lại mật khẩu?", null, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
         if (n == JOptionPane.YES_OPTION) {
@@ -677,12 +677,17 @@ public class LoginJFrame extends javax.swing.JFrame {
                             SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
                             temp.passwordChange(Name, MSSV, "123456");
                             JOptionPane.showMessageDialog(jPanel23, "Mật khẩu của bạn đã được đổi thành 123456", "Cấp lại mật khẩu thành công", JOptionPane.INFORMATION_MESSAGE);
+                            check = true;
                             break;
                         }
                     }
                 }
-                jPanel19.setVisible(true);
-                jPanel20.setVisible(false);
+                if (check == false) {
+                    JOptionPane.showMessageDialog(jPanel23, "Thông tin bạn nhập không chính xác", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    jPanel19.setVisible(true);
+                    jPanel20.setVisible(false);
+                }
             }
         } else if (n == JOptionPane.NO_OPTION) {
         }

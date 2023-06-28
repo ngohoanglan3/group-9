@@ -93,6 +93,7 @@ public class SINH_VIEN_DAO extends BDConnect{
                 dataList.add(std);
             }
         } catch (Exception ex) {
+            ex.printStackTrace();
         }
         
         
