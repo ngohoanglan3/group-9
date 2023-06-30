@@ -1795,7 +1795,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         roundPanel31.add(jCheckBoxCustom1, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 71, -1, -1));
 
         jLabel39.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel39.setText("Tự chọn");
+        jLabel39.setText("Song hành");
         roundPanel31.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 195, -1, 40));
 
         jLabel41.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -4517,6 +4517,10 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         if (ma.equals("") || matkhau.equals("")) {
             JOptionPane.showMessageDialog(null, "Bạn phải nhập đầy đủ thông tin", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
         } else
+            if(ma.charAt(0)=='A' &&ma.charAt(1)=='D'){
+            JOptionPane.showMessageDialog(null, "Không thể tạo tài khoản quản trị viên", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+           }
+        else
         try {
             int kq = new SINH_VIEN_DAO().insert(new SINH_VIEN(ma, matkhau));
             if (kq == 1) {

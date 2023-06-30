@@ -154,7 +154,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         if(sinhvien.getMaKhoaHoc()!=null ) if(new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getFlag()==true)
         Khoahoc1.setText(sinhvien.getMaKhoaHoc());
         
-        if(new LOP_DAO().getThongTin(sinhvien.getMaLop()).getFlag()==true)
+        if(sinhvien.getMaLop()!=null ) if(new LOP_DAO().getThongTin(sinhvien.getMaLop()).getFlag()==true)
         Lophoc1.setText(new LOP_DAO().getThongTin(sinhvien.getMaLop()).getTenLop());
         
         if(sinhvien.getMaBac()!=null) if(new BAC_DAO_TAO_DAO().getThongTin(sinhvien.getMaBac()).getFlag()==true)
@@ -165,7 +165,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         
 
 // khoi tao cac bien
-        if(sinhvien.getMaNganh()!=null ) if(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getFlag()==true)
+        //if(sinhvien.getMaNganh()!=null ) if(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getFlag()==true)
         if(sinhvien.getMaKhoaHoc()!=null ) if(new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getFlag()==true)
         try{
         ArrayList<String> danhsachhocky = new SINH_VIEN_DAO().getDanhSachHocKy(sinhvien.getMaSV());
