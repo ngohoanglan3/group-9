@@ -149,6 +149,8 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
         if(sinhvien.getMaNganh()!=null) if(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getFlag()==true)
         {Nganh1.setText(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getTenNganh());
         
+        if(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa()!=null)
+        if(new KHOA_DAO().getThongTin(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa()).getFlag()==true)
         Khoa1.setText(new KHOA_DAO().getThongTin(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa()).getTenKhoa());}
         
         if(sinhvien.getMaKhoaHoc()!=null ) if(new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getFlag()==true)
