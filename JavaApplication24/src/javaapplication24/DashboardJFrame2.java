@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package javaapplication24;
 
 import database.BAC_DAO_TAO_DAO;
@@ -43,74 +39,70 @@ import java.awt.Image;
  *
  * @author ngoho
  */
-
-class HocKiPanel extends javax.swing.JPanel {
-    javax.swing.JLabel t;
-    boolean flag;
-    public ArrayList<DIEM> Diem;
-    public ArrayList<MON_HOC> MonHoc;
-    public HocKiPanel(String s){
-        super();
-        this.flag = false;
-        this.t = new javax.swing.JLabel();
-        t.setText(s);
-        t.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11));
-        t.setForeground(Color.white);
-        super.add(t);
-        super.setBackground(new Color(0, 150, 150));
-    };
-    public void setDiem(ArrayList<DIEM> Diem){
-        this.Diem = Diem;
-    }
-    
-    public void setMonHoc(ArrayList<MON_HOC> MonHoc){
-        this.MonHoc = MonHoc;
-    }
-    
-    public void changeFlag(){
-        if (flag == false){flag=true;}
-        else flag=false;
-    };
-    public void changeColor(JPanel hover, Color rand) {
-        hover.setBackground(rand);
-    }
-    public void addTextLabel(String s){
-        t.setText(s);
-    };
-    public void HocKiPanelMouseEntered() {
-        if (this.flag==false)
-    super.setBackground(new Color(0, 200, 200));
-    };
-    public void HocKiPanelMouseExited() {
-    if (this.flag==false)
-    super.setBackground(new Color(0, 150, 150));
-    };
-}
-
-
-class ThongBaoPanel extends javax.swing.JLabel {
-    Boolean flag;
-    public ThongBaoPanel(String s){
-        super();
-        this.flag = false;
-        this.setText(s);
-        this.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14));
-        this.setForeground(new Color(51,51,51));
-    };
-    public void changeFlag(){
-        if (flag == false){flag=true;}
-        else flag=false;
-    };
-    public void ThongBaoPanelMouseEntered() {
-    if (this.flag==false)
-    super.setForeground(new Color(51,204,255));
-    };
-    public void ThongBaoPanelMouseExited() {
-    if (this.flag==false)
-    super.setForeground(new Color(51,51,51));
-    };
-}
-
+//class HocKiPanel extends javax.swing.JPanel {
+//    javax.swing.JLabel t;
+//    boolean flag;
+//    public ArrayList<DIEM> Diem;
+//    public ArrayList<MON_HOC> MonHoc;
+//    public HocKiPanel(String s){
+//        super();
+//        this.flag = false;
+//        this.t = new javax.swing.JLabel();
+//        t.setText(s);
+//        t.setFont(new java.awt.Font("Segoe UI Semibold", 0, 11));
+//        t.setForeground(Color.white);
+//        super.add(t);
+//        super.setBackground(new Color(0, 150, 150));
+//    };
+//    public void setDiem(ArrayList<DIEM> Diem){
+//        this.Diem = Diem;
+//    }
+//    
+//    public void setMonHoc(ArrayList<MON_HOC> MonHoc){
+//        this.MonHoc = MonHoc;
+//    }
+//    
+//    public void changeFlag(){
+//        if (flag == false){flag=true;}
+//        else flag=false;
+//    };
+//    public void changeColor(JPanel hover, Color rand) {
+//        hover.setBackground(rand);
+//    }
+//    public void addTextLabel(String s){
+//        t.setText(s);
+//    };
+//    public void HocKiPanelMouseEntered() {
+//        if (this.flag==false)
+//    super.setBackground(new Color(0, 200, 200));
+//    };
+//    public void HocKiPanelMouseExited() {
+//    if (this.flag==false)
+//    super.setBackground(new Color(0, 150, 150));
+//    };
+//}
+//class ThongBaoPanel extends javax.swing.JLabel {
+//    Boolean flag;
+//    public ThongBaoPanel(String s){
+//        super();
+//        this.flag = false;
+//        this.setText(s);
+//        this.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14));
+//        this.setForeground(new Color(51,51,51));
+//    };
+//    public void changeFlag(){
+//        if (flag == false){flag=true;}
+//        else flag=false;
+//    };
+//    public void ThongBaoPanelMouseEntered() {
+//    if (this.flag==false)
+//    super.setForeground(new Color(51,204,255));
+//    };
+//    public void ThongBaoPanelMouseExited() {
+//    if (this.flag==false)
+//    super.setForeground(new Color(51,51,51));
+//    };
+//}
 public class DashboardJFrame2 extends javax.swing.JFrame {
 
     /**
@@ -119,425 +111,437 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private int x;
     private int y;
     SINH_VIEN sinhvien;
-    public DashboardJFrame2(){}
+
+    public DashboardJFrame2() {
+    }
+
     public DashboardJFrame2(SINH_VIEN sv) {
         initComponents();
         this.sinhvien = sv;
         //cap nhat thong tin sinh vien
         Hoten1.setText(sinhvien.getHo() + " " + sinhvien.getTen());
-        
+
         Mssv1.setText(sinhvien.getMaSV());
-        
-        if (sinhvien.getGioiTinh()== true){
-        GioiTinh1.setText("Nam");}
-        else GioiTinh1.setText("Nữ");
-        
+
+        if (sinhvien.getGioiTinh() == true) {
+            GioiTinh1.setText("Nam");
+        } else {
+            GioiTinh1.setText("Nữ");
+        }
+
         Ngaysinh1.setText(sinhvien.getNgaySinh());
-        
+
         CCCD1.setText(sinhvien.getCCCD());
-        
+
         Email1.setText(sinhvien.getEmail());
-        
+
         Sodienthoai1.setText(sinhvien.getSDT());
-        
+
         Noisinh1.setText(sinhvien.getNoiSinh());
-        
+
         Thuongtru1.setText(sinhvien.getHoKhauThuongTru());
-        
+
         Dantoc1.setText(sinhvien.getDanToc());
-        
-        if(sinhvien.getMaNganh()!=null) if(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getFlag()==true)
-        {Nganh1.setText(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getTenNganh());
-        
-        if(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa()!=null)
-        if(new KHOA_DAO().getThongTin(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa()).getFlag()==true)
-        Khoa1.setText(new KHOA_DAO().getThongTin(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa()).getTenKhoa());}
-        
-        if(sinhvien.getMaKhoaHoc()!=null ) if(new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getFlag()==true)
-        Khoahoc1.setText(sinhvien.getMaKhoaHoc());
-        
-        if(sinhvien.getMaLop()!=null ) if(new LOP_DAO().getThongTin(sinhvien.getMaLop()).getFlag()==true)
-        Lophoc1.setText(new LOP_DAO().getThongTin(sinhvien.getMaLop()).getTenLop());
-        
-        if(sinhvien.getMaBac()!=null) if(new BAC_DAO_TAO_DAO().getThongTin(sinhvien.getMaBac()).getFlag()==true)
-        BacDaotao1.setText(new BAC_DAO_TAO_DAO().getThongTin(sinhvien.getMaBac()).getTenBac());
-        
-        if(sinhvien.getMaLoaiHinhDaoTao()!=null) if(new LOAI_HINH_DAO_TAO_DAO().getThongTin(sinhvien.getMaLoaiHinhDaoTao()).getFlag()==true)
-        Loaihinh1.setText(new LOAI_HINH_DAO_TAO_DAO().getThongTin(sinhvien.getMaLoaiHinhDaoTao()).getTenLoaiHinhDaoTao());
-        
+
+        if (sinhvien.getMaNganh() != null) {
+            if (new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getFlag() == true) {
+                Nganh1.setText(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getTenNganh());
+
+                if (new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa() != null) {
+                    if (new KHOA_DAO().getThongTin(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa()).getFlag() == true) {
+                        Khoa1.setText(new KHOA_DAO().getThongTin(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getMaKhoa()).getTenKhoa());
+                    }
+                }
+            }
+        }
+
+        if (sinhvien.getMaKhoaHoc() != null) {
+            if (new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getFlag() == true) {
+                Khoahoc1.setText(sinhvien.getMaKhoaHoc());
+            }
+        }
+
+        if (sinhvien.getMaLop() != null) {
+            if (new LOP_DAO().getThongTin(sinhvien.getMaLop()).getFlag() == true) {
+                Lophoc1.setText(new LOP_DAO().getThongTin(sinhvien.getMaLop()).getTenLop());
+            }
+        }
+
+        if (sinhvien.getMaBac() != null) {
+            if (new BAC_DAO_TAO_DAO().getThongTin(sinhvien.getMaBac()).getFlag() == true) {
+                BacDaotao1.setText(new BAC_DAO_TAO_DAO().getThongTin(sinhvien.getMaBac()).getTenBac());
+            }
+        }
+
+        if (sinhvien.getMaLoaiHinhDaoTao() != null) {
+            if (new LOAI_HINH_DAO_TAO_DAO().getThongTin(sinhvien.getMaLoaiHinhDaoTao()).getFlag() == true) {
+                Loaihinh1.setText(new LOAI_HINH_DAO_TAO_DAO().getThongTin(sinhvien.getMaLoaiHinhDaoTao()).getTenLoaiHinhDaoTao());
+            }
+        }
 
 // khoi tao cac bien
         //if(sinhvien.getMaNganh()!=null ) if(new NGANH_DAO().getThongTin(sinhvien.getMaNganh()).getFlag()==true)
-        if(sinhvien.getMaKhoaHoc()!=null ) if(new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getFlag()==true)
-        try{
-        ArrayList<String> danhsachhocky = new SINH_VIEN_DAO().getDanhSachHocKy(sinhvien.getMaSV());
-        ArrayList<Integer> danhsachchuongtrinhkhung = new CHUONG_TRINH_KHUNG_DAO().getDanhSachHocKy(sinhvien.getMaNganh());
-        int n = danhsachhocky.size();
-        int m = danhsachchuongtrinhkhung.size();
-        HocKiPanel[] HocKi = new HocKiPanel[n];
-        HocKiPanel[] HocKiChuongTrinhKhung = new HocKiPanel[m];
-        
+        if (sinhvien.getMaKhoaHoc() != null) {
+            if (new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getFlag() == true)
+        try {
+                ArrayList<String> danhsachhocky = new SINH_VIEN_DAO().getDanhSachHocKy(sinhvien.getMaSV());
+                ArrayList<Integer> danhsachchuongtrinhkhung = new CHUONG_TRINH_KHUNG_DAO().getDanhSachHocKy(sinhvien.getMaNganh());
+                int n = danhsachhocky.size();
+                int m = danhsachchuongtrinhkhung.size();
+                HocKiPanel[] HocKi = new HocKiPanel[n];
+                HocKiPanel[] HocKiChuongTrinhKhung = new HocKiPanel[m];
 
-
-        
-
-        
 //CHUONG_TRINH_KHUNG
+                for (int i = 0; i < m; i++) {
+                    //crk = new CHUONG_TRINH_KHUNG_DAO().;
+                    ArrayList<MON_HOC> danhsach = new CHUONG_TRINH_KHUNG_DAO().getDanhSachChuongTrinhKhung(sinhvien.getMaNganh(), danhsachchuongtrinhkhung.get(i));
+                    HocKiChuongTrinhKhung[i] = new HocKiPanel("Học kỳ " + (1 + i));
+                    HocKiChuongTrinhKhung[i].setBounds(10, i * 50 + 20, 120, 40);
+                    HocKiChuongTrinhKhung[i].setMonHoc(danhsach);
+                    final int j = i;
+                    HocKiChuongTrinhKhung[i].addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                            for (int t = 0; t < m; t++) {
+                                HocKiChuongTrinhKhung[t].flag = false;
+                                HocKiChuongTrinhKhung[t].HocKiPanelMouseExited();
+                            }
+                            changeColor(HocKiChuongTrinhKhung[j], new Color(0, 250, 250));///////////////////////KIEM THU
+                            HocKiChuongTrinhKhung[j].flag = true;
 
-        for (int i=0;i<m;i++){
-            //crk = new CHUONG_TRINH_KHUNG_DAO().;
-            ArrayList<MON_HOC> danhsach = new CHUONG_TRINH_KHUNG_DAO().getDanhSachChuongTrinhKhung(sinhvien.getMaNganh(), danhsachchuongtrinhkhung.get(i));
-            HocKiChuongTrinhKhung[i]= new HocKiPanel("Học kỳ " + (1+i));
-            HocKiChuongTrinhKhung[i].setBounds(10, i*50+20, 120,40);
-            HocKiChuongTrinhKhung[i].setMonHoc(danhsach);
-            final int j = i;
-            HocKiChuongTrinhKhung[i].addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                for (int t=0;t<m;t++){
-                    HocKiChuongTrinhKhung[t].flag=false;
-                    HocKiChuongTrinhKhung[t].HocKiPanelMouseExited();
-                }
-                changeColor(HocKiChuongTrinhKhung[j],new Color(0,250,250));///////////////////////KIEM THU
-                HocKiChuongTrinhKhung[j].flag=true;
-                
-                table3.setModel(new javax.swing.table.DefaultTableModel(
-                        new Object [][] {
+                            table3.setModel(new javax.swing.table.DefaultTableModel(
+                                    new Object[][]{},
+                                    new String[]{
+                                        "Mã học phần", "Tên học phần", "Học phần song hành", "Học phần tiên quyết"
+                                    }
+                            ) {
+                                Class[] types = new Class[]{
+                                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                                };
+                                boolean[] canEdit = new boolean[]{
+                                    false, false, false, false
+                                };
 
-                        },
-                        new String [] {
-                            "Mã học phần", "Tên học phần", "Học phần song hành", "Học phần tiên quyết"
+                                public Class getColumnClass(int columnIndex) {
+                                    return types[columnIndex];
+                                }
+
+                                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                                    return canEdit[columnIndex];
+                                }
+                            });
+                            for (int t = 0; t < HocKiChuongTrinhKhung[j].MonHoc.size(); t++) {
+                                String ma = HocKiChuongTrinhKhung[j].MonHoc.get(t).getMaMon();
+                                String ten = HocKiChuongTrinhKhung[j].MonHoc.get(t).getTenMon();
+                                String songhanh = HocKiChuongTrinhKhung[j].MonHoc.get(t).getSongHanh();
+                                String tienquyet = HocKiChuongTrinhKhung[j].MonHoc.get(t).getTienQuyet();
+                                Object[] data = {ma, ten, songhanh, tienquyet};
+                                table3.addRow(data);
+
+                            }
                         }
-                    ) {
-                        Class[] types = new Class [] {
-                            java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-                        };
-                        boolean[] canEdit = new boolean [] {
-                            false, false, false, false
-                        };
 
-                        public Class getColumnClass(int columnIndex) {
-                            return types [columnIndex];
+                        public void mouseEntered(java.awt.event.MouseEvent evt) {
+                            HocKiChuongTrinhKhung[j].HocKiPanelMouseEntered();
                         }
 
-                        public boolean isCellEditable(int rowIndex, int columnIndex) {
-                            return canEdit [columnIndex];
+                        public void mouseExited(java.awt.event.MouseEvent evt) {
+                            if (HocKiChuongTrinhKhung[j].flag == false) {
+                                HocKiChuongTrinhKhung[j].HocKiPanelMouseExited();
+                            }
                         }
                     });
-                for(int t=0;t< HocKiChuongTrinhKhung[j].MonHoc.size();t++){
-                    String ma =HocKiChuongTrinhKhung[j].MonHoc.get(t).getMaMon();
-                    String ten =HocKiChuongTrinhKhung[j].MonHoc.get(t).getTenMon();
-                    String songhanh=HocKiChuongTrinhKhung[j].MonHoc.get(t).getSongHanh();
-                    String tienquyet=HocKiChuongTrinhKhung[j].MonHoc.get(t).getTienQuyet();
-                    Object[] data = {ma, ten, songhanh, tienquyet};
-                    table3.addRow(data);
-                
-                }
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                HocKiChuongTrinhKhung[j].HocKiPanelMouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                if (HocKiChuongTrinhKhung[j].flag==false){
-                    HocKiChuongTrinhKhung[j].HocKiPanelMouseExited();
-                            }
-            }
-        });
-            jPanel14.setPreferredSize(new Dimension(120, m*50+30));
-            jPanel14.add(HocKiChuongTrinhKhung[i]);
-        };
-        
+                    jPanel14.setPreferredSize(new Dimension(120, m * 50 + 30));
+                    jPanel14.add(HocKiChuongTrinhKhung[i]);
+                };
 
 //HOC_KY        
-        HOC_KY hocky;
-        for (int i=0;i<n;i++){
-            
-            hocky = new HOC_KY_DAO().getThongTin(danhsachhocky.get(i));
-            HocKi[i] = new HocKiPanel("Học kỳ " + hocky.getSoThuTu() + "/"+ hocky.getNam());
-            
-            HocKi[i].setBounds(10, i*50+20, 120,40);
-            
-            HocKi[i].setDiem(new DIEM_DAO().getDanhSachDiem(sinhvien.getMaSV(), danhsachhocky.get(i)));
-            final int j = i;
-            
-            HocKi[i].addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                for (int t=0;t<n;t++){
-                    HocKi[t].flag=false;
-                    HocKi[t].HocKiPanelMouseExited();
-                }
-                changeColor(HocKi[j],new Color(0,250,250));
-                HocKi[j].flag=true;
-                
-                
-                table1.setModel(new javax.swing.table.DefaultTableModel(
-                        new Object [][] {
-                        },
-                        new String [] {
-                            "Tên môn", "Điểm chuyên cần", "Điểm giữa Kỳ", "Điểm Kết thúc", "Điểm trung bình", "Điểm chữ", "Đạt"
-                        }
-                    ) {
-                        Class[] types = new Class [] {
-                            java.lang.Object.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class, java.lang.Boolean.class
-                        };
+                HOC_KY hocky;
+                for (int i = 0; i < n; i++) {
 
-                        public Class getColumnClass(int columnIndex) {
-                            return types [columnIndex];
+                    hocky = new HOC_KY_DAO().getThongTin(danhsachhocky.get(i));
+                    HocKi[i] = new HocKiPanel("Học kỳ " + hocky.getSoThuTu() + "/" + hocky.getNam());
+
+                    HocKi[i].setBounds(10, i * 50 + 20, 120, 40);
+
+                    HocKi[i].setDiem(new DIEM_DAO().getDanhSachDiem(sinhvien.getMaSV(), danhsachhocky.get(i)));
+                    final int j = i;
+
+                    HocKi[i].addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                            for (int t = 0; t < n; t++) {
+                                HocKi[t].flag = false;
+                                HocKi[t].HocKiPanelMouseExited();
+                            }
+                            changeColor(HocKi[j], new Color(0, 250, 250));
+                            HocKi[j].flag = true;
+
+                            table1.setModel(new javax.swing.table.DefaultTableModel(
+                                    new Object[][]{},
+                                    new String[]{
+                                        "Tên môn", "Điểm chuyên cần", "Điểm giữa Kỳ", "Điểm Kết thúc", "Điểm trung bình", "Điểm chữ", "Đạt"
+                                    }
+                            ) {
+                                Class[] types = new Class[]{
+                                    java.lang.Object.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Float.class, java.lang.Object.class, java.lang.Boolean.class
+                                };
+
+                                public Class getColumnClass(int columnIndex) {
+                                    return types[columnIndex];
+                                }
+                            });
+
+                            int cc = new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getHeSoDCC();
+                            int gk = new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getHeSoDGK();
+                            int kt = new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getHeSoDKT();
+                            int tinchi = 0;
+                            int tinchihoclai = 0;
+                            double tongdiem10 = 0;
+                            double tongdiem4 = 0;
+                            for (int t = 0; t < HocKi[j].Diem.size(); t++) {
+                                String ten = new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getTenMon();
+                                tinchi += new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                                Float dcc = HocKi[j].Diem.get(t).getDiemChuyenCan();
+                                Float dgk = HocKi[j].Diem.get(t).getDiemGiuaKy();
+                                Float dkt = HocKi[j].Diem.get(t).getDiemKetThuc();
+                                double dtb = Math.ceil(((dcc * cc + dgk * gk) / 100 * (100 - kt) + dkt * kt)) / 100;
+                                //if(Math.ceil(((dcc*cc+ dgk*gk)/100*(100-kt) + dkt*kt))/100 <4.0) dtb = 0;
+                                tongdiem10 += dtb * new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();;
+                                String dc = "A";
+                                if (dtb >= 8.6) {
+                                    dc = "A";
+                                    tongdiem4 += 4 * new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                                } else if (dtb >= 8) {
+                                    dc = "B+";
+                                    tongdiem4 += 3.5 * new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                                } else if (dtb >= 7) {
+                                    dc = "B";
+                                    tongdiem4 += 3 * new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                                } else if (dtb >= 6) {
+                                    dc = "C+";
+                                    tongdiem4 += 2.5 * new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                                } else if (dtb >= 5) {
+                                    dc = "C";
+                                    tongdiem4 += 2 * new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                                } else if (dtb >= 4) {
+                                    dc = "D";
+                                    tongdiem4 += 1.5 * new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                                } else if (dtb >= 0) {
+                                    dc = "F";
+                                    tongdiem4 += 1 * new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                                }
+                                Boolean dat;
+                                if (dtb >= 4) {
+                                    dat = true;
+                                } else {
+                                    dat = false;
+                                    tinchihoclai += new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                                }
+                                Object[] data = {ten, dcc, dgk, dkt, dtb, dc, dat};
+                                table1.addRow(data);
+                            }
+                            String hocluc = "Giỏi";
+                            double dtbhk4 = Math.ceil(tongdiem4 / tinchi * 100) / 100;
+                            if (dtbhk4 >= 3.6) {
+                                hocluc = "Xuất sắc";
+                            } else if (dtbhk4 >= 3.2) {
+                                hocluc = "Giỏi";
+                            } else if (dtbhk4 >= 2.5) {
+                                hocluc = "Khá";
+                            } else if (dtbhk4 >= 2) {
+                                hocluc = "TB";
+                            } else if (dtbhk4 >= 0) {
+                                hocluc = "Kém";
+                            }
+                            Diem10.setText(String.valueOf(Math.ceil(tongdiem10 / tinchi * 100) / 100));
+                            Diem10.setOpaque(true);
+                            Diem4.setText(String.valueOf(dtbhk4));
+                            Diem4.setOpaque(true);
+                            Tinchi.setText(String.valueOf(tinchi));
+                            Tinchi.setOpaque(true);
+                            TinChiDaHoanThanh.setText(String.valueOf(tinchi - tinchihoclai));
+                            TinChiDaHoanThanh.setOpaque(true);
+                            Hocluc.setText(hocluc);
+                            Hocluc.setOpaque(true);
+
+                        }
+
+                        public void mouseEntered(java.awt.event.MouseEvent evt) {
+                            HocKi[j].HocKiPanelMouseEntered();
+                        }
+
+                        public void mouseExited(java.awt.event.MouseEvent evt) {
+                            if (HocKi[j].flag == false) {
+                                HocKi[j].HocKiPanelMouseExited();
+                            }
                         }
                     });
-                
-                int cc = new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getHeSoDCC();
-                int gk = new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getHeSoDGK();
-                int kt = new KHOA_HOC_DAO().getThongTin(sinhvien.getMaKhoaHoc()).getHeSoDKT();
-                int tinchi =0;
-                int tinchihoclai=0;
-                double tongdiem10 = 0;
-                double tongdiem4 = 0;
-                for(int t=0;t< HocKi[j].Diem.size();t++){
-                    String ten = new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getTenMon(); 
-                    tinchi += new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
-                    Float dcc = HocKi[j].Diem.get(t).getDiemChuyenCan();
-                    Float dgk = HocKi[j].Diem.get(t).getDiemGiuaKy();
-                    Float dkt = HocKi[j].Diem.get(t).getDiemKetThuc();
-                    double dtb = Math.ceil(((dcc*cc+ dgk*gk)/100*(100-kt) + dkt*kt))/100;
-                    //if(Math.ceil(((dcc*cc+ dgk*gk)/100*(100-kt) + dkt*kt))/100 <4.0) dtb = 0;
-                    tongdiem10+= dtb * new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();;
-                    String dc ="A";
-                    if (dtb>=8.6) {
-                        dc = "A";
-                        tongdiem4 += 4 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
+                    jPanel13.setPreferredSize(new Dimension(120, n * 50 + 30));
+                    jPanel13.add(HocKi[i]);
+                };
+
+                //THONG_KE
+                float diemtichluy = 0;
+                double diem[] = new double[n];
+                double diem1[] = new double[n];
+
+                for (int i = 0; i < n; i++) {
+                    int chart = (int) Math.round(new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i)));
+                    if (chart < 5) {
+                        chart2.addLegend("" + (i + 1), new Color(255, chart * 25, 0));
+                    } else {
+                        chart2.addLegend("" + (i + 1), new Color(255 - chart * 25, 250, 0));
                     }
-                    else if (dtb>=8) {
-                        dc = "B+";
-                        tongdiem4 += 3.5 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
-                    }
-                    else if (dtb>=7) {
-                        dc = "B";
-                        tongdiem4 += 3 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
-                    }
-                    else if (dtb>=6) {
-                        dc = "C+";
-                        tongdiem4 += 2.5 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
-                    }
-                    else if (dtb>=5) {
-                        dc = "C";
-                        tongdiem4 += 2 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
-                    }
-                    else if (dtb>=4) {
-                        dc = "D";
-                        tongdiem4 += 1.5 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
-                    }
-                    else if (dtb>=0) {
-                        dc = "F";
-                        tongdiem4 += 1 *new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
-                    }
-                    Boolean dat;
-                    if(dtb >=4) dat = true;
-                    else {
-                        dat = false;
-                        tinchihoclai+=new MON_HOC_DAO().getThongTin(HocKi[j].Diem.get(t).getMaMon()).getSoTinChi();
-                    }
-                    Object[] data = {ten, dcc, dgk, dkt, dtb, dc, dat};
-                table1.addRow(data);
-            }
-                String hocluc = "Giỏi";
-                double dtbhk4 = Math.ceil(tongdiem4/tinchi*100)/100;
-                if (dtbhk4>=3.6) {
-                        hocluc = "Xuất sắc";
-                        }
-                    else if (dtbhk4>=3.2) {
-                        hocluc = "Giỏi";
-                       }
-                    else if (dtbhk4>=2.5) {
-                        hocluc = "Khá";
-                        }
-                    else if (dtbhk4>=2) {
-                        hocluc = "TB";
-                        }
-                    else if (dtbhk4>=0) {
-                        hocluc = "Kém";
-                        }
-                Diem10.setText(String.valueOf(Math.ceil(tongdiem10/tinchi*100)/100));
-                Diem10.setOpaque(true);
-                Diem4.setText(String.valueOf(dtbhk4));
-                Diem4.setOpaque(true);
-                Tinchi.setText(String.valueOf(tinchi));
-                Tinchi.setOpaque(true);
-                TinChiDaHoanThanh.setText(String.valueOf(tinchi - tinchihoclai));
-                TinChiDaHoanThanh.setOpaque(true);
-                Hocluc.setText(hocluc);
-                Hocluc.setOpaque(true);
-                
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                HocKi[j].HocKiPanelMouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                if (HocKi[j].flag==false){
-                    HocKi[j].HocKiPanelMouseExited();
-                            }
-            }
-            });
-            jPanel13.setPreferredSize(new Dimension(120, n*50+30));
-            jPanel13.add(HocKi[i]);
-        };
-        
-        //THONG_KE
-        float diemtichluy=0;
-        double diem[] = new double[n];
-        double diem1[] = new double[n];
-       
-        for(int i = 0; i < n;i++){
-            int chart = (int) Math.round(new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i)));
-            if (chart < 5) {
-                chart2.addLegend(""+(i+1), new Color(255, chart*25, 0));
-            }
-            else {
-                chart2.addLegend(""+(i+1), new Color(255-chart*25, 250, 0));
-            }
-             //double diem2[] = new double[1];
-             diem[i]= new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i));
-        //if(new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i)) < 4.0)
-        //{diem[i]=0;}
-            ///diem2[0]=diem[i];
-             diemtichluy+=diem[i];
-             //chart2.addData(new ModelChart("HỌC KỲ " + i,diem)); 
-        }
-        chart2.addData(new ModelChart("HỌC KỲ ",diem)); 
-        //for (int i=0;i<5;i++){diem[3+i]=10; chart2.addLegend("11", Color.yellow);};
+                    //double diem2[] = new double[1];
+                    diem[i] = new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i));
+                    //if(new DIEM_DAO().getDiemTrungBinhHocKy10(sinhvien.getMaSV(), danhsachhocky.get(i)) < 4.0)
+                    //{diem[i]=0;}
+                    ///diem2[0]=diem[i];
+                    diemtichluy += diem[i];
+                    //chart2.addData(new ModelChart("HỌC KỲ " + i,diem)); 
+                }
+                chart2.addData(new ModelChart("HỌC KỲ ", diem));
+                //for (int i=0;i<5;i++){diem[3+i]=10; chart2.addLegend("11", Color.yellow);};
 //        for(int i = 1; i <= n; i++) {
 //            
 //        }        
-        
-        
-        jLabel7.setText(String.valueOf(Math.ceil(diemtichluy/n*100)/100));
-        diemtichluy=0;
-        for(int i = 0; i < n;i++){
-        diem1[i]= new DIEM_DAO().getDiemTrungBinhHocKy4(sinhvien.getMaSV(), danhsachhocky.get(i));
-        diemtichluy+=diem1[i];
-        }
-        
-        
-        jLabel8.setText(String.valueOf(Math.ceil(diemtichluy/n*100)/100));
-        
-        
-        jLabel9.setText(String.valueOf(new DIEM_DAO().getSoTinChiTichLuu(sinhvien.getMaSV())));
-        
-        
-        float totnghiep =(float) (Math.ceil((2.0*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100);
-        float banggioi =(float) (Math.ceil((3.2*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100);
-        float bangkha =(float) (Math.ceil((2.5*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100);
-        if (totnghiep >4.0) jLabel12.setText("Không khả thi");
-        else jLabel12.setText(String.valueOf(Math.ceil((2.0*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100));
-        if (banggioi >4.0) jLabel13.setText("Không khả thi");
-        else jLabel13.setText(String.valueOf(Math.ceil((3.2*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100));
-        if (bangkha >4.0) jLabel14.setText("Không khả thi");
-        else jLabel14.setText(String.valueOf(Math.ceil((2.5*m-Math.ceil(diemtichluy/n*100)/100*n)/(m-n)*100)/100));
-        
-        
-        ArrayList<DIEM> monhoclai = new DIEM_DAO().getMonHocLai(sinhvien.getMaSV());
-        for(int i=0;i<monhoclai.size();i++){
-            String mamon = monhoclai.get(i).getMaMon();
-            String ten= new MON_HOC_DAO().getThongTin(mamon).getTenMon();
-            DIEM moncaonhat = new DIEM_DAO().getKiemTraDiemCaoNhat(sinhvien.getMaSV(),mamon);
-            if(new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon)<4.0)
-            {Object[] data = {mamon,ten};
-            table4.addRow(data);}
+
+                jLabel7.setText(String.valueOf(Math.ceil(diemtichluy / n * 100) / 100));
+                diemtichluy = 0;
+                for (int i = 0; i < n; i++) {
+                    diem1[i] = new DIEM_DAO().getDiemTrungBinhHocKy4(sinhvien.getMaSV(), danhsachhocky.get(i));
+                    diemtichluy += diem1[i];
+                }
+
+                jLabel8.setText(String.valueOf(Math.ceil(diemtichluy / n * 100) / 100));
+
+                jLabel9.setText(String.valueOf(new DIEM_DAO().getSoTinChiTichLuu(sinhvien.getMaSV())));
+
+                float totnghiep = (float) (Math.ceil((2.0 * m - Math.ceil(diemtichluy / n * 100) / 100 * n) / (m - n) * 100) / 100);
+                float banggioi = (float) (Math.ceil((3.2 * m - Math.ceil(diemtichluy / n * 100) / 100 * n) / (m - n) * 100) / 100);
+                float bangkha = (float) (Math.ceil((2.5 * m - Math.ceil(diemtichluy / n * 100) / 100 * n) / (m - n) * 100) / 100);
+                if (totnghiep > 4.0) {
+                    jLabel12.setText("Không khả thi");
+                } else {
+                    jLabel12.setText(String.valueOf(Math.ceil((2.0 * m - Math.ceil(diemtichluy / n * 100) / 100 * n) / (m - n) * 100) / 100));
+                }
+                if (banggioi > 4.0) {
+                    jLabel13.setText("Không khả thi");
+                } else {
+                    jLabel13.setText(String.valueOf(Math.ceil((3.2 * m - Math.ceil(diemtichluy / n * 100) / 100 * n) / (m - n) * 100) / 100));
+                }
+                if (bangkha > 4.0) {
+                    jLabel14.setText("Không khả thi");
+                } else {
+                    jLabel14.setText(String.valueOf(Math.ceil((2.5 * m - Math.ceil(diemtichluy / n * 100) / 100 * n) / (m - n) * 100) / 100));
+                }
+
+                ArrayList<DIEM> monhoclai = new DIEM_DAO().getMonHocLai(sinhvien.getMaSV());
+                for (int i = 0; i < monhoclai.size(); i++) {
+                    String mamon = monhoclai.get(i).getMaMon();
+                    String ten = new MON_HOC_DAO().getThongTin(mamon).getTenMon();
+                    DIEM moncaonhat = new DIEM_DAO().getKiemTraDiemCaoNhat(sinhvien.getMaSV(), mamon);
+                    if (new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon) < 4.0) {
+                        Object[] data = {mamon, ten};
+                        table4.addRow(data);
                     }
-        
-        
-        ArrayList<DIEM> monhocnangdiem = new DIEM_DAO().getMonHocNangDiem(sinhvien.getMaSV());
-        for(int i=0;i<monhocnangdiem.size();i++){
-            String mamon = monhocnangdiem.get(i).getMaMon();
-            String ten= new MON_HOC_DAO().getThongTin(mamon).getTenMon();
-            DIEM moncaonhat = new DIEM_DAO().getKiemTraDiemCaoNhat(sinhvien.getMaSV(),mamon);
-            if(new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon)>=4.0 && new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon)< 5.0)
-            {Object[] data = {mamon,ten,new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon)};
-            table5.addRow(data);}
+                }
+
+                ArrayList<DIEM> monhocnangdiem = new DIEM_DAO().getMonHocNangDiem(sinhvien.getMaSV());
+                for (int i = 0; i < monhocnangdiem.size(); i++) {
+                    String mamon = monhocnangdiem.get(i).getMaMon();
+                    String ten = new MON_HOC_DAO().getThongTin(mamon).getTenMon();
+                    DIEM moncaonhat = new DIEM_DAO().getKiemTraDiemCaoNhat(sinhvien.getMaSV(), mamon);
+                    if (new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon) >= 4.0 && new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon) < 5.0) {
+                        Object[] data = {mamon, ten, new DIEM_DAO().getDiemTrungBinh10(sinhvien.getMaSV(), moncaonhat.getMaHocKy(), mamon)};
+                        table5.addRow(data);
                     }
-        
-        //chart2.addLegend("HỌC KỲ 1", new Color(245, 189, 135));
-        //chart2.addLegend("HỌC KỲ 2", new Color(135, 189, 245));
-        //chart2.addLegend("HỌC KỲ 3", new Color(189, 135, 245));
-        //chart2.addLegend("HỌC KỲ 4", new Color(139, 229, 222));
-        //chart2.addData(new ModelChart("HỌC KỲ", new double[]{10, 9, 8, 7}));
+                }
+
+                //chart2.addLegend("HỌC KỲ 1", new Color(245, 189, 135));
+                //chart2.addLegend("HỌC KỲ 2", new Color(135, 189, 245));
+                //chart2.addLegend("HỌC KỲ 3", new Color(189, 135, 245));
+                //chart2.addLegend("HỌC KỲ 4", new Color(139, 229, 222));
+                //chart2.addData(new ModelChart("HỌC KỲ", new double[]{10, 9, 8, 7}));
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
-        catch(Exception ex){ex.printStackTrace();}
-        
+
         ArrayList<THONG_BAO> thongbao = new THONG_BAO_DAO().getThongTin(15);
-        ThongBaoPanel[] DanhSachThongBao= new ThongBaoPanel[thongbao.size()];
+        ThongBaoPanel[] DanhSachThongBao = new ThongBaoPanel[thongbao.size()];
         javax.swing.JLabel[] mess = new javax.swing.JLabel[thongbao.size()];
-        for(int i=0;i<thongbao.size();i++){
+        for (int i = 0; i < thongbao.size(); i++) {
             NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/Folder/mess.png")));
             mess[i] = new javax.swing.JLabel();
             mess[i].setIcon(thongbaoimage);
             DanhSachThongBao[i] = new ThongBaoPanel(thongbao.get(i).getTieuDe());
             //DanhSachThongBao[i].setText(thongbao.get(i).getTieuDe());
-            mess[i].setBounds(10, i*50+20, 400,40);
-            DanhSachThongBao[i].setBounds(60, i*50+20, 400,40);
+            mess[i].setBounds(10, i * 50 + 20, 400, 40);
+            DanhSachThongBao[i].setBounds(60, i * 50 + 20, 400, 40);
             final int j = i;
             DanhSachThongBao[i].addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                for (int t=0;t<thongbao.size();t++){
-                    DanhSachThongBao[t].flag=false;
-                    DanhSachThongBao[t].ThongBaoPanelMouseExited();
-                }
-                
-                DanhSachThongBao[j].setForeground(new Color(0,255,255));
-                DanhSachThongBao[j].flag=true;
-                try{
-                    ImageIcon img =new ImageIcon(getClass().getResource("/ThongBao/"+thongbao.get(j).getMaThongBao()+".jpg"));
-                    Image image = img.getImage(); 
-                    Image newimg = image.getScaledInstance(900, 1300,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
-                    img = new ImageIcon(newimg);  
-                    NoScalingIcon thongbaoimage = new NoScalingIcon(img);
-                    jLabel11.setIcon(thongbaoimage);}
-                catch(Exception ex){
-                    NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/unknown.jpg")));
-                    jLabel11.setIcon(thongbaoimage);
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    for (int t = 0; t < thongbao.size(); t++) {
+                        DanhSachThongBao[t].flag = false;
+                        DanhSachThongBao[t].ThongBaoPanelMouseExited();
                     }
-                
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                DanhSachThongBao[j].ThongBaoPanelMouseEntered();
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                DanhSachThongBao[j].ThongBaoPanelMouseExited();
-            }
-        });
-            jPanel16.setPreferredSize(new Dimension(120, i*50+30));
+
+                    DanhSachThongBao[j].setForeground(new Color(0, 255, 255));
+                    DanhSachThongBao[j].flag = true;
+                    try {
+                        ImageIcon img = new ImageIcon(getClass().getResource("/ThongBao/" + thongbao.get(j).getMaThongBao() + ".jpg"));
+                        Image image = img.getImage();
+                        Image newimg = image.getScaledInstance(900, 1300, java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+                        img = new ImageIcon(newimg);
+                        NoScalingIcon thongbaoimage = new NoScalingIcon(img);
+                        jLabel11.setIcon(thongbaoimage);
+                    } catch (Exception ex) {
+                        NoScalingIcon thongbaoimage = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/unknown.jpg")));
+                        jLabel11.setIcon(thongbaoimage);
+                    }
+
+                }
+
+                public void mouseEntered(java.awt.event.MouseEvent evt) {
+                    DanhSachThongBao[j].ThongBaoPanelMouseEntered();
+                }
+
+                public void mouseExited(java.awt.event.MouseEvent evt) {
+                    DanhSachThongBao[j].ThongBaoPanelMouseExited();
+                }
+            });
+            jPanel16.setPreferredSize(new Dimension(120, i * 50 + 30));
             jPanel16.add(mess[i]);
             jPanel16.add(DanhSachThongBao[i]);
         }
-        
-        
+
         //SET_ANH
-        try{
-        NoScalingIcon icon1 = new NoScalingIcon(new ImageIcon(getClass().getResource("/Avatar/"+sinhvien.getMaSV()+".jpg")));
-        avatar.setIcon(icon1);}
-        catch(Exception ex){
-        NoScalingIcon icon1 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/unknown.jpg")));
-        avatar.setIcon(icon1);
+        try {
+            NoScalingIcon icon1 = new NoScalingIcon(new ImageIcon(getClass().getResource("/Avatar/" + sinhvien.getMaSV() + ".jpg")));
+            avatar.setIcon(icon1);
+        } catch (Exception ex) {
+            NoScalingIcon icon1 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/unknown.jpg")));
+            avatar.setIcon(icon1);
         }
-        
+
         NoScalingIcon icon2 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/skills.png")));
         Setting.setIcon(icon2);
-        
+
         NoScalingIcon icon3 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/changePassword.png")));
         changePassword.setIcon(icon3);
-        
+
         NoScalingIcon icon4 = new NoScalingIcon(new ImageIcon(getClass().getResource("/folder/logout.png")));
         Logout.setIcon(icon4);
-        
+
         jPanel9.setVisible(false);
         jPanel12.setVisible(false);
-        
-        
 
     }
-    
+
     public void changeColor(JPanel hover, Color rand) {
         hover.setBackground(rand);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -2013,7 +2017,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseEntered
 
     private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
-        changeColor(jPanel6, new Color(0,63,92));
+        changeColor(jPanel6, new Color(0, 63, 92));
     }//GEN-LAST:event_jLabel1MouseExited
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -2021,11 +2025,11 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-        changeColor(jPanel10, new Color(30,70,100));
+        changeColor(jPanel10, new Color(30, 70, 100));
     }//GEN-LAST:event_jLabel2MouseEntered
 
     private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-        changeColor(jPanel10, new Color(0,63,92));
+        changeColor(jPanel10, new Color(0, 63, 92));
     }//GEN-LAST:event_jLabel2MouseExited
 
     private void TitlebarformMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TitlebarformMouseDragged
@@ -2040,12 +2044,12 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     }//GEN-LAST:event_TitlebarformMousePressed
 
     private void SettingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingMouseExited
-        changeColor(jPanel2, new Color(23,100,126));  
+        changeColor(jPanel2, new Color(23, 100, 126));
         jPanel9.setVisible(false);
     }//GEN-LAST:event_SettingMouseExited
 
     private void SettingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingMouseEntered
-        changeColor(jPanel2, new Color(23, 111, 126));   
+        changeColor(jPanel2, new Color(23, 111, 126));
         jPanel9.setVisible(true);
     }//GEN-LAST:event_SettingMouseEntered
 
@@ -2062,7 +2066,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel7MouseEntered
 
     private void jPanel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseExited
-        changeColor(jPanel7, new Color(255,90,0));
+        changeColor(jPanel7, new Color(255, 90, 0));
     }//GEN-LAST:event_jPanel7MouseExited
 
     private void jPanel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseEntered
@@ -2070,7 +2074,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel8MouseEntered
 
     private void jPanel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseExited
-        changeColor(jPanel8, new Color(255,90,0));
+        changeColor(jPanel8, new Color(255, 90, 0));
     }//GEN-LAST:event_jPanel8MouseExited
 
     private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
@@ -2079,33 +2083,37 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
     private void jPanel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseClicked
         Object[] options = {"Có", "Không"};
-        if((jTextArea2.getText().equals(null) && jTextArea1.equals(null)||
-           (jTextArea2.getText().equals(null) && jTextArea1.getText().equals(""))||
-           (jTextArea2.getText().equals("") && jTextArea1.getText().equals(null))||
-           (jTextArea2.getText().equals("") && jTextArea1.getText().equals(""))))
-           {JOptionPane.showMessageDialog(null, "Bạn phải nhập tiêu đề và nội dung thư","Nhắc nhở",JOptionPane.INFORMATION_MESSAGE);}
-        else if(jTextArea1.getText().equals("") || jTextArea2.getText().equals(null)){JOptionPane.showMessageDialog(null, "Bạn phải nhập nội dung","Nhắc nhở",JOptionPane.INFORMATION_MESSAGE);}
-        else if(jTextArea2.getText().equals("") || jTextArea2.getText().equals(null)){JOptionPane.showMessageDialog(null, "Bạn phải nhập tiêu đề","Nhắc nhở",JOptionPane.INFORMATION_MESSAGE);}
-        else{int n = JOptionPane.showOptionDialog(GopY, "Bạn muốn gửi tới hòm thư?", null, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
-        if (n == JOptionPane.YES_OPTION) {
-            HOM_THU thugui = new HOM_THU();
-            int t =0;
-            try{
-                thugui = new HOM_THU(new HOM_THU_DAO().getSoThu2()+1,jTextArea2.getText(),jTextArea1.getText(),sinhvien.getMaSV(),false);
-                t = new HOM_THU_DAO().insert(thugui);
-            }
-            catch(Exception e){
-                thugui = new HOM_THU(new HOM_THU_DAO().getSoThu()+1,jTextArea2.getText(),jTextArea1.getText(),sinhvien.getMaSV(),false);
-                t = new HOM_THU_DAO().insert(thugui);
-            }
-            
+        if ((jTextArea2.getText().equals(null) && jTextArea1.equals(null)
+                || (jTextArea2.getText().equals(null) && jTextArea1.getText().equals(""))
+                || (jTextArea2.getText().equals("") && jTextArea1.getText().equals(null))
+                || (jTextArea2.getText().equals("") && jTextArea1.getText().equals("")))) {
+            JOptionPane.showMessageDialog(null, "Bạn phải nhập tiêu đề và nội dung thư", "Nhắc nhở", JOptionPane.INFORMATION_MESSAGE);
+        } else if (jTextArea1.getText().equals("") || jTextArea2.getText().equals(null)) {
+            JOptionPane.showMessageDialog(null, "Bạn phải nhập nội dung", "Nhắc nhở", JOptionPane.INFORMATION_MESSAGE);
+        } else if (jTextArea2.getText().equals("") || jTextArea2.getText().equals(null)) {
+            JOptionPane.showMessageDialog(null, "Bạn phải nhập tiêu đề", "Nhắc nhở", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            int n = JOptionPane.showOptionDialog(GopY, "Bạn muốn gửi tới hòm thư?", null, JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+            if (n == JOptionPane.YES_OPTION) {
+                HOM_THU thugui = new HOM_THU();
+                int t = 0;
+                try {
+                    thugui = new HOM_THU(new HOM_THU_DAO().getSoThu2() + 1, jTextArea2.getText(), jTextArea1.getText(), sinhvien.getMaSV(), false);
+                    t = new HOM_THU_DAO().insert(thugui);
+                } catch (Exception e) {
+                    thugui = new HOM_THU(new HOM_THU_DAO().getSoThu() + 1, jTextArea2.getText(), jTextArea1.getText(), sinhvien.getMaSV(), false);
+                    t = new HOM_THU_DAO().insert(thugui);
+                }
+
 //            if (t==0){
 //                thugui = new HOM_THU(new HOM_THU_DAO().getSoThu()+1,jTextArea2.getText(),jTextArea1.getText(),sinhvien.getMaSV(),false);
 //                t = new HOM_THU_DAO().insert(thugui);}
-            if (t==1) JOptionPane.showMessageDialog(null, "Bạn đã gửi thư thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);
-            jTextArea2.setText("");
-            jTextArea1.setText("");
-        }
+                if (t == 1) {
+                    JOptionPane.showMessageDialog(null, "Bạn đã gửi thư thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                }
+                jTextArea2.setText("");
+                jTextArea1.setText("");
+            }
         }
     }//GEN-LAST:event_jPanel8MouseClicked
 
@@ -2120,7 +2128,7 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
     private void changePassword1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePassword1MouseExited
         changeColor(changePassword1, new Color(47, 84, 95));
-       jPanel9.setVisible(false);
+        jPanel9.setVisible(false);
     }//GEN-LAST:event_changePassword1MouseExited
 
     private void Logout1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logout1MouseEntered
@@ -2152,22 +2160,22 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel31MouseDragged
 
     private void jPanel13MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseEntered
-        changeColor(jPanel2, new Color(23, 111, 126));   
+        changeColor(jPanel2, new Color(23, 111, 126));
         jPanel9.setVisible(true);
     }//GEN-LAST:event_jPanel13MouseEntered
 
     private void jPanel13MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseExited
-        changeColor(jPanel2, new Color(23,100,126));  
+        changeColor(jPanel2, new Color(23, 100, 126));
         //jPanel9.setVisible(false);
     }//GEN-LAST:event_jPanel13MouseExited
 
     private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
-        changeColor(jPanel2, new Color(23, 111, 126));   
+        changeColor(jPanel2, new Color(23, 111, 126));
         jPanel9.setVisible(true);
     }//GEN-LAST:event_jPanel2MouseEntered
 
     private void jPanel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseExited
-        changeColor(jPanel2, new Color(23,100,126));  
+        changeColor(jPanel2, new Color(23, 100, 126));
         jPanel9.setVisible(false);
     }//GEN-LAST:event_jPanel2MouseExited
 
@@ -2177,12 +2185,12 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel31MouseClicked
 
     private void jPanel15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseExited
-        changeColor(jPanel2, new Color(23,100,126));  
+        changeColor(jPanel2, new Color(23, 100, 126));
         jPanel9.setVisible(false);
     }//GEN-LAST:event_jPanel15MouseExited
 
     private void jPanel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseEntered
-        changeColor(jPanel2, new Color(23, 111, 126));   
+        changeColor(jPanel2, new Color(23, 111, 126));
         jPanel9.setVisible(true);
     }//GEN-LAST:event_jPanel15MouseEntered
 
@@ -2202,40 +2210,39 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
     private void jPanel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel24MouseClicked
         String password1 = "";
         char[] getpassword1 = passwordField1.getPassword();
-        for(int i=0;i < getpassword1.length;i++){
-            password1+=getpassword1[i];
+        for (int i = 0; i < getpassword1.length; i++) {
+            password1 += getpassword1[i];
         };
-        
+
         String password2 = "";
         char[] getpassword2 = passwordField2.getPassword();
-        for(int i=0;i < getpassword2.length;i++){
-            password2+=getpassword2[i];
+        for (int i = 0; i < getpassword2.length; i++) {
+            password2 += getpassword2[i];
         };
-        
+
         String password3 = "";
         char[] getpassword3 = passwordField3.getPassword();
-        for(int i=0;i < getpassword3.length;i++){
-            password3+=getpassword3[i];
+        for (int i = 0; i < getpassword3.length; i++) {
+            password3 += getpassword3[i];
         };
-        
+
         Object[] options = {"Có", "Không"};
-        int n = JOptionPane.showOptionDialog(jPanel12,"Bạn muốn yêu cầu đổi lại mật khẩu?",null,JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE,null,options,options[1]);
+        int n = JOptionPane.showOptionDialog(jPanel12, "Bạn muốn yêu cầu đổi lại mật khẩu?", null, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
         if (n == JOptionPane.YES_OPTION) {
-            if ((sinhvien.getMatKhau().equals(password2)) && (password2.equals(password3))){
-            SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
-            temp.passwordChange(sinhvien.getTen(),sinhvien.getMaSV(),password1);
-            jPanel12.setVisible(false);
-            materialTabbed.setVisible(true);
-            this.sinhvien = new SINH_VIEN_DAO().getThongTin3(sinhvien.getMaSV());
-                JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công","Thông báo",JOptionPane.INFORMATION_MESSAGE);}
-            else {
+            if ((sinhvien.getMatKhau().equals(password2)) && (password2.equals(password3))) {
+                SINH_VIEN_DAO temp = new SINH_VIEN_DAO();
+                temp.passwordChange(sinhvien.getTen(), sinhvien.getMaSV(), password1);
+                jPanel12.setVisible(false);
+                materialTabbed.setVisible(true);
+                this.sinhvien = new SINH_VIEN_DAO().getThongTin3(sinhvien.getMaSV());
+                JOptionPane.showMessageDialog(null, "Đổi mật khẩu thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+            } else {
                 System.out.println(password2);
                 System.out.println(password3);
                 System.out.println(password1);
-                JOptionPane.showMessageDialog(null, "Mật khẩu không đúng, xin hãy nhập lại","Thông báo",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Mật khẩu không đúng, xin hãy nhập lại", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
             }
-        }
-        else if (n == JOptionPane.NO_OPTION) {
+        } else if (n == JOptionPane.NO_OPTION) {
             materialTabbed.setVisible(true);
             jPanel12.setVisible(false);
         }

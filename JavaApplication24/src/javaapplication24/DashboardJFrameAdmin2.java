@@ -4516,11 +4516,9 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
         String matkhau = jTextField4.getText();
         if (ma.equals("") || matkhau.equals("")) {
             JOptionPane.showMessageDialog(null, "Bạn phải nhập đầy đủ thông tin", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-        } else
-            if(ma.charAt(0)=='A' &&ma.charAt(1)=='D'){
+        } else if (ma.charAt(0) == 'A' && ma.charAt(1) == 'D') {
             JOptionPane.showMessageDialog(null, "Không thể tạo tài khoản quản trị viên", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-           }
-        else
+        } else
         try {
             int kq = new SINH_VIEN_DAO().insert(new SINH_VIEN(ma, matkhau));
             if (kq == 1) {

@@ -577,6 +577,7 @@ public class LoginJFrame extends javax.swing.JFrame {
                     if (thongtin.getMaSV().equals(user) && thongtin.getMatKhau().equals(password)) {
                         this.setVisible(false);
                         DashboardJFrameAdmin2 dash = new DashboardJFrameAdmin2(thongtin);
+                        //DashboardJFrame2 dash = new DashboardJFrame2(new SINH_VIEN_DAO().getThongTin("ST0002", "123456"));
                         dash.setVisible(true);
                     }
                 } else if (thongtin.getFlag() == true) {
