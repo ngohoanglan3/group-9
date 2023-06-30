@@ -4801,6 +4801,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
             int kq = new MON_HOC_DAO().XoaDong(ma);
             if (kq == 1) {
                 JOptionPane.showMessageDialog(null, "Bạn đã xóa thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
+                kq = new CHUONG_TRINH_KHUNG_DAO().delete(ma);
                 lam_moi_mon_hoc();
             } else {
                 JOptionPane.showMessageDialog(null, "Xóa không thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);

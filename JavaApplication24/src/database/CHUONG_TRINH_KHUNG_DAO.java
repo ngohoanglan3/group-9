@@ -176,4 +176,19 @@ public class CHUONG_TRINH_KHUNG_DAO extends BDConnect{
 		}
 		return kq;
 	}
+     
+     public int delete(String MaMon) {
+		int kq = 0;
+		try {
+			
+			String sql = "DELETE from CHUONG_TRINH_KHUNG WHERE MaMon =? ";
+			PreparedStatement pst = conn.prepareStatement(sql);
+                        pst.setString(1, MaMon);
+			kq = pst.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return kq;
+	}
 }
