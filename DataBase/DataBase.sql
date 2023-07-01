@@ -1,5 +1,6 @@
-﻿--create database CoSoDuLieu;
-
+﻿create database CoSoDuLieu;
+go 
+use CoSoDuLieu
 create table DIEU_KHIEN(
 VoHieuHoaSinhVien bit,
 );

@@ -4428,7 +4428,7 @@ public class DashboardJFrameAdmin2 extends javax.swing.JFrame {
             return;
         }
         String filename = f.getAbsolutePath();
-        jTextField1.setText(filename);
+        //jTextField1.setText(filename);
 
         SwingWorker sw = new SwingWorker() {
             @Override

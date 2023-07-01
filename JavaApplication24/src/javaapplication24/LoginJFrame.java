@@ -328,7 +328,6 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         textField3.setBackground(new java.awt.Color(191, 211, 222));
         textField3.setBorder(null);
-        textField3.setText("ST0002");
         textField3.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         textField3.setLabelText("TÀI KHOẢN");
         textField3.addActionListener(new java.awt.event.ActionListener() {
@@ -360,7 +359,6 @@ public class LoginJFrame extends javax.swing.JFrame {
 
         passwordField1.setBackground(new java.awt.Color(191, 211, 222));
         passwordField1.setBorder(null);
-        passwordField1.setText("123456");
         passwordField1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         passwordField1.setLabelText("MẬT KHẨU");
         jPanel17.add(passwordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 50));
