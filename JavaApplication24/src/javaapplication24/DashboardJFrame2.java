@@ -1708,27 +1708,21 @@ public class DashboardJFrame2 extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("jLabel7");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("jLabel8");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("jLabel9");
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("jLabel12");
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("jLabel13");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("jLabel14");
 
         javax.swing.GroupLayout roundPanel4Layout = new javax.swing.GroupLayout(roundPanel4);
         roundPanel4.setLayout(roundPanel4Layout);
